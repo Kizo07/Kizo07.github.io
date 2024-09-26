@@ -11,35 +11,49 @@ redirect_from:
 
 Education
 ======
-* Ph.D in Version Control Theory, GitHub University, 2018 (expected)
-* M.S. in Jekyll, GitHub University, 2014
-* B.S. in GitHub, GitHub University, 2012
+* Master of Financial Engineering, UCLA Anderson School of Management, 2024 - 2025
+* Bachelors of Technology in Civil Engineering, Indian Institute of Technology Roorkee, 2013 - 2017
 
 Work experience
 ======
-* Spring 2024: Academic Pages Collaborator
-  * Github University
-  * Duties includes: Updates and improvements to template
-  * Supervisor: The Users
+* Senior Quantitative Research Analyst : QES @ Wolfe Research, LLC
+  *	**Alpha Generation Research** - Authored multiple cutting-edge research papers, driving innovative approaches to alpha generation by focusing on undervalued intangible assets and systematically analyzing loss-making companies to uncover hidden opportunities. Developed risk-neutralized strategies achieving a Sharpe Ratio of 1.53 and annual returns of 19%, delivering exceptional risk-adjusted performance.
+  *	**NLP for Financial Analysis** - Pioneered the development of sophisticated alpha-generating factors through advanced NLP techniques, applied to a wide range of financial texts including earnings call transcripts, regulatory filings (10-K/Q, 8-K/Q), news headlines, and financial events.
+  *	**Dashboards and Analytical** Tools - Spearheaded the design and deployment of scalable, high-performance R Shiny dashboards, powering advanced backtesting engines, dynamic stock screening, and comprehensive strategy analysis to enhance investment decision-making.
+  *	**Global Exposure Analysis** - Led comprehensive exposure assessments on major macro and geopolitical risks, including the Israel-Palestine conflict, interest rate shifts, tech layoffs, and the China-Taiwan tensions. These analyses informed strategic asset allocation and risk mitigation, positioning client portfolios for resilience in volatile markets.
 
-* Fall 2015: Research Assistant
-  * Github University
-  * Duties included: Merging pull requests
-  * Supervisor: Professor Hub
 
-* Summer 2015: Research Assistant
-  * Github University
-  * Duties included: Tagging issues
-  * Supervisor: Professor Git
+* Business Analyst : Udaan.com
+  *	**Fraud analytics** - Engineered advanced deep learning classification models, integrating internal and third-party datasets, boosting fraud detection accuracy by over 30% and improving risk management capabilities.
+  *	**Agent Rating system** - Designed and deployed a data-driven rating system for Field Collection agents, seamlessly integrating with weekly models. This optimization led to a 20% increase in target achievement and enhanced operational efficiency.
+  *	**Revenue Forecasting** - Developed sophisticated predictive analytics models, reducing collection forecast errors by 75% (from $200 to $50) and driving a 30% uplift in overall collections, significantly improving cash flow accuracy and performance. 
+
+
+
+* Analytics Associate Consultant: ZS Associates
+  *	**FDA Compliance & Observational Research** - Led observational studies for Fortune 500 pharma clients, designing synthetic control arms from clinical trial data that prevented FDA drug discontinuation, resulting in $5-10 million in savings per trial and improved compliance rates by 25%.
+  *	**Healthcare Cost Optimization** - Engineered cost-cutting strategies that optimized pricing, and patient clustering, reducing overall costs by 15-20% for insurers and increasing profit margins by 10% through strategic resource allocation.
+  *	**Automated Data Solutions** - Developed a fully automated data analytics platform for unstructured/structured healthcare data, delivering cross-departmental insights via dynamic dashboards. This solution reduced manual data processing time by 40%, improved data accuracy by 30%, and enhanced decision-making efficiency by 50%.
+
   
 Skills
 ======
-* Skill 1
-* Skill 2
-  * Sub-skill 2.1
-  * Sub-skill 2.2
-  * Sub-skill 2.3
-* Skill 3
+* Quantitative Research
+  * Alpha Research
+  * Backtesting
+  * Attribution Analysis
+  * Risk Neutralization
+* Programming Languages
+  * Python
+  * R
+  * C++
+* SQL
+* MS Office Suite
+* Machine learning
+  * Neural Networks
+  * NLP
+  * Network Analysis
+  * Ensemble Models
 
 Publications
 ======
