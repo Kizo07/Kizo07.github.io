@@ -36,6 +36,9 @@ layout: default
         
         {% if page.collection == 'teaching' %}
           <p> {{ page.type }}, <i>{{ page.venue }}</i>, {{ page.date | default: "1900-01-01" | date: "%Y" }} </p>
+        {% elsif page.collection == 'experience' %}
+          <p> {{ page.type }}, <i>{{ page.venue }}</i></p> 
+          <p> Duration: {{ page.date1 | default: "1900-01-01"}}  -  {{ page.date2 | default: "1900-01-01" }} </p>
         {% elsif page.venue and page.date %}
           <p>Published in <i>{{ page.venue }}</i>, {{ page.date | default: "1900-01-01" | date: "%Y" }} </p>
         {% elsif page.date %}
