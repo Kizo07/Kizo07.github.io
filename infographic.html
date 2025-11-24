@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kanav Mehta - Quantitative Infographic V2</title>
+    <!-- Modern Font: Outfit -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --primary-dark: #1e293b;
+            --primary-blue: #3b82f6;
+            --primary-gold: #f59e0b;
+            --bg-gradient: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
+            --card-bg: #ffffff;
+            --text-main: #0f172a;
+            --text-sub: #475569;
+        }
+
+        .dark {
+            --primary-dark: #f1f5f9;
+            --primary-blue: #60a5fa;
+            --primary-gold: #f59e0b;
+            --bg-gradient: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+            --card-bg: #1e293b;
+            --text-main: #f8fafc;
+            --text-sub: #94a3b8;
+        }
+
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            background: var(--bg-gradient);
+            color: var(--text-main);
+            display: flex;
+            justify-content: center;
+            padding: 40px;
+            min-height: 100vh;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1600px;
+            background: rgba(255, 255, 255, 0); /* Make transparent to see body gradient */
+            border-radius: 24px;
+            padding: 40px;
+        }
+        
+        .dark .container {
+             background: rgba(255, 255, 255, 0); /* Make transparent */
+        }
+
+
+        header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+            letter-spacing: -0.025em;
+            text-transform: uppercase;
+        }
+
+        .section-row {
+            display: flex;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        /* Vertical Labels */
+        .label-column {
+            width: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            writing-mode: vertical-rl;
+            transform: rotate(180deg);
+            font-weight: 700;
+            font-size: 1.25rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            border-radius: 16px;
+            color: white;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        .label-theoretical { background: linear-gradient(to bottom, #1e293b, #334155); }
+        .label-applied { background: linear-gradient(to bottom, #b45309, #f59e0b); }
+        
+        .dark .label-theoretical { background: linear-gradient(to bottom, #3b82f6, #2563eb); }
+        .dark .label-applied { background: linear-gradient(to bottom, #f59e0b, #d97706); }
+
+
+        /* Grid */
+        .cards-grid {
+            flex: 1;
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 20px;
+        }
+
+        /* Card Design */
+        .card {
+            background: var(--card-bg);
+            border-radius: 16px;
+            padding: 24px 20px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            border: 1px solid #e2e8f0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .dark .card {
+             border: 1px solid #334155;
+        }
+
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+            border-color: transparent;
+        }
+        
+        .dark .card:hover {
+             box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2);
+        }
+
+
+        /* Top accent line */
+        .card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+        }
+        .theo-row .card::after { background: var(--primary-blue); }
+        .app-row .card::after { background: var(--primary-gold); }
+
+        /* Icons */
+        .icon-circle {
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.75rem;
+            margin-bottom: 16px;
+            transition: transform 0.3s ease;
+        }
+        
+        .theo-row .icon-circle {
+            background: #eff6ff;
+            color: var(--primary-blue);
+        }
+        .app-row .icon-circle {
+            background: #fffbeb;
+            color: var(--primary-gold);
+        }
+        
+        .dark .theo-row .icon-circle {
+            background: #1e293b;
+            color: var(--primary-blue);
+        }
+        .dark .app-row .icon-circle {
+            background: #3a2202;
+            color: var(--primary-gold);
+        }
+
+        .card:hover .icon-circle { transform: scale(1.1) rotate(5deg); }
+
+        /* Typography */
+        .card h3 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 16px;
+            color: var(--text-main);
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            line-height: 1.2;
+        }
+
+        .card ul {
+            list-style: none;
+            width: 100%;
+        }
+
+        .card li {
+            font-size: 0.85rem;
+            color: var(--text-sub);
+            margin-bottom: 8px;
+            padding-left: 16px;
+            position: relative;
+            line-height: 1.4;
+        }
+
+        .card li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 7px;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+        }
+        .theo-row li::before { background: var(--primary-blue); opacity: 0.7; }
+        .app-row li::before { background: var(--primary-gold); opacity: 0.7; }
+
+        /* Responsive */
+        @media (max-width: 1200px) {
+            .cards-grid { grid-template-columns: repeat(3, 1fr); }
+        }
+        @media (max-width: 768px) {
+            .section-row { flex-direction: column; }
+            .label-column { 
+                width: 100%; 
+                height: 50px; 
+                writing-mode: horizontal-tb; 
+                transform: none; 
+                margin-bottom: 10px; 
+            }
+            .cards-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>Quantitative Profile</h1>
+        </header>
+
+        <!-- THEORETICAL ROW -->
+        <div class="section-row theo-row">
+            <div class="label-column label-theoretical">Theoretical</div>
+            
+            <div class="cards-grid">
+                <!-- Card 1 -->
+                <div class="card">
+                    <div class="icon-circle"><i class="fa-solid fa-square-root-variable"></i></div>
+                    <h3>Adv. Stochastic Calculus</h3>
+                    <ul>
+                        <li>Malliavin Calculus & Greeks</li>
+                        <li>Lévy Processes & Jumps</li>
+                        <li>Girsanov & Measure Change</li>
+                        <li>Stochastic Volatility (Heston)</li>
+                    </ul>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="card">
+                    <div class="icon-circle"><i class="fa-solid fa-chart-area"></i></div>
+                    <h3>Financial Econometrics</h3>
+                    <ul>
+                        <li>State-Space Models (Kalman)</li>
+                        <li>Cointegration & VECM</li>
+                        <li>GARCH & Realized Volatility</li>
+                        <li>GMM & MLE Inference</li>
+                    </ul>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="card">
+                    <div class="icon-circle"><i class="fa-solid fa-microchip"></i></div>
+                    <h3>Computational Methods</h3>
+                    <ul>
+                        <li>PDE Solvers (ADI, Crank-Nicolson)</li>
+                        <li>Quasi-Monte Carlo (Sobol)</li>
+                        <li>FFT Pricing (Carr-Madan)</li>
+                        <li>Calibration & Regularization</li>
+                    </ul>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="card">
+                    <div class="icon-circle"><i class="fa-solid fa-bezier-curve"></i></div>
+                    <h3>Convex Optimization</h3>
+                    <ul>
+                        <li>Conic Programming (SOCP/SDP)</li>
+                        <li>Interior-Point Methods</li>
+                        <li>Robust Optimization</li>
+                        <li>Dynamic Programming (HJB)</li>
+                    </ul>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="card">
+                    <div class="icon-circle"><i class="fa-solid fa-scale-balanced"></i></div>
+                    <h3>Quant Asset Pricing</h3>
+                    <ul>
+                        <li>Term Structure (HJM, LMM)</li>
+                        <li>Credit Risk Models (Merton/CDS)</li>
+                        <li>Market Microstructure (Hawkes)</li>
+                        <li>Exotics & Incomplete Markets</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- APPLIED ROW -->
+        <div class="section-row app-row">
+            <div class="label-column label-applied">Applied</div>
+            
+            <div class="cards-grid">
+                <!-- Card 1 -->
+                <div class="card">
+                    <div class="icon-circle"><i class="fa-solid fa-network-wired"></i></div>
+                    <h3>Machine Learning</h3>
+                    <ul>
+                        <li>Deep Learning (Transformers, CNN)</li>
+                        <li>Ensemble (LightGBM, XGBoost)</li>
+                        <li>Elastic Net Regularization</li>
+                        <li>Reinforcement Learning (RL)</li>
+                    </ul>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="card">
+                    <div class="icon-circle"><i class="fa-solid fa-comments-dollar"></i></div>
+                    <h3>NLP for Finance</h3>
+                    <ul>
+                        <li>Sentiment & Topic Modeling (BERT)</li>
+                        <li>Knowledge Graphs & NER</li>
+                        <li>10-K/Q & Earnings Calls Analysis</li>
+                        <li>Audio Emotion Analysis</li>
+                    </ul>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="card">
+                    <div class="icon-circle"><i class="fa-solid fa-bolt"></i></div>
+                    <h3>Algorithmic Trading</h3>
+                    <ul>
+                        <li>Stat Arb & Mean Reversion</li>
+                        <li>Order Flow & Bid-Ask Spreads</li>
+                        <li>Signals (RSI, Amihud, Lottery)</li>
+                        <li>Backtesting & Slippage Models</li>
+                    </ul>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="card">
+                    <div class="icon-circle"><i class="fa-solid fa-vial"></i></div>
+                    <h3>Statistical Methods</h3>
+                    <ul>
+                        <li>Survival Analysis (Kaplan-Meier)</li>
+                        <li>Cox Proportional Hazards</li>
+                        <li>Geopolitical Risk Indexing</li>
+                        <li>Causal Inference & Event Studies</li>
+                    </ul>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="card">
+                    <div class="icon-circle"><i class="fa-solid fa-laptop-code"></i></div>
+                    <h3>Computational Stack</h3>
+                    <ul>
+                        <li>C++, Python, R, SQL</li>
+                        <li>AWS Spark & Data Pipelines</li>
+                        <li>Bloomberg, LSEG, WRDS</li>
+                        <li>Tableau & Shiny Dashboards</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    
+    <script>
+        // This script will be run inside the iframe
+        const applyTheme = () => {
+            try {
+                // Access the parent document
+                const parentHtml = window.parent.document.querySelector('html');
+                if (parentHtml && parentHtml.classList.contains('dark')) {
+                    document.documentElement.classList.add('dark');
+                    document.body.classList.add('dark');
+                } else {
+                    document.documentElement.classList.remove('dark');
+                    document.body.classList.remove('dark');
+                }
+            } catch (e) {
+                // This might fail due to cross-origin restrictions in some environments,
+                // but should work fine when served from the same origin (in public/).
+                console.error('Could not apply theme from parent:', e);
+            }
+        };
+
+        // Create a MutationObserver to watch for class changes on the parent's <html> element
+        const observer = new MutationObserver((mutationsList) => {
+            for (const mutation of mutationsList) {
+                if (mutation.type === 'attributes' && mutation.attributeName === 'class') {
+                    applyTheme();
+                }
+            }
+        });
+
+        // Start observing
+        try {
+            const parentHtml = window.parent.document.querySelector('html');
+            if(parentHtml) {
+                 observer.observe(parentHtml, { attributes: true });
+            }
+        } catch(e) {
+             console.error('Could not observe parent theme changes:', e);
+        }
+       
+        // Apply theme on initial load
+        document.addEventListener('DOMContentLoaded', applyTheme);
+    </script>
+
+
+</body>
+</html>
