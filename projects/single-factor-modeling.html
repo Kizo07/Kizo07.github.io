@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Single-Factor Modeling | Kanav Mehta</title>
+    <meta name="description" content="Quantlink AI single-factor modeling dashboard by Kanav Mehta.">
+    <link rel="icon" href="/favicon.ico">
+    <script>
+      (function () {
+        try {
+          var saved = localStorage.getItem("theme");
+          var theme = saved || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+          document.documentElement.setAttribute("data-theme", theme);
+        } catch (error) {
+          document.documentElement.setAttribute("data-theme", "light");
+        }
+      })();
+    </script>
+    <link rel="stylesheet" href="/assets/site.css?v=2">
+  </head>
+  <body>
+    <div class="site-shell">
+      <header class="site-header">
+        <div class="nav-inner">
+          <a class="brand" href="/" aria-label="Kanav Mehta home"><span class="brand-mark">K</span><span>Kanav Mehta</span></a>
+          <nav class="site-nav" data-site-nav aria-label="Primary navigation">
+            <a href="/">Home</a>
+            <a class="active" href="/projects/">Projects</a>
+            <a href="/blogs/">Blogs</a>
+            <a href="/#contact">Contact</a>
+          </nav>
+          <div class="nav-actions">
+            <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch theme" title="Switch theme">
+              <span class="sun-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path></svg></span>
+              <span class="moon-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path></svg></span>
+            </button>
+            <button class="nav-toggle" type="button" data-nav-toggle aria-label="Open navigation" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"></path></svg></button>
+          </div>
+        </div>
+      </header>
+
+      <main>
+        <section class="page-hero">
+          <div class="page-section">
+            <div class="page-title">
+              <p class="eyebrow">Quantlink AI | Factor Research</p>
+              <h1>Single-factor research as a complete decision workflow.</h1>
+              <p class="lead">Built as the flagship Quantlink AI modeling page: users can choose a metric, lookback window, and bucket scheme, then watch the entire analytical stack recompute from distribution to signal quality to risk-adjusted backtest.</p>
+              <div class="hero-actions">
+                <a class="button primary" href="/projects/">Back to Projects</a>
+                <a class="button accent" href="/blogs/#factor-note">Read Blog Note</a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="page-section">
+          <div class="detail-layout">
+            <div class="article-grid">
+              <article class="detail-panel">
+                <span class="section-kicker">Research Frame</span>
+                <h2>What the page answers</h2>
+                <ul class="square-list">
+                  <li>What does the factor distribution look like across the full 3,545-stock universe?</li>
+                  <li>Where is the factor concentrated by sector, industry, and market-cap band?</li>
+                  <li>Does the factor rank stocks in a way that predicts forward 12-month returns?</li>
+                  <li>Do long-short or top-minus-bottom buckets survive risk and benchmark comparison?</li>
+                </ul>
+              </article>
+
+              <article class="detail-panel">
+                <span class="section-kicker">Build</span>
+                <h2>Dashboard architecture</h2>
+                <p class="lead">The dashboard is structured like a professional factor researcher thinks: first understand the cross-section, then inspect concentration risk, then test predictive power, then evaluate performance and drawdown behavior.</p>
+                <table class="data-table">
+                  <thead>
+                    <tr><th>Module</th><th>Purpose</th></tr>
+                  </thead>
+                  <tbody>
+                    <tr><td>Universe Stats</td><td>Count, lower quartile, median, and upper quartile for the selected metric.</td></tr>
+                    <tr><td>Distribution and Segments</td><td>Histogram with S&amp;P 500 percentile reference overlay.</td></tr>
+                    <tr><td>Sector and Industry</td><td>GICS sector medians, top-15 industry breakdowns, and universe-median reference lines.</td></tr>
+                    <tr><td>Market Cap Bands</td><td>Mega, Large, Mid, Small, Micro, and Nano segmentation.</td></tr>
+                    <tr><td>Predictive Power</td><td>Forward 12-month returns by decile of factor exposure.</td></tr>
+                    <tr><td>Signal Quality</td><td>IC, Spearman, Pearson, OLS slope, R-squared, monotonicity, spread, sample size, and verdict.</td></tr>
+                    <tr><td>Backtest and Risk</td><td>Quintile cumulative returns, benchmark comparison, Sharpe, Sortino, drawdown, Calmar, win rate, and terminal wealth.</td></tr>
+                    <tr><td>Sector Composition</td><td>Stacked sector exposure by quintile to reveal unintended sector bets.</td></tr>
+                  </tbody>
+                </table>
+              </article>
+
+              <article class="detail-panel">
+                <span class="section-kicker">Product Decision</span>
+                <h2>The key design choice</h2>
+                <p class="lead">The page does not stop at a single performance chart. It forces the factor to explain itself through distribution, concentration, predictive power, signal quality, realized performance, and risk. That makes the output more useful for non-quant users without flattening the analytics.</p>
+                <ul class="square-list">
+                  <li>Controls recompute all panels on one state change.</li>
+                  <li>The key-takeaway panel summarizes backtest highlights, sector bias, and signal quality in one glanceable read.</li>
+                  <li>Conditional formatting and reference overlays keep dense outputs scannable.</li>
+                </ul>
+              </article>
+            </div>
+
+            <aside class="detail-panel sticky">
+              <span class="project-type" style="--project: var(--factor)">Factor Research</span>
+              <h3>Project Snapshot</h3>
+              <ul class="square-list">
+                <li>Role: Founding Quantitative AI Researcher</li>
+                <li>Company: Quantlink AI</li>
+                <li>Universe: 3,545 stocks</li>
+                <li>Lookbacks: 1Y, 3Y, 5Y, 10Y, MAX</li>
+                <li>Buckets: quintiles and deciles</li>
+              </ul>
+              <div class="tag-row"><span class="tag">IC</span><span class="tag">Spearman</span><span class="tag">OLS</span><span class="tag">Sharpe</span><span class="tag">Sortino</span><span class="tag">GICS</span></div>
+            </aside>
+          </div>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <div class="footer-inner">
+          <strong>Kanav Mehta</strong>
+          <div class="footer-links"><a href="/">Home</a><a href="/projects/">Projects</a><a href="/blogs/">Blogs</a><a href="https://github.com/Kizo07" target="_blank" rel="noopener noreferrer">GitHub</a></div>
+        </div>
+      </footer>
+    </div>
+    <script src="/assets/site.js?v=11"></script>
+  </body>
+</html>
