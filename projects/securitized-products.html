@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Securitized Products and American Options | Kanav Mehta</title>
+    <meta name="description" content="Numerical methods project for American options, barrier options, MBS, and interest-rate models by Kanav Mehta.">
+    <link rel="icon" href="/favicon.ico">
+    <script>
+      (function () {
+        try {
+          var saved = localStorage.getItem("theme");
+          var theme = saved || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+          document.documentElement.setAttribute("data-theme", theme);
+        } catch (error) {
+          document.documentElement.setAttribute("data-theme", "light");
+        }
+      })();
+    </script>
+    <link rel="stylesheet" href="/assets/site.css?v=2">
+  </head>
+  <body>
+    <div class="site-shell">
+      <header class="site-header">
+        <div class="nav-inner">
+          <a class="brand" href="/" aria-label="Kanav Mehta home"><span class="brand-mark">K</span><span>Kanav Mehta</span></a>
+          <nav class="site-nav" data-site-nav aria-label="Primary navigation">
+            <a href="/">Home</a>
+            <a class="active" href="/projects/">Projects</a>
+            <a href="/blogs/">Blogs</a>
+            <a href="/#contact">Contact</a>
+          </nav>
+          <div class="nav-actions">
+            <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch theme" title="Switch theme">
+              <span class="sun-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path></svg></span>
+              <span class="moon-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path></svg></span>
+            </button>
+            <button class="nav-toggle" type="button" data-nav-toggle aria-label="Open navigation" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"></path></svg></button>
+          </div>
+        </div>
+      </header>
+
+      <main>
+        <section class="page-hero">
+          <div class="page-section">
+            <div class="page-title">
+              <p class="eyebrow">Options, Rates, and Securitized Products</p>
+              <h1>Numerical pricing methods for instruments where closed form is not enough.</h1>
+              <p class="lead">A research project covering American and barrier options, mortgage-backed securities, Monte Carlo variance reduction, finite-difference Greeks, and G2++ interest-rate models.</p>
+              <div class="hero-actions">
+                <a class="button primary" href="/projects/">Back to Projects</a>
+                <a class="button accent" href="https://github.com/Kizo07/American_Options" target="_blank" rel="noopener noreferrer">Open GitHub</a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="page-section">
+          <div class="detail-layout">
+            <div class="article-grid">
+              <article class="detail-panel">
+                <span class="section-kicker">Core Methods</span>
+                <h2>Pricing toolkit</h2>
+                <ul class="square-list">
+                  <li>Binomial and trinomial lattices for early-exercise features and path-dependent logic.</li>
+                  <li>Least Squares Monte Carlo for American option exercise policies.</li>
+                  <li>Finite difference methods for price surfaces and Greeks.</li>
+                  <li>Monte Carlo with antithetic and control variates to reduce estimator variance.</li>
+                  <li>G2++ interest-rate modeling for curve-sensitive fixed-income instruments.</li>
+                </ul>
+              </article>
+
+              <article class="detail-panel">
+                <span class="section-kicker">Why it matters</span>
+                <h2>From derivative math to securitized risk</h2>
+                <p class="lead">Securitized products combine embedded optionality, prepayment behavior, rate sensitivity, and cash-flow timing. The project treats numerical methods as a common language for valuing those nonlinear risks rather than as separate textbook techniques.</p>
+                <table class="data-table">
+                  <thead>
+                    <tr><th>Instrument</th><th>Modeling emphasis</th></tr>
+                  </thead>
+                  <tbody>
+                    <tr><td>American Options</td><td>Exercise boundary estimation and dynamic programming.</td></tr>
+                    <tr><td>Barrier Options</td><td>Path dependence and boundary crossing behavior.</td></tr>
+                    <tr><td>MBS</td><td>Rate-sensitive cash flows, optionality, and valuation under curve scenarios.</td></tr>
+                    <tr><td>Rates Models</td><td>Two-factor dynamics for yield curve movement and discounting.</td></tr>
+                  </tbody>
+                </table>
+              </article>
+
+              <article class="detail-panel">
+                <span class="section-kicker">Portfolio Angle</span>
+                <h2>What I would extend next</h2>
+                <ul class="square-list">
+                  <li>Prepayment modeling with borrower incentives and refinancing thresholds.</li>
+                  <li>Scenario explorer for parallel, slope, and curvature shocks.</li>
+                  <li>Reusable comparison between lattice, LSMC, and finite-difference outputs.</li>
+                  <li>Stress dashboard for duration, convexity, and option-adjusted spread sensitivity.</li>
+                </ul>
+              </article>
+            </div>
+
+            <aside class="detail-panel sticky">
+              <span class="project-type" style="--project: var(--options)">Options and Rates</span>
+              <h3>Project Snapshot</h3>
+              <ul class="square-list">
+                <li>Topic: securitized products and numerical methods</li>
+                <li>GitHub: American_Options</li>
+                <li>Methods: lattices, LSMC, FDM, Monte Carlo</li>
+                <li>Risk lens: Greeks, curve sensitivity, embedded optionality</li>
+              </ul>
+              <div class="tag-row"><span class="tag">LSMC</span><span class="tag">FDM</span><span class="tag">G2++</span><span class="tag">MBS</span><span class="tag">Greeks</span></div>
+            </aside>
+          </div>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <div class="footer-inner">
+          <strong>Kanav Mehta</strong>
+          <div class="footer-links"><a href="/">Home</a><a href="/projects/">Projects</a><a href="/blogs/">Blogs</a><a href="https://github.com/Kizo07" target="_blank" rel="noopener noreferrer">GitHub</a></div>
+        </div>
+      </footer>
+    </div>
+    <script src="/assets/site.js?v=11"></script>
+  </body>
+</html>
