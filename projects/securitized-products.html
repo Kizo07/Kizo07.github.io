@@ -10,20 +10,20 @@
       (function () {
         try {
           var saved = localStorage.getItem("theme");
-          var theme = saved || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+          var theme = saved || "dark";
           document.documentElement.setAttribute("data-theme", theme);
         } catch (error) {
-          document.documentElement.setAttribute("data-theme", "light");
+          document.documentElement.setAttribute("data-theme", "dark");
         }
       })();
     </script>
-    <link rel="stylesheet" href="/assets/site.css?v=2">
+    <link rel="stylesheet" href="/assets/site.css?v=8">
   </head>
   <body>
     <div class="site-shell">
       <header class="site-header">
         <div class="nav-inner">
-          <a class="brand" href="/" aria-label="Kanav Mehta home"><span class="brand-mark">K</span><span>Kanav Mehta</span></a>
+          <a class="brand" href="/" aria-label="Kanav Mehta home"><span class="brand-mark">KM</span><span>Kanav Mehta</span></a>
           <nav class="site-nav" data-site-nav aria-label="Primary navigation">
             <a href="/">Home</a>
             <a class="active" href="/projects/">Projects</a>
@@ -44,9 +44,9 @@
         <section class="page-hero">
           <div class="page-section">
             <div class="page-title">
-              <p class="eyebrow">Options, Rates, and Securitized Products</p>
-              <h1>Numerical pricing methods for instruments where closed form is not enough.</h1>
-              <p class="lead">A research project covering American and barrier options, mortgage-backed securities, Monte Carlo variance reduction, finite-difference Greeks, and G2++ interest-rate models.</p>
+              <p class="eyebrow">Options, Rates, Securitized Products</p>
+              <h1>Pricing code for optionality, rates, and cash-flow risk.</h1>
+              <p class="lead">American options. Barriers. MBS. Variance reduction. Greeks. G2++ rates.</p>
               <div class="hero-actions">
                 <a class="button primary" href="/projects/">Back to Projects</a>
                 <a class="button accent" href="https://github.com/Kizo07/American_Options" target="_blank" rel="noopener noreferrer">Open GitHub</a>
@@ -59,8 +59,8 @@
           <div class="detail-layout">
             <div class="article-grid">
               <article class="detail-panel">
-                <span class="section-kicker">Core Methods</span>
-                <h2>Pricing toolkit</h2>
+                <span class="section-kicker">Methods</span>
+                <h2>Pricing stack</h2>
                 <ul class="square-list">
                   <li>Binomial and trinomial lattices for early-exercise features and path-dependent logic.</li>
                   <li>Least Squares Monte Carlo for American option exercise policies.</li>
@@ -71,9 +71,9 @@
               </article>
 
               <article class="detail-panel">
-                <span class="section-kicker">Why it matters</span>
-                <h2>From derivative math to securitized risk</h2>
-                <p class="lead">Securitized products combine embedded optionality, prepayment behavior, rate sensitivity, and cash-flow timing. The project treats numerical methods as a common language for valuing those nonlinear risks rather than as separate textbook techniques.</p>
+                <span class="section-kicker">Risk Stack</span>
+                <h2>Optionality, rates, cash flows</h2>
+                <p class="lead">Embedded optionality. Prepayment behavior. Curve sensitivity. Timing.</p>
                 <table class="data-table">
                   <thead>
                     <tr><th>Instrument</th><th>Modeling emphasis</th></tr>
@@ -88,8 +88,8 @@
               </article>
 
               <article class="detail-panel">
-                <span class="section-kicker">Portfolio Angle</span>
-                <h2>What I would extend next</h2>
+                <span class="section-kicker">Extensions</span>
+                <h2>Next modules</h2>
                 <ul class="square-list">
                   <li>Prepayment modeling with borrower incentives and refinancing thresholds.</li>
                   <li>Scenario explorer for parallel, slope, and curvature shocks.</li>
@@ -101,7 +101,7 @@
 
             <aside class="detail-panel sticky">
               <span class="project-type" style="--project: var(--options)">Options and Rates</span>
-              <h3>Project Snapshot</h3>
+              <h3>Snapshot</h3>
               <ul class="square-list">
                 <li>Topic: securitized products and numerical methods</li>
                 <li>GitHub: American_Options</li>
@@ -121,6 +121,6 @@
         </div>
       </footer>
     </div>
-    <script src="/assets/site.js?v=11"></script>
+    <script src="/assets/site.js?v=12"></script>
   </body>
 </html>

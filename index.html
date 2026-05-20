@@ -10,21 +10,21 @@
       (function () {
         try {
           var saved = localStorage.getItem("theme");
-          var theme = saved || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+          var theme = saved || "dark";
           document.documentElement.setAttribute("data-theme", theme);
         } catch (error) {
-          document.documentElement.setAttribute("data-theme", "light");
+          document.documentElement.setAttribute("data-theme", "dark");
         }
       })();
     </script>
-    <link rel="stylesheet" href="/assets/site.css?v=2">
+    <link rel="stylesheet" href="/assets/site.css?v=8">
   </head>
   <body>
     <div class="site-shell">
       <header class="site-header">
         <div class="nav-inner">
           <a class="brand" href="/" aria-label="Kanav Mehta home">
-            <span class="brand-mark">K</span>
+            <span class="brand-mark">KM</span>
             <span>Kanav Mehta</span>
           </a>
           <nav class="site-nav" data-site-nav aria-label="Primary navigation">
@@ -53,14 +53,19 @@
         <section class="hero">
           <div class="hero-content">
             <div class="hero-copy">
-              <p class="eyebrow">Founding Quantitative AI Researcher at Quantlink AI</p>
-              <h1>Building quant systems that make signals earn their keep.</h1>
-              <p class="lead">I work across factor research, machine-learning trading systems, securitized products, and AI-assisted investment workflows. My edge is turning raw market questions into testable models, diagnostic dashboards, and decisions a user can actually act on.</p>
+              <p class="eyebrow">Founding Quantitative AI Researcher | Quantlink AI</p>
+              <h1>Quant AI researcher for markets, models, and machine intelligence.</h1>
+              <p class="lead">Factor engines. ML strategy research. Derivatives tooling. NLP signals. Analyst systems.</p>
               <div class="hero-actions">
                 <a class="button accent" href="/projects/">Explore Projects</a>
-                <a class="button primary" href="mailto:kanavdbz@gmail.com">Email Me</a>
+                <a class="button cyan" href="mailto:kanavdbz@gmail.com">Email</a>
                 <a class="button ghost" href="https://github.com/Kizo07" target="_blank" rel="noopener noreferrer">GitHub</a>
               </div>
+              <pre class="terminal-readout"><span class="cyan">$ whoami</span>
+Kanav Mehta
+role=founding_quant_ai_researcher
+stack=factors | ml_strats | derivatives | nlp
+mode=research_to_production</pre>
             </div>
             <div class="hero-portrait" aria-label="Portrait of Kanav Mehta">
               <img src="/images/profile.png" alt="Kanav Mehta">
@@ -87,17 +92,157 @@
           </div>
         </section>
 
+        <section class="page-section career-market-section" aria-labelledby="career-market-title">
+          <div class="market-board">
+            <div class="market-board-header">
+              <div>
+                <span class="section-kicker">Career Curve</span>
+                <h2 id="career-market-title">KM.EXP</h2>
+                <p class="lead">2017-2026 | analytics -> quant research -> quantitative AI</p>
+              </div>
+              <div class="market-ticker" aria-label="Career index summary">
+                <span>KM.EXP</span>
+                <strong>917.4</strong>
+                <small>+817% since 2017</small>
+              </div>
+            </div>
+
+            <div class="career-terminal-grid">
+              <figure class="career-chart" aria-label="Experience equity curve from 2017 to 2026">
+                <svg viewBox="0 0 960 430" role="img" aria-labelledby="career-chart-title career-chart-desc">
+                  <title id="career-chart-title">Kanav Mehta experience curve</title>
+                  <desc id="career-chart-desc">A stylized price chart showing career milestones from 2017 analytics work to 2026 founding quantitative AI researcher work.</desc>
+                  <defs>
+                    <linearGradient id="career-area" x1="0" x2="0" y1="0" y2="1">
+                      <stop class="career-stop-primary" offset="0%"></stop>
+                      <stop class="career-stop-mid" offset="55%"></stop>
+                      <stop class="career-stop-end" offset="100%"></stop>
+                    </linearGradient>
+                    <filter id="career-glow" x="-30%" y="-30%" width="160%" height="160%">
+                      <feGaussianBlur stdDeviation="3" result="blur"></feGaussianBlur>
+                      <feMerge>
+                        <feMergeNode in="blur"></feMergeNode>
+                        <feMergeNode in="SourceGraphic"></feMergeNode>
+                      </feMerge>
+                    </filter>
+                  </defs>
+
+                  <rect class="chart-bg" x="0" y="0" width="960" height="430"></rect>
+                  <g class="chart-grid-lines">
+                    <path d="M70 40H910M70 105H910M70 170H910M70 235H910M70 300H910M70 365H910"></path>
+                    <path d="M70 40V365M190 40V365M310 40V365M430 40V365M550 40V365M670 40V365M790 40V365M910 40V365"></path>
+                  </g>
+
+                  <g class="chart-axis-labels">
+                    <text x="24" y="45">900</text>
+                    <text x="24" y="110">750</text>
+                    <text x="24" y="175">600</text>
+                    <text x="24" y="240">450</text>
+                    <text x="24" y="305">300</text>
+                    <text x="24" y="370">100</text>
+                    <text x="67" y="402">2017</text>
+                    <text x="187" y="402">2018</text>
+                    <text x="307" y="402">2019</text>
+                    <text x="427" y="402">2020</text>
+                    <text x="547" y="402">2022</text>
+                    <text x="667" y="402">2024</text>
+                    <text x="787" y="402">2025</text>
+                    <text x="885" y="402">2026</text>
+                  </g>
+
+                  <g class="chart-drawdown">
+                    <path d="M190 314C254 324 275 312 310 280"></path>
+                    <path d="M430 218C486 236 510 205 550 146"></path>
+                    <path d="M670 106C726 128 756 94 790 65"></path>
+                  </g>
+
+                  <path class="career-area" d="M70 336C122 326 146 334 190 314C250 300 254 320 310 280C363 242 386 264 430 218C486 170 506 194 550 146C615 93 642 124 670 106C724 72 742 93 790 65C840 48 862 57 910 36L910 365L70 365Z"></path>
+                  <path class="career-ma" d="M70 348C178 332 228 321 310 292C398 262 456 226 550 176C635 132 704 101 790 78C838 65 872 52 910 45"></path>
+                  <path class="career-line" filter="url(#career-glow)" d="M70 336C122 326 146 334 190 314C250 300 254 320 310 280C363 242 386 264 430 218C486 170 506 194 550 146C615 93 642 124 670 106C724 72 742 93 790 65C840 48 862 57 910 36"></path>
+
+                  <g class="volume-bars" aria-label="Career volume bars">
+                    <rect x="76" y="346" width="26" height="19"></rect>
+                    <rect x="176" y="334" width="26" height="31"></rect>
+                    <rect x="296" y="318" width="26" height="47"></rect>
+                    <rect x="416" y="290" width="26" height="75"></rect>
+                    <rect x="536" y="252" width="26" height="113"></rect>
+                    <rect x="656" y="222" width="26" height="143"></rect>
+                    <rect x="776" y="186" width="26" height="179"></rect>
+                    <rect x="894" y="146" width="26" height="219"></rect>
+                  </g>
+
+                  <g class="event-markers">
+                    <g style="--event: var(--stack-3)">
+                      <line x1="70" y1="40" x2="70" y2="365"></line>
+                      <circle cx="70" cy="336" r="6"></circle>
+                      <text x="82" y="332">ZS</text>
+                    </g>
+                    <g style="--event: var(--product)">
+                      <line x1="310" y1="40" x2="310" y2="365"></line>
+                      <circle cx="310" cy="280" r="6"></circle>
+                      <text x="322" y="276">Udaan</text>
+                    </g>
+                    <g style="--event: var(--ai)">
+                      <line x1="430" y1="40" x2="430" y2="365"></line>
+                      <circle cx="430" cy="218" r="6"></circle>
+                      <text x="442" y="214">Wolfe</text>
+                    </g>
+                    <g style="--event: var(--options)">
+                      <line x1="670" y1="40" x2="670" y2="365"></line>
+                      <circle cx="670" cy="106" r="6"></circle>
+                      <text x="682" y="102">UCLA MFE</text>
+                    </g>
+                    <g style="--event: var(--trading)">
+                      <line x1="790" y1="40" x2="790" y2="365"></line>
+                      <circle cx="790" cy="65" r="6"></circle>
+                      <text x="802" y="61">WQ + Quanta</text>
+                    </g>
+                    <g style="--event: var(--factor)">
+                      <line x1="910" y1="40" x2="910" y2="365"></line>
+                      <circle cx="910" cy="36" r="7"></circle>
+                      <text x="760" y="30">Quantlink AI</text>
+                    </g>
+                  </g>
+
+                  <g class="chart-legend">
+                    <text x="70" y="24">KM.EXP / LOG EXPERIENCE INDEX</text>
+                  </g>
+                </svg>
+              </figure>
+
+              <aside class="chart-stats" aria-label="Experience curve statistics">
+                <div>
+                  <span>Index CAGR</span>
+                  <strong>27.1%</strong>
+                </div>
+                <div>
+                  <span>Max Drawdown</span>
+                  <strong>-8.4%</strong>
+                </div>
+                <div>
+                  <span>Signal Breadth</span>
+                  <strong>5 domains</strong>
+                </div>
+                <div>
+                  <span>Current Regime</span>
+                  <strong>Quant AI</strong>
+                </div>
+              </aside>
+            </div>
+          </div>
+        </section>
+
         <section class="page-section">
           <span class="section-kicker">Current Focus</span>
           <div class="split-grid">
             <div>
-              <h2>Research depth, product clarity, production discipline.</h2>
-              <p class="lead">The new site is built around the work I want people to understand quickly: systematic signal research, practical AI, and finance products that expose risk instead of hiding it behind a chart.</p>
+              <h2>Research systems with audit trails.</h2>
+              <p class="lead">Alpha research. Risk diagnostics. Usable interfaces.</p>
             </div>
             <div class="work-grid">
               <article class="feature-card factor">
                 <p class="label">Quantlink AI</p>
-                <h3>Single-Factor Modeling</h3>
+                <h3>Factor Engine</h3>
                 <ul class="square-list">
                   <li>Built an end-to-end factor research workflow across a 3,545-stock universe.</li>
                   <li>Implemented IC, rank correlation, OLS slope, R-squared, monotonicity, and top-minus-bottom spread diagnostics.</li>
@@ -106,7 +251,7 @@
               </article>
               <article class="feature-card trading">
                 <p class="label">Systematic Trading</p>
-                <h3>ML Strategy Research</h3>
+                <h3>Strategy Lab</h3>
                 <ul class="square-list">
                   <li>Developed ETF and crypto-linked strategies using LightGBM, oscillator signals, liquidity features, and macro trend indicators.</li>
                   <li>Built multi-region alpha strategies across US, China, Europe, and UK markets.</li>
@@ -115,7 +260,7 @@
               </article>
               <article class="feature-card ai">
                 <p class="label">AI + Markets</p>
-                <h3>NLP, Macro, Dashboards</h3>
+                <h3>NLP + Research UI</h3>
                 <ul class="square-list">
                   <li>Applied transformer models and knowledge graphs to financial filings, calls, headlines, and macro communications.</li>
                   <li>Built dashboards for stock screening, backtesting, alpha analysis, and risk exposure monitoring.</li>
@@ -197,13 +342,13 @@
           <div class="contact-panel">
             <div>
               <span class="section-kicker">Contact</span>
-              <h2>Open to research, quant product, and AI-for-markets conversations.</h2>
-              <p class="lead">Based in Los Angeles. MFE graduate from UCLA Anderson, with prior research experience at Wolfe Research and WorldQuant.</p>
+              <h2>Quant research, AI markets, derivatives, product systems.</h2>
+              <p class="lead">Los Angeles. UCLA Anderson MFE. Research background across Quantlink AI, Quanta Ventures, WorldQuant, and Wolfe Research.</p>
             </div>
             <div class="inline-actions">
               <a class="button primary" href="mailto:kanavdbz@gmail.com">kanavdbz@gmail.com</a>
               <a class="button ghost" href="mailto:kanav.mehta.2025@anderson.ucla.edu">UCLA Email</a>
-              <a class="button accent" href="https://linkedin.com/in/cxz07" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+              <a class="button cyan" href="https://linkedin.com/in/cxz07" target="_blank" rel="noopener noreferrer">LinkedIn</a>
             </div>
           </div>
         </section>
@@ -221,6 +366,6 @@
         </div>
       </footer>
     </div>
-    <script src="/assets/site.js?v=11"></script>
+    <script src="/assets/site.js?v=12"></script>
   </body>
 </html>

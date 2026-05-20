@@ -10,21 +10,21 @@
       (function () {
         try {
           var saved = localStorage.getItem("theme");
-          var theme = saved || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+          var theme = saved || "dark";
           document.documentElement.setAttribute("data-theme", theme);
         } catch (error) {
-          document.documentElement.setAttribute("data-theme", "light");
+          document.documentElement.setAttribute("data-theme", "dark");
         }
       })();
     </script>
-    <link rel="stylesheet" href="/assets/site.css?v=2">
+    <link rel="stylesheet" href="/assets/site.css?v=8">
   </head>
   <body>
     <div class="site-shell">
       <header class="site-header">
         <div class="nav-inner">
           <a class="brand" href="/" aria-label="Kanav Mehta home">
-            <span class="brand-mark">K</span>
+            <span class="brand-mark">KM</span>
             <span>Kanav Mehta</span>
           </a>
           <nav class="site-nav" data-site-nav aria-label="Primary navigation">
@@ -53,9 +53,9 @@
         <section class="page-hero">
           <div class="page-section">
             <div class="page-title">
-              <p class="eyebrow">Color-coded by research surface</p>
-              <h1>Projects that move from model to market context.</h1>
-              <p class="lead">Each project is organized by a consistent palette: factor research, options and rates, trading systems, AI/NLP, market structure, and product analytics.</p>
+              <p class="eyebrow">Research Index</p>
+              <h1>Models, markets, and the interfaces between them.</h1>
+              <p class="lead">Factors / derivatives / strategies / NLP / market structure / analytics</p>
             </div>
             <div class="filter-bar" aria-label="Project filters">
               <button class="filter-button active" type="button" data-filter="all">All</button>
@@ -75,7 +75,7 @@
               <div class="project-card-inner">
                 <span class="project-type">Factor Research</span>
                 <h2>Quantlink AI Single-Factor Modeling</h2>
-                <p>End-to-end dashboard for cross-sectional factor research, built to make institutional diagnostics readable for retail and student users.</p>
+                <p>Cross-sectional factor research dashboard for ranking, diagnostics, buckets, risk, and backtest review.</p>
                 <div class="project-metrics">
                   <span>3,545<small>stocks</small></span>
                   <span>10+<small>panels</small></span>
@@ -111,7 +111,7 @@
                 <div class="tag-row"><span class="tag">American Options</span><span class="tag">MBS</span><span class="tag">Monte Carlo</span></div>
                 <div class="inline-actions">
                   <a class="button accent" href="/projects/securitized-products.html">Read Detail</a>
-                  <a class="button ghost" href="https://github.com/Kizo07/American_Options" target="_blank" rel="noopener noreferrer">GitHub</a>
+                  <a class="button cyan" href="https://github.com/Kizo07/American_Options" target="_blank" rel="noopener noreferrer">GitHub</a>
                 </div>
               </div>
             </article>
@@ -120,7 +120,7 @@
               <div class="project-card-inner">
                 <span class="project-type">Trading Systems</span>
                 <h2>QQQ Regime Strategy</h2>
-                <p>Long/short strategy driven by trend, volatility, and kurtosis regimes to isolate bullish periods with cleaner risk profiles.</p>
+                <p>Long/short QQQ strategy gated by trend, volatility, and tail-risk regimes.</p>
                 <div class="project-metrics">
                   <span>SMA<small>trend</small></span>
                   <span>IV/RV<small>risk</small></span>
@@ -130,7 +130,7 @@
                 <ul class="square-list">
                   <li>Separates market direction from risk state before taking exposure.</li>
                   <li>Uses a tearsheet workflow to review cumulative return, drawdown, and risk-adjusted metrics.</li>
-                  <li>Built as a compact example of research logic becoming a reviewable strategy page.</li>
+                  <li>Compact audit trail from rule logic to tearsheet.</li>
                 </ul>
                 <div class="tag-row"><span class="tag">Python</span><span class="tag">Volatility</span><span class="tag">Regimes</span></div>
                 <div class="inline-actions"><a class="button accent" href="/projects/qqq-ls-strategy.html">Open Tearsheet</a></div>
@@ -141,7 +141,7 @@
               <div class="project-card-inner">
                 <span class="project-type">Trading Systems</span>
                 <h2>ETF ML Strategy Research</h2>
-                <p>Sliding LightGBM research framework for Bitcoin, Ether, and QQQ strategies using oscillator signals, liquidity measures, and macro trend features.</p>
+                <p>Sliding-window LightGBM research for Bitcoin, Ether, and QQQ with oscillators, liquidity, and macro trend features.</p>
                 <div class="project-metrics">
                   <span>LightGBM<small>model</small></span>
                   <span>ETF<small>universe</small></span>
@@ -161,7 +161,7 @@
               <div class="project-card-inner">
                 <span class="project-type">Factor Research</span>
                 <h2>WorldQuant Multi-Region Alphas</h2>
-                <p>Intraday and medium-frequency alpha development across US, China, Europe, and UK markets, using multiple data surfaces and turnover-aware design.</p>
+                <p>Intraday and medium-frequency alpha work across US, China, Europe, and UK markets.</p>
                 <div class="project-metrics">
                   <span>40+<small>strategies</small></span>
                   <span>4<small>regions</small></span>
@@ -181,7 +181,7 @@
               <div class="project-card-inner">
                 <span class="project-type">AI/NLP</span>
                 <h2>Financial NLP Alpha Research</h2>
-                <p>Transformer and knowledge-graph research for extracting alpha from financial documents, earnings calls, headlines, and unstructured market text.</p>
+                <p>Transformer and knowledge-graph research over filings, earnings calls, headlines, and market text.</p>
                 <div class="project-metrics">
                   <span>NLP<small>signals</small></span>
                   <span>KG<small>entities</small></span>
@@ -261,7 +261,7 @@
               <div class="project-card-inner">
                 <span class="project-type">Product Analytics</span>
                 <h2>Quant Dashboard Systems</h2>
-                <p>Analyst-facing dashboards for backtesting, stock screening, alpha analysis, financial-model review, and macro risk exposure monitoring.</p>
+                <p>Dashboards for backtesting, screening, alpha review, financial models, and macro risk monitoring.</p>
                 <div class="project-metrics">
                   <span>Screeners<small>stocks</small></span>
                   <span>Backtests<small>strategy</small></span>
@@ -292,6 +292,6 @@
         </div>
       </footer>
     </div>
-    <script src="/assets/site.js?v=11"></script>
+    <script src="/assets/site.js?v=12"></script>
   </body>
 </html>

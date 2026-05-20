@@ -10,21 +10,21 @@
       (function () {
         try {
           var saved = localStorage.getItem("theme");
-          var theme = saved || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+          var theme = saved || "dark";
           document.documentElement.setAttribute("data-theme", theme);
         } catch (error) {
-          document.documentElement.setAttribute("data-theme", "light");
+          document.documentElement.setAttribute("data-theme", "dark");
         }
       })();
     </script>
-    <link rel="stylesheet" href="/assets/site.css?v=2">
+    <link rel="stylesheet" href="/assets/site.css?v=8">
   </head>
   <body>
     <div class="site-shell">
       <header class="site-header">
         <div class="nav-inner">
           <a class="brand" href="/" aria-label="Kanav Mehta home">
-            <span class="brand-mark">K</span>
+            <span class="brand-mark">KM</span>
             <span>Kanav Mehta</span>
           </a>
           <nav class="site-nav" data-site-nav aria-label="Primary navigation">
@@ -54,8 +54,8 @@
           <div class="page-section">
             <div class="page-title">
               <p class="eyebrow">Research Notes</p>
-              <h1>Short essays on quant work that deserves a sharper explanation.</h1>
-              <p class="lead">This tab is designed for compact thinking: model design, dashboard judgment, risk interpretation, and the practical details that decide whether research survives contact with users.</p>
+              <h1>Notes from the quant lab.</h1>
+              <p class="lead">Factor judgment / risk leakage / numerical methods</p>
             </div>
           </div>
         </section>
@@ -65,7 +65,7 @@
             <a class="blog-card" href="#factor-note">
               <p class="article-meta">Factor Modeling</p>
               <h2>From factor idea to verdict</h2>
-              <p>A useful factor page should make the signal prove distribution, predictive power, performance, and risk concentration.</p>
+              <p>Factor work earns trust through distribution, predictive power, performance, and risk concentration.</p>
             </a>
             <a class="blog-card" href="#sector-note">
               <p class="article-meta">Risk Design</p>
@@ -75,7 +75,7 @@
             <a class="blog-card" href="#numerical-note">
               <p class="article-meta">Derivatives</p>
               <h2>Numerical methods as product design</h2>
-              <p>Lattices, LSMC, finite differences, and Monte Carlo are not just methods. They shape what users can inspect.</p>
+              <p>Lattices, LSMC, finite differences, Monte Carlo, Greeks.</p>
             </a>
           </div>
         </section>
@@ -85,12 +85,12 @@
             <article class="article-card" id="factor-note">
               <p class="article-meta">Factor Modeling</p>
               <h2>From factor idea to verdict</h2>
-              <p class="lead">A single factor is not interesting because it has a clean name. It becomes interesting when it keeps working after you ask it uncomfortable questions.</p>
+              <p class="lead">Distribution checks. Concentration checks. Rank tests. Portfolio tests.</p>
               <ul class="square-list">
                 <li>Start with the cross-section. A factor with a broken or wildly skewed distribution needs different treatment before it becomes portfolio logic.</li>
                 <li>Inspect concentration. Sector, industry, and market-cap breakdowns reveal whether the factor is actually measuring the claimed economic intuition.</li>
                 <li>Measure rank quality. IC, Spearman correlation, monotonicity, and top-minus-bottom spread tell a richer story than one return number.</li>
-                <li>Backtest buckets, not just one portfolio. Quintiles and deciles show whether the signal degrades smoothly or only works in the extremes.</li>
+                <li>Backtest buckets and the portfolio. Quintiles and deciles show whether the signal degrades smoothly or only works in the extremes.</li>
                 <li>End with a verdict. Users need to know whether the factor is promising, weak, noisy, sector-biased, or only conditionally useful.</li>
               </ul>
             </article>
@@ -98,7 +98,7 @@
             <article class="article-card" id="sector-note">
               <p class="article-meta">Risk Design</p>
               <h2>Sector composition is not a footnote</h2>
-              <p class="lead">A factor backtest can look strong because it is right, or because it loaded into a sector that happened to win. A dashboard should make that distinction hard to miss.</p>
+              <p class="lead">Signal or sector bet. Separate them before trusting the spread.</p>
               <ul class="square-list">
                 <li>Sector composition by quintile shows whether the top bucket is diversified or simply overexposed to one economic theme.</li>
                 <li>Median factor values by sector help separate stock-level signal from industry structure.</li>
@@ -110,7 +110,7 @@
             <article class="article-card" id="numerical-note">
               <p class="article-meta">Derivatives</p>
               <h2>Numerical methods as product design</h2>
-              <p class="lead">The method you choose for pricing a derivative also decides the questions your interface can answer. That makes model choice a product choice, not just a technical one.</p>
+              <p class="lead">Method choice -> visible risk surface.</p>
               <ul class="square-list">
                 <li>Lattices are useful when early exercise and decision trees need to be visible.</li>
                 <li>Least Squares Monte Carlo is powerful when the exercise policy is estimated from simulated paths.</li>
@@ -135,6 +135,6 @@
         </div>
       </footer>
     </div>
-    <script src="/assets/site.js?v=11"></script>
+    <script src="/assets/site.js?v=12"></script>
   </body>
 </html>

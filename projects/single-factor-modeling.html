@@ -10,20 +10,20 @@
       (function () {
         try {
           var saved = localStorage.getItem("theme");
-          var theme = saved || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+          var theme = saved || "dark";
           document.documentElement.setAttribute("data-theme", theme);
         } catch (error) {
-          document.documentElement.setAttribute("data-theme", "light");
+          document.documentElement.setAttribute("data-theme", "dark");
         }
       })();
     </script>
-    <link rel="stylesheet" href="/assets/site.css?v=2">
+    <link rel="stylesheet" href="/assets/site.css?v=8">
   </head>
   <body>
     <div class="site-shell">
       <header class="site-header">
         <div class="nav-inner">
-          <a class="brand" href="/" aria-label="Kanav Mehta home"><span class="brand-mark">K</span><span>Kanav Mehta</span></a>
+          <a class="brand" href="/" aria-label="Kanav Mehta home"><span class="brand-mark">KM</span><span>Kanav Mehta</span></a>
           <nav class="site-nav" data-site-nav aria-label="Primary navigation">
             <a href="/">Home</a>
             <a class="active" href="/projects/">Projects</a>
@@ -45,8 +45,8 @@
           <div class="page-section">
             <div class="page-title">
               <p class="eyebrow">Quantlink AI | Factor Research</p>
-              <h1>Single-factor research as a complete decision workflow.</h1>
-              <p class="lead">Built as the flagship Quantlink AI modeling page: users can choose a metric, lookback window, and bucket scheme, then watch the entire analytical stack recompute from distribution to signal quality to risk-adjusted backtest.</p>
+              <h1>Single-factor engine for ranking, buckets, and risk.</h1>
+              <p class="lead">Metric. Lookback. Buckets. Distribution. Signal quality. Backtest.</p>
               <div class="hero-actions">
                 <a class="button primary" href="/projects/">Back to Projects</a>
                 <a class="button accent" href="/blogs/#factor-note">Read Blog Note</a>
@@ -59,20 +59,20 @@
           <div class="detail-layout">
             <div class="article-grid">
               <article class="detail-panel">
-                <span class="section-kicker">Research Frame</span>
-                <h2>What the page answers</h2>
+                <span class="section-kicker">Signal Map</span>
+                <h2>Research questions</h2>
                 <ul class="square-list">
-                  <li>What does the factor distribution look like across the full 3,545-stock universe?</li>
-                  <li>Where is the factor concentrated by sector, industry, and market-cap band?</li>
-                  <li>Does the factor rank stocks in a way that predicts forward 12-month returns?</li>
-                  <li>Do long-short or top-minus-bottom buckets survive risk and benchmark comparison?</li>
+                  <li>Distribution across the full 3,545-stock universe.</li>
+                  <li>Concentration by sector, industry, and market-cap band.</li>
+                  <li>Rank signal vs. forward 12-month returns.</li>
+                  <li>Long-short and top-minus-bottom buckets vs. benchmark risk.</li>
                 </ul>
               </article>
 
               <article class="detail-panel">
                 <span class="section-kicker">Build</span>
                 <h2>Dashboard architecture</h2>
-                <p class="lead">The dashboard is structured like a professional factor researcher thinks: first understand the cross-section, then inspect concentration risk, then test predictive power, then evaluate performance and drawdown behavior.</p>
+                <p class="lead">Cross-section first. Concentration risk second. Predictive power third. Portfolio behavior last.</p>
                 <table class="data-table">
                   <thead>
                     <tr><th>Module</th><th>Purpose</th></tr>
@@ -91,9 +91,9 @@
               </article>
 
               <article class="detail-panel">
-                <span class="section-kicker">Product Decision</span>
-                <h2>The key design choice</h2>
-                <p class="lead">The page does not stop at a single performance chart. It forces the factor to explain itself through distribution, concentration, predictive power, signal quality, realized performance, and risk. That makes the output more useful for non-quant users without flattening the analytics.</p>
+                <span class="section-kicker">Design</span>
+                <h2>One-screen verdict</h2>
+                <p class="lead">Distribution. Concentration. Signal quality. Performance. Risk.</p>
                 <ul class="square-list">
                   <li>Controls recompute all panels on one state change.</li>
                   <li>The key-takeaway panel summarizes backtest highlights, sector bias, and signal quality in one glanceable read.</li>
@@ -104,7 +104,7 @@
 
             <aside class="detail-panel sticky">
               <span class="project-type" style="--project: var(--factor)">Factor Research</span>
-              <h3>Project Snapshot</h3>
+              <h3>Snapshot</h3>
               <ul class="square-list">
                 <li>Role: Founding Quantitative AI Researcher</li>
                 <li>Company: Quantlink AI</li>
@@ -125,6 +125,6 @@
         </div>
       </footer>
     </div>
-    <script src="/assets/site.js?v=11"></script>
+    <script src="/assets/site.js?v=12"></script>
   </body>
 </html>
