@@ -7,23 +7,23 @@
   var projectCards = document.querySelectorAll("[data-project]");
   var tearsheetThemeCss = `
     :root[data-parent-theme="light"] {
-      --ts-bg: #ffffff;
-      --ts-panel: #f7f8fb;
-      --ts-text: #0b0d10;
-      --ts-muted: #59616f;
-      --ts-line: #c8ced8;
-      --ts-grid: #d8dde6;
-      --ts-accent: #f2552c;
+      --ts-bg: #fbfff9;
+      --ts-panel: #e6fbe9;
+      --ts-text: #06110a;
+      --ts-muted: #445846;
+      --ts-line: #9bc9a5;
+      --ts-grid: #c5ebce;
+      --ts-accent: #00c853;
     }
 
     :root[data-parent-theme="dark"] {
-      --ts-bg: #101126;
-      --ts-panel: #171932;
-      --ts-text: #f4f7fb;
-      --ts-muted: #b7b9d6;
-      --ts-line: #41466f;
-      --ts-grid: #353a63;
-      --ts-accent: #ff6a3d;
+      --ts-bg: #010503;
+      --ts-panel: #06110a;
+      --ts-text: #eaffef;
+      --ts-muted: #93b99d;
+      --ts-line: #145d2d;
+      --ts-grid: #0f3f22;
+      --ts-accent: #00ff66;
     }
 
     html[data-parent-theme],
@@ -124,7 +124,7 @@
     if (saved === "light" || saved === "dark") {
       return saved;
     }
-    return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+    return "dark";
   }
 
   function setTheme(theme) {
@@ -158,10 +158,10 @@
   }
 
   function recolorTearsheetSvgText(doc, theme) {
-    var textColor = theme === "dark" ? "#f4f7fb" : "#0b0d10";
-    var mutedColor = theme === "dark" ? "#b7b9d6" : "#59616f";
-    var gridColor = theme === "dark" ? "#353a63" : "#d8dde6";
-    var panelColor = theme === "dark" ? "#171932" : "#ffffff";
+    var textColor = theme === "dark" ? "#eaffef" : "#06110a";
+    var mutedColor = theme === "dark" ? "#93b99d" : "#445846";
+    var gridColor = theme === "dark" ? "#0f3f22" : "#c5ebce";
+    var panelColor = theme === "dark" ? "#06110a" : "#fbfff9";
 
     doc.querySelectorAll('svg g[id^="text_"], svg g[id^="text_"] use').forEach(function (node) {
       node.style.fill = textColor;

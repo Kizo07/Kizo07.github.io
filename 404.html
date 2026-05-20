@@ -9,20 +9,20 @@
       (function () {
         try {
           var saved = localStorage.getItem("theme");
-          var theme = saved || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+          var theme = saved || "dark";
           document.documentElement.setAttribute("data-theme", theme);
         } catch (error) {
-          document.documentElement.setAttribute("data-theme", "light");
+          document.documentElement.setAttribute("data-theme", "dark");
         }
       })();
     </script>
-    <link rel="stylesheet" href="/assets/site.css?v=2">
+    <link rel="stylesheet" href="/assets/site.css?v=8">
   </head>
   <body>
     <div class="site-shell">
       <header class="site-header">
         <div class="nav-inner">
-          <a class="brand" href="/" aria-label="Kanav Mehta home"><span class="brand-mark">K</span><span>Kanav Mehta</span></a>
+          <a class="brand" href="/" aria-label="Kanav Mehta home"><span class="brand-mark">KM</span><span>Kanav Mehta</span></a>
           <nav class="site-nav" data-site-nav aria-label="Primary navigation">
             <a href="/">Home</a>
             <a href="/projects/">Projects</a>
@@ -43,8 +43,8 @@
           <div class="page-section">
             <div class="page-title">
               <p class="eyebrow">404</p>
-              <h1>This route does not have a signal.</h1>
-              <p class="lead">The page you asked for is not in this static build.</p>
+              <h1>404: no route, no signal.</h1>
+              <p class="lead">Path unavailable.</p>
               <div class="hero-actions">
                 <a class="button accent" href="/">Go Home</a>
                 <a class="button primary" href="/projects/">View Projects</a>
@@ -54,6 +54,6 @@
         </section>
       </main>
     </div>
-    <script src="/assets/site.js?v=11"></script>
+    <script src="/assets/site.js?v=12"></script>
   </body>
 </html>
