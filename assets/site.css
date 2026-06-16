@@ -65,12 +65,12 @@
 
 :root[data-theme="dark"] {
   color-scheme: dark;
-  --bg: #010503;
-  --bg-2: #031009;
-  --panel: #06110a;
-  --panel-strong: #0b1d10;
-  --terminal: #020604;
-  --terminal-2: #07130c;
+  --bg: #000101;
+  --bg-2: #010604;
+  --panel: #030906;
+  --panel-strong: #06120b;
+  --terminal: #000201;
+  --terminal-2: #020805;
   --text: #eaffef;
   --text-invert: #eaffef;
   --muted: #93b99d;
@@ -101,16 +101,16 @@
   --blog-1: #00ff66;
   --blog-2: #ff4f8b;
   --blog-3: #00e5ff;
-  --board-bg: #020604;
-  --board-bg-2: #07130c;
-  --chart-bg: #020604;
-  --chart-card-bg: #020604;
+  --board-bg: #000201;
+  --board-bg-2: #020805;
+  --chart-bg: #000201;
+  --chart-card-bg: #000201;
   --chart-grid: #145d2d;
   --chart-text: #93b99d;
   --chart-line: #7dff9f;
   --chart-area-1: #00ff66;
   --chart-area-2: #00e5ff;
-  --chart-area-end: #020604;
+  --chart-area-end: #000201;
   --chart-ma: #00e5ff;
   --chart-dd: #ff4f8b;
   --chart-volume-1: #00e5ff;
@@ -118,10 +118,10 @@
   --chart-volume-3: #b56cff;
   --specter: #b56cff;
   --specter-2: #86f7ff;
-  --mist: rgba(181, 108, 255, 0.18);
-  --mist-strong: rgba(134, 247, 255, 0.13);
+  --mist: rgba(181, 108, 255, 0);
+  --mist-strong: rgba(134, 247, 255, 0);
   --moon: #dffaff;
-  --void-glow: rgba(181, 108, 255, 0.28);
+  --void-glow: rgba(181, 108, 255, 0.08);
   --shadow: 8px 8px 0 #39ff7c;
   --shadow-soft: 5px 5px 0 #39ff7c;
 }
@@ -175,14 +175,11 @@ textarea {
   min-height: 100vh;
   overflow-x: hidden;
   background:
-    radial-gradient(ellipse at 16% 8%, var(--mist) 0 18%, transparent 42%),
-    radial-gradient(ellipse at 88% 3%, var(--mist-strong) 0 12%, transparent 34%),
-    radial-gradient(ellipse at 55% 42%, color-mix(in srgb, var(--specter) 10%, transparent) 0 12%, transparent 38%),
     linear-gradient(90deg, color-mix(in srgb, var(--primary) 12%, transparent) 1px, transparent 1px),
     linear-gradient(0deg, color-mix(in srgb, var(--primary) 9%, transparent) 1px, transparent 1px),
     radial-gradient(circle at 16px 16px, color-mix(in srgb, var(--cyan) 18%, transparent) 1px, transparent 2px),
     linear-gradient(180deg, var(--bg), var(--bg-2));
-  background-size: auto, auto, auto, 42px 42px, 42px 42px, 84px 84px, auto;
+  background-size: 42px 42px, 42px 42px, 84px 84px, auto;
 }
 
 .site-shell::before,
@@ -196,12 +193,10 @@ textarea {
 
 .site-shell::before {
   background:
-    radial-gradient(ellipse at 12% 24%, color-mix(in srgb, var(--specter) 22%, transparent) 0 8%, transparent 30%),
-    radial-gradient(ellipse at 78% 18%, color-mix(in srgb, var(--moon) 17%, transparent) 0 7%, transparent 24%),
     repeating-linear-gradient(115deg, transparent 0 52px, color-mix(in srgb, var(--specter) 14%, transparent) 53px, transparent 56px 116px),
     repeating-linear-gradient(22deg, transparent 0 96px, color-mix(in srgb, var(--cyan) 13%, transparent) 97px, transparent 99px 176px),
     repeating-linear-gradient(0deg, transparent 0 3px, color-mix(in srgb, var(--line) 8%, transparent) 4px, transparent 6px);
-  opacity: 0.78;
+  opacity: 0.54;
   mask-image: linear-gradient(120deg, transparent 0%, #000 14%, #000 82%, transparent 100%);
   animation: spectral-drift 24s linear infinite alternate;
 }
@@ -419,8 +414,6 @@ main,
   align-items: stretch;
   border-bottom: 1px solid var(--line);
   background:
-    radial-gradient(ellipse at 72% 12%, color-mix(in srgb, var(--moon) 12%, transparent), transparent 30%),
-    radial-gradient(ellipse at 18% 82%, color-mix(in srgb, var(--specter) 22%, transparent), transparent 40%),
     linear-gradient(180deg, color-mix(in srgb, var(--terminal) 96%, transparent), color-mix(in srgb, var(--terminal-2) 92%, transparent)),
     var(--terminal);
   color: var(--text-invert);
@@ -432,12 +425,10 @@ main,
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(ellipse at 42% 20%, color-mix(in srgb, var(--specter-2) 11%, transparent), transparent 34%),
-    radial-gradient(ellipse at 84% 64%, color-mix(in srgb, var(--specter) 16%, transparent), transparent 34%),
     linear-gradient(90deg, color-mix(in srgb, var(--primary-bright) 17%, transparent) 1px, transparent 1px),
     linear-gradient(0deg, color-mix(in srgb, var(--primary-bright) 11%, transparent) 1px, transparent 1px),
     repeating-linear-gradient(0deg, transparent 0 6px, color-mix(in srgb, #000 38%, transparent) 7px);
-  background-size: auto, auto, 38px 38px, 38px 38px, auto;
+  background-size: 38px 38px, 38px 38px, auto;
   opacity: 0.86;
   pointer-events: none;
 }
@@ -553,7 +544,6 @@ h3 {
   margin: 28px 0 0;
   border: 1px solid var(--primary-bright);
   background:
-    radial-gradient(ellipse at 80% 10%, color-mix(in srgb, var(--specter) 18%, transparent), transparent 38%),
     linear-gradient(180deg, color-mix(in srgb, var(--primary-bright) 9%, transparent), transparent),
     #020604;
   color: var(--primary-bright);
@@ -607,7 +597,6 @@ h3 {
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(ellipse at 50% 18%, color-mix(in srgb, var(--specter-2) 18%, transparent), transparent 34%),
     linear-gradient(180deg, transparent, color-mix(in srgb, var(--primary-bright) 20%, transparent)),
     repeating-linear-gradient(0deg, transparent 0 5px, color-mix(in srgb, #000 35%, transparent) 6px);
   mix-blend-mode: screen;
@@ -662,8 +651,6 @@ h3 {
   --project: var(--options);
   border: 1px solid color-mix(in srgb, var(--cyan) 70%, var(--line));
   background:
-    radial-gradient(ellipse at 8% 6%, color-mix(in srgb, var(--specter) 16%, transparent), transparent 34%),
-    radial-gradient(ellipse at 86% 18%, color-mix(in srgb, var(--moon) 10%, transparent), transparent 28%),
     linear-gradient(135deg, color-mix(in srgb, var(--cyan) 8%, transparent), transparent 34%),
     linear-gradient(180deg, var(--board-bg), var(--board-bg-2));
   color: var(--text);
@@ -723,7 +710,6 @@ h3 {
   margin: 0;
   border: 1px solid color-mix(in srgb, var(--primary-bright) 55%, var(--line));
   background:
-    radial-gradient(ellipse at 78% 12%, color-mix(in srgb, var(--specter) 10%, transparent), transparent 30%),
     var(--chart-bg);
   overflow: hidden;
 }
@@ -1165,8 +1151,6 @@ h3 {
   position: relative;
   border-bottom: 1px solid var(--line);
   background:
-    radial-gradient(ellipse at 80% 6%, color-mix(in srgb, var(--moon) 13%, transparent), transparent 28%),
-    radial-gradient(ellipse at 18% 70%, color-mix(in srgb, var(--specter) 20%, transparent), transparent 44%),
     linear-gradient(90deg, color-mix(in srgb, var(--terminal) 94%, transparent), color-mix(in srgb, var(--terminal-2) 78%, transparent)),
     var(--terminal);
   color: var(--text-invert);
@@ -1178,11 +1162,10 @@ h3 {
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(ellipse at 50% 12%, color-mix(in srgb, var(--specter-2) 12%, transparent), transparent 34%),
     linear-gradient(90deg, color-mix(in srgb, var(--primary-bright) 16%, transparent) 1px, transparent 1px),
     linear-gradient(0deg, color-mix(in srgb, var(--primary-bright) 9%, transparent) 1px, transparent 1px),
     repeating-linear-gradient(135deg, transparent 0 42px, color-mix(in srgb, var(--cyan) 16%, transparent) 43px, transparent 45px 92px);
-  background-size: auto, 40px 40px, 40px 40px, auto;
+  background-size: 40px 40px, 40px 40px, auto;
   opacity: 0.68;
 }
 
