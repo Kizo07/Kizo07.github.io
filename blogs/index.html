@@ -3,8 +3,13 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Blogs | Kanav Mehta</title>
+    <title>Research Notes | Kanav Mehta</title>
     <meta name="description" content="Research notes by Kanav Mehta on factor modeling, sector risk, and numerical methods.">
+    <meta property="og:title" content="Research Notes | Kanav Mehta">
+    <meta property="og:description" content="Notes on factor judgment, risk design, and numerical methods from a quantitative AI researcher.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="/images/profile.png">
+    <meta name="theme-color" content="#0a0d12">
     <link rel="icon" href="/favicon.ico">
     <script>
       (function () {
@@ -17,20 +22,23 @@
         }
       })();
     </script>
-    <link rel="stylesheet" href="/assets/site.css?v=9">
+    <link rel="stylesheet" href="/assets/site.css?v=20">
+    <noscript><style>.reveal { opacity: 1; transform: none; }</style></noscript>
   </head>
   <body>
+    <a class="skip-link" href="#main">Skip to content</a>
     <div class="site-shell">
       <header class="site-header">
         <div class="nav-inner">
           <a class="brand" href="/" aria-label="Kanav Mehta home">
             <span class="brand-mark">KM</span>
             <span>Kanav Mehta</span>
+            <span class="brand-role">Quantitative AI Research</span>
           </a>
           <nav class="site-nav" data-site-nav aria-label="Primary navigation">
             <a href="/">Home</a>
             <a href="/projects/">Projects</a>
-            <a class="active" href="/blogs/">Blogs</a>
+            <a class="active" href="/blogs/">Research Notes</a>
             <a href="/#contact">Contact</a>
           </nav>
           <div class="nav-actions">
@@ -49,40 +57,38 @@
         </div>
       </header>
 
-      <main>
+      <main id="main">
         <section class="page-hero">
           <div class="page-section">
             <div class="page-title">
               <p class="eyebrow">Research Notes</p>
               <h1>Notes from the quant lab.</h1>
-              <p class="lead">Factor judgment / risk leakage / numerical methods</p>
+              <p class="lead">Short, opinionated notes on factor judgment, risk design, and numerical methods — the discipline behind the dashboards.</p>
             </div>
           </div>
         </section>
 
         <section class="page-section">
           <div class="blog-grid">
-            <a class="blog-card" href="#factor-note">
+            <a class="blog-card reveal" href="#factor-note">
               <p class="article-meta">Factor Modeling</p>
               <h2>From factor idea to verdict</h2>
               <p>Factor work earns trust through distribution, predictive power, performance, and risk concentration.</p>
             </a>
-            <a class="blog-card" href="#sector-note">
+            <a class="blog-card reveal" href="#sector-note">
               <p class="article-meta">Risk Design</p>
               <h2>Sector composition is not a footnote</h2>
               <p>Top-bottom spreads can look clean until sector concentration turns a factor result into an accidental macro bet.</p>
             </a>
-            <a class="blog-card" href="#numerical-note">
+            <a class="blog-card reveal" href="#numerical-note">
               <p class="article-meta">Derivatives</p>
               <h2>Numerical methods as product design</h2>
-              <p>Lattices, LSMC, finite differences, Monte Carlo, Greeks.</p>
+              <p>Lattices, LSMC, finite differences, Monte Carlo, Greeks — method choice is a product decision.</p>
             </a>
           </div>
-        </section>
 
-        <section class="page-section">
           <div class="article-grid">
-            <article class="article-card" id="factor-note">
+            <article class="article-card reveal" id="factor-note">
               <p class="article-meta">Factor Modeling</p>
               <h2>From factor idea to verdict</h2>
               <p class="lead">Distribution checks. Concentration checks. Rank tests. Portfolio tests.</p>
@@ -95,7 +101,7 @@
               </ul>
             </article>
 
-            <article class="article-card" id="sector-note">
+            <article class="article-card reveal" id="sector-note">
               <p class="article-meta">Risk Design</p>
               <h2>Sector composition is not a footnote</h2>
               <p class="lead">Signal or sector bet. Separate them before trusting the spread.</p>
@@ -107,10 +113,10 @@
               </ul>
             </article>
 
-            <article class="article-card" id="numerical-note">
+            <article class="article-card reveal" id="numerical-note">
               <p class="article-meta">Derivatives</p>
               <h2>Numerical methods as product design</h2>
-              <p class="lead">Method choice -> visible risk surface.</p>
+              <p class="lead">Method choice → visible risk surface.</p>
               <ul class="square-list">
                 <li>Lattices are useful when early exercise and decision trees need to be visible.</li>
                 <li>Least Squares Monte Carlo is powerful when the exercise policy is estimated from simulated paths.</li>
@@ -125,16 +131,21 @@
 
       <footer class="site-footer">
         <div class="footer-inner">
-          <strong>Kanav Mehta</strong>
+          <div class="footer-brand">
+            <strong>Kanav Mehta</strong>
+            <span>Quantitative AI Researcher</span>
+          </div>
           <div class="footer-links">
             <a href="/">Home</a>
             <a href="/projects/">Projects</a>
+            <a href="/blogs/">Research Notes</a>
             <a href="https://github.com/Kizo07" target="_blank" rel="noopener noreferrer">GitHub</a>
             <a href="https://linkedin.com/in/cxz07" target="_blank" rel="noopener noreferrer">LinkedIn</a>
           </div>
+          <p class="footer-meta">© <span data-year>2026</span> · KM.EXP ▲</p>
         </div>
       </footer>
     </div>
-    <script src="/assets/site.js?v=12"></script>
+    <script src="/assets/site.js?v=20"></script>
   </body>
 </html>

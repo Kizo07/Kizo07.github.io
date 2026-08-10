@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Securitized Products and American Options | Kanav Mehta</title>
     <meta name="description" content="Numerical methods project for American options, barrier options, MBS, and interest-rate models by Kanav Mehta.">
+    <meta name="theme-color" content="#0a0d12">
     <link rel="icon" href="/favicon.ico">
     <script>
       (function () {
@@ -17,49 +18,69 @@
         }
       })();
     </script>
-    <link rel="stylesheet" href="/assets/site.css?v=9">
+    <link rel="stylesheet" href="/assets/site.css?v=20">
+    <noscript><style>.reveal { opacity: 1; transform: none; }</style></noscript>
   </head>
   <body>
+    <a class="skip-link" href="#main">Skip to content</a>
     <div class="site-shell">
       <header class="site-header">
         <div class="nav-inner">
-          <a class="brand" href="/" aria-label="Kanav Mehta home"><span class="brand-mark">KM</span><span>Kanav Mehta</span></a>
+          <a class="brand" href="/" aria-label="Kanav Mehta home">
+            <span class="brand-mark">KM</span>
+            <span>Kanav Mehta</span>
+            <span class="brand-role">Quantitative AI Research</span>
+          </a>
           <nav class="site-nav" data-site-nav aria-label="Primary navigation">
             <a href="/">Home</a>
             <a class="active" href="/projects/">Projects</a>
-            <a href="/blogs/">Blogs</a>
+            <a href="/blogs/">Research Notes</a>
             <a href="/#contact">Contact</a>
           </nav>
           <div class="nav-actions">
             <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch theme" title="Switch theme">
-              <span class="sun-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path></svg></span>
-              <span class="moon-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path></svg></span>
+              <span class="sun-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path></svg>
+              </span>
+              <span class="moon-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path></svg>
+              </span>
             </button>
-            <button class="nav-toggle" type="button" data-nav-toggle aria-label="Open navigation" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"></path></svg></button>
+            <button class="nav-toggle" type="button" data-nav-toggle aria-label="Open navigation" aria-expanded="false">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"></path></svg>
+            </button>
           </div>
         </div>
       </header>
 
-      <main>
+      <main id="main">
         <section class="page-hero">
           <div class="page-section">
             <div class="page-title">
-              <p class="eyebrow">Options, Rates, Securitized Products</p>
+              <p class="eyebrow">Options · Rates · Securitized Products</p>
               <h1>Pricing code for optionality, rates, and cash-flow risk.</h1>
               <p class="lead">American options. Barriers. MBS. Variance reduction. Greeks. G2++ rates.</p>
-              <div class="hero-actions">
-                <a class="button primary" href="/projects/">Back to Projects</a>
-                <a class="button accent" href="https://github.com/Kizo07/American_Options" target="_blank" rel="noopener noreferrer">Open GitHub</a>
+              <div class="inline-actions">
+                <a class="button ghost small" href="/projects/"><span class="arr" aria-hidden="true">←</span> Back to Projects</a>
+                <a class="button cyan small" href="https://github.com/Kizo07/American_Options" target="_blank" rel="noopener noreferrer">Open GitHub ↗</a>
               </div>
             </div>
           </div>
         </section>
 
         <section class="page-section">
-          <div class="detail-layout">
-            <div class="article-grid">
-              <article class="detail-panel">
-                <span class="section-kicker">Methods</span>
+          <div class="detail-grid">
+            <aside class="fact-sheet reveal" aria-label="Project snapshot">
+              <div class="fact-row"><span>Type</span><b>Options &amp; Rates</b></div>
+              <div class="fact-row"><span>Topic</span><b>Securitized products &amp; numerical methods</b></div>
+              <div class="fact-row"><span>Repository</span><b>American_Options</b></div>
+              <div class="fact-row"><span>Methods</span><b>Lattices · LSMC · FDM · Monte Carlo</b></div>
+              <div class="fact-row"><span>Risk Lens</span><b>Greeks · curve sensitivity · embedded optionality</b></div>
+            </aside>
+
+            <div class="prose reveal">
+              <article class="article-card">
+                <p class="article-meta">Methods</p>
                 <h2>Pricing stack</h2>
                 <ul class="square-list">
                   <li>Binomial and trinomial lattices for early-exercise features and path-dependent logic.</li>
@@ -70,13 +91,13 @@
                 </ul>
               </article>
 
-              <article class="detail-panel">
-                <span class="section-kicker">Risk Stack</span>
+              <article class="article-card" style="margin-top: 18px;">
+                <p class="article-meta">Risk Stack</p>
                 <h2>Optionality, rates, cash flows</h2>
                 <p class="lead">Embedded optionality. Prepayment behavior. Curve sensitivity. Timing.</p>
                 <table class="data-table">
                   <thead>
-                    <tr><th>Instrument</th><th>Modeling emphasis</th></tr>
+                    <tr><th scope="col">Instrument</th><th scope="col">Modeling emphasis</th></tr>
                   </thead>
                   <tbody>
                     <tr><td>American Options</td><td>Exercise boundary estimation and dynamic programming.</td></tr>
@@ -87,8 +108,8 @@
                 </table>
               </article>
 
-              <article class="detail-panel">
-                <span class="section-kicker">Extensions</span>
+              <article class="article-card" style="margin-top: 18px;">
+                <p class="article-meta">Extensions</p>
                 <h2>Next modules</h2>
                 <ul class="square-list">
                   <li>Prepayment modeling with borrower incentives and refinancing thresholds.</li>
@@ -98,29 +119,27 @@
                 </ul>
               </article>
             </div>
-
-            <aside class="detail-panel sticky">
-              <span class="project-type" style="--project: var(--options)">Options and Rates</span>
-              <h3>Snapshot</h3>
-              <ul class="square-list">
-                <li>Topic: securitized products and numerical methods</li>
-                <li>GitHub: American_Options</li>
-                <li>Methods: lattices, LSMC, FDM, Monte Carlo</li>
-                <li>Risk lens: Greeks, curve sensitivity, embedded optionality</li>
-              </ul>
-              <div class="tag-row"><span class="tag">LSMC</span><span class="tag">FDM</span><span class="tag">G2++</span><span class="tag">MBS</span><span class="tag">Greeks</span></div>
-            </aside>
           </div>
         </section>
       </main>
 
       <footer class="site-footer">
         <div class="footer-inner">
-          <strong>Kanav Mehta</strong>
-          <div class="footer-links"><a href="/">Home</a><a href="/projects/">Projects</a><a href="/blogs/">Blogs</a><a href="https://github.com/Kizo07" target="_blank" rel="noopener noreferrer">GitHub</a></div>
+          <div class="footer-brand">
+            <strong>Kanav Mehta</strong>
+            <span>Quantitative AI Researcher</span>
+          </div>
+          <div class="footer-links">
+            <a href="/">Home</a>
+            <a href="/projects/">Projects</a>
+            <a href="/blogs/">Research Notes</a>
+            <a href="https://github.com/Kizo07" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <a href="https://linkedin.com/in/cxz07" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          </div>
+          <p class="footer-meta">© <span data-year>2026</span> · KM.EXP ▲</p>
         </div>
       </footer>
     </div>
-    <script src="/assets/site.js?v=12"></script>
+    <script src="/assets/site.js?v=20"></script>
   </body>
 </html>

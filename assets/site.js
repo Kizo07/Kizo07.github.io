@@ -5,25 +5,27 @@
   var nav = document.querySelector("[data-site-nav]");
   var filterButtons = document.querySelectorAll("[data-filter]");
   var projectCards = document.querySelectorAll("[data-project]");
+
+  /* ---- Tearsheet iframe theme injection (quantstats pages) ---- */
   var tearsheetThemeCss = `
     :root[data-parent-theme="light"] {
-      --ts-bg: #fbfff9;
-      --ts-panel: #e6fbe9;
-      --ts-text: #06110a;
-      --ts-muted: #445846;
-      --ts-line: #9bc9a5;
-      --ts-grid: #c5ebce;
-      --ts-accent: #00c853;
+      --ts-bg: #f6f4ef;
+      --ts-panel: #ffffff;
+      --ts-text: #171d26;
+      --ts-muted: #556070;
+      --ts-line: rgba(24, 30, 40, 0.22);
+      --ts-grid: rgba(24, 30, 40, 0.1);
+      --ts-accent: #a4701f;
     }
 
     :root[data-parent-theme="dark"] {
-      --ts-bg: #010503;
-      --ts-panel: #06110a;
-      --ts-text: #eaffef;
-      --ts-muted: #93b99d;
-      --ts-line: #145d2d;
-      --ts-grid: #0f3f22;
-      --ts-accent: #00ff66;
+      --ts-bg: #0a0d12;
+      --ts-panel: #10151d;
+      --ts-text: #e7eaf0;
+      --ts-muted: #9aa4b2;
+      --ts-line: rgba(148, 163, 184, 0.28);
+      --ts-grid: rgba(148, 163, 184, 0.12);
+      --ts-accent: #d9a54e;
     }
 
     html[data-parent-theme],
@@ -51,7 +53,6 @@
       color: var(--ts-muted) !important;
     }
 
-    html[data-parent-theme] h4 a,
     html[data-parent-theme] a {
       color: var(--ts-accent) !important;
     }
@@ -131,8 +132,14 @@
     root.setAttribute("data-theme", theme);
     localStorage.setItem("theme", theme);
     if (toggle) {
-      toggle.setAttribute("aria-label", theme === "dark" ? "Switch to light mode" : "Switch to dark mode");
-      toggle.setAttribute("title", theme === "dark" ? "Switch to light mode" : "Switch to dark mode");
+      toggle.setAttribute(
+        "aria-label",
+        theme === "dark" ? "Switch to light mode" : "Switch to dark mode"
+      );
+      toggle.setAttribute(
+        "title",
+        theme === "dark" ? "Switch to light mode" : "Switch to dark mode"
+      );
     }
     applyTearsheetTheme(theme);
   }
@@ -158,10 +165,10 @@
   }
 
   function recolorTearsheetSvgText(doc, theme) {
-    var textColor = theme === "dark" ? "#eaffef" : "#06110a";
-    var mutedColor = theme === "dark" ? "#93b99d" : "#445846";
-    var gridColor = theme === "dark" ? "#0f3f22" : "#c5ebce";
-    var panelColor = theme === "dark" ? "#06110a" : "#fbfff9";
+    var textColor = theme === "dark" ? "#e7eaf0" : "#171d26";
+    var mutedColor = theme === "dark" ? "#9aa4b2" : "#556070";
+    var gridColor = theme === "dark" ? "rgba(148,163,184,0.12)" : "rgba(24,30,40,0.1)";
+    var panelColor = theme === "dark" ? "#10151d" : "#ffffff";
 
     doc.querySelectorAll('svg g[id^="text_"], svg g[id^="text_"] use').forEach(function (node) {
       node.style.fill = textColor;
@@ -206,23 +213,79 @@
     });
   }
 
+  /* ---- Mobile nav ---- */
   if (navToggle && nav) {
+    if (!nav.id) {
+      nav.id = "site-nav";
+    }
+    navToggle.setAttribute("aria-controls", nav.id);
     navToggle.addEventListener("click", function () {
       var isOpen = nav.classList.toggle("open");
       navToggle.setAttribute("aria-expanded", String(isOpen));
+      navToggle.setAttribute("aria-label", isOpen ? "Close navigation" : "Open navigation");
+    });
+
+    nav.querySelectorAll("a").forEach(function (link) {
+      link.addEventListener("click", function () {
+        nav.classList.remove("open");
+        navToggle.setAttribute("aria-expanded", "false");
+        navToggle.setAttribute("aria-label", "Open navigation");
+      });
     });
   }
 
+  /* ---- Project filters ---- */
   filterButtons.forEach(function (button) {
+    button.setAttribute("aria-pressed", button.classList.contains("active") ? "true" : "false");
     button.addEventListener("click", function () {
       var filter = button.getAttribute("data-filter");
       filterButtons.forEach(function (item) {
-        item.classList.toggle("active", item === button);
+        var isActive = item === button;
+        item.classList.toggle("active", isActive);
+        item.setAttribute("aria-pressed", String(isActive));
       });
       projectCards.forEach(function (card) {
-        var visible = filter === "all" || card.getAttribute("data-project") === filter;
+        var tags = (card.getAttribute("data-project") || "").split(/\s+/);
+        var visible = filter === "all" || tags.indexOf(filter) !== -1;
         card.hidden = !visible;
       });
     });
   });
+
+  /* ---- Ticker: duplicate track content for a seamless loop.
+     The ticker container is aria-hidden in markup (decorative),
+     so the duplicated half never reaches screen readers. ---- */
+  var tickerTrack = document.querySelector("[data-ticker-track]");
+  if (tickerTrack) {
+    tickerTrack.innerHTML += tickerTrack.innerHTML;
+  }
+
+  /* ---- Scroll reveal ---- */
+  var revealTargets = document.querySelectorAll(".reveal");
+  if (revealTargets.length && "IntersectionObserver" in window) {
+    var observer = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("in");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.08, rootMargin: "0px 0px -40px 0px" }
+    );
+    revealTargets.forEach(function (el) {
+      observer.observe(el);
+    });
+  } else {
+    revealTargets.forEach(function (el) {
+      el.classList.add("in");
+    });
+  }
+
+  /* ---- Footer year ---- */
+  var yearNode = document.querySelector("[data-year]");
+  if (yearNode) {
+    yearNode.textContent = String(new Date().getFullYear());
+  }
 })();
