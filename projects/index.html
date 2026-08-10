@@ -4,7 +4,12 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Projects | Kanav Mehta</title>
-    <meta name="description" content="Selected quantitative research, AI, derivatives, trading strategy, and dashboard projects by Kanav Mehta.">
+    <meta name="description" content="Selected quantitative research, AI, derivatives, trading strategy, and dashboard projects by Kanav Mehta — with GitHub repositories and strategy tearsheets.">
+    <meta property="og:title" content="Projects | Kanav Mehta">
+    <meta property="og:description" content="Factor research, derivatives, systematic strategies, NLP, and analytics product — with GitHub repositories and strategy tearsheets.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="/images/profile.png">
+    <meta name="theme-color" content="#0a0d12">
     <link rel="icon" href="/favicon.ico">
     <script>
       (function () {
@@ -17,20 +22,23 @@
         }
       })();
     </script>
-    <link rel="stylesheet" href="/assets/site.css?v=9">
+    <link rel="stylesheet" href="/assets/site.css?v=20">
+    <noscript><style>.reveal { opacity: 1; transform: none; }</style></noscript>
   </head>
   <body>
+    <a class="skip-link" href="#main">Skip to content</a>
     <div class="site-shell">
       <header class="site-header">
         <div class="nav-inner">
           <a class="brand" href="/" aria-label="Kanav Mehta home">
             <span class="brand-mark">KM</span>
             <span>Kanav Mehta</span>
+            <span class="brand-role">Quantitative AI Research</span>
           </a>
           <nav class="site-nav" data-site-nav aria-label="Primary navigation">
             <a href="/">Home</a>
             <a class="active" href="/projects/">Projects</a>
-            <a href="/blogs/">Blogs</a>
+            <a href="/blogs/">Research Notes</a>
             <a href="/#contact">Contact</a>
           </nav>
           <div class="nav-actions">
@@ -49,20 +57,20 @@
         </div>
       </header>
 
-      <main>
+      <main id="main">
         <section class="page-hero">
           <div class="page-section">
             <div class="page-title">
               <p class="eyebrow">Research Index</p>
               <h1>Models, markets, and the interfaces between them.</h1>
-              <p class="lead">Factors / derivatives / strategies / NLP / market structure / analytics</p>
+              <p class="lead">Factor research · derivatives · systematic strategies · NLP · market structure · analytics product. Open repositories are linked; internal work is described with permission-safe detail.</p>
             </div>
-            <div class="filter-bar" aria-label="Project filters">
+            <div class="filter-bar" role="group" aria-label="Project filters">
               <button class="filter-button active" type="button" data-filter="all">All</button>
               <button class="filter-button" type="button" data-filter="factor">Factor</button>
               <button class="filter-button" type="button" data-filter="options">Options</button>
               <button class="filter-button" type="button" data-filter="trading">Trading</button>
-              <button class="filter-button" type="button" data-filter="ai">AI/NLP</button>
+              <button class="filter-button" type="button" data-filter="ai">AI / NLP</button>
               <button class="filter-button" type="button" data-filter="market">Market</button>
               <button class="filter-button" type="button" data-filter="product">Product</button>
             </div>
@@ -71,227 +79,410 @@
 
         <section class="page-section">
           <div class="project-grid">
-            <article class="project-card" data-project="factor">
+            <article class="project-card reveal" data-project="factor">
               <div class="project-card-inner">
-                <span class="project-type">Factor Research</span>
-                <h2>Quantlink AI Single-Factor Modeling</h2>
+                <span class="project-type">Factor Research · QuantLink AI</span>
+                <h2>Single-Factor Modeling</h2>
                 <p>Cross-sectional factor research dashboard for ranking, diagnostics, buckets, risk, and backtest review.</p>
                 <div class="project-metrics">
                   <span>3,545<small>stocks</small></span>
                   <span>10+<small>panels</small></span>
                   <span>IC + OLS<small>diagnostics</small></span>
-                  <span>Q/D buckets<small>backtests</small></span>
+                  <span>Q / D<small>buckets</small></span>
                 </div>
                 <ul class="square-list">
                   <li>Configurable metric, lookback, and bucket controls propagate through every panel.</li>
-                  <li>Signal quality summary combines IC, Spearman, Pearson, slope, R-squared, monotonicity, and spread.</li>
-                  <li>Backtests report return, volatility, Sharpe, Sortino, drawdown, Calmar, win rate, and terminal wealth.</li>
+                  <li>Signal quality combines IC, Spearman, Pearson, slope, R², monotonicity, and spread.</li>
+                  <li>Backtests report Sharpe, Sortino, drawdown, Calmar, win rate, and terminal wealth.</li>
                 </ul>
                 <div class="tag-row"><span class="tag">Factor Investing</span><span class="tag">Backtesting</span><span class="tag">Dashboards</span></div>
-                <div class="inline-actions"><a class="button accent" href="/projects/single-factor-modeling.html">Read Detail</a></div>
+                <div class="inline-actions"><a class="button accent small" href="/projects/single-factor-modeling.html">Case Study <span class="arr" aria-hidden="true">→</span></a></div>
               </div>
             </article>
 
-            <article class="project-card" data-project="options">
+            <article class="project-card reveal" data-project="options">
               <div class="project-card-inner">
-                <span class="project-type">Options and Rates</span>
-                <h2>Securitized Products and American Options</h2>
-                <p>Numerical methods project for complex derivatives and fixed-income instruments, including American options, barriers, MBS, and G2++ rate models.</p>
+                <span class="project-type">Options &amp; Rates</span>
+                <h2>American Options &amp; Securitized Products</h2>
+                <p>Numerical methods for complex derivatives and fixed income: American options, barriers, MBS, and G2++ rate models.</p>
                 <div class="project-metrics">
                   <span>LSMC<small>early exercise</small></span>
-                  <span>FDM<small>Greeks</small></span>
+                  <span>FDM<small>greeks</small></span>
                   <span>G2++<small>rates</small></span>
                   <span>MBS<small>valuation</small></span>
                 </div>
                 <ul class="square-list">
-                  <li>Used binomial and trinomial lattices with dynamic programming for path-dependent pricing.</li>
-                  <li>Applied Monte Carlo with antithetic and control variates for variance reduction.</li>
-                  <li>Connected derivative pricing mechanics to securitized product risk and curve dynamics.</li>
+                  <li>Binomial and trinomial lattices with dynamic programming for path-dependent pricing.</li>
+                  <li>Monte Carlo with antithetic and control variates for variance reduction.</li>
                 </ul>
                 <div class="tag-row"><span class="tag">American Options</span><span class="tag">MBS</span><span class="tag">Monte Carlo</span></div>
                 <div class="inline-actions">
-                  <a class="button accent" href="/projects/securitized-products.html">Read Detail</a>
-                  <a class="button cyan" href="https://github.com/Kizo07/American_Options" target="_blank" rel="noopener noreferrer">GitHub</a>
+                  <a class="button accent small" href="/projects/securitized-products.html">Detail <span class="arr" aria-hidden="true">→</span></a>
+                  <a class="button ghost small" href="https://github.com/Kizo07/American_Options" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
                 </div>
               </div>
             </article>
 
-            <article class="project-card" data-project="trading">
+            <article class="project-card reveal" data-project="trading">
               <div class="project-card-inner">
                 <span class="project-type">Trading Systems</span>
                 <h2>QQQ Regime Strategy</h2>
-                <p>Long/short QQQ strategy gated by trend, volatility, and tail-risk regimes.</p>
+                <p>Long/short QQQ strategy gated by trend, volatility, and tail-risk regimes before any exposure is taken.</p>
                 <div class="project-metrics">
                   <span>SMA<small>trend</small></span>
-                  <span>IV/RV<small>risk</small></span>
+                  <span>IV / RV<small>risk</small></span>
                   <span>Kurtosis<small>tails</small></span>
                   <span>QQQ<small>asset</small></span>
                 </div>
                 <ul class="square-list">
                   <li>Separates market direction from risk state before taking exposure.</li>
-                  <li>Uses a tearsheet workflow to review cumulative return, drawdown, and risk-adjusted metrics.</li>
                   <li>Compact audit trail from rule logic to tearsheet.</li>
                 </ul>
                 <div class="tag-row"><span class="tag">Python</span><span class="tag">Volatility</span><span class="tag">Regimes</span></div>
-                <div class="inline-actions"><a class="button accent" href="/projects/qqq-ls-strategy.html">Open Tearsheet</a></div>
+                <div class="inline-actions"><a class="button accent small" href="/projects/qqq-ls-strategy.html">Detail + Tearsheet <span class="arr" aria-hidden="true">→</span></a></div>
               </div>
             </article>
 
-            <article class="project-card" data-project="trading">
+            <article class="project-card reveal" data-project="trading ai">
               <div class="project-card-inner">
-                <span class="project-type">Trading Systems</span>
-                <h2>ETF ML Strategy Research</h2>
-                <p>Sliding-window LightGBM research for Bitcoin, Ether, and QQQ with oscillators, liquidity, and macro trend features.</p>
+                <span class="project-type">Trading Systems · ML</span>
+                <h2>ETF &amp; Crypto ML Strategy Research</h2>
+                <p>Sliding-window LightGBM research for Bitcoin, Ether, and QQQ with oscillators, liquidity, and macro-trend features.</p>
                 <div class="project-metrics">
                   <span>LightGBM<small>model</small></span>
-                  <span>ETF<small>universe</small></span>
-                  <span>Signals<small>oscillators</small></span>
+                  <span>&gt;1.5<small>Sharpe</small></span>
+                  <span>Oscillators<small>signals</small></span>
                   <span>Costs<small>paper trading</small></span>
                 </div>
                 <ul class="square-list">
-                  <li>Incorporated EWMA, RSI, Amihud, lottery, bid-ask spread, and SPY trend signals.</li>
-                  <li>Designed around rigorous backtesting and transaction-cost awareness.</li>
-                  <li>Balanced predictive signals with practical execution constraints.</li>
+                  <li>EWMA, RSI, Amihud, lottery, bid-ask spread, and SPY trend features.</li>
+                  <li>Beat benchmark in live paper trading after transaction costs.</li>
                 </ul>
-                <div class="tag-row"><span class="tag">Machine Learning</span><span class="tag">ETFs</span><span class="tag">Backtests</span></div>
+                <div class="tag-row"><span class="tag">Machine Learning</span><span class="tag">ETFs</span><span class="tag">Crypto</span></div>
+                <div class="inline-actions"><a class="button cyan small" href="/tearsheets/QQQ_GLD_UUP_Rotation.html" target="_blank" rel="noopener noreferrer">Rotation Tearsheet ↗</a></div>
               </div>
             </article>
 
-            <article class="project-card" data-project="factor">
+            <article class="project-card reveal" data-project="ai">
+              <div class="project-card-inner">
+                <span class="project-type">AI / NLP</span>
+                <h2>FOMC Sentiment Research</h2>
+                <p>FinBERT fine-tuning on FOMC communications; labor, inflation, and rates text mapped to sector ETF return direction.</p>
+                <div class="project-metrics">
+                  <span>FinBERT<small>transformer</small></span>
+                  <span>0.65<small>ROC-AUC</small></span>
+                  <span>LightGBM<small>classifier</small></span>
+                  <span>Sector ETF<small>targets</small></span>
+                </div>
+                <ul class="square-list">
+                  <li>Transformer macro text features from statements and related indicators.</li>
+                  <li>Model diagnostics separate signal from macro noise.</li>
+                </ul>
+                <div class="tag-row"><span class="tag">FinBERT</span><span class="tag">FOMC</span><span class="tag">Macro NLP</span></div>
+                <div class="inline-actions"><a class="button cyan small" href="https://github.com/Kizo07/FOMC-Sentiment" target="_blank" rel="noopener noreferrer">GitHub ↗</a></div>
+              </div>
+            </article>
+
+            <article class="project-card reveal" data-project="ai product">
+              <div class="project-card-inner">
+                <span class="project-type">AI / NLP · Product</span>
+                <h2>CEO Tracker</h2>
+                <p>Self-hosted app tracking CEO speeches and press releases from top US firms — company mentions via spaCy NER, FinBERT sentiment.</p>
+                <div class="project-metrics">
+                  <span>spaCy<small>NER</small></span>
+                  <span>FinBERT<small>sentiment</small></span>
+                  <span>FastAPI<small>backend</small></span>
+                  <span>React<small>frontend</small></span>
+                </div>
+                <ul class="square-list">
+                  <li>Postgres + Celery pipeline for ingestion and scoring.</li>
+                  <li>Executive language turned into trackable company signals.</li>
+                </ul>
+                <div class="tag-row"><span class="tag">NLP</span><span class="tag">Full Stack</span><span class="tag">Pipelines</span></div>
+                <div class="inline-actions"><a class="button cyan small" href="https://github.com/Kizo07/ceo-tracker" target="_blank" rel="noopener noreferrer">GitHub ↗</a></div>
+              </div>
+            </article>
+
+            <article class="project-card reveal" data-project="market">
+              <div class="project-card-inner">
+                <span class="project-type">Market Structure</span>
+                <h2>Early Warning System</h2>
+                <p>A market-crash probability model for US equities — regime and tail-risk signals distilled into a single live probability.</p>
+                <div class="project-metrics">
+                  <span>Crash<small>probability</small></span>
+                  <span>US Equity<small>universe</small></span>
+                  <span>Tail risk<small>signals</small></span>
+                  <span>Regime<small>detection</small></span>
+                </div>
+                <div class="tag-row"><span class="tag">Risk</span><span class="tag">Macro</span><span class="tag">Monitoring</span></div>
+                <div class="inline-actions"><a class="button cyan small" href="https://github.com/Kizo07/Early_Warning_System" target="_blank" rel="noopener noreferrer">GitHub ↗</a></div>
+              </div>
+            </article>
+
+            <article class="project-card reveal" data-project="trading">
+              <div class="project-card-inner">
+                <span class="project-type">Trading Systems</span>
+                <h2>RL Statistical Arbitrage</h2>
+                <p>Stat-arb combining copula dependence, theory-implied correlation, graph structure, and reinforcement learning.</p>
+                <div class="project-metrics">
+                  <span>Copula<small>dependence</small></span>
+                  <span>Graph<small>structure</small></span>
+                  <span>RL<small>execution</small></span>
+                  <span>Pairs<small>baskets</small></span>
+                </div>
+                <div class="tag-row"><span class="tag">Stat Arb</span><span class="tag">RL</span><span class="tag">Graphs</span></div>
+                <div class="inline-actions"><a class="button cyan small" href="https://github.com/Kizo07/RL_StatArb" target="_blank" rel="noopener noreferrer">GitHub ↗</a></div>
+              </div>
+            </article>
+
+            <article class="project-card reveal" data-project="options">
+              <div class="project-card-inner">
+                <span class="project-type">Options</span>
+                <h2>Implied Volatility Strategies</h2>
+                <p>Equity strategies built on implied-volatility data from the options market — surface signals as tradable edges.</p>
+                <div class="project-metrics">
+                  <span>IV surface<small>data</small></span>
+                  <span>Equity<small>universe</small></span>
+                  <span>Skew<small>signals</small></span>
+                  <span>Systematic<small>rules</small></span>
+                </div>
+                <div class="tag-row"><span class="tag">Volatility</span><span class="tag">Options</span></div>
+                <div class="inline-actions"><a class="button cyan small" href="https://github.com/Kizo07/Implied_Vol_Strategies" target="_blank" rel="noopener noreferrer">GitHub ↗</a></div>
+              </div>
+            </article>
+
+            <article class="project-card reveal" data-project="options factor">
+              <div class="project-card-inner">
+                <span class="project-type">Options · Factor</span>
+                <h2>Factor Investing with Options</h2>
+                <p>Factor portfolios constructed with deep in-the-money options instead of stocks — leverage and downside asymmetry as design inputs.</p>
+                <div class="project-metrics">
+                  <span>DITM<small>substitute</small></span>
+                  <span>Factors<small>underlying</small></span>
+                  <span>LEAPS<small>horizon</small></span>
+                  <span>Backtest<small>comparison</small></span>
+                </div>
+                <div class="tag-row"><span class="tag">LEAPS</span><span class="tag">Factor Investing</span></div>
+                <div class="inline-actions"><a class="button cyan small" href="https://github.com/Kizo07/Factor-Investing-with-Options" target="_blank" rel="noopener noreferrer">GitHub ↗</a></div>
+              </div>
+            </article>
+
+            <article class="project-card reveal" data-project="factor">
+              <div class="project-card-inner">
+                <span class="project-type">Factor Research</span>
+                <h2>Modified Momentum</h2>
+                <p>Replication of the classic momentum portfolio, then modified for the current market structure.</p>
+                <div class="project-metrics">
+                  <span>Classic<small>replication</small></span>
+                  <span>Modified<small>construction</small></span>
+                  <span>Cross-section<small>ranking</small></span>
+                  <span>Robustness<small>checks</small></span>
+                </div>
+                <div class="tag-row"><span class="tag">Momentum</span><span class="tag">Replication</span></div>
+                <div class="inline-actions"><a class="button cyan small" href="https://github.com/Kizo07/Modified_Momentum" target="_blank" rel="noopener noreferrer">GitHub ↗</a></div>
+              </div>
+            </article>
+
+            <article class="project-card reveal" data-project="factor market">
+              <div class="project-card-inner">
+                <span class="project-type">Market Structure</span>
+                <h2>MAG7 Concentration Effects</h2>
+                <p>IAQF 2025 research on whether SMB factor behavior decoupled after concentration moved into mega-cap winners.</p>
+                <div class="project-metrics">
+                  <span>IAQF<small>2025</small></span>
+                  <span>SMB<small>factor</small></span>
+                  <span>MAG7<small>regime</small></span>
+                  <span>Crowding<small>risk</small></span>
+                </div>
+                <ul class="square-list">
+                  <li>Post-COVID concentration vs. historical size-factor assumptions.</li>
+                  <li>Framed as both a portfolio risk and a research-design problem.</li>
+                </ul>
+                <div class="tag-row"><span class="tag">Market Cap</span><span class="tag">SMB</span><span class="tag">Factor Crowding</span></div>
+                <div class="inline-actions"><a class="button cyan small" href="https://github.com/Kizo07/Concentration_Strategies" target="_blank" rel="noopener noreferrer">GitHub ↗</a></div>
+              </div>
+            </article>
+
+            <article class="project-card reveal" data-project="trading ai">
+              <div class="project-card-inner">
+                <span class="project-type">Trading Systems · ML</span>
+                <h2>LightGBM Technicals</h2>
+                <p>Technical signals created and combined with LightGBM for single equities and ETFs.</p>
+                <div class="project-metrics">
+                  <span>LightGBM<small>combiner</small></span>
+                  <span>Technicals<small>features</small></span>
+                  <span>Equity / ETF<small>targets</small></span>
+                  <span>Signal<small>fusion</small></span>
+                </div>
+                <div class="tag-row"><span class="tag">Machine Learning</span><span class="tag">Technicals</span></div>
+                <div class="inline-actions"><a class="button cyan small" href="https://github.com/Kizo07/LightGBM_Technicals" target="_blank" rel="noopener noreferrer">GitHub ↗</a></div>
+              </div>
+            </article>
+
+            <article class="project-card reveal" data-project="factor trading">
               <div class="project-card-inner">
                 <span class="project-type">Factor Research</span>
                 <h2>WorldQuant Multi-Region Alphas</h2>
-                <p>Intraday and medium-frequency alpha work across US, China, Europe, and UK markets.</p>
+                <p>Intraday and medium-frequency alpha work across US, China, Europe, and UK markets via WorldQuant BRAIN.</p>
                 <div class="project-metrics">
                   <span>40+<small>strategies</small></span>
                   <span>4<small>regions</small></span>
-                  <span>1.5+<small>Sharpe</small></span>
                   <span>Multi-data<small>inputs</small></span>
+                  <span>Turnover<small>control</small></span>
                 </div>
                 <ul class="square-list">
-                  <li>Combined fundamental, analyst, short interest, news, options, and price-volume features.</li>
-                  <li>Designed factor and timing signals for different market structures and liquidity conditions.</li>
-                  <li>Controlled for turnover while preserving risk-adjusted performance.</li>
+                  <li>Fundamental, analyst, short interest, news, options, and price-volume features.</li>
+                  <li>Signals tuned to different market structures and liquidity conditions.</li>
                 </ul>
-                <div class="tag-row"><span class="tag">Alpha Research</span><span class="tag">Global Equities</span><span class="tag">Turnover</span></div>
+                <div class="tag-row"><span class="tag">Alpha Research</span><span class="tag">Global Equities</span></div>
               </div>
             </article>
 
-            <article class="project-card" data-project="ai">
+            <article class="project-card reveal" data-project="factor ai">
               <div class="project-card-inner">
-                <span class="project-type">AI/NLP</span>
-                <h2>Financial NLP Alpha Research</h2>
-                <p>Transformer and knowledge-graph research over filings, earnings calls, headlines, and market text.</p>
-                <div class="project-metrics">
-                  <span>NLP<small>signals</small></span>
-                  <span>KG<small>entities</small></span>
-                  <span>Audio<small>calls</small></span>
-                  <span>Sharpe<small>alpha</small></span>
-                </div>
-                <ul class="square-list">
-                  <li>Applied advanced NLP to filings, earnings-call transcripts, headlines, and financial event data.</li>
-                  <li>Connected textual signals to predictive alpha and risk context.</li>
-                  <li>Integrated research outputs into analyst-facing screening and dashboard workflows.</li>
-                </ul>
-                <div class="tag-row"><span class="tag">Transformers</span><span class="tag">Knowledge Graphs</span><span class="tag">Filings</span></div>
-              </div>
-            </article>
-
-            <article class="project-card" data-project="factor">
-              <div class="project-card-inner">
-                <span class="project-type">Factor Research</span>
+                <span class="project-type">Factor Research · ML</span>
                 <h2>Loss-Making Companies Factor Model</h2>
-                <p>Risk-neutralized factor model for loss-making companies, built with a LightGBM and Elastic Net ensemble.</p>
+                <p>Risk-neutralized factor model for loss-making companies — a LightGBM and Elastic Net ensemble where traditional valuation signals break down.</p>
                 <div class="project-metrics">
                   <span>1.53<small>Sharpe</small></span>
-                  <span>Risk<small>neutralized</small></span>
-                  <span>ML<small>ensemble</small></span>
+                  <span>Neutralized<small>risk</small></span>
+                  <span>Ensemble<small>LGBM + ENet</small></span>
                   <span>Alpha<small>factor</small></span>
                 </div>
-                <ul class="square-list">
-                  <li>Targeted a market segment where traditional valuation signals often break down.</li>
-                  <li>Used machine learning to combine nonlinear interactions with interpretable regularization.</li>
-                  <li>Evaluated exposures and robustness before presenting as a systematic signal.</li>
-                </ul>
                 <div class="tag-row"><span class="tag">LightGBM</span><span class="tag">Elastic Net</span><span class="tag">Risk Model</span></div>
               </div>
             </article>
 
-            <article class="project-card" data-project="market">
+            <article class="project-card reveal" data-project="market">
               <div class="project-card-inner">
-                <span class="project-type">Market Structure</span>
-                <h2>MAG7 Concentration Effects</h2>
-                <p>IAQF 2025 research on whether Small-Minus-Big factor behavior decoupled after market concentration moved into mega-cap winners.</p>
+                <span class="project-type">Research · Mathematics</span>
+                <h2>Complex Itô Random Walk</h2>
+                <p>Research notebooks exploring random-walk structure through complex-valued Itô calculus.</p>
                 <div class="project-metrics">
-                  <span>IAQF<small>2025</small></span>
-                  <span>SMB<small>factor</small></span>
-                  <span>MAG7<small>focus</small></span>
-                  <span>Regime<small>analysis</small></span>
+                  <span>Itô<small>calculus</small></span>
+                  <span>Complex<small>domain</small></span>
+                  <span>Random walk<small>process</small></span>
+                  <span>Notebooks<small>research</small></span>
                 </div>
-                <ul class="square-list">
-                  <li>Analyzed post-COVID concentration and its implications for systematic factor construction.</li>
-                  <li>Compared market-cap dominance with historical size-factor assumptions.</li>
-                  <li>Framed the question as both a portfolio risk and research-design problem.</li>
-                </ul>
-                <div class="tag-row"><span class="tag">Market Cap</span><span class="tag">SMB</span><span class="tag">Factor Crowding</span></div>
+                <div class="tag-row"><span class="tag">Stochastic Calculus</span><span class="tag">Research</span></div>
+                <div class="inline-actions"><a class="button cyan small" href="https://github.com/Kizo07/Complex-Ito-Random-Walk-Research" target="_blank" rel="noopener noreferrer">GitHub ↗</a></div>
               </div>
             </article>
 
-            <article class="project-card" data-project="ai">
+            <article class="project-card reveal" data-project="product">
               <div class="project-card-inner">
-                <span class="project-type">AI/NLP</span>
-                <h2>FOMC Communications Impact</h2>
-                <p>DoubleLine project connecting FOMC sentiment, labor, inflation, and rates text to sector ETF return direction.</p>
+                <span class="project-type">Product Analytics</span>
+                <h2>Options Dashboard</h2>
+                <p>Interactive options analytics dashboard — positioning, chains, and risk views for repeated analyst use.</p>
                 <div class="project-metrics">
-                  <span>FinBERT<small>FOMC</small></span>
-                  <span>0.65<small>ROC-AUC</small></span>
-                  <span>LightGBM<small>classifier</small></span>
-                  <span>Sector ETF<small>returns</small></span>
+                  <span>Chains<small>options</small></span>
+                  <span>Risk<small>views</small></span>
+                  <span>Interactive<small>controls</small></span>
+                  <span>Python<small>backend</small></span>
                 </div>
-                <ul class="square-list">
-                  <li>Developed a transformer-based macro text feature set from FOMC statements and related indicators.</li>
-                  <li>Mapped text signals to sector ETF directional outcomes.</li>
-                  <li>Used model diagnostics to separate signal from macro noise.</li>
-                </ul>
-                <div class="tag-row"><span class="tag">FinBERT</span><span class="tag">FOMC</span><span class="tag">Macro NLP</span></div>
+                <div class="tag-row"><span class="tag">Dashboards</span><span class="tag">Options</span></div>
+                <div class="inline-actions"><a class="button cyan small" href="https://github.com/Kizo07/Options_Dashboard2" target="_blank" rel="noopener noreferrer">GitHub ↗</a></div>
               </div>
             </article>
 
-            <article class="project-card" data-project="product">
+            <article class="project-card reveal" data-project="product">
               <div class="project-card-inner">
                 <span class="project-type">Product Analytics</span>
                 <h2>Quant Dashboard Systems</h2>
-                <p>Dashboards for backtesting, screening, alpha review, financial models, and macro risk monitoring.</p>
+                <p>Dashboards for backtesting, screening, alpha review, financial models, and macro risk monitoring — built at Wolfe Research and beyond.</p>
                 <div class="project-metrics">
                   <span>Screeners<small>stocks</small></span>
                   <span>Backtests<small>strategy</small></span>
                   <span>Risk<small>exposures</small></span>
                   <span>Reports<small>analysts</small></span>
                 </div>
-                <ul class="square-list">
-                  <li>Designed dense interfaces for scanning, comparison, and repeated analyst workflows.</li>
-                  <li>Balanced feature-rich outputs with practical visual hierarchy.</li>
-                  <li>Connected research notebooks to reusable decision tools.</li>
-                </ul>
                 <div class="tag-row"><span class="tag">Dashboards</span><span class="tag">Screening</span><span class="tag">Analytics UX</span></div>
               </div>
             </article>
+
+            <article class="project-card reveal" data-project="trading">
+              <div class="project-card-inner">
+                <span class="project-type">Trading Systems</span>
+                <h2>IMC Prosperity 2025</h2>
+                <p>Algorithmic trading submission for IMC Prosperity 2025 — market-making and positioning under live-style constraints.</p>
+                <div class="project-metrics">
+                  <span>IMC<small>2025</small></span>
+                  <span>Market making<small>quotes</small></span>
+                  <span>Positioning<small>limits</small></span>
+                  <span>Python<small>engine</small></span>
+                </div>
+                <div class="tag-row"><span class="tag">Algo Trading</span><span class="tag">Competition</span></div>
+                <div class="inline-actions"><a class="button cyan small" href="https://github.com/Kizo07/IMC-Prosperity-2025" target="_blank" rel="noopener noreferrer">GitHub ↗</a></div>
+              </div>
+            </article>
+
+            <article class="project-card reveal" data-project="factor">
+              <div class="project-card-inner">
+                <span class="project-type">Factor Research</span>
+                <h2>Quant Toolkit Contributions</h2>
+                <p>Forked and extended quant research tooling — portfolio analytics with quantstats and stochastic-process simulation for research reproducibility.</p>
+                <div class="project-metrics">
+                  <span>quantstats<small>analytics</small></span>
+                  <span>stochastic<small>simulation</small></span>
+                  <span>Tearsheets<small>output</small></span>
+                  <span>Python<small>tooling</small></span>
+                </div>
+                <div class="tag-row"><span class="tag">Open Source</span><span class="tag">Tooling</span></div>
+                <div class="inline-actions">
+                  <a class="button ghost small" href="https://github.com/Kizo07/quantstats" target="_blank" rel="noopener noreferrer">quantstats ↗</a>
+                  <a class="button ghost small" href="https://github.com/Kizo07/stochastic" target="_blank" rel="noopener noreferrer">stochastic ↗</a>
+                </div>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section class="page-section" aria-labelledby="tearsheets-title">
+          <div class="section-head">
+            <div>
+              <p class="kicker">Tearsheets</p>
+              <h2 id="tearsheets-title">Strategy performance, documented</h2>
+            </div>
+            <p class="section-note">Selected strategy reports</p>
+          </div>
+          <div class="tearsheet-strip">
+            <a class="tearsheet-link" href="/tearsheets/QQQ_LS.html" target="_blank" rel="noopener noreferrer">
+              <b>QQQ Long/Short Regime</b>
+              <span>Open tearsheet ↗</span>
+            </a>
+            <a class="tearsheet-link" href="/tearsheets/QQQ_GLD_UUP_Rotation.html" target="_blank" rel="noopener noreferrer">
+              <b>QQQ · GLD · UUP Rotation</b>
+              <span>Open tearsheet ↗</span>
+            </a>
+            <a class="tearsheet-link" href="/tearsheets/deep-learning-momentum-tearsheet.html" target="_blank" rel="noopener noreferrer">
+              <b>Deep Learning Momentum</b>
+              <span>Open tearsheet ↗</span>
+            </a>
+            <a class="tearsheet-link" href="/tearsheets/sentiment-analysis-trader-tearsheet.html" target="_blank" rel="noopener noreferrer">
+              <b>Sentiment Trader</b>
+              <span>Open tearsheet ↗</span>
+            </a>
           </div>
         </section>
       </main>
 
       <footer class="site-footer">
         <div class="footer-inner">
-          <strong>Kanav Mehta</strong>
+          <div class="footer-brand">
+            <strong>Kanav Mehta</strong>
+            <span>Quantitative AI Researcher</span>
+          </div>
           <div class="footer-links">
             <a href="/">Home</a>
-            <a href="/blogs/">Blogs</a>
+            <a href="/projects/">Projects</a>
+            <a href="/blogs/">Research Notes</a>
             <a href="https://github.com/Kizo07" target="_blank" rel="noopener noreferrer">GitHub</a>
             <a href="https://linkedin.com/in/cxz07" target="_blank" rel="noopener noreferrer">LinkedIn</a>
           </div>
+          <p class="footer-meta">© <span data-year>2026</span> · KM.EXP ▲</p>
         </div>
       </footer>
     </div>
-    <script src="/assets/site.js?v=12"></script>
+    <script src="/assets/site.js?v=20"></script>
   </body>
 </html>

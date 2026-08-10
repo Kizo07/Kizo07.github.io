@@ -4,7 +4,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Single-Factor Modeling | Kanav Mehta</title>
-    <meta name="description" content="Quantlink AI single-factor modeling dashboard by Kanav Mehta.">
+    <meta name="description" content="QuantLink AI single-factor modeling dashboard by Kanav Mehta — ranking, diagnostics, buckets, risk, and backtest review.">
+    <meta name="theme-color" content="#0a0d12">
     <link rel="icon" href="/favicon.ico">
     <script>
       (function () {
@@ -17,49 +18,71 @@
         }
       })();
     </script>
-    <link rel="stylesheet" href="/assets/site.css?v=9">
+    <link rel="stylesheet" href="/assets/site.css?v=20">
+    <noscript><style>.reveal { opacity: 1; transform: none; }</style></noscript>
   </head>
   <body>
+    <a class="skip-link" href="#main">Skip to content</a>
     <div class="site-shell">
       <header class="site-header">
         <div class="nav-inner">
-          <a class="brand" href="/" aria-label="Kanav Mehta home"><span class="brand-mark">KM</span><span>Kanav Mehta</span></a>
+          <a class="brand" href="/" aria-label="Kanav Mehta home">
+            <span class="brand-mark">KM</span>
+            <span>Kanav Mehta</span>
+            <span class="brand-role">Quantitative AI Research</span>
+          </a>
           <nav class="site-nav" data-site-nav aria-label="Primary navigation">
             <a href="/">Home</a>
             <a class="active" href="/projects/">Projects</a>
-            <a href="/blogs/">Blogs</a>
+            <a href="/blogs/">Research Notes</a>
             <a href="/#contact">Contact</a>
           </nav>
           <div class="nav-actions">
             <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch theme" title="Switch theme">
-              <span class="sun-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path></svg></span>
-              <span class="moon-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path></svg></span>
+              <span class="sun-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path></svg>
+              </span>
+              <span class="moon-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path></svg>
+              </span>
             </button>
-            <button class="nav-toggle" type="button" data-nav-toggle aria-label="Open navigation" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"></path></svg></button>
+            <button class="nav-toggle" type="button" data-nav-toggle aria-label="Open navigation" aria-expanded="false">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"></path></svg>
+            </button>
           </div>
         </div>
       </header>
 
-      <main>
+      <main id="main">
         <section class="page-hero">
           <div class="page-section">
             <div class="page-title">
-              <p class="eyebrow">Quantlink AI | Factor Research</p>
+              <p class="eyebrow">QuantLink AI · Factor Research</p>
               <h1>Single-factor engine for ranking, buckets, and risk.</h1>
-              <p class="lead">Metric. Lookback. Buckets. Distribution. Signal quality. Backtest.</p>
-              <div class="hero-actions">
-                <a class="button primary" href="/projects/">Back to Projects</a>
-                <a class="button accent" href="/blogs/#factor-note">Read Blog Note</a>
+              <p class="lead">Metric. Lookback. Buckets. Distribution. Signal quality. Backtest. One workflow from raw universe to verdict.</p>
+              <div class="inline-actions">
+                <a class="button ghost small" href="/projects/"><span class="arr" aria-hidden="true">←</span> Back to Projects</a>
+                <a class="button accent small" href="/blogs/#factor-note">Read Research Note <span class="arr" aria-hidden="true">→</span></a>
               </div>
             </div>
           </div>
         </section>
 
         <section class="page-section">
-          <div class="detail-layout">
-            <div class="article-grid">
-              <article class="detail-panel">
-                <span class="section-kicker">Signal Map</span>
+          <div class="detail-grid">
+            <aside class="fact-sheet reveal" aria-label="Project snapshot">
+              <div class="fact-row"><span>Type</span><b>Factor Research</b></div>
+              <div class="fact-row"><span>Role</span><b>Founding Quantitative AI Researcher</b></div>
+              <div class="fact-row"><span>Company</span><b>QuantLink AI</b></div>
+              <div class="fact-row"><span>Universe</span><b>3,545 stocks</b></div>
+              <div class="fact-row"><span>Lookbacks</span><b>1Y · 3Y · 5Y · 10Y · MAX</b></div>
+              <div class="fact-row"><span>Buckets</span><b>Quintiles &amp; deciles</b></div>
+              <div class="fact-row"><span>Diagnostics</span><b>IC · Spearman · OLS · Sharpe · Sortino · GICS</b></div>
+            </aside>
+
+            <div class="prose reveal">
+              <article class="article-card">
+                <p class="article-meta">Signal Map</p>
                 <h2>Research questions</h2>
                 <ul class="square-list">
                   <li>Distribution across the full 3,545-stock universe.</li>
@@ -69,29 +92,29 @@
                 </ul>
               </article>
 
-              <article class="detail-panel">
-                <span class="section-kicker">Build</span>
+              <article class="article-card" style="margin-top: 18px;">
+                <p class="article-meta">Build</p>
                 <h2>Dashboard architecture</h2>
                 <p class="lead">Cross-section first. Concentration risk second. Predictive power third. Portfolio behavior last.</p>
                 <table class="data-table">
                   <thead>
-                    <tr><th>Module</th><th>Purpose</th></tr>
+                    <tr><th scope="col">Module</th><th scope="col">Purpose</th></tr>
                   </thead>
                   <tbody>
                     <tr><td>Universe Stats</td><td>Count, lower quartile, median, and upper quartile for the selected metric.</td></tr>
-                    <tr><td>Distribution and Segments</td><td>Histogram with S&amp;P 500 percentile reference overlay.</td></tr>
-                    <tr><td>Sector and Industry</td><td>GICS sector medians, top-15 industry breakdowns, and universe-median reference lines.</td></tr>
+                    <tr><td>Distribution &amp; Segments</td><td>Histogram with S&amp;P 500 percentile reference overlay.</td></tr>
+                    <tr><td>Sector &amp; Industry</td><td>GICS sector medians, top-15 industry breakdowns, and universe-median reference lines.</td></tr>
                     <tr><td>Market Cap Bands</td><td>Mega, Large, Mid, Small, Micro, and Nano segmentation.</td></tr>
                     <tr><td>Predictive Power</td><td>Forward 12-month returns by decile of factor exposure.</td></tr>
                     <tr><td>Signal Quality</td><td>IC, Spearman, Pearson, OLS slope, R-squared, monotonicity, spread, sample size, and verdict.</td></tr>
-                    <tr><td>Backtest and Risk</td><td>Quintile cumulative returns, benchmark comparison, Sharpe, Sortino, drawdown, Calmar, win rate, and terminal wealth.</td></tr>
+                    <tr><td>Backtest &amp; Risk</td><td>Quintile cumulative returns, benchmark comparison, Sharpe, Sortino, drawdown, Calmar, win rate, and terminal wealth.</td></tr>
                     <tr><td>Sector Composition</td><td>Stacked sector exposure by quintile to reveal unintended sector bets.</td></tr>
                   </tbody>
                 </table>
               </article>
 
-              <article class="detail-panel">
-                <span class="section-kicker">Design</span>
+              <article class="article-card" style="margin-top: 18px;">
+                <p class="article-meta">Design</p>
                 <h2>One-screen verdict</h2>
                 <p class="lead">Distribution. Concentration. Signal quality. Performance. Risk.</p>
                 <ul class="square-list">
@@ -101,30 +124,27 @@
                 </ul>
               </article>
             </div>
-
-            <aside class="detail-panel sticky">
-              <span class="project-type" style="--project: var(--factor)">Factor Research</span>
-              <h3>Snapshot</h3>
-              <ul class="square-list">
-                <li>Role: Founding Quantitative AI Researcher</li>
-                <li>Company: Quantlink AI</li>
-                <li>Universe: 3,545 stocks</li>
-                <li>Lookbacks: 1Y, 3Y, 5Y, 10Y, MAX</li>
-                <li>Buckets: quintiles and deciles</li>
-              </ul>
-              <div class="tag-row"><span class="tag">IC</span><span class="tag">Spearman</span><span class="tag">OLS</span><span class="tag">Sharpe</span><span class="tag">Sortino</span><span class="tag">GICS</span></div>
-            </aside>
           </div>
         </section>
       </main>
 
       <footer class="site-footer">
         <div class="footer-inner">
-          <strong>Kanav Mehta</strong>
-          <div class="footer-links"><a href="/">Home</a><a href="/projects/">Projects</a><a href="/blogs/">Blogs</a><a href="https://github.com/Kizo07" target="_blank" rel="noopener noreferrer">GitHub</a></div>
+          <div class="footer-brand">
+            <strong>Kanav Mehta</strong>
+            <span>Quantitative AI Researcher</span>
+          </div>
+          <div class="footer-links">
+            <a href="/">Home</a>
+            <a href="/projects/">Projects</a>
+            <a href="/blogs/">Research Notes</a>
+            <a href="https://github.com/Kizo07" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <a href="https://linkedin.com/in/cxz07" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          </div>
+          <p class="footer-meta">© <span data-year>2026</span> · KM.EXP ▲</p>
         </div>
       </footer>
     </div>
-    <script src="/assets/site.js?v=12"></script>
+    <script src="/assets/site.js?v=20"></script>
   </body>
 </html>
