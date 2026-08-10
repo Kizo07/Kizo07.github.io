@@ -229,6 +229,7 @@
       link.addEventListener("click", function () {
         nav.classList.remove("open");
         navToggle.setAttribute("aria-expanded", "false");
+        navToggle.setAttribute("aria-label", "Open navigation");
       });
     });
   }
