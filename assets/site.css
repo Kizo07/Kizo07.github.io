@@ -36,7 +36,7 @@
 
   --radius: 14px;
   --radius-sm: 9px;
-  --wrap: 1140px;
+  --wrap: clamp(1140px, 85vw, 2080px);
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
@@ -87,19 +87,7 @@ body {
   text-rendering: optimizeLegibility;
 }
 
-/* Fixed backdrop: faint blueprint grid + two soft glows */
-body::before {
-  content: '';
-  position: fixed;
-  inset: 0;
-  z-index: -2;
-  background-image:
-    linear-gradient(var(--grid-line) 1px, transparent 1px),
-    linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
-  background-size: 44px 44px;
-  mask-image: radial-gradient(ellipse 90% 60% at 50% 0%, black 30%, transparent 78%);
-  -webkit-mask-image: radial-gradient(ellipse 90% 60% at 50% 0%, black 30%, transparent 78%);
-}
+/* Fixed backdrop: two soft glows (the grid, streaks, and watermark live on .site-shell) */
 
 body::after {
   content: '';
@@ -152,13 +140,71 @@ button:focus-visible {
 
 /* ---------- Layout shells ---------- */
 .site-shell {
+  position: relative;
+  isolation: isolate;
   min-height: 100vh;
+  overflow-x: hidden;
   display: flex;
   flex-direction: column;
+  background:
+    linear-gradient(90deg, color-mix(in srgb, var(--gold) 12%, transparent) 1px, transparent 1px),
+    linear-gradient(0deg, color-mix(in srgb, var(--gold) 9%, transparent) 1px, transparent 1px),
+    radial-gradient(circle at 16px 16px, color-mix(in srgb, var(--cyan) 18%, transparent) 1px, transparent 2px),
+    linear-gradient(180deg, var(--bg), var(--bg-soft));
+  background-size: 42px 42px, 42px 42px, 84px 84px, auto;
+}
+
+.site-shell::before,
+.site-shell::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.site-shell::before {
+  background:
+    repeating-linear-gradient(115deg, transparent 0 52px, color-mix(in srgb, var(--gold) 14%, transparent) 53px, transparent 56px 116px),
+    repeating-linear-gradient(22deg, transparent 0 96px, color-mix(in srgb, var(--cyan) 13%, transparent) 97px, transparent 99px 176px),
+    repeating-linear-gradient(0deg, transparent 0 3px, color-mix(in srgb, var(--line) 8%, transparent) 4px, transparent 6px);
+  opacity: 0.54;
+  mask-image: linear-gradient(120deg, transparent 0%, #000 14%, #000 82%, transparent 100%);
+  -webkit-mask-image: linear-gradient(120deg, transparent 0%, #000 14%, #000 82%, transparent 100%);
+  animation: spectral-drift 24s linear infinite alternate;
+}
+
+.site-shell::after {
+  content: "lambda(t)  hidden_state  shadow_delta  dS=muSdt+sigmaSdW  hedge(gamma)  vol_surface  lsmc_paths  factor_zscore  dark_pool  covariance_kernel  drawdown_guard";
+  width: 190vw;
+  color: color-mix(in srgb, var(--cyan) 30%, var(--gold));
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 800;
+  line-height: 5;
+  text-transform: uppercase;
+  white-space: pre-wrap;
+  word-spacing: 24px;
+  transform: rotate(-13deg) translate(-25vw, 8vh);
+  opacity: 0.28;
+  mask-image: linear-gradient(to bottom, transparent 0%, #000 18%, #000 70%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, #000 18%, #000 70%, transparent 100%);
+}
+
+@keyframes spectral-drift {
+  0% {
+    transform: translate3d(-1.5%, -1%, 0);
+  }
+
+  100% {
+    transform: translate3d(1.5%, 1%, 0);
+  }
 }
 
 main {
   flex: 1;
+  position: relative;
+  z-index: 1;
 }
 
 .page-section {
@@ -522,7 +568,7 @@ main {
 .terminal-readout {
   margin: 30px 0 0;
   padding: 18px 22px;
-  max-width: 480px;
+  max-width: 560px;
   border: 1px solid var(--line);
   border-radius: var(--radius-sm);
   background: var(--surface);
@@ -530,7 +576,8 @@ main {
   font-size: 13px;
   line-height: 1.75;
   color: var(--muted);
-  overflow-x: auto;
+  white-space: pre-wrap;
+  word-break: break-word;
 }
 
 .terminal-readout .cyan {
@@ -568,7 +615,7 @@ main {
 }
 
 .portrait-caption {
-  margin: 16px 4px 0;
+  margin: 16px -10px 0 18px;
   display: flex;
   justify-content: space-between;
   gap: 12px;
@@ -1535,7 +1582,6 @@ main {
 .data-table td:first-child {
   color: var(--text);
   font-weight: 500;
-  white-space: nowrap;
 }
 
 .data-table td {
@@ -1567,6 +1613,8 @@ main {
 
 /* ---------- Footer ---------- */
 .site-footer {
+  position: relative;
+  z-index: 1;
   border-top: 1px solid var(--line);
   background: var(--bg-soft);
   margin-top: 24px;
