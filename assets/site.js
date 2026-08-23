@@ -9,13 +9,13 @@
   /* ---- Tearsheet iframe theme injection (quantstats pages) ---- */
   var tearsheetThemeCss = `
     :root[data-parent-theme="light"] {
-      --ts-bg: #f6f4ef;
-      --ts-panel: #ffffff;
-      --ts-text: #171d26;
-      --ts-muted: #556070;
-      --ts-line: rgba(24, 30, 40, 0.22);
-      --ts-grid: rgba(24, 30, 40, 0.1);
-      --ts-accent: #a4701f;
+      --ts-bg: #f2ebdc;
+      --ts-panel: #fbf6ea;
+      --ts-text: #292217;
+      --ts-muted: #6a5d47;
+      --ts-line: rgba(72, 58, 32, 0.22);
+      --ts-grid: rgba(72, 58, 32, 0.11);
+      --ts-accent: #9a681c;
     }
 
     :root[data-parent-theme="dark"] {
@@ -165,10 +165,10 @@
   }
 
   function recolorTearsheetSvgText(doc, theme) {
-    var textColor = theme === "dark" ? "#e7eaf0" : "#171d26";
-    var mutedColor = theme === "dark" ? "#9aa4b2" : "#556070";
-    var gridColor = theme === "dark" ? "rgba(148,163,184,0.12)" : "rgba(24,30,40,0.1)";
-    var panelColor = theme === "dark" ? "#10151d" : "#ffffff";
+    var textColor = theme === "dark" ? "#e7eaf0" : "#292217";
+    var mutedColor = theme === "dark" ? "#9aa4b2" : "#6a5d47";
+    var gridColor = theme === "dark" ? "rgba(148,163,184,0.12)" : "rgba(72,58,32,0.11)";
+    var panelColor = theme === "dark" ? "#10151d" : "#fbf6ea";
 
     doc.querySelectorAll('svg g[id^="text_"], svg g[id^="text_"] use').forEach(function (node) {
       node.style.fill = textColor;
@@ -205,6 +205,7 @@
     });
   }
 
+  window.__kizoSetTheme = setTheme;
   setTheme(preferredTheme());
 
   if (toggle) {

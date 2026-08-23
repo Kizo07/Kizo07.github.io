@@ -1,0 +1,146 @@
+/* ============================================================
+   Kizo × Mantine integration overrides
+   Loads after mantine-bundle.css; maps Mantine components onto
+   the "Ledger" design tokens (gold + cyan, dark & warm light).
+   ============================================================ */
+
+/* ---------- Buttons: Ledger look on Mantine Button ---------- */
+.km-btn {
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  border-radius: 10px;
+  transition:
+    transform 0.22s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.22s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.km-btn:hover {
+  transform: translateY(-2px);
+}
+
+.km-btn .arr {
+  display: inline-block;
+  font-family: var(--font-mono);
+  transition: transform 0.22s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.km-btn:hover .arr {
+  transform: translateX(3px);
+}
+
+.km-btn.km-ghost:hover {
+  border-color: var(--gold) !important;
+}
+
+.km-filter-btn {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.km-filter-btn[aria-pressed='false']:hover {
+  color: var(--text);
+}
+
+/* ---------- Tags: Mantine Badge in ledger style ---------- */
+.km-tag {
+  font-family: var(--font-mono) !important;
+  font-size: 10.5px !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding-block: 4px;
+}
+
+/* ---------- Header controls ---------- */
+.km-theme-action {
+  color: var(--muted);
+  border-radius: 10px;
+  transition: color 0.2s, border-color 0.2s, background 0.2s;
+}
+
+.km-theme-action:hover {
+  color: var(--text) !important;
+  border-color: var(--line-strong) !important;
+  background: var(--surface) !important;
+}
+
+.km-theme-action svg,
+.km-theme-action .sun-icon svg,
+.km-theme-action .moon-icon svg {
+  width: 18px;
+  height: 18px;
+  stroke: currentColor;
+  fill: none;
+}
+
+.km-theme-action .sun-icon svg,
+.km-theme-action .moon-icon svg {
+  width: 18px;
+  height: 18px;
+}
+
+.km-burger {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  border: 1px solid var(--line);
+  background: transparent;
+  color: var(--muted);
+  transition: color 0.2s, border-color 0.2s, background 0.2s;
+  display: none;
+}
+
+.km-burger:hover {
+  color: var(--text);
+  border-color: var(--line-strong);
+  background: var(--surface);
+}
+
+@media (max-width: 860px) {
+  .km-burger {
+    display: block;
+  }
+}
+
+/* ---------- Drawer ---------- */
+.km-drawer-link {
+  display: block;
+  padding: 13px 14px;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--muted);
+  transition: color 0.2s, background 0.2s;
+}
+
+.km-drawer-link:hover {
+  color: var(--text);
+  background: var(--bg-soft);
+}
+
+.km-drawer-link.active {
+  color: var(--gold);
+}
+
+.km-drawer-mail {
+  margin-top: 10px;
+  border-top: 1px dashed var(--line);
+  border-radius: 0 0 10px 10px;
+  font-family: var(--font-mono);
+  font-size: 13px;
+}
+
+/* ---------- Back-to-top Affix ---------- */
+.km-top {
+  width: 44px;
+  height: 44px;
+  color: var(--muted);
+  border: 1px solid var(--line-strong);
+}
+
+.km-top:hover {
+  color: var(--gold);
+  border-color: var(--gold);
+}
