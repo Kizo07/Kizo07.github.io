@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Options Analytics Dashboard v3 | Kanav Mehta</title>
+    <meta name="description" content="Options Analytics Dashboard v3 by Kanav Mehta — a 6-leg strategy builder with American exercise, five American pricing models, a Greeks lab, and exotics via Monte Carlo.">
+    <meta name="theme-color" content="#0a0d12">
+    <link rel="icon" href="/favicon.ico">
+    <script>
+      (function () {
+        try {
+          var saved = localStorage.getItem("theme");
+          var theme = saved || "dark";
+          document.documentElement.setAttribute("data-theme", theme);
+        } catch (error) {
+          document.documentElement.setAttribute("data-theme", "dark");
+        }
+      })();
+    </script>
+    <link rel="stylesheet" href="/assets/site.css?v=21">
+    <link rel="stylesheet" href="/assets/vendor/mantine-bundle.css">
+    <link rel="stylesheet" href="/assets/vendor/mantine-overrides.css?v=1">
+    <noscript><style>.reveal { opacity: 1; transform: none; }</style></noscript>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <div class="site-shell">
+      <header class="site-header">
+        <div class="nav-inner">
+          <a class="brand" href="/" aria-label="Kanav Mehta home">
+            <span class="brand-mark">KM</span>
+            <span>Kanav Mehta</span>
+            <span class="brand-role">Quantitative AI Research</span>
+          </a>
+          <nav class="site-nav" data-site-nav aria-label="Primary navigation">
+            <a href="/">Home</a>
+            <a class="active" href="/projects/">Projects</a>
+            <a href="/blogs/">Research Notes</a>
+            <a href="/#contact">Contact</a>
+          </nav>
+          <div class="nav-actions">
+            <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch theme" title="Switch theme">
+              <span class="sun-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 6.34l-1.41 1.41M19.07 19.07l-1.41-1.41"></path></svg>
+              </span>
+              <span class="moon-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path></svg>
+              </span>
+            </button>
+            <button class="nav-toggle" type="button" data-nav-toggle aria-label="Open navigation" aria-expanded="false">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"></path></svg>
+            </button>
+          </div>
+        </div>
+      </header>
+
+      <main id="main">
+        <section class="page-hero">
+          <div class="page-section">
+            <div class="page-title">
+              <p class="eyebrow">Product Analytics · Options</p>
+              <h1>Pricing models, made into a workbench.</h1>
+              <p class="lead">A rebuilt options analytics dashboard: multi-leg strategy construction with American exercise, five pricing models side by side, a Greeks lab, and exotics — all on one vendored pricing library.</p>
+              <div class="inline-actions">
+                <a class="button ghost small" href="/projects/"><span class="arr" aria-hidden="true">←</span> Back to Projects</a>
+                <a class="button cyan small" href="https://github.com/Kizo07/Options_Dashboard3" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="page-section">
+          <div class="detail-grid">
+            <aside class="fact-sheet reveal" aria-label="Project snapshot">
+              <div class="fact-row"><span>Type</span><b>Options analytics dashboard</b></div>
+              <div class="fact-row"><span>Builder</span><b>Up to 6 legs · European &amp; American</b></div>
+              <div class="fact-row"><span>American models</span><b>Trinomial · Binomial · CRR · Crank–Nicolson · LSMC</b></div>
+              <div class="fact-row"><span>Greeks</span><b>Central finite differences</b></div>
+              <div class="fact-row"><span>Exotics</span><b>Asian · Barrier · Lookback · Digital</b></div>
+              <div class="fact-row"><span>IV</span><b>European + American back-solving</b></div>
+              <div class="fact-row"><span>Stack</span><b>Dash backend · Mantine/React frontend</b></div>
+              <div class="fact-row"><span>Lineage</span><b>comp_methods vendored from American_Options</b></div>
+            </aside>
+
+            <div class="prose reveal">
+              <article class="article-card">
+                <p class="article-meta">Modules</p>
+                <h2>Five rooms, one pricing core</h2>
+                <p class="lead">Every module draws on the same vendored comp_methods library, so a price in the builder is the same price as the Greeks lab.</p>
+                <table class="data-table">
+                  <thead>
+                    <tr><th scope="col">Module</th><th scope="col">What it does</th></tr>
+                  </thead>
+                  <tbody>
+                    <tr><td>Strategy Builder</td><td>Up to 6 legs of calls, puts, and stock — buy or sell, European or American — with payoff and current-value overlays plus portfolio Greeks.</td></tr>
+                    <tr><td>American Options</td><td>Five pricing models side by side with early-exercise premiums vs. Black–Scholes, runtimes, and convergence charts.</td></tr>
+                    <tr><td>Greeks Lab</td><td>Two instruments on one chart: Δ, Γ, ν, Θ, ρ against spot, time, vol, and rates — 20 charts plus N(d1)/N(d2) moneyness.</td></tr>
+                    <tr><td>Implied Volatility</td><td>European (Brent root-find) and American (trinomial) IV with back-solve verification and a live-quote workflow.</td></tr>
+                    <tr><td>Exotics</td><td>Asian, barrier, and lookback via seeded Monte Carlo with standard errors; digital options in closed form.</td></tr>
+                  </tbody>
+                </table>
+              </article>
+
+              <article class="article-card" style="margin-top: 18px;">
+                <p class="article-meta">Design</p>
+                <h2>Trading conventions baked in</h2>
+                <p class="lead">The dashboard speaks the way a desk speaks, so outputs don't need mental conversion.</p>
+                <ul class="square-list">
+                  <li>Theta per day; vega and rho per 1% move — displayed the way traders quote them.</li>
+                  <li>Ticker → expiry → strike → bid/ask/mid auto-fill for real-quote IV work.</li>
+                  <li>Dividend yield support and spot fetching from Yahoo Finance keep the builder honest on real names.</li>
+                </ul>
+              </article>
+
+              <article class="article-card" style="margin-top: 18px;">
+                <p class="article-meta">Lineage</p>
+                <h2>From pricing library to product</h2>
+                <p class="lead">The numerical methods research became the product's spine.</p>
+                <ul class="square-list">
+                  <li>comp_methods — trees, finite differences, LSM Monte Carlo, Greeks, and rate models — is vendored from the American_Options project.</li>
+                  <li>v3 rebuilds and supersedes Options_Dashboard2, with a Mantine/React frontend migration underway.</li>
+                </ul>
+              </article>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <div class="footer-inner">
+          <div class="footer-brand">
+            <strong>Kanav Mehta</strong>
+            <span>Quantitative AI Researcher</span>
+          </div>
+          <div class="footer-links">
+            <a href="/">Home</a>
+            <a href="/projects/">Projects</a>
+            <a href="/blogs/">Research Notes</a>
+            <a href="https://github.com/Kizo07" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <a href="https://linkedin.com/in/cxz07" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          </div>
+          <p class="footer-meta">© <span data-year>2026</span> · KM.EXP ▲</p>
+        </div>
+      </footer>
+    </div>
+    <script src="/assets/site.js?v=21"></script>
+    <script src="/assets/vendor/mantine-bundle.js" defer></script>
+    <script src="/assets/mantine-app.js?v=1" defer></script>
+  </body>
+</html>

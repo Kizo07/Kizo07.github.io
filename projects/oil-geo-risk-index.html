@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Oil Geopolitical Risk Index | Kanav Mehta</title>
+    <meta name="description" content="Oil Geopolitical Risk Index by Kanav Mehta — a composite 0–100 risk dashboard for crude oil built from prices, prediction markets, news flow, positioning, and live vessel traffic.">
+    <meta name="theme-color" content="#0a0d12">
+    <link rel="icon" href="/favicon.ico">
+    <script>
+      (function () {
+        try {
+          var saved = localStorage.getItem("theme");
+          var theme = saved || "dark";
+          document.documentElement.setAttribute("data-theme", theme);
+        } catch (error) {
+          document.documentElement.setAttribute("data-theme", "dark");
+        }
+      })();
+    </script>
+    <link rel="stylesheet" href="/assets/site.css?v=21">
+    <link rel="stylesheet" href="/assets/vendor/mantine-bundle.css">
+    <link rel="stylesheet" href="/assets/vendor/mantine-overrides.css?v=1">
+    <noscript><style>.reveal { opacity: 1; transform: none; }</style></noscript>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <div class="site-shell">
+      <header class="site-header">
+        <div class="nav-inner">
+          <a class="brand" href="/" aria-label="Kanav Mehta home">
+            <span class="brand-mark">KM</span>
+            <span>Kanav Mehta</span>
+            <span class="brand-role">Quantitative AI Research</span>
+          </a>
+          <nav class="site-nav" data-site-nav aria-label="Primary navigation">
+            <a href="/">Home</a>
+            <a class="active" href="/projects/">Projects</a>
+            <a href="/blogs/">Research Notes</a>
+            <a href="/#contact">Contact</a>
+          </nav>
+          <div class="nav-actions">
+            <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch theme" title="Switch theme">
+              <span class="sun-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 6.34l-1.41 1.41M19.07 19.07l-1.41-1.41"></path></svg>
+              </span>
+              <span class="moon-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path></svg>
+              </span>
+            </button>
+            <button class="nav-toggle" type="button" data-nav-toggle aria-label="Open navigation" aria-expanded="false">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"></path></svg>
+            </button>
+          </div>
+        </div>
+      </header>
+
+      <main id="main">
+        <section class="page-hero">
+          <div class="page-section">
+            <div class="page-title">
+              <p class="eyebrow">Market Structure · Product</p>
+              <h1>One number for oil geopolitics.</h1>
+              <p class="lead">A composite 0–100 risk index distilled from prices, prediction markets, news flow, positioning, and live vessel traffic at chokepoints — refreshed every minute, local-only by design.</p>
+              <div class="inline-actions">
+                <a class="button ghost small" href="/projects/"><span class="arr" aria-hidden="true">←</span> Back to Projects</a>
+                <a class="button cyan small" href="https://github.com/Kizo07/oil-geo-dashboard" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="page-section">
+          <div class="detail-grid">
+            <aside class="fact-sheet reveal" aria-label="Project snapshot">
+              <div class="fact-row"><span>Type</span><b>Risk dashboard</b></div>
+              <div class="fact-row"><span>Index</span><b>0–100 composite</b></div>
+              <div class="fact-row"><span>Bands</span><b>Low · Elevated · High · Severe · Critical</b></div>
+              <div class="fact-row"><span>Sources</span><b>GDELT · Polymarket · Kalshi · CFTC · EIA · AIS</b></div>
+              <div class="fact-row"><span>Backend</span><b>FastAPI · local-only</b></div>
+              <div class="fact-row"><span>Frontend</span><b>ECharts terminal-finance UI</b></div>
+              <div class="fact-row"><span>Refresh</span><b>60-second auto-refresh</b></div>
+            </aside>
+
+            <div class="prose reveal">
+              <article class="article-card">
+                <p class="article-meta">Signal Universe</p>
+                <h2>Five families of evidence</h2>
+                <p class="lead">Crude moves on geopolitics before it moves on inventories. The index blends independent evidence families so no single source can dominate the read.</p>
+                <table class="data-table">
+                  <thead>
+                    <tr><th scope="col">Family</th><th scope="col">Signals</th></tr>
+                  </thead>
+                  <tbody>
+                    <tr><td>Prices &amp; curves</td><td>WTI/Brent levels and spreads (Yahoo, FRED), macro rate context.</td></tr>
+                    <tr><td>Prediction markets</td><td>Polymarket and Kalshi odds on conflict and supply-disruption events.</td></tr>
+                    <tr><td>News flow</td><td>GDELT event data and RSS feeds, scored and cached.</td></tr>
+                    <tr><td>Positioning &amp; supply</td><td>CFTC COT positioning, Baker Hughes rig counts, EIA SPR and inventories.</td></tr>
+                    <tr><td>Vessel traffic</td><td>Live AIS snapshots around chokepoint zones on 5-minute collection cycles.</td></tr>
+                  </tbody>
+                </table>
+              </article>
+
+              <article class="article-card" style="margin-top: 18px;">
+                <p class="article-meta">Build</p>
+                <h2>Fail-soft by construction</h2>
+                <p class="lead">Every source is an independent async collector. One outage degrades the index gracefully instead of taking the dashboard down.</p>
+                <ul class="square-list">
+                  <li>Disk-backed JSON cache survives restarts; free-tier rate limits (GDELT 1 req / 5 s) handled with spacing, retries, and 30-minute caching.</li>
+                  <li>AIS gaps are marked stale with provider-health timestamps and backoff retries rather than shown as zero traffic.</li>
+                  <li>Weights and queries live in one config module — the composite score is auditable from signal to number.</li>
+                </ul>
+              </article>
+
+              <article class="article-card" style="margin-top: 18px;">
+                <p class="article-meta">Design</p>
+                <h2>Status bands as the verdict</h2>
+                <p class="lead">0–25 Low · 25–45 Elevated · 45–65 High · 65–85 Severe · 85+ Critical.</p>
+                <ul class="square-list">
+                  <li>The composite is the headline; the signal panels are the evidence trail behind it.</li>
+                  <li>Terminal-finance dark UI with ECharts, no build step, auto-refresh every 60 seconds.</li>
+                  <li>Local-only FastAPI on 127.0.0.1 — a decision-support surface, not a public service.</li>
+                </ul>
+              </article>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <div class="footer-inner">
+          <div class="footer-brand">
+            <strong>Kanav Mehta</strong>
+            <span>Quantitative AI Researcher</span>
+          </div>
+          <div class="footer-links">
+            <a href="/">Home</a>
+            <a href="/projects/">Projects</a>
+            <a href="/blogs/">Research Notes</a>
+            <a href="https://github.com/Kizo07" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <a href="https://linkedin.com/in/cxz07" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          </div>
+          <p class="footer-meta">© <span data-year>2026</span> · KM.EXP ▲</p>
+        </div>
+      </footer>
+    </div>
+    <script src="/assets/site.js?v=21"></script>
+    <script src="/assets/vendor/mantine-bundle.js" defer></script>
+    <script src="/assets/mantine-app.js?v=1" defer></script>
+  </body>
+</html>

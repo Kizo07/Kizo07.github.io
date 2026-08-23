@@ -102,6 +102,29 @@
               </div>
             </article>
 
+            <article class="project-card reveal" data-project="trading ai product">
+              <div class="project-card-inner">
+                <span class="project-type">Agentic Research · Trading Systems</span>
+                <h2>Agentic Alpha Engine</h2>
+                <p>End-to-end alpha engine for US public equities, built entirely on public data and designed to be driven by any MCP-capable AI agent.</p>
+                <div class="project-metrics">
+                  <span>MCP<small>agent tools</small></span>
+                  <span>dbt+DuckDB<small>transform</small></span>
+                  <span>153<small>JKP factors</small></span>
+                  <span>vectorbt<small>backtests</small></span>
+                </div>
+                <ul class="square-list">
+                  <li>Spec-driven YAML datasets feed dbt staging and marts with generated tests and a JSON-LD catalog.</li>
+                  <li>French, AQR, and JKP factor libraries; PyPortfolioOpt and skfolio optimization; CI-tested end to end.</li>
+                </ul>
+                <div class="tag-row"><span class="tag">Agentic Research</span><span class="tag">MCP</span><span class="tag">Portfolio Optimization</span></div>
+                <div class="inline-actions">
+                  <a class="button accent small" href="/projects/agentic-alpha-engine.html">Case Study <span class="arr" aria-hidden="true">→</span></a>
+                  <a class="button ghost small" href="https://github.com/Kizo07/alpha_engine" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+                </div>
+              </div>
+            </article>
+
             <article class="project-card reveal" data-project="options">
               <div class="project-card-inner">
                 <span class="project-type">Options &amp; Rates</span>
@@ -165,23 +188,46 @@
               </div>
             </article>
 
-            <article class="project-card reveal" data-project="ai">
+            <article class="project-card reveal" data-project="ai product">
               <div class="project-card-inner">
-                <span class="project-type">AI / NLP</span>
-                <h2>FOMC Sentiment Research</h2>
-                <p>FinBERT fine-tuning on FOMC communications; labor, inflation, and rates text mapped to sector ETF return direction.</p>
+                <span class="project-type">AI / NLP · Product</span>
+                <h2>FOMC Sentiment Toolkit</h2>
+                <p>Productized port of the FinBERT-FOMC research — a package and CLI covering transcript extraction, LLM-assisted labeling, fine-tuning, embeddings, novelty scores, and market regressions.</p>
                 <div class="project-metrics">
-                  <span>FinBERT<small>transformer</small></span>
-                  <span>0.65<small>ROC-AUC</small></span>
-                  <span>LightGBM<small>classifier</small></span>
-                  <span>Sector ETF<small>targets</small></span>
+                  <span>FinBERT<small>fine-tuned</small></span>
+                  <span>Novelty<small>score</small></span>
+                  <span>Walk-forward<small>validation</small></span>
+                  <span>Backtest<small>sign signals</small></span>
                 </div>
                 <ul class="square-list">
-                  <li>Transformer macro text features from statements and related indicators.</li>
-                  <li>Model diagnostics separate signal from macro noise.</li>
+                  <li>Hawk/dove lexicon baseline, per-speaker profiles, and walk-forward LightGBM evaluation against SPY.</li>
+                  <li>Interactive dashboard for factor series, the per-paragraph meeting explorer, and speaker analytics.</li>
                 </ul>
                 <div class="tag-row"><span class="tag">FinBERT</span><span class="tag">FOMC</span><span class="tag">Macro NLP</span></div>
-                <div class="inline-actions"><a class="button cyan small" href="https://github.com/Kizo07/FOMC-Sentiment" target="_blank" rel="noopener noreferrer">GitHub ↗</a></div>
+                <div class="inline-actions">
+                  <a class="button cyan small" href="https://github.com/Kizo07/fomc-sentiment-toolkit" target="_blank" rel="noopener noreferrer">Toolkit ↗</a>
+                  <a class="button ghost small" href="https://github.com/Kizo07/FOMC-Sentiment" target="_blank" rel="noopener noreferrer">Research ↗</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="project-card reveal" data-project="factor ai">
+              <div class="project-card-inner">
+                <span class="project-type">Factor Research · AI</span>
+                <h2>AI Exposure Factor Suite</h2>
+                <p>ETF-based market-implied AI return factors — an AI Theme factor and an AI Infrastructure factor, built point-in-time for firm-level AI exposure estimation.</p>
+                <div class="project-metrics">
+                  <span>2<small>AI factors</small></span>
+                  <span>AUM-weighted<small>baskets</small></span>
+                  <span>Point-in-time<small>construction</small></span>
+                  <span>FF controls<small>diagnostics</small></span>
+                </div>
+                <ul class="square-list">
+                  <li>F_AITheme (AI ETFs ex-semiconductors) and F_AIInfra (semiconductor / AI infrastructure) daily factors.</li>
+                  <li>QC diagnostics against Fama-French factors; rolling betas for firm-level exposure work.</li>
+                </ul>
+                <div class="tag-row"><span class="tag">AI Factors</span><span class="tag">ETFs</span><span class="tag">Risk Exposure</span></div>
+                <div class="inline-actions"><a class="button cyan small" href="https://github.com/Kizo07/AI-Factor" target="_blank" rel="noopener noreferrer">GitHub ↗</a></div>
               </div>
             </article>
 
@@ -237,6 +283,21 @@
               </div>
             </article>
 
+            <article class="project-card reveal" data-project="trading factor">
+              <div class="project-card-inner">
+                <span class="project-type">Trading Systems · Risk</span>
+                <h2>Stat Arb Optimization &amp; Risk Analytics</h2>
+                <p>RMT-denoised and shrinkage covariance modeling with transaction-cost-aware convex portfolio optimization and granular performance analytics for a copula-based US equity pairs strategy.</p>
+                <div class="project-metrics">
+                  <span>RMT<small>denoised</small></span>
+                  <span>Shrinkage<small>covariance</small></span>
+                  <span>Cost-aware<small>convex opt</small></span>
+                  <span>Copula<small>pairs</small></span>
+                </div>
+                <div class="tag-row"><span class="tag">Stat Arb</span><span class="tag">Risk Analytics</span><span class="tag">Portfolio Optimization</span></div>
+              </div>
+            </article>
+
             <article class="project-card reveal" data-project="options">
               <div class="project-card-inner">
                 <span class="project-type">Options</span>
@@ -257,15 +318,21 @@
               <div class="project-card-inner">
                 <span class="project-type">Options · Factor</span>
                 <h2>Factor Investing with Options</h2>
-                <p>Factor portfolios constructed with deep in-the-money options instead of stocks — leverage and downside asymmetry as design inputs.</p>
+                <p>Factor portfolios constructed with deep in-the-money options instead of stocks — leverage and downside asymmetry as design inputs — now validated by a full LEAPS-as-stock-substitute long/short backtest.</p>
                 <div class="project-metrics">
                   <span>DITM<small>substitute</small></span>
-                  <span>Factors<small>underlying</small></span>
-                  <span>LEAPS<small>horizon</small></span>
-                  <span>Backtest<small>comparison</small></span>
+                  <span>LEAPS<small>L/S backtest</small></span>
+                  <span>V0–V3<small>portfolios</small></span>
+                  <span>Sensitivity<small>grid</small></span>
                 </div>
-                <div class="tag-row"><span class="tag">LEAPS</span><span class="tag">Factor Investing</span></div>
-                <div class="inline-actions"><a class="button cyan small" href="https://github.com/Kizo07/Factor-Investing-with-Options" target="_blank" rel="noopener noreferrer">GitHub ↗</a></div>
+                <ul class="square-list">
+                  <li>Staged pipeline on public data: download → pricing validation gates → single-instrument lanes → long/short portfolios → REPORT.md.</li>
+                </ul>
+                <div class="tag-row"><span class="tag">LEAPS</span><span class="tag">Factor Investing</span><span class="tag">Backtesting</span></div>
+                <div class="inline-actions">
+                  <a class="button cyan small" href="https://github.com/Kizo07/LEAPS-Stock-Substitute-Backtest" target="_blank" rel="noopener noreferrer">LEAPS Backtest ↗</a>
+                  <a class="button ghost small" href="https://github.com/Kizo07/Factor-Investing-with-Options" target="_blank" rel="noopener noreferrer">Original ↗</a>
+                </div>
               </div>
             </article>
 
@@ -359,31 +426,112 @@
               <div class="project-card-inner">
                 <span class="project-type">Research · Mathematics</span>
                 <h2>Complex Itô Random Walk</h2>
-                <p>Research notebooks exploring random-walk structure through complex-valued Itô calculus.</p>
+                <p>A 13-phase research program: an exact-law framework for stochastic correlation with closed-form transition densities, barrier laws, and spread/basket pricing.</p>
                 <div class="project-metrics">
-                  <span>Itô<small>calculus</small></span>
-                  <span>Complex<small>domain</small></span>
-                  <span>Random walk<small>process</small></span>
-                  <span>Notebooks<small>research</small></span>
+                  <span>13<small>phases</small></span>
+                  <span>192/192<small>tests</small></span>
+                  <span>Exact law<small>correlation</small></span>
+                  <span>Closed form<small>pricing</small></span>
                 </div>
-                <div class="tag-row"><span class="tag">Stochastic Calculus</span><span class="tag">Research</span></div>
+                <ul class="square-list">
+                  <li>Act I bridges complex polar form, Brownian quadratic variation, and Itô's lemma to random walks.</li>
+                  <li>Act II prices spread/basket options, occupation-clock derivatives, and de-peg derivatives in closed form.</li>
+                </ul>
+                <div class="tag-row"><span class="tag">Stochastic Calculus</span><span class="tag">Derivatives</span><span class="tag">Research</span></div>
                 <div class="inline-actions"><a class="button cyan small" href="https://github.com/Kizo07/Complex-Ito-Random-Walk-Research" target="_blank" rel="noopener noreferrer">GitHub ↗</a></div>
               </div>
             </article>
 
-            <article class="project-card reveal" data-project="product">
+            <article class="project-card reveal" data-project="product options">
               <div class="project-card-inner">
-                <span class="project-type">Product Analytics</span>
-                <h2>Options Dashboard</h2>
-                <p>Interactive options analytics dashboard — positioning, chains, and risk views for repeated analyst use.</p>
+                <span class="project-type">Product Analytics · Options</span>
+                <h2>Options Analytics Dashboard v3</h2>
+                <p>Rebuilt options analytics: a 6-leg strategy builder with American exercise, five American pricing models side by side, a Greeks lab, and exotics via Monte Carlo.</p>
                 <div class="project-metrics">
-                  <span>Chains<small>options</small></span>
-                  <span>Risk<small>views</small></span>
-                  <span>Interactive<small>controls</small></span>
-                  <span>Python<small>backend</small></span>
+                  <span>6-leg<small>builder</small></span>
+                  <span>5<small>American models</small></span>
+                  <span>Greeks lab<small>20 charts</small></span>
+                  <span>Exotics<small>MC</small></span>
                 </div>
-                <div class="tag-row"><span class="tag">Dashboards</span><span class="tag">Options</span></div>
-                <div class="inline-actions"><a class="button cyan small" href="https://github.com/Kizo07/Options_Dashboard2" target="_blank" rel="noopener noreferrer">GitHub ↗</a></div>
+                <ul class="square-list">
+                  <li>Early-exercise premiums, convergence charts, and American implied volatility back-solved from live quotes.</li>
+                  <li>Dash backend with a Mantine/React frontend; pricing library vendored from the American_Options project.</li>
+                </ul>
+                <div class="tag-row"><span class="tag">Options</span><span class="tag">Dashboards</span><span class="tag">Numerical Methods</span></div>
+                <div class="inline-actions">
+                  <a class="button accent small" href="/projects/options-analytics-dashboard.html">Case Study <span class="arr" aria-hidden="true">→</span></a>
+                  <a class="button ghost small" href="https://github.com/Kizo07/Options_Dashboard3" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="project-card reveal" data-project="market product">
+              <div class="project-card-inner">
+                <span class="project-type">Market Structure · Product</span>
+                <h2>Oil Geopolitical Risk Index</h2>
+                <p>A composite 0–100 geopolitical risk index for crude oil, distilled from prices, prediction markets, news flow, positioning, and live vessel traffic at chokepoints.</p>
+                <div class="project-metrics">
+                  <span>0–100<small>composite</small></span>
+                  <span>GDELT<small>news flow</small></span>
+                  <span>Kalshi · Polymarket<small>odds</small></span>
+                  <span>AIS<small>ship tracking</small></span>
+                </div>
+                <ul class="square-list">
+                  <li>Fail-soft async collectors for CFTC COT, Baker Hughes rigs, EIA inventories, and macro rates.</li>
+                  <li>FastAPI backend with a terminal-finance ECharts frontend and 60-second auto-refresh.</li>
+                </ul>
+                <div class="tag-row"><span class="tag">Geopolitics</span><span class="tag">Crude Oil</span><span class="tag">Dashboards</span></div>
+                <div class="inline-actions">
+                  <a class="button accent small" href="/projects/oil-geo-risk-index.html">Case Study <span class="arr" aria-hidden="true">→</span></a>
+                  <a class="button ghost small" href="https://github.com/Kizo07/oil-geo-dashboard" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="project-card reveal" data-project="market product">
+              <div class="project-card-inner">
+                <span class="project-type">Market Structure · Product</span>
+                <h2>Kalshi Market Data &amp; Mentions Pricing</h2>
+                <p>Daily Kalshi descriptive-data collection into Feather/Polars with an exploration dashboard — plus a pricing engine for Kalshi "Mentions" markets.</p>
+                <div class="project-metrics">
+                  <span>Daily<small>collection</small></span>
+                  <span>Polars<small>Feather store</small></span>
+                  <span>Mentions<small>pricing engine</small></span>
+                  <span>systemd<small>automation</small></span>
+                </div>
+                <div class="tag-row"><span class="tag">Prediction Markets</span><span class="tag">Data Pipelines</span></div>
+                <div class="inline-actions"><a class="button cyan small" href="https://github.com/Kizo07/kalshi-data-pipeline" target="_blank" rel="noopener noreferrer">GitHub ↗</a></div>
+              </div>
+            </article>
+
+            <article class="project-card reveal" data-project="market trading">
+              <div class="project-card-inner">
+                <span class="project-type">Market Structure · Trading</span>
+                <h2>Polymarket Earnings Markets</h2>
+                <p>Public-data pipeline for Polymarket earnings-beat markets: discovery, backfill, a DuckDB warehouse, and a T-2 probability signal backtested as an event-driven equity strategy.</p>
+                <div class="project-metrics">
+                  <span>DuckDB<small>warehouse</small></span>
+                  <span>T-2<small>probability signal</small></span>
+                  <span>Event-driven<small>backtest</small></span>
+                  <span>Calendar<small>sync</small></span>
+                </div>
+                <div class="tag-row"><span class="tag">Prediction Markets</span><span class="tag">Earnings</span><span class="tag">Backtesting</span></div>
+                <div class="inline-actions"><a class="button cyan small" href="https://github.com/Kizo07/polymarket-earnings-data" target="_blank" rel="noopener noreferrer">GitHub ↗</a></div>
+              </div>
+            </article>
+
+            <article class="project-card reveal" data-project="ai market">
+              <div class="project-card-inner">
+                <span class="project-type">AI · Market</span>
+                <h2>WTI Multi-Agent Forecasting</h2>
+                <p>Five independent LLM-agent runs forecasting the maximum daily EIA WTI Cushing spot through 2026, with a reproducible Quarto paper on forecast-revision behavior after peer exposure.</p>
+                <div class="project-metrics">
+                  <span>5<small>agent runs</small></span>
+                  <span>EIA WTI<small>target</small></span>
+                  <span>Revision<small>analysis</small></span>
+                  <span>Quarto<small>reproducible</small></span>
+                </div>
+                <div class="tag-row"><span class="tag">LLM Agents</span><span class="tag">Forecasting</span><span class="tag">Crude Oil</span></div>
               </div>
             </article>
 
@@ -391,7 +539,7 @@
               <div class="project-card-inner">
                 <span class="project-type">Product Analytics</span>
                 <h2>Quant Dashboard Systems</h2>
-                <p>Dashboards for backtesting, screening, alpha review, financial models, and macro risk monitoring — built at Wolfe Research and beyond.</p>
+                <p>Dashboards for backtesting, screening, alpha review, financial models, and macro risk monitoring — built at Wolfe Research and beyond, with every recent dashboard launched from a self-built Mission Control hub.</p>
                 <div class="project-metrics">
                   <span>Screeners<small>stocks</small></span>
                   <span>Backtests<small>strategy</small></span>
