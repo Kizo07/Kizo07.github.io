@@ -22,7 +22,7 @@
         }
       })();
     </script>
-    <link rel="stylesheet" href="/assets/site.css?v=24">
+    <link rel="stylesheet" href="/assets/site.css?v=26">
     <link rel="stylesheet" href="/assets/vendor/mantine-bundle.css">
     <link rel="stylesheet" href="/assets/vendor/mantine-overrides.css?v=1">
     <noscript><style>.reveal { opacity: 1; transform: none; }</style></noscript>
@@ -96,9 +96,9 @@
               <p class="lead">Distribution checks. Concentration checks. Rank tests. Portfolio tests.</p>
               <ul class="square-list">
                 <li>Start with the cross-section. A factor with a broken or wildly skewed distribution needs different treatment before it becomes portfolio logic.</li>
-                <li>Inspect concentration. Sector, industry, and market-cap breakdowns reveal whether the factor is actually measuring the claimed economic intuition.</li>
-                <li>Measure rank quality. IC, Spearman correlation, monotonicity, and top-minus-bottom spread tell a richer story than one return number.</li>
-                <li>Backtest buckets and the portfolio. Quintiles and deciles show whether the signal degrades smoothly or only works in the extremes.</li>
+                <li>Inspect concentration. Sector, industry, and market-cap breakdowns reveal whether the factor actually measures the economic intuition it claims to.</li>
+                <li>Measure rank quality. IC, Spearman correlation, monotonicity, and the top-minus-bottom spread tell a richer story than a single return number.</li>
+                <li>Backtest buckets and the portfolio. Quintiles and deciles show whether the signal degrades smoothly or only works at the extremes.</li>
                 <li>End with a verdict. Users need to know whether the factor is promising, weak, noisy, sector-biased, or only conditionally useful.</li>
               </ul>
             </article>
@@ -111,7 +111,7 @@
                 <li>Sector composition by quintile shows whether the top bucket is diversified or simply overexposed to one economic theme.</li>
                 <li>Median factor values by sector help separate stock-level signal from industry structure.</li>
                 <li>Industry-level breakdowns catch hidden clusters that broad sector labels can smooth over.</li>
-                <li>A benchmark line or universe median is useful because users need an anchor before judging whether a bar is extreme.</li>
+                <li>A benchmark line or universe median gives users an anchor for judging whether a bar is extreme.</li>
               </ul>
             </article>
 
@@ -120,11 +120,11 @@
               <h2>Numerical methods as product design</h2>
               <p class="lead">Method choice → visible risk surface.</p>
               <ul class="square-list">
-                <li>Lattices are useful when early exercise and decision trees need to be visible.</li>
-                <li>Least Squares Monte Carlo is powerful when the exercise policy is estimated from simulated paths.</li>
-                <li>Finite difference methods make surfaces and Greeks easier to inspect across grids.</li>
-                <li>Variance reduction is not cosmetic. It can decide whether a Monte Carlo estimate is usable inside an interactive workflow.</li>
-                <li>For securitized products, rate scenarios and embedded optionality need to be reviewable together.</li>
+                <li>Lattices work well when early exercise matters and you want the decision tree visible.</li>
+                <li>Least Squares Monte Carlo is strongest when the exercise policy has to be estimated from simulated paths.</li>
+                <li>Finite difference methods make value surfaces and Greeks easier to inspect across the grid.</li>
+                <li>Variance reduction is not cosmetic. It can determine whether a Monte Carlo estimate is usable in an interactive workflow.</li>
+                <li>For securitized products, rate scenarios and embedded optionality need to be reviewable side by side.</li>
               </ul>
             </article>
           </div>

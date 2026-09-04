@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Securitized Products and American Options | Kanav Mehta</title>
-    <meta name="description" content="Numerical methods project for American options, barrier options, MBS, and interest-rate models by Kanav Mehta.">
+    <title>report-forge | Kanav Mehta</title>
+    <meta name="description" content="MCP-driven report engine: Markdown and chart PNGs in, typography-grade PDF, HTML, and DOCX out — Typst templates, native Exhibit numbering, mechanical quality gates.">
     <meta name="theme-color" content="#0a0d12">
     <link rel="icon" href="/favicon.ico">
     <script>
@@ -59,12 +59,12 @@
         <section class="page-hero">
           <div class="page-section">
             <div class="page-title">
-              <p class="eyebrow">Options · Rates · Securitized Products</p>
-              <h1>Pricing code for optionality, rates, and cash-flow risk.</h1>
-              <p class="lead">American options. Barriers. MBS. Variance reduction. Greeks. G2++ rates.</p>
+              <p class="eyebrow">Agent-Driven Research · Reporting</p>
+              <h1>Reports an agent can assemble and a PM will actually read.</h1>
+              <p class="lead">report-forge turns Markdown and local chart PNGs into publication-grade PDF, HTML, and DOCX — driven by agents over MCP, with quality gates that mechanically refuse to ship a bad exhibit.</p>
               <div class="inline-actions">
                 <a class="button ghost small" href="/projects/"><span class="arr" aria-hidden="true">←</span> Back to Projects</a>
-                <a class="button cyan small" href="https://github.com/Kizo07/American_Options" target="_blank" rel="noopener noreferrer">Open GitHub ↗</a>
+                <a class="button accent small" href="https://github.com/Kizo07/report-forge" target="_blank" rel="noopener noreferrer">GitHub <span class="arr" aria-hidden="true">↗</span></a>
               </div>
             </div>
           </div>
@@ -73,51 +73,42 @@
         <section class="page-section">
           <div class="detail-grid">
             <aside class="fact-sheet reveal" aria-label="Project snapshot">
-              <div class="fact-row"><span>Type</span><b>Options &amp; Rates</b></div>
-              <div class="fact-row"><span>Topic</span><b>Securitized products &amp; numerical methods</b></div>
-              <div class="fact-row"><span>Repository</span><b>American_Options</b></div>
-              <div class="fact-row"><span>Methods</span><b>Lattices · LSMC · FDM · Monte Carlo</b></div>
-              <div class="fact-row"><span>Risk Lens</span><b>Greeks · curve sensitivity · embedded optionality</b></div>
+              <div class="fact-row"><span>Engine</span><b>Quarto + custom Typst</b></div>
+              <div class="fact-row"><span>Outputs</span><b>PDF · HTML · DOCX · pdf-web</b></div>
+              <div class="fact-row"><span>Templates</span><b>8 editorial layouts</b></div>
+              <div class="fact-row"><span>Agent surface</span><b>MCP stdio server</b></div>
+              <div class="fact-row"><span>Gate</span><b>Exhibit quality checks</b></div>
+              <div class="fact-row"><span>In production</span><b>QuantFlow flagships</b></div>
             </aside>
 
             <div class="prose reveal">
               <article class="article-card">
-                <p class="article-meta">Methods</p>
-                <h2>Pricing stack</h2>
+                <p class="article-meta">Typography</p>
+                <h2>Sell-side polish, programmatic.</h2>
                 <ul class="square-list">
-                  <li>Binomial and trinomial lattices for early-exercise features and path-dependent logic.</li>
-                  <li>Least-squares Monte Carlo (LSMC) for American option exercise policies.</li>
-                  <li>Finite-difference methods for price surfaces and Greeks.</li>
-                  <li>Monte Carlo with antithetic and control variates to reduce estimator variance.</li>
-                  <li>G2++ interest-rate modeling for curve-sensitive fixed-income instruments.</li>
+                  <li>Eight templates — standard, memo, whitepaper, modern, studio, portfolio-light, portfolio-dark, bespoke — each a real Typst layout, not a CSS skin.</li>
+                  <li>Cover infographics on page one: KPI strip, conviction verdict band, key-point cards, and a fixed three-scenario strip, compacted so the body breaks cleanly to page two.</li>
+                  <li>Spreadsheet treatment for showcase tables — banded headers, zebra rows, tabular numerals, right-aligned numbers — identical in HTML and PDF.</li>
                 </ul>
               </article>
 
               <article class="article-card" style="margin-top: 18px;">
-                <p class="article-meta">Risk Stack</p>
-                <h2>Optionality, rates, cash flows</h2>
-                <p class="lead">Embedded optionality. Prepayment behavior. Curve sensitivity. Timing.</p>
-                <table class="data-table">
-                  <thead>
-                    <tr><th scope="col">Instrument</th><th scope="col">Modeling emphasis</th></tr>
-                  </thead>
-                  <tbody>
-                    <tr><td>American Options</td><td>Exercise boundary estimation and dynamic programming.</td></tr>
-                    <tr><td>Barrier Options</td><td>Path dependence and boundary crossing behavior.</td></tr>
-                    <tr><td>MBS</td><td>Rate-sensitive cash flows, optionality, and valuation under curve scenarios.</td></tr>
-                    <tr><td>Rates Models</td><td>Two-factor dynamics for yield curve movement and discounting.</td></tr>
-                  </tbody>
-                </table>
+                <p class="article-meta">Discipline</p>
+                <h2>Gates, not vibes.</h2>
+                <ul class="square-list">
+                  <li>Every figure must pass mechanical checks — resolution, aspect, legibility, provenance — or the build fails, and no blurry chart ships.</li>
+                  <li>Native Exhibit numbering with cross-references, so "see Exhibit 12" survives reordering and regeneration.</li>
+                  <li>Burned-in provenance: as-of dates and data stamps on every exhibit, carrying the research engine's audit discipline into print.</li>
+                </ul>
               </article>
 
               <article class="article-card" style="margin-top: 18px;">
-                <p class="article-meta">Extensions</p>
-                <h2>Next modules</h2>
+                <p class="article-meta">In production</p>
+                <h2>The rendering half of QuantFlow.</h2>
                 <ul class="square-list">
-                  <li>Prepayment modeling with borrower incentives and refinancing thresholds.</li>
-                  <li>Scenario explorer for parallel, slope, and curvature shocks.</li>
-                  <li>Reusable harness for comparing lattice, LSMC, and finite-difference outputs.</li>
-                  <li>Stress dashboard for duration, convexity, and option-adjusted spread sensitivity.</li>
+                  <li>Renders QuantFlow's flagship equity outlooks — the AMZN 24-page and MRNA 12-page reports share one pipeline, with different briefs.</li>
+                  <li>One scaffold call per report: agents pick a template, place the charts, and the forge enforces the layout contract.</li>
+                  <li>A gold/teal identity for exhibits across dark and light print themes — the reports and the site share one visual system.</li>
                 </ul>
               </article>
             </div>

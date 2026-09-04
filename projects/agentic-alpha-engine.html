@@ -18,7 +18,7 @@
         }
       })();
     </script>
-    <link rel="stylesheet" href="/assets/site.css?v=24">
+    <link rel="stylesheet" href="/assets/site.css?v=26">
     <link rel="stylesheet" href="/assets/vendor/mantine-bundle.css">
     <link rel="stylesheet" href="/assets/vendor/mantine-overrides.css?v=1">
     <noscript><style>.reveal { opacity: 1; transform: none; }</style></noscript>
@@ -60,8 +60,8 @@
           <div class="page-section">
             <div class="page-title">
               <p class="eyebrow">Agentic Research · Systems</p>
-              <h1>An alpha engine built to be driven by AI agents.</h1>
-              <p class="lead">Ingest. Transform. Backtest. Optimize. Every capability exposed as an MCP tool, so any capable agent can run the full research loop on US public equities — using only public data.</p>
+              <h1>An alpha engine that AI agents can run end-to-end.</h1>
+              <p class="lead">Ingest. Transform. Backtest. Optimize. Every capability is exposed as an MCP tool, so any capable agent can run the full research loop on US public equities — using only public data.</p>
               <div class="inline-actions">
                 <a class="button ghost small" href="/projects/"><span class="arr" aria-hidden="true">←</span> Back to Projects</a>
                 <a class="button cyan small" href="https://github.com/Kizo07/alpha_engine" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
@@ -88,7 +88,7 @@
               <article class="article-card">
                 <p class="article-meta">Thesis</p>
                 <h2>Desk tools as agent tools</h2>
-                <p class="lead">The agentic platform I build at QuantLink AI needs a proving ground: a complete research stack where an AI agent can propose a strategy, backtest it, optimize it, read the attribution, and iterate — without a human glue step.</p>
+                <p class="lead">The agentic platform I build at QuantLink AI needs a proving ground: a complete research stack where an AI agent can propose a strategy, backtest it, optimize it, read the attribution, and iterate — no human glue step in between.</p>
                 <ul class="square-list">
                   <li>Every engine capability is a first-class MCP tool — the same interface any MCP-capable agent already speaks.</li>
                   <li>Public data only, so the full loop is reproducible by anyone: no vendor feeds, no keys required for the core path.</li>
@@ -99,7 +99,7 @@
               <article class="article-card" style="margin-top: 18px;">
                 <p class="article-meta">Build</p>
                 <h2>Pipeline architecture</h2>
-                <p class="lead">One spine from raw ticker history to optimized portfolio.</p>
+                <p class="lead">One pipeline from raw ticker history to optimized portfolio.</p>
                 <table class="data-table">
                   <thead>
                     <tr><th scope="col">Stage</th><th scope="col">What it does</th></tr>
@@ -117,11 +117,11 @@
 
               <article class="article-card" style="margin-top: 18px;">
                 <p class="article-meta">Agent Interface</p>
-                <h2>The loop an agent can run alone</h2>
+                <h2>The loop an agent can run unaided.</h2>
                 <p class="lead">Hypothesis → backtest → optimize → attribution → refine.</p>
                 <ul class="square-list">
                   <li>An MCP server over stdio exposes the engine to any MCP-capable agent — the same loop being productized at QuantLink AI.</li>
-                  <li>A human-grade CLI (<code>alpha-engine status | refresh | demo | datasets | build</code>) mirrors every agent capability.</li>
+                  <li>A human-facing CLI (<code>alpha-engine status | refresh | demo | datasets | build</code>) mirrors every agent capability.</li>
                   <li>CI runs the offline test subset; network and local-data markers keep the suite reproducible on any machine.</li>
                 </ul>
               </article>

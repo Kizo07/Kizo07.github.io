@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Securitized Products and American Options | Kanav Mehta</title>
-    <meta name="description" content="Numerical methods project for American options, barrier options, MBS, and interest-rate models by Kanav Mehta.">
+    <title>Kalshi Mentions Pricing | Kanav Mehta</title>
+    <meta name="description" content="Fair-value engine for Kalshi Mentions contracts — hurdle model over shrunk Beta-Binomial base rates and a truncated negative-binomial repetition layer, live Gamma-Poisson updating, walk-forward backtests.">
     <meta name="theme-color" content="#0a0d12">
     <link rel="icon" href="/favicon.ico">
     <script>
@@ -59,12 +59,12 @@
         <section class="page-hero">
           <div class="page-section">
             <div class="page-title">
-              <p class="eyebrow">Options · Rates · Securitized Products</p>
-              <h1>Pricing code for optionality, rates, and cash-flow risk.</h1>
-              <p class="lead">American options. Barriers. MBS. Variance reduction. Greeks. G2++ rates.</p>
+              <p class="eyebrow">Prediction Markets · NLP</p>
+              <h1>Pricing "will they say the word" like it deserves a model.</h1>
+              <p class="lead">Kalshi lists binary and count markets on whether a word gets said during a speech or earnings call — and how many times. This is a fair-value engine for those contracts: a hurdle model, live updates, and walk-forward evidence against the base rate.</p>
               <div class="inline-actions">
                 <a class="button ghost small" href="/projects/"><span class="arr" aria-hidden="true">←</span> Back to Projects</a>
-                <a class="button cyan small" href="https://github.com/Kizo07/American_Options" target="_blank" rel="noopener noreferrer">Open GitHub ↗</a>
+                <a class="button accent small" href="https://github.com/Kizo07/kalshi-data-pipeline" target="_blank" rel="noopener noreferrer">GitHub <span class="arr" aria-hidden="true">↗</span></a>
               </div>
             </div>
           </div>
@@ -73,51 +73,41 @@
         <section class="page-section">
           <div class="detail-grid">
             <aside class="fact-sheet reveal" aria-label="Project snapshot">
-              <div class="fact-row"><span>Type</span><b>Options &amp; Rates</b></div>
-              <div class="fact-row"><span>Topic</span><b>Securitized products &amp; numerical methods</b></div>
-              <div class="fact-row"><span>Repository</span><b>American_Options</b></div>
-              <div class="fact-row"><span>Methods</span><b>Lattices · LSMC · FDM · Monte Carlo</b></div>
-              <div class="fact-row"><span>Risk Lens</span><b>Greeks · curve sensitivity · embedded optionality</b></div>
+              <div class="fact-row"><span>Markets</span><b>Kalshi Mentions · binary + count</b></div>
+              <div class="fact-row"><span>Model</span><b>Hurdle: Beta-Binomial × truncated NegBin</b></div>
+              <div class="fact-row"><span>Live layer</span><b>Gamma-Poisson, mid-event</b></div>
+              <div class="fact-row"><span>Evidence</span><b>Walk-forward vs base rate</b></div>
+              <div class="fact-row"><span>Adjusters</span><b>LLM · topic similarity (opt-in)</b></div>
+              <div class="fact-row"><span>Stack</span><b>Python · FastAPI · Mantine</b></div>
             </aside>
 
             <div class="prose reveal">
               <article class="article-card">
-                <p class="article-meta">Methods</p>
-                <h2>Pricing stack</h2>
+                <p class="article-meta">The Model</p>
+                <h2>Two questions, one prior.</h2>
                 <ul class="square-list">
-                  <li>Binomial and trinomial lattices for early-exercise features and path-dependent logic.</li>
-                  <li>Least-squares Monte Carlo (LSMC) for American option exercise policies.</li>
-                  <li>Finite-difference methods for price surfaces and Greeks.</li>
-                  <li>Monte Carlo with antithetic and control variates to reduce estimator variance.</li>
-                  <li>G2++ interest-rate modeling for curve-sensitive fixed-income instruments.</li>
+                  <li>First the hurdle: is the word said at all? Reference-class base rates — shrunk through a Beta-Binomial ladder from speaker×format down to speaker, format, and global word rate — give P(occurs) without overfitting thin history.</li>
+                  <li>Then repetition: conditional on being said, a truncated negative-binomial layer models how many times, calibrated so E[N|N&gt;0] matches history.</li>
+                  <li>The product prices binary "said" markets and count ladders (≥N times) from one coherent distribution instead of separate heuristics.</li>
                 </ul>
               </article>
 
               <article class="article-card" style="margin-top: 18px;">
-                <p class="article-meta">Risk Stack</p>
-                <h2>Optionality, rates, cash flows</h2>
-                <p class="lead">Embedded optionality. Prepayment behavior. Curve sensitivity. Timing.</p>
-                <table class="data-table">
-                  <thead>
-                    <tr><th scope="col">Instrument</th><th scope="col">Modeling emphasis</th></tr>
-                  </thead>
-                  <tbody>
-                    <tr><td>American Options</td><td>Exercise boundary estimation and dynamic programming.</td></tr>
-                    <tr><td>Barrier Options</td><td>Path dependence and boundary crossing behavior.</td></tr>
-                    <tr><td>MBS</td><td>Rate-sensitive cash flows, optionality, and valuation under curve scenarios.</td></tr>
-                    <tr><td>Rates Models</td><td>Two-factor dynamics for yield curve movement and discounting.</td></tr>
-                  </tbody>
-                </table>
+                <p class="article-meta">Live Pricing</p>
+                <h2>Updates as the speech happens.</h2>
+                <ul class="square-list">
+                  <li>Mid-event, a Gamma-Poisson prior is anchored to the hurdle estimate and updates continuously from elapsed words and observed counts — exact binary continuity, no ad-hoc blending.</li>
+                  <li>Opt-in, interpretable adjusters: an LLM reading the transcript corpus, and topic-similarity features over it.</li>
+                </ul>
               </article>
 
               <article class="article-card" style="margin-top: 18px;">
-                <p class="article-meta">Extensions</p>
-                <h2>Next modules</h2>
+                <p class="article-meta">Evidence &amp; Interface</p>
+                <h2>Beat the base rate, then show it.</h2>
                 <ul class="square-list">
-                  <li>Prepayment modeling with borrower incentives and refinancing thresholds.</li>
-                  <li>Scenario explorer for parallel, slope, and curvature shocks.</li>
-                  <li>Reusable harness for comparing lattice, LSMC, and finite-difference outputs.</li>
-                  <li>Stress dashboard for duration, convexity, and option-adjusted spread sensitivity.</li>
+                  <li>Walk-forward backtests compare the model against the shrunk base-rate baseline — the honest benchmark for a market most participants price by gut.</li>
+                  <li>The full stack ships as a CLI, a FastAPI backend, and a Mantine dashboard, all reading parquet snapshots of the mention universe.</li>
+                  <li>Transcripts are plain JSON records — speaker, event type, date, text — so the corpus stays portable and auditable.</li>
                 </ul>
               </article>
             </div>

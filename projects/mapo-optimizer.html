@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Securitized Products and American Options | Kanav Mehta</title>
-    <meta name="description" content="Numerical methods project for American options, barrier options, MBS, and interest-rate models by Kanav Mehta.">
+    <title>MAPO — Multi-Asset Optimizer | Kanav Mehta</title>
+    <meta name="description" content="Multi-asset portfolio optimization library — PyPortfolioOpt, skfolio, and Riskfolio-Lib behind one API plus native SOCP, CVaR LP, HRP/HERC, and Black-Litterman solvers, with a no-lookahead walk-forward backtester.">
     <meta name="theme-color" content="#0a0d12">
     <link rel="icon" href="/favicon.ico">
     <script>
@@ -59,12 +59,11 @@
         <section class="page-hero">
           <div class="page-section">
             <div class="page-title">
-              <p class="eyebrow">Options · Rates · Securitized Products</p>
-              <h1>Pricing code for optionality, rates, and cash-flow risk.</h1>
-              <p class="lead">American options. Barriers. MBS. Variance reduction. Greeks. G2++ rates.</p>
+              <p class="eyebrow">Portfolio Construction</p>
+              <h1>One optimizer API, every asset class, no look-ahead.</h1>
+              <p class="lead">MAPO wraps established open-source optimizers behind one interface and adds native solvers where they fall short — exact max-Sharpe under real constraints, CVaR LP, hierarchical risk parity, and Black-Litterman — plus a walk-forward backtester with no look-ahead.</p>
               <div class="inline-actions">
                 <a class="button ghost small" href="/projects/"><span class="arr" aria-hidden="true">←</span> Back to Projects</a>
-                <a class="button cyan small" href="https://github.com/Kizo07/American_Options" target="_blank" rel="noopener noreferrer">Open GitHub ↗</a>
               </div>
             </div>
           </div>
@@ -73,51 +72,43 @@
         <section class="page-section">
           <div class="detail-grid">
             <aside class="fact-sheet reveal" aria-label="Project snapshot">
-              <div class="fact-row"><span>Type</span><b>Options &amp; Rates</b></div>
-              <div class="fact-row"><span>Topic</span><b>Securitized products &amp; numerical methods</b></div>
-              <div class="fact-row"><span>Repository</span><b>American_Options</b></div>
-              <div class="fact-row"><span>Methods</span><b>Lattices · LSMC · FDM · Monte Carlo</b></div>
-              <div class="fact-row"><span>Risk Lens</span><b>Greeks · curve sensitivity · embedded optionality</b></div>
+              <div class="fact-row"><span>Asset classes</span><b>Equities · crypto · futures · FX · treasuries</b></div>
+              <div class="fact-row"><span>Native solvers</span><b>SOCP · CVaR LP · HRP/HERC · ERC</b></div>
+              <div class="fact-row"><span>Wrapped libraries</span><b>PyPortfolioOpt · skfolio · Riskfolio-Lib</b></div>
+              <div class="fact-row"><span>Risk models</span><b>EWMA · Ledoit-Wolf · PCA · PSD repair</b></div>
+              <div class="fact-row"><span>Backtests</span><b>Walk-forward, cost-aware</b></div>
+              <div class="fact-row"><span>Interface</span><b>Python API + CLI</b></div>
             </aside>
 
             <div class="prose reveal">
               <article class="article-card">
-                <p class="article-meta">Methods</p>
-                <h2>Pricing stack</h2>
+                <p class="article-meta">Solvers</p>
+                <h2>Exact where it counts.</h2>
                 <ul class="square-list">
-                  <li>Binomial and trinomial lattices for early-exercise features and path-dependent logic.</li>
-                  <li>Least-squares Monte Carlo (LSMC) for American option exercise policies.</li>
-                  <li>Finite-difference methods for price surfaces and Greeks.</li>
-                  <li>Monte Carlo with antithetic and control variates to reduce estimator variance.</li>
-                  <li>G2++ interest-rate modeling for curve-sensitive fixed-income instruments.</li>
+                  <li>Max-Sharpe as an exact homogeneous SOCP — valid under box, asset-class, and turnover constraints together, where heuristic rescaling quietly breaks.</li>
+                  <li>CVaR LP from Rockafellar-Uryasev: minimize tail loss or cap it while maximizing return, at any confidence level.</li>
+                  <li>HRP and HERC with López de Prado seriation and ERC-refined splits — millisecond numpy implementations, with constraint projection when the hierarchy must respect caps.</li>
+                  <li>Black-Litterman with full He-Litterman and Idzorek view-uncertainty control.</li>
                 </ul>
               </article>
 
               <article class="article-card" style="margin-top: 18px;">
-                <p class="article-meta">Risk Stack</p>
-                <h2>Optionality, rates, cash flows</h2>
-                <p class="lead">Embedded optionality. Prepayment behavior. Curve sensitivity. Timing.</p>
-                <table class="data-table">
-                  <thead>
-                    <tr><th scope="col">Instrument</th><th scope="col">Modeling emphasis</th></tr>
-                  </thead>
-                  <tbody>
-                    <tr><td>American Options</td><td>Exercise boundary estimation and dynamic programming.</td></tr>
-                    <tr><td>Barrier Options</td><td>Path dependence and boundary crossing behavior.</td></tr>
-                    <tr><td>MBS</td><td>Rate-sensitive cash flows, optionality, and valuation under curve scenarios.</td></tr>
-                    <tr><td>Rates Models</td><td>Two-factor dynamics for yield curve movement and discounting.</td></tr>
-                  </tbody>
-                </table>
+                <p class="article-meta">Constraints</p>
+                <h2>Real portfolio rules, first-class.</h2>
+                <ul class="square-list">
+                  <li>Asset-class caps (crypto ≤ 10%, futures ≤ 20%), per-asset bounds, turnover limits against previous weights, cash buffers, leverage caps.</li>
+                  <li>Convex rules compile to cvxpy; hierarchical weights get a projection repair operator instead of being ignored.</li>
+                  <li>A unified <code>optimize(returns, cov, prev_weights)</code> signature — swap native, PyPortfolioOpt, skfolio, or Riskfolio backends on identical inputs and compare weights directly.</li>
+                </ul>
               </article>
 
               <article class="article-card" style="margin-top: 18px;">
-                <p class="article-meta">Extensions</p>
-                <h2>Next modules</h2>
+                <p class="article-meta">Evidence</p>
+                <h2>Backtests that respect the calendar.</h2>
                 <ul class="square-list">
-                  <li>Prepayment modeling with borrower incentives and refinancing thresholds.</li>
-                  <li>Scenario explorer for parallel, slope, and curvature shocks.</li>
-                  <li>Reusable harness for comparing lattice, LSMC, and finite-difference outputs.</li>
-                  <li>Stress dashboard for duration, convexity, and option-adjusted spread sensitivity.</li>
+                  <li>Walk-forward evaluation with monthly rebalancing and explicit cost basis in basis points — no in-sample shortcuts.</li>
+                  <li>Default 28-asset universe across five classes, with parquet-cached fetching and a deterministic synthetic generator for offline tests.</li>
+                  <li>Risk measures vectorized end to end: VaR and CVaR (historical, Gaussian, Cornish-Fisher), drawdown and Ulcer series, tracking error.</li>
                 </ul>
               </article>
             </div>

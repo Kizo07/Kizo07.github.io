@@ -34,6 +34,15 @@
   --shadow-card: 0 18px 50px rgba(2, 6, 12, 0.45);
   --header-bg: rgba(10, 13, 18, 0.78);
 
+  /* Glass & halo (let the ledger backdrop breathe through surfaces) */
+  --glass: color-mix(in srgb, var(--surface) 74%, transparent);
+  --glass-2: color-mix(in srgb, var(--surface-2) 66%, transparent);
+  --glass-deep: color-mix(in srgb, var(--bg-soft) 58%, transparent);
+  --glass-blur: blur(14px) saturate(1.35);
+  --halo-gold: rgba(217, 165, 78, 0.17);
+  --halo-cyan: rgba(86, 207, 196, 0.13);
+  --halo-text: 0 0 28px rgba(217, 165, 78, 0.3);
+
   --radius: 14px;
   --radius-sm: 9px;
   --wrap: clamp(1140px, 85vw, 2080px);
@@ -62,6 +71,24 @@
   --grid-line: rgba(74, 62, 40, 0.07);
   --shadow-card: 0 18px 44px rgba(64, 52, 28, 0.16);
   --header-bg: rgba(229, 221, 204, 0.86);
+
+  /* Glass & halo — parchment edition (matched to dark-mode transparency) */
+  --glass: color-mix(in srgb, var(--surface) 74%, transparent);
+  --glass-2: color-mix(in srgb, var(--surface-2) 66%, transparent);
+  --glass-deep: color-mix(in srgb, var(--bg-soft) 58%, transparent);
+  --glass-blur: blur(14px) saturate(1.12);
+  --halo-gold: rgba(143, 98, 31, 0.2);
+  --halo-cyan: rgba(20, 117, 108, 0.15);
+  --halo-text: 0 0 24px rgba(143, 98, 31, 0.22);
+}
+
+/* ---------- Fallback: no backdrop-filter support → denser glass ---------- */
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  :root {
+    --glass: color-mix(in srgb, var(--surface) 93%, transparent);
+    --glass-2: color-mix(in srgb, var(--surface-2) 90%, transparent);
+    --glass-deep: color-mix(in srgb, var(--bg-soft) 85%, transparent);
+  }
 }
 
 /* ---------- Base ---------- */
@@ -85,6 +112,30 @@ body {
   background-color: var(--bg);
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
+  transition: background-color 0.35s var(--ease), color 0.35s var(--ease);
+}
+
+/* Themed scrollbar */
+html {
+  scrollbar-color: color-mix(in srgb, var(--gold) 26%, var(--surface-2)) var(--bg);
+}
+
+::-webkit-scrollbar {
+  width: 11px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: color-mix(in srgb, var(--gold) 28%, var(--surface-2));
+  border-radius: 8px;
+  border: 3px solid var(--bg);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: color-mix(in srgb, var(--gold) 45%, var(--surface-2));
 }
 
 /* Fixed backdrop: two soft glows (the grid, streaks, and watermark live on .site-shell) */
@@ -222,6 +273,21 @@ main {
   margin-bottom: 40px;
   border-bottom: 1px solid var(--line);
   padding-bottom: 20px;
+  position: relative;
+}
+
+/* Gold hairline fading out of every section divider */
+.section-head::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  height: 1px;
+  background: linear-gradient(90deg,
+    color-mix(in srgb, var(--gold) 52%, transparent),
+    var(--line) 38%,
+    transparent 97%);
 }
 
 .section-head h2 {
@@ -361,6 +427,7 @@ main {
   height: 2px;
   border-radius: 2px;
   background: var(--gold);
+  box-shadow: 0 0 12px 1px color-mix(in srgb, var(--gold) 55%, transparent);
 }
 
 .nav-actions {
@@ -443,14 +510,21 @@ main {
 
 .button.primary,
 .button.accent {
-  background: var(--gold);
-  border-color: var(--gold);
+  background: linear-gradient(180deg,
+    color-mix(in srgb, var(--gold) 82%, #fff),
+    var(--gold) 58%,
+    color-mix(in srgb, var(--gold) 86%, #3a2708));
+  border-color: color-mix(in srgb, var(--gold) 78%, #573a10);
   color: #171104;
+  box-shadow: inset 0 1px 0 rgba(255, 248, 230, 0.32);
 }
 
 .button.primary:hover,
 .button.accent:hover {
-  box-shadow: 0 10px 30px rgba(217, 165, 78, 0.28);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 248, 230, 0.32),
+    0 10px 30px rgba(217, 165, 78, 0.3),
+    0 0 22px -6px rgba(217, 165, 78, 0.45);
 }
 
 [data-theme='light'] .button.primary,
@@ -519,7 +593,10 @@ main {
   padding: 7px 14px;
   border: 1px solid var(--line-strong);
   border-radius: 999px;
-  background: var(--surface);
+  background: var(--glass);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  box-shadow: 0 0 24px -10px var(--halo-gold);
   font-family: var(--font-mono);
   font-size: 11.5px;
   font-weight: 500;
@@ -554,6 +631,7 @@ main {
 .hero h1 em {
   font-style: italic;
   color: var(--gold);
+  text-shadow: var(--halo-text);
 }
 
 .hero-copy {
@@ -569,9 +647,16 @@ main {
   margin: 30px 0 0;
   padding: 18px 22px;
   max-width: 560px;
-  border: 1px solid var(--line);
+  border: 1px solid var(--line-strong);
   border-radius: var(--radius-sm);
-  background: var(--surface);
+  background:
+    linear-gradient(180deg, var(--gold-soft), transparent 55%),
+    var(--glass);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  box-shadow:
+    inset 0 1px 0 color-mix(in srgb, var(--gold) 14%, transparent),
+    0 0 38px -10px var(--halo-gold);
   font-family: var(--font-mono);
   font-size: 13px;
   line-height: 1.75;
@@ -600,7 +685,10 @@ main {
   object-fit: cover;
   border-radius: 18px;
   border: 1px solid var(--line-strong);
-  box-shadow: var(--shadow-card);
+  box-shadow:
+    var(--shadow-card),
+    0 0 46px -8px var(--halo-gold),
+    0 0 110px -24px var(--halo-cyan);
   filter: saturate(0.92);
 }
 
@@ -612,6 +700,8 @@ main {
   border-radius: 18px;
   border: 1px solid var(--line);
   background: linear-gradient(150deg, var(--gold-soft), var(--cyan-soft));
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
 }
 
 .portrait-caption {
@@ -708,10 +798,19 @@ main {
   padding: 20px 22px;
   border: 1px solid var(--line);
   border-radius: var(--radius);
-  background: var(--surface);
+  background: var(--glass);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
   display: flex;
   flex-direction: column;
   gap: 6px;
+  transition: border-color 0.3s var(--ease), box-shadow 0.3s var(--ease),
+    background-color 0.35s var(--ease);
+}
+
+.metric:hover {
+  border-color: color-mix(in srgb, var(--gold) 40%, var(--line));
+  box-shadow: 0 0 34px -12px var(--halo-gold);
 }
 
 .metric strong {
@@ -720,6 +819,11 @@ main {
   font-weight: 600;
   letter-spacing: -0.02em;
   color: var(--text);
+  font-variant-numeric: tabular-nums;
+  background: linear-gradient(180deg, var(--text) 55%, color-mix(in srgb, var(--gold) 42%, var(--text)));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .metric strong sup {
@@ -746,10 +850,10 @@ main {
   padding: 28px 26px 26px;
   border: 1px solid var(--line);
   border-radius: var(--radius);
-  background: var(--surface);
+  background: var(--glass);
   overflow: hidden;
   transition: transform 0.3s var(--ease), border-color 0.3s var(--ease),
-    box-shadow 0.3s var(--ease);
+    box-shadow 0.3s var(--ease), background-color 0.35s var(--ease);
 }
 
 .feature-card::before {
@@ -766,7 +870,9 @@ main {
 .feature-card:hover {
   transform: translateY(-4px);
   border-color: var(--line-strong);
-  box-shadow: var(--shadow-card);
+  box-shadow:
+    var(--shadow-card),
+    0 0 40px -12px color-mix(in srgb, var(--edge, var(--gold)) 38%, transparent);
 }
 
 .feature-card.factor { --edge: var(--gold); }
@@ -874,8 +980,13 @@ main {
 .panel {
   border: 1px solid var(--line-strong);
   border-radius: var(--radius);
-  background: var(--surface);
-  box-shadow: var(--shadow-card);
+  background: var(--glass);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  box-shadow:
+    var(--shadow-card),
+    0 0 48px -12px var(--halo-gold),
+    0 0 90px -30px var(--halo-cyan);
   overflow: hidden;
 }
 
@@ -885,7 +996,7 @@ main {
   gap: 8px;
   padding: 12px 16px;
   border-bottom: 1px solid var(--line);
-  background: var(--surface-2);
+  background: var(--glass-2);
 }
 
 .panel-bar .lamp {
@@ -921,9 +1032,15 @@ main {
   padding: 12px 14px;
   border: 1px solid var(--line);
   border-radius: var(--radius-sm);
-  background: var(--bg-soft);
+  background: var(--glass-deep);
   font-family: var(--font-mono);
   font-size: 12.5px;
+  transition: border-color 0.25s var(--ease), box-shadow 0.25s var(--ease);
+}
+
+.pipe-row:hover {
+  border-color: color-mix(in srgb, var(--cyan) 38%, var(--line));
+  box-shadow: 0 0 22px -10px var(--halo-cyan);
 }
 
 .pipe-row .step {
@@ -983,7 +1100,7 @@ main {
 }
 
 .ledger-row:hover {
-  background: var(--surface);
+  background: color-mix(in srgb, var(--surface) 52%, transparent);
 }
 
 .ledger-when {
@@ -1097,21 +1214,43 @@ main {
 }
 
 .project-card-inner {
+  position: relative;
   width: 100%;
   display: flex;
   flex-direction: column;
   padding: 26px 24px 24px;
   border: 1px solid var(--line);
   border-radius: var(--radius);
-  background: var(--surface);
+  background: var(--glass);
+  overflow: hidden;
   transition: transform 0.3s var(--ease), border-color 0.3s var(--ease),
-    box-shadow 0.3s var(--ease);
+    box-shadow 0.3s var(--ease), background-color 0.35s var(--ease);
 }
+
+.project-card-inner::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--edge, var(--gold)), transparent 72%);
+  opacity: 0.8;
+}
+
+.project-card[data-project~='factor'] { --edge: var(--gold); }
+.project-card[data-project~='trading'] { --edge: var(--cyan); }
+.project-card[data-project~='ai'] { --edge: var(--green); }
+.project-card[data-project~='options'] { --edge: var(--gold); }
+.project-card[data-project~='market'] { --edge: var(--red); }
+.project-card.flagship { --edge: var(--gold); }
 
 .project-card-inner:hover {
   transform: translateY(-4px);
-  border-color: var(--line-strong);
-  box-shadow: var(--shadow-card);
+  border-color: color-mix(in srgb, var(--edge, var(--gold)) 34%, var(--line-strong));
+  box-shadow:
+    var(--shadow-card),
+    0 0 38px -12px color-mix(in srgb, var(--edge, var(--gold)) 34%, transparent);
 }
 
 .project-type {
@@ -1148,7 +1287,7 @@ main {
   padding: 14px;
   border: 1px solid var(--line);
   border-radius: var(--radius-sm);
-  background: var(--bg-soft);
+  background: var(--glass-deep);
 }
 
 .project-metrics span {
@@ -1192,7 +1331,15 @@ main {
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--muted);
-  background: var(--bg-soft);
+  background: var(--glass-deep);
+  transition: color 0.2s var(--ease), border-color 0.2s var(--ease);
+}
+
+.project-card-inner:hover .tag,
+.feature-card:hover .tag,
+.skill-block:hover .tag {
+  color: var(--text);
+  border-color: color-mix(in srgb, var(--edge, var(--gold)) 30%, var(--line));
 }
 
 .project-card .inline-actions {
@@ -1252,13 +1399,15 @@ main {
   padding: 18px 20px;
   border: 1px solid var(--line);
   border-radius: var(--radius-sm);
-  background: var(--surface);
-  transition: border-color 0.25s var(--ease), transform 0.25s var(--ease);
+  background: var(--glass);
+  transition: border-color 0.25s var(--ease), transform 0.25s var(--ease),
+    box-shadow 0.25s var(--ease);
 }
 
 .tearsheet-link:hover {
   border-color: var(--cyan);
   transform: translateY(-3px);
+  box-shadow: 0 0 30px -12px var(--halo-cyan);
 }
 
 .tearsheet-link b {
@@ -1286,13 +1435,17 @@ main {
   padding: 24px;
   border: 1px solid var(--line);
   border-radius: var(--radius);
-  background: var(--surface);
-  transition: transform 0.3s var(--ease), border-color 0.3s var(--ease);
+  background: var(--glass);
+  transition: transform 0.3s var(--ease), border-color 0.3s var(--ease),
+    box-shadow 0.3s var(--ease), background-color 0.35s var(--ease);
 }
 
 .blog-card:hover {
   transform: translateY(-4px);
   border-color: var(--gold);
+  box-shadow:
+    var(--shadow-card),
+    0 0 36px -12px var(--halo-gold);
 }
 
 .article-meta {
@@ -1331,7 +1484,7 @@ main {
   padding: 34px 36px;
   border: 1px solid var(--line);
   border-radius: var(--radius);
-  background: var(--surface);
+  background: var(--glass);
 }
 
 .article-card .lead {
@@ -1354,7 +1507,14 @@ main {
   padding: 28px 26px;
   border: 1px solid var(--line);
   border-radius: var(--radius);
-  background: var(--surface);
+  background: var(--glass);
+  transition: border-color 0.3s var(--ease), box-shadow 0.3s var(--ease),
+    background-color 0.35s var(--ease);
+}
+
+.skill-block:hover {
+  border-color: var(--line-strong);
+  box-shadow: 0 0 32px -12px var(--halo-cyan);
 }
 
 .skill-block h3 {
@@ -1389,7 +1549,7 @@ main {
   padding: 26px;
   border: 1px solid var(--line);
   border-radius: var(--radius);
-  background: var(--surface);
+  background: var(--glass);
 }
 
 .edu-card .school {
@@ -1448,7 +1608,13 @@ main {
   border-radius: 20px;
   background:
     radial-gradient(560px 300px at 88% 0%, var(--hero-glow-a), transparent 70%),
-    var(--surface);
+    radial-gradient(480px 280px at 4% 110%, var(--hero-glow-b), transparent 72%),
+    var(--glass);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  box-shadow:
+    var(--shadow-card),
+    0 0 70px -18px var(--halo-gold);
 }
 
 .contact-panel h2 {
@@ -1477,13 +1643,15 @@ main {
   padding: 16px 20px;
   border: 1px solid var(--line);
   border-radius: var(--radius-sm);
-  background: var(--bg-soft);
-  transition: border-color 0.22s var(--ease), transform 0.22s var(--ease);
+  background: var(--glass-deep);
+  transition: border-color 0.22s var(--ease), transform 0.22s var(--ease),
+    box-shadow 0.22s var(--ease);
 }
 
 .channel:hover {
   border-color: var(--gold);
   transform: translateX(4px);
+  box-shadow: 0 0 26px -12px var(--halo-gold);
 }
 
 .channel .ch-label {
@@ -1510,7 +1678,7 @@ main {
   border-bottom: 1px solid var(--line);
   background:
     radial-gradient(700px 340px at 78% -20%, var(--hero-glow-a), transparent 70%),
-    var(--bg-soft);
+    color-mix(in srgb, var(--bg-soft) 80%, transparent);
 }
 
 .page-title {
@@ -1539,7 +1707,9 @@ main {
   padding: 24px;
   border: 1px solid var(--line);
   border-radius: var(--radius);
-  background: var(--surface);
+  background: var(--glass);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
   display: grid;
   gap: 0;
 }
@@ -1628,7 +1798,7 @@ main {
 }
 
 .data-table tbody tr:hover {
-  background: var(--bg-soft);
+  background: var(--glass-deep);
 }
 
 /* ---------- Tearsheet frame ---------- */
@@ -1655,7 +1825,7 @@ main {
   position: relative;
   z-index: 1;
   border-top: 1px solid var(--line);
-  background: var(--bg-soft);
+  background: color-mix(in srgb, var(--bg-soft) 82%, transparent);
   margin-top: 24px;
 }
 
@@ -1715,12 +1885,39 @@ main {
 .reveal {
   opacity: 0;
   transform: translateY(18px);
-  transition: opacity 0.7s var(--ease), transform 0.7s var(--ease);
+  transition: opacity 0.7s var(--ease), transform 0.7s var(--ease),
+    background-color 0.35s var(--ease), border-color 0.3s var(--ease),
+    box-shadow 0.3s var(--ease);
 }
 
 .reveal.in {
   opacity: 1;
   transform: none;
+}
+
+/* Gentle stagger when grid siblings enter together */
+.metric-strip > .reveal:nth-child(2),
+.work-grid > .reveal:nth-child(2),
+.project-grid > .reveal:nth-child(2),
+.blog-grid > .reveal:nth-child(2),
+.skill-grid > .reveal:nth-child(2) {
+  transition-delay: 0.07s;
+}
+
+.metric-strip > .reveal:nth-child(3),
+.work-grid > .reveal:nth-child(3),
+.project-grid > .reveal:nth-child(3),
+.blog-grid > .reveal:nth-child(3),
+.skill-grid > .reveal:nth-child(3) {
+  transition-delay: 0.14s;
+}
+
+.metric-strip > .reveal:nth-child(4),
+.work-grid > .reveal:nth-child(4),
+.project-grid > .reveal:nth-child(4),
+.blog-grid > .reveal:nth-child(4),
+.skill-grid > .reveal:nth-child(4) {
+  transition-delay: 0.21s;
 }
 
 @media (prefers-reduced-motion: reduce) {

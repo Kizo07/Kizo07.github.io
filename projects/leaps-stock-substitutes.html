@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Securitized Products and American Options | Kanav Mehta</title>
-    <meta name="description" content="Numerical methods project for American options, barrier options, MBS, and interest-rate models by Kanav Mehta.">
+    <title>LEAPS as Stock Substitutes | Kanav Mehta</title>
+    <meta name="description" content="Empirical backtest of LEAPS as leveraged stock substitutes in long/short equity — Black-Scholes on escrowed spot, calibrated IV proxy, daily-accounting engine, V0–V3 portfolio variants.">
     <meta name="theme-color" content="#0a0d12">
     <link rel="icon" href="/favicon.ico">
     <script>
@@ -59,12 +59,12 @@
         <section class="page-hero">
           <div class="page-section">
             <div class="page-title">
-              <p class="eyebrow">Options · Rates · Securitized Products</p>
-              <h1>Pricing code for optionality, rates, and cash-flow risk.</h1>
-              <p class="lead">American options. Barriers. MBS. Variance reduction. Greeks. G2++ rates.</p>
+              <p class="eyebrow">Derivatives · Portfolio Research</p>
+              <h1>LEAPS as stock substitutes, treated as an empirical question.</h1>
+              <p class="lead">Can long/short equity keep its risk profile when the stock legs are replaced with LEAPS? A full daily-accounting backtest with validation gates, frictions, and no-lookahead audits — public data only.</p>
               <div class="inline-actions">
                 <a class="button ghost small" href="/projects/"><span class="arr" aria-hidden="true">←</span> Back to Projects</a>
-                <a class="button cyan small" href="https://github.com/Kizo07/American_Options" target="_blank" rel="noopener noreferrer">Open GitHub ↗</a>
+                <a class="button accent small" href="https://github.com/Kizo07/LEAPS-Stock-Substitute-Backtest" target="_blank" rel="noopener noreferrer">GitHub <span class="arr" aria-hidden="true">↗</span></a>
               </div>
             </div>
           </div>
@@ -73,51 +73,42 @@
         <section class="page-section">
           <div class="detail-grid">
             <aside class="fact-sheet reveal" aria-label="Project snapshot">
-              <div class="fact-row"><span>Type</span><b>Options &amp; Rates</b></div>
-              <div class="fact-row"><span>Topic</span><b>Securitized products &amp; numerical methods</b></div>
-              <div class="fact-row"><span>Repository</span><b>American_Options</b></div>
-              <div class="fact-row"><span>Methods</span><b>Lattices · LSMC · FDM · Monte Carlo</b></div>
-              <div class="fact-row"><span>Risk Lens</span><b>Greeks · curve sensitivity · embedded optionality</b></div>
+              <div class="fact-row"><span>Type</span><b>Empirical backtest</b></div>
+              <div class="fact-row"><span>Instruments</span><b>LEAPS calls &amp; puts</b></div>
+              <div class="fact-row"><span>Pricing</span><b>BS on escrowed spot · calibrated IV proxy</b></div>
+              <div class="fact-row"><span>Portfolios</span><b>V0–V3 momentum variants</b></div>
+              <div class="fact-row"><span>Data</span><b>Yahoo Finance · FRED · Ken French</b></div>
+              <div class="fact-row"><span>Stack</span><b>Python · pytest</b></div>
             </aside>
 
             <div class="prose reveal">
               <article class="article-card">
-                <p class="article-meta">Methods</p>
-                <h2>Pricing stack</h2>
+                <p class="article-meta">The Question</p>
+                <h2>Substitution, not approximation.</h2>
                 <ul class="square-list">
-                  <li>Binomial and trinomial lattices for early-exercise features and path-dependent logic.</li>
-                  <li>Least-squares Monte Carlo (LSMC) for American option exercise policies.</li>
-                  <li>Finite-difference methods for price surfaces and Greeks.</li>
-                  <li>Monte Carlo with antithetic and control variates to reduce estimator variance.</li>
-                  <li>G2++ interest-rate modeling for curve-sensitive fixed-income instruments.</li>
+                  <li>Deep in-the-money LEAPS promise stock-like exposure with built-in leverage — the backtest asks what that actually costs in tracking, friction, and tail behavior.</li>
+                  <li>The engine reprices every position daily: early exercise, put-parity reopens, expiry settlement, and ruin/write-off reconciliation are explicit events, not approximations.</li>
+                  <li>Dollar frictions are split-scaled, and momentum signals are audited for dollar-neutrality and look-ahead bias via signal-shift checks.</li>
                 </ul>
               </article>
 
               <article class="article-card" style="margin-top: 18px;">
-                <p class="article-meta">Risk Stack</p>
-                <h2>Optionality, rates, cash flows</h2>
-                <p class="lead">Embedded optionality. Prepayment behavior. Curve sensitivity. Timing.</p>
-                <table class="data-table">
-                  <thead>
-                    <tr><th scope="col">Instrument</th><th scope="col">Modeling emphasis</th></tr>
-                  </thead>
-                  <tbody>
-                    <tr><td>American Options</td><td>Exercise boundary estimation and dynamic programming.</td></tr>
-                    <tr><td>Barrier Options</td><td>Path dependence and boundary crossing behavior.</td></tr>
-                    <tr><td>MBS</td><td>Rate-sensitive cash flows, optionality, and valuation under curve scenarios.</td></tr>
-                    <tr><td>Rates Models</td><td>Two-factor dynamics for yield curve movement and discounting.</td></tr>
-                  </tbody>
-                </table>
+                <p class="article-meta">Method</p>
+                <h2>Gated pipeline, staged evidence.</h2>
+                <ul class="square-list">
+                  <li>Download → pricing validation (gates V1–V4) → single-instrument lanes → V0–V3 long/short portfolios → sensitivity grid → assembled report.</li>
+                  <li>V1–V4 validation gates reject data before it can contaminate the engine — bad ticks, stale quotes, and mispriced rolls fail loudly.</li>
+                  <li>Offline deterministic tests: daily NAV reconciliation for every variant, exercise and settlement mechanics, and synthetic-engine accounting on known inputs.</li>
+                </ul>
               </article>
 
               <article class="article-card" style="margin-top: 18px;">
-                <p class="article-meta">Extensions</p>
-                <h2>Next modules</h2>
+                <p class="article-meta">Why it matters</p>
+                <h2>Options as portfolio construction inputs.</h2>
                 <ul class="square-list">
-                  <li>Prepayment modeling with borrower incentives and refinancing thresholds.</li>
-                  <li>Scenario explorer for parallel, slope, and curvature shocks.</li>
-                  <li>Reusable harness for comparing lattice, LSMC, and finite-difference outputs.</li>
-                  <li>Stress dashboard for duration, convexity, and option-adjusted spread sensitivity.</li>
+                  <li>Most factor research assumes frictionless stock legs; this measures what changes when leverage and asymmetry come from contracts rather than borrowing.</li>
+                  <li>The sensitivity grid maps results across moneyness, tenor, and rebalancing choices — a substitution claim reported over the full grid, not a single point.</li>
+                  <li>Foundation work for the Factor Investing with Options line: the same discipline, applied to full factor portfolios.</li>
                 </ul>
               </article>
             </div>

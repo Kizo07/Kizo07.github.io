@@ -18,7 +18,7 @@
         }
       })();
     </script>
-    <link rel="stylesheet" href="/assets/site.css?v=24">
+    <link rel="stylesheet" href="/assets/site.css?v=26">
     <link rel="stylesheet" href="/assets/vendor/mantine-bundle.css">
     <link rel="stylesheet" href="/assets/vendor/mantine-overrides.css?v=1">
     <noscript><style>.reveal { opacity: 1; transform: none; }</style></noscript>
@@ -86,7 +86,7 @@
               <article class="article-card">
                 <p class="article-meta">Signal Universe</p>
                 <h2>Five families of evidence</h2>
-                <p class="lead">Crude moves on geopolitics before it moves on inventories. The index blends independent evidence families so no single source can dominate the read.</p>
+                <p class="lead">Crude moves on geopolitics before it moves on inventories. The index blends independent evidence families so no single source can dominate the composite.</p>
                 <table class="data-table">
                   <thead>
                     <tr><th scope="col">Family</th><th scope="col">Signals</th></tr>
@@ -104,17 +104,17 @@
               <article class="article-card" style="margin-top: 18px;">
                 <p class="article-meta">Build</p>
                 <h2>Fail-soft by construction</h2>
-                <p class="lead">Every source is an independent async collector. One outage degrades the index gracefully instead of taking the dashboard down.</p>
+                <p class="lead">Each source runs as an independent async collector. One outage degrades the index gracefully instead of taking down the dashboard.</p>
                 <ul class="square-list">
                   <li>Disk-backed JSON cache survives restarts; free-tier rate limits (GDELT 1 req / 5 s) handled with spacing, retries, and 30-minute caching.</li>
-                  <li>AIS gaps are marked stale with provider-health timestamps and backoff retries rather than shown as zero traffic.</li>
+                  <li>AIS gaps are marked stale with provider-health timestamps and backoff retries instead of being displayed as zero traffic.</li>
                   <li>Weights and queries live in one config module — the composite score is auditable from signal to number.</li>
                 </ul>
               </article>
 
               <article class="article-card" style="margin-top: 18px;">
                 <p class="article-meta">Design</p>
-                <h2>Status bands as the verdict</h2>
+                <h2>Status bands carry the verdict</h2>
                 <p class="lead">0–25 Low · 25–45 Elevated · 45–65 High · 65–85 Severe · 85+ Critical.</p>
                 <ul class="square-list">
                   <li>The composite is the headline; the signal panels are the evidence trail behind it.</li>

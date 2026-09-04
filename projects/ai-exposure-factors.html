@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Securitized Products and American Options | Kanav Mehta</title>
-    <meta name="description" content="Numerical methods project for American options, barrier options, MBS, and interest-rate models by Kanav Mehta.">
+    <title>AI Exposure Factor Suite | Kanav Mehta</title>
+    <meta name="description" content="Two point-in-time, market-implied AI return factors — AI Theme and AI Infrastructure — built from AUM-weighted ETF baskets as the foundation for firm-level AI exposure estimation.">
     <meta name="theme-color" content="#0a0d12">
     <link rel="icon" href="/favicon.ico">
     <script>
@@ -59,12 +59,12 @@
         <section class="page-hero">
           <div class="page-section">
             <div class="page-title">
-              <p class="eyebrow">Options · Rates · Securitized Products</p>
-              <h1>Pricing code for optionality, rates, and cash-flow risk.</h1>
-              <p class="lead">American options. Barriers. MBS. Variance reduction. Greeks. G2++ rates.</p>
+              <p class="eyebrow">Factor Research · AI</p>
+              <h1>Measuring the market's AI exposure — from the market itself.</h1>
+              <p class="lead">Two daily return factors distilled from ETF flows: an AI Theme factor and an AI Infrastructure factor, built point-in-time so firm-level exposure estimation avoids look-ahead bias.</p>
               <div class="inline-actions">
                 <a class="button ghost small" href="/projects/"><span class="arr" aria-hidden="true">←</span> Back to Projects</a>
-                <a class="button cyan small" href="https://github.com/Kizo07/American_Options" target="_blank" rel="noopener noreferrer">Open GitHub ↗</a>
+                <a class="button accent small" href="https://github.com/Kizo07/AI-Factor" target="_blank" rel="noopener noreferrer">GitHub <span class="arr" aria-hidden="true">↗</span></a>
               </div>
             </div>
           </div>
@@ -73,51 +73,42 @@
         <section class="page-section">
           <div class="detail-grid">
             <aside class="fact-sheet reveal" aria-label="Project snapshot">
-              <div class="fact-row"><span>Type</span><b>Options &amp; Rates</b></div>
-              <div class="fact-row"><span>Topic</span><b>Securitized products &amp; numerical methods</b></div>
-              <div class="fact-row"><span>Repository</span><b>American_Options</b></div>
-              <div class="fact-row"><span>Methods</span><b>Lattices · LSMC · FDM · Monte Carlo</b></div>
-              <div class="fact-row"><span>Risk Lens</span><b>Greeks · curve sensitivity · embedded optionality</b></div>
+              <div class="fact-row"><span>Factors</span><b>F_AITheme · F_AIInfra</b></div>
+              <div class="fact-row"><span>Weights</span><b>AUM-weighted baskets</b></div>
+              <div class="fact-row"><span>Theme scope</span><b>AI ETFs ex-semiconductors</b></div>
+              <div class="fact-row"><span>Infra scope</span><b>Semis · AI infrastructure</b></div>
+              <div class="fact-row"><span>Discipline</span><b>Point-in-time construction</b></div>
+              <div class="fact-row"><span>Controls</span><b>Fama-French diagnostics</b></div>
             </aside>
 
             <div class="prose reveal">
               <article class="article-card">
-                <p class="article-meta">Methods</p>
-                <h2>Pricing stack</h2>
+                <p class="article-meta">Construction</p>
+                <h2>Two factors, cleanly separated.</h2>
                 <ul class="square-list">
-                  <li>Binomial and trinomial lattices for early-exercise features and path-dependent logic.</li>
-                  <li>Least-squares Monte Carlo (LSMC) for American option exercise policies.</li>
-                  <li>Finite-difference methods for price surfaces and Greeks.</li>
-                  <li>Monte Carlo with antithetic and control variates to reduce estimator variance.</li>
-                  <li>G2++ interest-rate modeling for curve-sensitive fixed-income instruments.</li>
+                  <li>F_AITheme: an AUM-weighted basket of AI-focused ETFs, excluding semiconductors — the "use of AI" exposure.</li>
+                  <li>F_AIInfra: semiconductor and AI-infrastructure ETFs — the "picks and shovels" exposure.</li>
+                  <li>Eligibility and bucket assignments live in versioned classification files, so the factor definition is auditable rather than ad hoc.</li>
                 </ul>
               </article>
 
               <article class="article-card" style="margin-top: 18px;">
-                <p class="article-meta">Risk Stack</p>
-                <h2>Optionality, rates, cash flows</h2>
-                <p class="lead">Embedded optionality. Prepayment behavior. Curve sensitivity. Timing.</p>
-                <table class="data-table">
-                  <thead>
-                    <tr><th scope="col">Instrument</th><th scope="col">Modeling emphasis</th></tr>
-                  </thead>
-                  <tbody>
-                    <tr><td>American Options</td><td>Exercise boundary estimation and dynamic programming.</td></tr>
-                    <tr><td>Barrier Options</td><td>Path dependence and boundary crossing behavior.</td></tr>
-                    <tr><td>MBS</td><td>Rate-sensitive cash flows, optionality, and valuation under curve scenarios.</td></tr>
-                    <tr><td>Rates Models</td><td>Two-factor dynamics for yield curve movement and discounting.</td></tr>
-                  </tbody>
-                </table>
+                <p class="article-meta">Discipline</p>
+                <h2>Point-in-time or it didn't happen.</h2>
+                <ul class="square-list">
+                  <li>Raw data lands untouched, then moves through processed, reference, and factor layers with QC diagnostics at each step.</li>
+                  <li>Factor returns are checked against Fama-French controls — what survives net of market, size, value, and momentum is the AI signal.</li>
+                  <li>Rolling betas from these factors become the inputs for firm-level AI exposure estimation in the next part of the program.</li>
+                </ul>
               </article>
 
               <article class="article-card" style="margin-top: 18px;">
-                <p class="article-meta">Extensions</p>
-                <h2>Next modules</h2>
+                <p class="article-meta">Why it matters</p>
+                <h2>Exposure estimation needs a valid factor first.</h2>
                 <ul class="square-list">
-                  <li>Prepayment modeling with borrower incentives and refinancing thresholds.</li>
-                  <li>Scenario explorer for parallel, slope, and curvature shocks.</li>
-                  <li>Reusable harness for comparing lattice, LSMC, and finite-difference outputs.</li>
-                  <li>Stress dashboard for duration, convexity, and option-adjusted spread sensitivity.</li>
+                  <li>Everyone claims AI exposure; almost nobody measures it with a return-based, point-in-time factor.</li>
+                  <li>ETF flows are the market's own portfolio of AI claims — using them as the factor keeps the definition market-implied rather than keyword-driven.</li>
+                  <li>The suite is Part 1 of a longer program: firm-level AI betas, then factor portfolios tilted by measured exposure.</li>
                 </ul>
               </article>
             </div>
