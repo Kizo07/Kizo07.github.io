@@ -1216,8 +1216,8 @@ main {
   vertical-align: middle;
 }
 
-.project-card.flagship {
-  outline: 1px solid color-mix(in srgb, var(--gold) 55%, transparent);
+.project-card.flagship .project-card-inner {
+  border-color: color-mix(in srgb, var(--gold) 55%, var(--line));
 }
 
 .showcase-figure {
