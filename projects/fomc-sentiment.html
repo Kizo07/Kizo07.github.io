@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Single-Factor Modeling | Kanav Mehta</title>
-    <meta name="description" content="QuantLink AI single-factor modeling dashboard by Kanav Mehta — ranking, diagnostics, buckets, risk, and backtest review.">
+    <title>FOMC Sentiment Toolkit | Kanav Mehta</title>
+    <meta name="description" content="FinBERT-FOMC research productized: transcript extraction, LLM-assisted labeling, fine-tuning, novelty scores, walk-forward validation, and an interactive dashboard with light and dark themes.">
     <meta name="theme-color" content="#0a0d12">
     <link rel="icon" href="/favicon.ico">
     <script>
@@ -59,12 +59,13 @@
         <section class="page-hero">
           <div class="page-section">
             <div class="page-title">
-              <p class="eyebrow">QuantLink AI · Factor Research</p>
-              <h1>Single-factor engine for ranking, bucketing, and risk analysis.</h1>
-              <p class="lead">Metric. Lookback. Buckets. Distribution. Signal quality. Backtest. One workflow from raw universe to verdict.</p>
+              <p class="eyebrow">AI / NLP · Macro</p>
+              <h1>FOMC sentiment, from research repo to product.</h1>
+              <p class="lead">The FinBERT-FOMC research line, productized into an installable package and CLI — transcript extraction, LLM-assisted labeling, fine-tuning, embeddings, novelty scores, and market regressions, wrapped in an interactive dashboard.</p>
               <div class="inline-actions">
                 <a class="button ghost small" href="/projects/"><span class="arr" aria-hidden="true">←</span> Back to Projects</a>
-                <a class="button accent small" href="/blogs/#factor-note">Read Research Note <span class="arr" aria-hidden="true">→</span></a>
+                <a class="button cyan small" href="https://github.com/Kizo07/fomc-sentiment-toolkit" target="_blank" rel="noopener noreferrer">Toolkit ↗</a>
+                <a class="button ghost small" href="https://github.com/Kizo07/FOMC-Sentiment" target="_blank" rel="noopener noreferrer">Research ↗</a>
               </div>
             </div>
           </div>
@@ -73,59 +74,56 @@
         <section class="page-section">
           <div class="detail-grid">
             <aside class="fact-sheet reveal" aria-label="Project snapshot">
-              <div class="fact-row"><span>Type</span><b>Factor Research</b></div>
-              <div class="fact-row"><span>Role</span><b>Founding Quantitative AI Researcher</b></div>
-              <div class="fact-row"><span>Company</span><b>QuantLink AI</b></div>
-              <div class="fact-row"><span>Universe</span><b>3,545 stocks</b></div>
-              <div class="fact-row"><span>Lookbacks</span><b>1Y · 3Y · 5Y · 10Y · MAX</b></div>
-              <div class="fact-row"><span>Buckets</span><b>Quintiles &amp; deciles</b></div>
-              <div class="fact-row"><span>Diagnostics</span><b>IC · Spearman · OLS · Sharpe · Sortino · GICS</b></div>
+              <div class="fact-row"><span>Model</span><b>FinBERT-FOMC fine-tuned</b></div>
+              <div class="fact-row"><span>Labels</span><b>Sentiment · labor · inflation</b></div>
+              <div class="fact-row"><span>Novelty</span><b>Embeddings vs prior meeting</b></div>
+              <div class="fact-row"><span>Validation</span><b>Walk-forward LightGBM</b></div>
+              <div class="fact-row"><span>Dashboard</span><b>4 views · light + dark</b></div>
+              <div class="fact-row"><span>Stack</span><b>Python · Streamlit · transformers</b></div>
             </aside>
 
             <div class="prose reveal">
               <article class="article-card">
-                <p class="article-meta">Signal Map</p>
-                <h2>Research questions</h2>
+                <p class="article-meta">Pipeline</p>
+                <h2>Every step, one CLI.</h2>
                 <ul class="square-list">
-                  <li>Distribution across the full 3,545-stock universe.</li>
-                  <li>Concentration by sector, industry, and market-cap band.</li>
-                  <li>Rank signal vs. forward 12-month returns.</li>
-                  <li>Long-short and top-minus-bottom buckets vs. benchmark risk.</li>
+                  <li>Extraction, training-data builds, LLM-assisted labeling, fine-tuning, inference, embeddings, and factor construction — each a subcommand with checkpoints, orchestrated by run-all.</li>
+                  <li>Hawk/dove lexicon baseline and per-speaker profiles anchor the model-based scores.</li>
+                  <li>Factor series regress against SPX returns under walk-forward evaluation — no in-sample shortcuts.</li>
                 </ul>
               </article>
 
               <article class="article-card" style="margin-top: 18px;">
-                <p class="article-meta">Build</p>
-                <h2>Dashboard architecture</h2>
-                <p class="lead">Cross-section first. Concentration risk second. Predictive power third. Portfolio behavior last.</p>
-                <table class="data-table">
-                  <thead>
-                    <tr><th scope="col">Module</th><th scope="col">Purpose</th></tr>
-                  </thead>
-                  <tbody>
-                    <tr><td>Universe Stats</td><td>Count, lower quartile, median, and upper quartile for the selected metric.</td></tr>
-                    <tr><td>Distribution &amp; Segments</td><td>Histogram with S&amp;P 500 percentile reference overlay.</td></tr>
-                    <tr><td>Sector &amp; Industry</td><td>GICS sector medians, top-15 industry breakdowns, and universe-median reference lines.</td></tr>
-                    <tr><td>Market Cap Bands</td><td>Mega, Large, Mid, Small, Micro, and Nano segmentation.</td></tr>
-                    <tr><td>Predictive Power</td><td>Forward 12-month returns by decile of factor exposure.</td></tr>
-                    <tr><td>Signal Quality</td><td>IC, Spearman, Pearson, OLS slope, R-squared, monotonicity, spread, sample size, and verdict.</td></tr>
-                    <tr><td>Backtest &amp; Risk</td><td>Quintile cumulative returns, benchmark comparison, Sharpe, Sortino, drawdown, Calmar, win rate, and terminal wealth.</td></tr>
-                    <tr><td>Sector Composition</td><td>Stacked sector exposure by quintile to reveal unintended sector bets.</td></tr>
-                  </tbody>
-                </table>
-              </article>
-
-              <article class="article-card" style="margin-top: 18px;">
-                <p class="article-meta">Design</p>
-                <h2>One-screen verdict</h2>
-                <p class="lead">Distribution. Concentration. Signal quality. Performance. Risk.</p>
+                <p class="article-meta">Dashboard</p>
+                <h2>Read the meetings, not just the scores.</h2>
                 <ul class="square-list">
-                  <li>Changing any control recomputes all panels.</li>
-                  <li>The key-takeaway panel summarizes backtest highlights, sector bias, and signal quality at a glance.</li>
-                  <li>Conditional formatting and reference overlays keep dense outputs easy to scan.</li>
+                  <li>Overview — sentiment, labor, inflation, and novelty time series across meetings.</li>
+                  <li>Meeting explorer — every paragraph with its labels and confidence; hawkish red, dovish green.</li>
+                  <li>Novelty explorer — per-meeting and per-paragraph novelty against the previous meeting, from embeddings.</li>
+                  <li>Speakers — hawk/dove profiles and per-meeting trends.</li>
                 </ul>
               </article>
             </div>
+          </div>
+        </section>
+
+        <section class="page-section" aria-labelledby="fomc-dash-title">
+          <div class="section-head">
+            <div>
+              <p class="kicker">Live Dashboard</p>
+              <h2 id="fomc-dash-title">The meeting explorer, running locally</h2>
+            </div>
+            <p class="section-note">Light + dark</p>
+          </div>
+          <div class="dash-gallery">
+            <figure class="showcase-figure">
+            <img src="/images/dashboards/fomc-sentiment-light.png" alt="FOMC meeting explorer in light mode with paragraph labels and confidence scores" width="1440" height="900" loading="lazy">
+            <figcaption>Meeting explorer, light — paragraph-level sentiment, labor, and inflation labels with confidence.</figcaption>
+          </figure>
+            <figure class="showcase-figure">
+            <img src="/images/dashboards/fomc-sentiment-dark.png" alt="FOMC meeting explorer in dark mode with the same panels" width="1440" height="900" loading="lazy">
+            <figcaption>Meeting explorer, dark — the same desk for late-night FOMC reads.</figcaption>
+          </figure>
           </div>
         </section>
       </main>

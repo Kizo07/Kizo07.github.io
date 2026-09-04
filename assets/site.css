@@ -1385,6 +1385,64 @@ main {
   color: var(--muted);
 }
 
+/* Dashboard captures: crisp two-up gallery.
+   Images are captured at ≥2× display size so the browser downsamples. */
+.dash-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(480px, 100%), 1fr));
+  gap: 18px;
+  align-items: start;
+}
+
+.dash-gallery .showcase-figure {
+  margin: 0;
+}
+
+.dash-gallery .showcase-figure img {
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-card);
+}
+
+.dash-gallery.solo {
+  max-width: 1080px;
+}
+
+/* Theme-following dashboard shot: exactly one image per color scheme.
+   Dark scheme shows the dark capture; light scheme swaps in the light one. */
+.dash-shot-theme img {
+  display: none;
+}
+
+:root:not([data-theme='light']) .dash-shot-theme img.dash-dark {
+  display: block;
+}
+
+[data-theme='light'] .dash-shot-theme img.dash-light {
+  display: block;
+}
+
+/* Left-rail dashboard capture: sits under the fact sheet, keeps pages compact */
+.fact-col {
+  display: grid;
+  gap: 18px;
+  align-content: start;
+}
+
+.fact-col .fact-sheet {
+  position: static;
+}
+
+.fact-col .showcase-figure {
+  margin: 0;
+}
+
+.fact-col .showcase-figure img {
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-card);
+}
+
 /* ---------- Tearsheet strip ---------- */
 .tearsheet-strip {
   display: grid;
