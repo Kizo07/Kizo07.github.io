@@ -18,7 +18,7 @@
         }
       })();
     </script>
-    <link rel="stylesheet" href="/assets/site.css?v=29">
+    <link rel="stylesheet" href="/assets/site.css?v=30">
     <link rel="stylesheet" href="/assets/vendor/mantine-bundle.css">
     <link rel="stylesheet" href="/assets/vendor/mantine-overrides.css?v=1">
     <noscript><style>.reveal { opacity: 1; transform: none; }</style></noscript>
@@ -73,6 +73,7 @@
 
         <section class="page-section">
           <div class="detail-grid">
+            <div class="fact-col">
             <aside class="fact-sheet reveal" aria-label="Project snapshot">
               <div class="fact-row"><span>Model</span><b>FinBERT-FOMC fine-tuned</b></div>
               <div class="fact-row"><span>Labels</span><b>Sentiment · labor · inflation</b></div>
@@ -81,6 +82,12 @@
               <div class="fact-row"><span>Dashboard</span><b>4 views · light + dark</b></div>
               <div class="fact-row"><span>Stack</span><b>Python · Streamlit · transformers</b></div>
             </aside>
+            <figure class="showcase-figure dash-shot-theme reveal">
+              <img class="dash-dark" src="/images/dashboards/fomc-sentiment-dark.png" alt="FOMC meeting explorer in dark mode with the same panels" width="1440" height="900" loading="lazy">
+              <img class="dash-light" src="/images/dashboards/fomc-sentiment-light.png" alt="FOMC meeting explorer in light mode with paragraph labels and confidence scores" width="1440" height="900" loading="lazy">
+              <figcaption>The meeting explorer, running locally — the capture follows the site theme.</figcaption>
+            </figure>
+          </div>
 
             <div class="prose reveal">
               <article class="article-card">
@@ -104,26 +111,6 @@
                 </ul>
               </article>
             </div>
-          </div>
-        </section>
-
-        <section class="page-section" aria-labelledby="fomc-dash-title">
-          <div class="section-head">
-            <div>
-              <p class="kicker">Live Dashboard</p>
-              <h2 id="fomc-dash-title">The meeting explorer, running locally</h2>
-            </div>
-            <p class="section-note">Light + dark</p>
-          </div>
-          <div class="dash-gallery">
-            <figure class="showcase-figure">
-            <img src="/images/dashboards/fomc-sentiment-light.png" alt="FOMC meeting explorer in light mode with paragraph labels and confidence scores" width="1440" height="900" loading="lazy">
-            <figcaption>Meeting explorer, light — paragraph-level sentiment, labor, and inflation labels with confidence.</figcaption>
-          </figure>
-            <figure class="showcase-figure">
-            <img src="/images/dashboards/fomc-sentiment-dark.png" alt="FOMC meeting explorer in dark mode with the same panels" width="1440" height="900" loading="lazy">
-            <figcaption>Meeting explorer, dark — the same desk for late-night FOMC reads.</figcaption>
-          </figure>
           </div>
         </section>
       </main>

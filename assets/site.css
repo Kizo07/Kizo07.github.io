@@ -1385,28 +1385,8 @@ main {
   color: var(--muted);
 }
 
-/* Dashboard captures: crisp two-up gallery.
-   Images are captured at ≥2× display size so the browser downsamples. */
-.dash-gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(480px, 100%), 1fr));
-  gap: 18px;
-  align-items: start;
-}
-
-.dash-gallery .showcase-figure {
-  margin: 0;
-}
-
-.dash-gallery .showcase-figure img {
-  border: 1px solid var(--line-strong);
-  border-radius: var(--radius-sm);
-  box-shadow: var(--shadow-card);
-}
-
-.dash-gallery.solo {
-  max-width: 1080px;
-}
+/* Dashboard captures: sit under the fact sheet in the left rail.
+   Captured at ~2× display size so the browser downsamples crisply. */
 
 /* Theme-following dashboard shot: exactly one image per color scheme.
    Dark scheme shows the dark capture; light scheme swaps in the light one. */

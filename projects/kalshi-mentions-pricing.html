@@ -18,7 +18,7 @@
         }
       })();
     </script>
-    <link rel="stylesheet" href="/assets/site.css?v=29">
+    <link rel="stylesheet" href="/assets/site.css?v=30">
     <link rel="stylesheet" href="/assets/vendor/mantine-bundle.css">
     <link rel="stylesheet" href="/assets/vendor/mantine-overrides.css?v=1">
     <noscript><style>.reveal { opacity: 1; transform: none; }</style></noscript>
@@ -72,6 +72,7 @@
 
         <section class="page-section">
           <div class="detail-grid">
+            <div class="fact-col">
             <aside class="fact-sheet reveal" aria-label="Project snapshot">
               <div class="fact-row"><span>Markets</span><b>Kalshi Mentions · binary + count</b></div>
               <div class="fact-row"><span>Model</span><b>Hurdle: Beta-Binomial × truncated NegBin</b></div>
@@ -80,6 +81,15 @@
               <div class="fact-row"><span>Adjusters</span><b>LLM · topic similarity (opt-in)</b></div>
               <div class="fact-row"><span>Stack</span><b>Python · FastAPI · Mantine</b></div>
             </aside>
+            <figure class="showcase-figure reveal">
+            <img src="/images/dashboards/kalshi-mentions-overview.png" alt="Kalshi mentions dashboard overview with market counts, type breakdown, and mentions distribution" width="1440" height="900" loading="lazy">
+            <figcaption>Overview — 2,533 mention markets, type breakdown, and the mentions-per-market distribution from the parquet snapshots.</figcaption>
+          </figure>
+            <figure class="showcase-figure reveal">
+            <img src="/images/dashboards/kalshi-mentions-pricing.png" alt="Kalshi mentions pricing tab with hurdle model fair values" width="1440" height="900" loading="lazy">
+            <figcaption>Pricing — hurdle-model fair values for mention contracts, straight off the transcript corpus.</figcaption>
+          </figure>
+          </div>
 
             <div class="prose reveal">
               <article class="article-card">
@@ -111,26 +121,6 @@
                 </ul>
               </article>
             </div>
-          </div>
-        </section>
-
-        <section class="page-section" aria-labelledby="kalshi-dash-title">
-          <div class="section-head">
-            <div>
-              <p class="kicker">Live Dashboard</p>
-              <h2 id="kalshi-dash-title">The mention desk, running locally</h2>
-            </div>
-            <p class="section-note">FastAPI + Mantine</p>
-          </div>
-          <div class="dash-gallery">
-            <figure class="showcase-figure">
-            <img src="/images/dashboards/kalshi-mentions-overview.png" alt="Kalshi mentions dashboard overview with market counts, type breakdown, and mentions distribution" width="1440" height="900" loading="lazy">
-            <figcaption>Overview — 2,533 mention markets, type breakdown, and the mentions-per-market distribution from the parquet snapshots.</figcaption>
-          </figure>
-            <figure class="showcase-figure">
-            <img src="/images/dashboards/kalshi-mentions-pricing.png" alt="Kalshi mentions pricing tab with hurdle model fair values" width="1440" height="900" loading="lazy">
-            <figcaption>Pricing — hurdle-model fair values for mention contracts, straight off the transcript corpus.</figcaption>
-          </figure>
           </div>
         </section>
       </main>

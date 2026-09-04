@@ -18,7 +18,7 @@
         }
       })();
     </script>
-    <link rel="stylesheet" href="/assets/site.css?v=29">
+    <link rel="stylesheet" href="/assets/site.css?v=30">
     <link rel="stylesheet" href="/assets/vendor/mantine-bundle.css">
     <link rel="stylesheet" href="/assets/vendor/mantine-overrides.css?v=1">
     <noscript><style>.reveal { opacity: 1; transform: none; }</style></noscript>
@@ -72,6 +72,7 @@
 
         <section class="page-section">
           <div class="detail-grid">
+            <div class="fact-col">
             <aside class="fact-sheet reveal" aria-label="Project snapshot">
               <div class="fact-row"><span>Factors</span><b>F_AITheme · F_AIInfra</b></div>
               <div class="fact-row"><span>Weights</span><b>AUM-weighted baskets</b></div>
@@ -80,6 +81,11 @@
               <div class="fact-row"><span>Discipline</span><b>Point-in-time construction</b></div>
               <div class="fact-row"><span>Controls</span><b>Fama-French diagnostics</b></div>
             </aside>
+            <figure class="showcase-figure reveal">
+            <img src="/images/dashboards/ai-exposure-dashboard.png" alt="S&amp;P 500 AI exposure dashboard showing beta distributions for AI theme and infrastructure factors" width="1440" height="900" loading="lazy">
+            <figcaption>Trailing 252-day regressions with Newey-West t-stats — β distributions for both AI factors and the theme-vs-infrastructure scatter, as of the last trading day.</figcaption>
+          </figure>
+          </div>
 
             <div class="prose reveal">
               <article class="article-card">
@@ -112,22 +118,6 @@
                 </ul>
               </article>
             </div>
-          </div>
-        </section>
-
-        <section class="page-section" aria-labelledby="aiexp-dash-title">
-          <div class="section-head">
-            <div>
-              <p class="kicker">Live Dashboard</p>
-              <h2 id="aiexp-dash-title">Exposure, estimated for every S&amp;P 500 stock</h2>
-            </div>
-            <p class="section-note">Streamlit · Plotly</p>
-          </div>
-          <div class="dash-gallery solo">
-            <figure class="showcase-figure">
-            <img src="/images/dashboards/ai-exposure-dashboard.png" alt="S&amp;P 500 AI exposure dashboard showing beta distributions for AI theme and infrastructure factors" width="1440" height="900" loading="lazy">
-            <figcaption>Trailing 252-day regressions with Newey-West t-stats — β distributions for both AI factors and the theme-vs-infrastructure scatter, as of the last trading day.</figcaption>
-          </figure>
           </div>
         </section>
       </main>
