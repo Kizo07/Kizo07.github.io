@@ -1199,6 +1199,45 @@ main {
   margin-top: 20px;
 }
 
+/* ---------- Flagship highlight ---------- */
+.flagship-tag {
+  display: inline-block;
+  margin-left: 10px;
+  padding: 3px 10px;
+  border: 1px solid var(--gold);
+  border-radius: 999px;
+  background: var(--gold-soft);
+  color: var(--gold);
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  vertical-align: middle;
+}
+
+.project-card.flagship {
+  outline: 1px solid color-mix(in srgb, var(--gold) 55%, transparent);
+}
+
+.showcase-figure {
+  margin: 16px 0 4px;
+}
+
+.showcase-figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+}
+
+.showcase-figure figcaption {
+  margin-top: 8px;
+  font-size: 13px;
+  color: var(--muted);
+}
+
 /* ---------- Tearsheet strip ---------- */
 .tearsheet-strip {
   display: grid;
