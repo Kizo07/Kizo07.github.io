@@ -674,31 +674,22 @@ main {
 
 /* ---------- Digital rain: decorative canvas, readable foreground ---------- */
 .matrix-canvas {
-  position: absolute;
+  position: fixed;
   inset: 0;
   width: 100%;
   height: 100%;
   z-index: 0;
   pointer-events: none;
-  opacity: 0.72;
-  mask-image: linear-gradient(180deg, #000 0%, #000 65%, transparent 100%);
-}
-
-.hero::after,
-.page-hero::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  pointer-events: none;
-  background: linear-gradient(90deg, var(--bg) 0%, color-mix(in srgb, var(--bg) 94%, transparent) 23%, color-mix(in srgb, var(--bg) 86%, transparent) 43%, transparent 76%);
+  opacity: 0.42;
+  /* Let rain show on both sides and between sections; keep reading areas calm. */
+  mask-image: linear-gradient(90deg, #000, rgba(0, 0, 0, 0.55) 22%, rgba(0, 0, 0, 0.4) 50%, rgba(0, 0, 0, 0.55) 78%, #000);
 }
 
 .matrix-toggle {
-  position: absolute;
-  z-index: 3;
-  right: max(24px, calc((100% - var(--wrap)) / 2 + 44px));
-  bottom: 22px;
+  position: fixed;
+  z-index: 120;
+  left: 24px;
+  bottom: 24px;
   display: grid;
   place-items: center;
   width: 32px;
@@ -720,7 +711,7 @@ main {
 [data-motion='paused'] .eyebrow .dot,
 [data-page-hidden] .ticker-track,
 [data-page-hidden] .eyebrow .dot { animation-play-state: paused; }
-[data-theme='light'] .matrix-canvas { opacity: 0.3; }
+[data-theme='light'] .matrix-canvas { opacity: 0.16; }
 
 /* ---------- Ticker tape ---------- */
 .ticker {
@@ -1739,9 +1730,7 @@ main {
   isolation: isolate;
   overflow: hidden;
   border-bottom: 1px solid var(--line);
-  background:
-    radial-gradient(700px 340px at 78% -20%, var(--hero-glow-a), transparent 70%),
-    color-mix(in srgb, var(--bg-soft) 80%, transparent);
+  background: radial-gradient(700px 340px at 78% -20%, var(--hero-glow-a), transparent 70%);
 }
 
 .page-hero > .page-section { position: relative; z-index: 2; }
@@ -2118,8 +2107,8 @@ main {
   .hero-portrait { width: min(320px, 88%); justify-self: center; }
   .portrait-caption { flex-direction: row; gap: 8px; font-size: 8px; }
   .terminal-readout { font-size: 10px; padding: 14px; }
-  .hero::after { background: linear-gradient(180deg, color-mix(in srgb, var(--bg) 75%, transparent), color-mix(in srgb, var(--bg) 95%, transparent) 56%, transparent); }
-  .page-hero::after { background: color-mix(in srgb, var(--bg) 86%, transparent); }
+  .matrix-canvas { opacity: 0.28; }
+  .matrix-toggle { left: 16px; bottom: 24px; }
   .page-title h1 { font-size: clamp(34px, 9vw, 48px); }
   .brand { font-size: 14px; gap: 9px; }
   .nav-inner { padding-inline: 20px; }

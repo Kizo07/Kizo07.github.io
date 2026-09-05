@@ -1,8 +1,8 @@
-/* Decorative digital rain. No dependencies; no content or pointer handling. */
+/* Site-wide digital rain, rendered on one viewport-sized decorative canvas. */
 (function () {
   "use strict";
 
-  var host = document.querySelector(".hero, .page-hero");
+  var host = document.querySelector(".site-shell");
   if (!host) return;
 
   var root = document.documentElement;
@@ -22,7 +22,6 @@
 
   var paused = false;
   try { paused = localStorage.getItem("portfolio-motion") === "paused"; } catch (error) {}
-  var visible = true;
   var width = 0;
   var height = 0;
   var streams = [];
@@ -84,14 +83,15 @@
     var label = paused ? "Play background animation" : "Pause background animation";
     toggle.setAttribute("aria-label", label);
     toggle.title = label;
-    if (!paused && !reducedMotion.matches && visible && !document.hidden) {
+    if (!paused && !reducedMotion.matches && !document.hidden) {
       frame = requestAnimationFrame(tick);
     }
   }
 
   function resize() {
-    var nextWidth = host.clientWidth;
-    var nextHeight = host.clientHeight;
+    // The fixed canvas stays viewport-sized even on the long project index.
+    var nextWidth = canvas.clientWidth;
+    var nextHeight = canvas.clientHeight;
     if (nextWidth === width && nextHeight === height) return;
     width = nextWidth;
     height = nextHeight;
@@ -128,14 +128,8 @@
     draw();
   }).observe(root, { attributes: true, attributeFilter: ["data-theme"] });
 
-  if ("IntersectionObserver" in window) {
-    new IntersectionObserver(function (entries) {
-      visible = entries[0].isIntersecting;
-      syncMotion();
-    }).observe(host);
-  }
   if ("ResizeObserver" in window) {
-    new ResizeObserver(resize).observe(host);
+    new ResizeObserver(resize).observe(canvas);
   } else {
     window.addEventListener("resize", resize, { passive: true });
   }

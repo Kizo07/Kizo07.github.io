@@ -26,9 +26,10 @@ links to public GitHub repositories and strategy tearsheets.
 - Fonts: Space Grotesk, Inter, IBM Plex Mono via Google Fonts.
 - Existing Mantine controls share the site's tokens through
   `assets/mantine-app.js` and `assets/vendor/mantine-overrides.css`.
-- Decorative digital rain in `assets/matrix.js` renders at up to 20fps, pauses
-  outside the viewport or in hidden tabs, and respects reduced-motion settings.
-  Its pause/play control remembers the preference across pages.
+- Decorative digital rain in `assets/matrix.js` spans the site on one
+  viewport-sized canvas, softened behind reading areas. It renders at up to
+  20fps, pauses in hidden tabs, and respects reduced-motion settings.
+  Its fixed pause/play control remembers the preference across pages.
 - Theme preference persists in `localStorage` (dark default).
 
 ## Local preview
