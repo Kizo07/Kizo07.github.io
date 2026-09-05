@@ -12,17 +12,16 @@
     return document.documentElement.getAttribute("data-theme") === "light" ? "light" : "dark";
   }
 
-  var GOLD = ["#fdf7ec", "#f7ecd4", "#efdba8", "#e7c77c", "#dfb458", "#d9a54e", "#c08f3f", "#a4701f", "#7d5518", "#573a10"];
-  var LAGOON = ["#eafaf8", "#d3f2ee", "#a9e5de", "#7fd8cd", "#63d0c6", "#56cfc4", "#3fb3a8", "#0d8d82", "#0a6b62", "#074a44"];
+  var MATRIX = ["#e9faff", "#cef2ff", "#a0e8ff", "#6bdbff", "#36ceff", "#08bfff", "#009ed9", "#007ea9", "#006484", "#004a63"];
 
   var theme = MC.createTheme({
     fontFamily: "'Inter', system-ui, -apple-system, sans-serif",
     fontFamilyMonospace: "'IBM Plex Mono', 'SFMono-Regular', Consolas, monospace",
-    headings: { fontFamily: "'Fraunces', Georgia, serif", fontWeight: "500" },
-    defaultRadius: "md",
-    primaryColor: "gold",
+    headings: { fontFamily: "'Space Grotesk', 'Inter', system-ui, sans-serif", fontWeight: "500" },
+    defaultRadius: "sm",
+    primaryColor: "matrix",
     primaryShade: { dark: 5, light: 7 },
-    colors: { gold: GOLD, lagoon: LAGOON }
+    colors: { matrix: MATRIX }
   });
 
   function captureAttrs(el) {
@@ -215,30 +214,30 @@
   var BUTTON_VARS = {
     gold: {
       dark: {
-        "--button-bg": "#d9a54e",
-        "--button-hover": "#e0b065",
-        "--button-color": "#171104",
-        "--button-bd": "1px solid #d9a54e"
+        "--button-bg": "var(--accent)",
+        "--button-hover": "var(--ice)",
+        "--button-color": "var(--accent-ink)",
+        "--button-bd": "1px solid var(--accent)"
       },
       light: {
-        "--button-bg": "#a4701f",
-        "--button-hover": "#8f611b",
-        "--button-color": "#fff8ec",
-        "--button-bd": "1px solid #a4701f"
+        "--button-bg": "var(--accent)",
+        "--button-hover": "var(--ice)",
+        "--button-color": "var(--accent-ink)",
+        "--button-bd": "1px solid var(--accent)"
       }
     },
     lagoon: {
       dark: {
-        "--button-bg": "rgba(86, 207, 196, 0.12)",
-        "--button-hover": "rgba(86, 207, 196, 0.18)",
-        "--button-color": "#56cfc4",
-        "--button-bd": "1px solid rgba(86, 207, 196, 0.4)"
+        "--button-bg": "var(--cyan-soft)",
+        "--button-hover": "var(--surface-2)",
+        "--button-color": "var(--cyan)",
+        "--button-bd": "1px solid var(--line-strong)"
       },
       light: {
-        "--button-bg": "rgba(13, 141, 130, 0.09)",
-        "--button-hover": "rgba(13, 141, 130, 0.15)",
-        "--button-color": "#0c8075",
-        "--button-bd": "1px solid rgba(12, 128, 117, 0.42)"
+        "--button-bg": "var(--cyan-soft)",
+        "--button-hover": "var(--surface-2)",
+        "--button-color": "var(--cyan)",
+        "--button-bd": "1px solid var(--line-strong)"
       }
     },
     ghost: {
@@ -372,7 +371,7 @@
 
   function BackToTop() {
     var scroll = MH.useWindowScroll();
-    var y = scroll[0];
+    var y = scroll[0].y;
     var visible = y > 600;
     return h(
       MC.Affix,
@@ -393,7 +392,10 @@
                 className: "km-top",
                 style: Object.assign({}, styles, { boxShadow: "var(--shadow-card)" }),
                 "aria-label": "Back to top",
-                onClick: function () { window.scrollTo({ top: 0, behavior: "smooth" }); }
+                onClick: function () {
+                  var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+                  window.scrollTo({ top: 0, behavior: reduce ? "instant" : "smooth" });
+                }
               },
               h(
                 "svg",

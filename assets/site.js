@@ -9,23 +9,23 @@
   /* ---- Tearsheet iframe theme injection (quantstats pages) ---- */
   var tearsheetThemeCss = `
     :root[data-parent-theme="light"] {
-      --ts-bg: #f2ebdc;
-      --ts-panel: #fbf6ea;
-      --ts-text: #292217;
-      --ts-muted: #6a5d47;
-      --ts-line: rgba(72, 58, 32, 0.22);
-      --ts-grid: rgba(72, 58, 32, 0.11);
-      --ts-accent: #9a681c;
+      --ts-bg: #f5faff;
+      --ts-panel: #ffffff;
+      --ts-text: #102d42;
+      --ts-muted: #445e72;
+      --ts-line: rgba(17, 93, 133, 0.22);
+      --ts-grid: rgba(17, 93, 133, 0.11);
+      --ts-accent: #006d9f;
     }
 
     :root[data-parent-theme="dark"] {
-      --ts-bg: #0a0d12;
-      --ts-panel: #10151d;
-      --ts-text: #e7eaf0;
-      --ts-muted: #9aa4b2;
-      --ts-line: rgba(148, 163, 184, 0.28);
-      --ts-grid: rgba(148, 163, 184, 0.12);
-      --ts-accent: #d9a54e;
+      --ts-bg: #020609;
+      --ts-panel: #07131d;
+      --ts-text: #edf7fc;
+      --ts-muted: #a1b4c4;
+      --ts-line: rgba(86, 183, 229, 0.28);
+      --ts-grid: rgba(86, 183, 229, 0.12);
+      --ts-accent: #08bfff;
     }
 
     html[data-parent-theme],
@@ -121,16 +121,18 @@
   `;
 
   function preferredTheme() {
-    var saved = localStorage.getItem("theme");
-    if (saved === "light" || saved === "dark") {
-      return saved;
-    }
+    try {
+      var saved = localStorage.getItem("theme");
+      if (saved === "light" || saved === "dark") return saved;
+    } catch (error) {}
     return "dark";
   }
 
   function setTheme(theme) {
     root.setAttribute("data-theme", theme);
-    localStorage.setItem("theme", theme);
+    try { localStorage.setItem("theme", theme); } catch (error) {}
+    var themeMeta = document.querySelector('meta[name="theme-color"]');
+    if (themeMeta) themeMeta.content = theme === "dark" ? "#020609" : "#f5faff";
     if (toggle) {
       toggle.setAttribute(
         "aria-label",
@@ -165,10 +167,10 @@
   }
 
   function recolorTearsheetSvgText(doc, theme) {
-    var textColor = theme === "dark" ? "#e7eaf0" : "#292217";
-    var mutedColor = theme === "dark" ? "#9aa4b2" : "#6a5d47";
-    var gridColor = theme === "dark" ? "rgba(148,163,184,0.12)" : "rgba(72,58,32,0.11)";
-    var panelColor = theme === "dark" ? "#10151d" : "#fbf6ea";
+    var textColor = theme === "dark" ? "#edf7fc" : "#102d42";
+    var mutedColor = theme === "dark" ? "#a1b4c4" : "#445e72";
+    var gridColor = theme === "dark" ? "rgba(86,183,229,0.12)" : "rgba(17,93,133,0.11)";
+    var panelColor = theme === "dark" ? "#07131d" : "#ffffff";
 
     doc.querySelectorAll('svg g[id^="text_"], svg g[id^="text_"] use').forEach(function (node) {
       node.style.fill = textColor;

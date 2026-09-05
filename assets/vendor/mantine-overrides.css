@@ -1,18 +1,48 @@
 /* ============================================================
    Kizo × Mantine integration overrides
    Loads after mantine-bundle.css; maps Mantine components onto
-   the "Ledger" design tokens (gold + cyan, dark & warm light).
+   the "Cyan Matrix" design tokens in dark and cool light modes.
    ============================================================ */
 
-/* ---------- Buttons: Ledger look on Mantine Button ---------- */
+/* Mantine's global body reset loads after site.css. Keep all native content
+   and portaled controls on the same color/typography system. */
+body {
+  color: var(--text);
+  background: var(--bg);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.65;
+  --mantine-color-text: var(--text);
+  --mantine-color-body: var(--bg);
+  --mantine-color-default: var(--surface);
+  --mantine-color-default-hover: var(--surface-2);
+  --mantine-color-default-color: var(--text);
+  --mantine-color-default-border: var(--line-strong);
+  --mantine-color-dimmed: var(--muted);
+  --mantine-primary-color-filled: var(--accent);
+}
+
+/* ---------- Buttons ---------- */
 .km-btn {
+  height: auto;
+  min-height: 44px;
+  padding: 12px 20px;
+  font-family: var(--font-body);
+  font-size: 13px;
   font-weight: 600;
   letter-spacing: 0.01em;
-  border-radius: 10px;
+  border-radius: var(--radius-sm);
   transition:
     transform 0.22s cubic-bezier(0.22, 1, 0.36, 1),
     box-shadow 0.22s cubic-bezier(0.22, 1, 0.36, 1);
 }
+
+.km-btn-sm { min-height: 36px; padding: 9px 14px; font-size: 12px; }
+.km-btn .mantine-Button-inner { height: auto; }
+.km-btn .mantine-Button-label { white-space: normal; height: auto; gap: 8px; text-align: left; }
+.km-btn.km-gold { box-shadow: 0 0 24px -12px var(--accent); }
+.km-btn.km-gold:hover { box-shadow: 0 0 30px -9px var(--accent); }
+.inline-actions > [data-kizo-mount] { max-width: 100%; }
 
 .km-btn:hover {
   transform: translateY(-2px);
@@ -33,6 +63,8 @@
 }
 
 .km-filter-btn {
+  min-height: 36px;
+  padding: 8px 16px;
   font-family: var(--font-mono);
   font-size: 12px;
   letter-spacing: 0.08em;
@@ -43,7 +75,7 @@
   color: var(--text);
 }
 
-/* ---------- Tags: Mantine Badge in ledger style ---------- */
+/* ---------- Tags ---------- */
 .km-tag {
   font-family: var(--font-mono) !important;
   font-size: 10.5px !important;
@@ -51,12 +83,18 @@
   letter-spacing: 0.08em;
   text-transform: uppercase;
   padding-block: 4px;
+  border-radius: 3px;
+  line-height: 1.4;
+  height: auto;
+  max-width: 100%;
 }
+
+.km-tag .mantine-Badge-label { white-space: normal; }
 
 /* ---------- Header controls ---------- */
 .km-theme-action {
   color: var(--muted);
-  border-radius: 10px;
+  border-radius: var(--radius-sm);
   transition: color 0.2s, border-color 0.2s, background 0.2s;
 }
 
@@ -84,7 +122,7 @@
 .km-burger {
   width: 38px;
   height: 38px;
-  border-radius: 10px;
+  border-radius: var(--radius-sm);
   border: 1px solid var(--line);
   background: transparent;
   color: var(--muted);
@@ -104,11 +142,15 @@
   }
 }
 
+.km-burger span,
+.km-burger span::before,
+.km-burger span::after { background: var(--text); }
+
 /* ---------- Drawer ---------- */
 .km-drawer-link {
   display: block;
   padding: 13px 14px;
-  border-radius: 10px;
+  border-radius: var(--radius-sm);
   font-size: 16px;
   font-weight: 500;
   color: var(--muted);
@@ -138,6 +180,13 @@
   height: 44px;
   color: var(--muted);
   border: 1px solid var(--line-strong);
+  background: var(--surface);
+  border-radius: var(--radius-sm);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .km-btn, .km-btn .arr, .km-theme-action, .km-burger, .km-drawer-link { transition: none; }
+  .km-btn:hover, .km-btn:hover .arr { transform: none; }
 }
 
 .km-top:hover {

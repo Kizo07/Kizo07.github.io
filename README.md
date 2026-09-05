@@ -21,8 +21,14 @@ links to public GitHub repositories and strategy tearsheets.
 ## Tech
 
 - Static HTML/CSS/JS — no build step, deployable on GitHub Pages as-is.
-- Design system in `assets/site.css` (CSS custom properties, dark/light themes).
-- Fonts: Fraunces, Inter, IBM Plex Mono via Google Fonts.
+- Cyan Matrix design system in `assets/site.css`: near-black surfaces, electric
+  cyan accents, illuminated frames, and a cool blue/white light theme.
+- Fonts: Space Grotesk, Inter, IBM Plex Mono via Google Fonts.
+- Existing Mantine controls share the site's tokens through
+  `assets/mantine-app.js` and `assets/vendor/mantine-overrides.css`.
+- Decorative digital rain in `assets/matrix.js` renders at up to 20fps, pauses
+  outside the viewport or in hidden tabs, and respects reduced-motion settings.
+  Its pause/play control remembers the preference across pages.
 - Theme preference persists in `localStorage` (dark default).
 
 ## Local preview
