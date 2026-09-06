@@ -49,16 +49,16 @@
         if (y < -20 || y > height + 20) continue;
         var alpha = Math.pow(1 - row / stream.length, 1.4) * stream.brightness;
         if (stream.warm) {
-          context.fillStyle = light ? "rgba(146,102,30," + alpha + ")" : "rgba(236,182,96," + alpha + ")";
+          context.fillStyle = light ? "rgba(138,94,22," + alpha + ")" : "rgba(236,182,96," + alpha + ")";
         } else {
-          context.fillStyle = light ? "rgba(0,98,150," + alpha + ")" : "rgba(0,178,255," + alpha + ")";
+          context.fillStyle = light ? "rgba(0,84,132," + alpha + ")" : "rgba(0,178,255," + alpha + ")";
         }
         if (row === 0) {
           if (stream.warm) {
-            context.fillStyle = light ? "#8f621f" : "#ffdda6";
+            context.fillStyle = light ? "#7d5518" : "#ffdda6";
             context.shadowColor = "#e3ac55";
           } else {
-            context.fillStyle = light ? "#0074a5" : "#a2e9ff";
+            context.fillStyle = light ? "#005f88" : "#a2e9ff";
             context.shadowColor = "#00bfff";
           }
           context.shadowBlur = light ? 0 : 10;
