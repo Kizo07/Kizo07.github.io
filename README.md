@@ -21,14 +21,17 @@ links to public GitHub repositories and strategy tearsheets.
 ## Tech
 
 - Static HTML/CSS/JS — no build step, deployable on GitHub Pages as-is.
-- Cyan Matrix design system in `assets/site.css`: near-black surfaces, electric
-  cyan accents, illuminated frames, and a cool blue/white light theme.
-- Fonts: Space Grotesk, Inter, IBM Plex Mono via Google Fonts.
+- Cyan Ledger design system in `assets/site.css`: near-black surfaces with
+  electric cyan actions and ledger-gold details, grotesk display type with
+  serif-italic accent words, and a cool blue/white light theme.
+- Fonts: Space Grotesk, Fraunces (italic accents), Inter, IBM Plex Mono via
+  Google Fonts.
 - Existing Mantine controls share the site's tokens through
   `assets/mantine-app.js` and `assets/vendor/mantine-overrides.css`.
 - Decorative digital rain in `assets/matrix.js` spans the site on one
-  viewport-sized canvas, softened behind reading areas. It renders at up to
-  20fps, pauses in hidden tabs, and respects reduced-motion settings.
+  viewport-sized canvas — cyan streams with occasional gold ones — softened
+  behind reading areas. It renders at up to 20fps, pauses in hidden tabs, and
+  respects reduced-motion settings.
   Its fixed pause/play control remembers the preference across pages.
 - Theme preference persists in `localStorage` (dark default).
 

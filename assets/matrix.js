@@ -1,4 +1,4 @@
-/* Site-wide digital rain, rendered on one viewport-sized decorative canvas. */
+/* Site-wide digital rain — cyan streams with occasional ledger-gold ones — rendered on one viewport-sized decorative canvas. */
 (function () {
   "use strict";
 
@@ -48,10 +48,19 @@
         var y = head - row * 20;
         if (y < -20 || y > height + 20) continue;
         var alpha = Math.pow(1 - row / stream.length, 1.4) * stream.brightness;
-        context.fillStyle = light ? "rgba(0,108,160," + alpha + ")" : "rgba(0,178,255," + alpha + ")";
+        if (stream.warm) {
+          context.fillStyle = light ? "rgba(146,102,30," + alpha + ")" : "rgba(236,182,96," + alpha + ")";
+        } else {
+          context.fillStyle = light ? "rgba(0,108,160," + alpha + ")" : "rgba(0,178,255," + alpha + ")";
+        }
         if (row === 0) {
-          context.fillStyle = light ? "#0074a5" : "#a2e9ff";
-          context.shadowColor = "#00bfff";
+          if (stream.warm) {
+            context.fillStyle = light ? "#8f621f" : "#ffdda6";
+            context.shadowColor = "#e3ac55";
+          } else {
+            context.fillStyle = light ? "#0074a5" : "#a2e9ff";
+            context.shadowColor = "#00bfff";
+          }
           context.shadowBlur = light ? 0 : 10;
         }
         var index = Math.floor(noise(column * 41 + row + Math.floor(elapsed * 0.7)) * glyphs.length);
@@ -107,7 +116,9 @@
         start: noise(i + 1) * (height + 480),
         length: 14 + Math.floor(noise(i + 31) * 22),
         speed: 18 + noise(i + 73) * 28,
-        brightness: 0.18 + noise(i + 111) * 0.6
+        brightness: 0.18 + noise(i + 111) * 0.6,
+        // Occasional ledger-gold stream: the warm counterpoint in the rain.
+        warm: noise(i + 151) < 0.14
       });
     }
     draw();

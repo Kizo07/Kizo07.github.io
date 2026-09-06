@@ -1,15 +1,17 @@
 /* ============================================================
    Kanav Mehta — Quantitative AI Researcher
-   Design system v3 · "Cyan Matrix" — electric cyan, midnight, ice
+   Design system v4 · "Cyan Ledger" — electric cyan × ledger gold,
+   grotesk display with serif-italic accents, midnight / ice themes
    ============================================================ */
 
 /* ---------- Fonts ---------- */
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@1,9..144,400;1,9..144,450;1,9..144,500&family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap');
 
 /* ---------- Tokens ---------- */
 :root {
   color-scheme: dark;
   --font-display: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+  --font-serif: 'Fraunces', 'Georgia', serif;
   --font-body: 'Inter', system-ui, -apple-system, sans-serif;
   --font-mono: 'IBM Plex Mono', 'SFMono-Regular', Consolas, monospace;
 
@@ -25,27 +27,28 @@
   --accent: #08bfff;
   --accent-ink: #00131e;
   --ice: #bcefff;
-  /* Compatibility aliases for the existing content and component classes. */
-  --gold: var(--accent);
-  --gold-soft: rgba(8, 191, 255, 0.1);
+  /* Dual-accent system: cyan drives actions, gold marks ledger details. */
+  --gold: #e3ac55;
+  --gold-soft: rgba(227, 172, 85, 0.1);
   --cyan: #6bdbff;
   --cyan-soft: rgba(107, 219, 255, 0.08);
   --green: #68dfcf;
   --red: #f58ba4;
   --hero-glow-a: rgba(0, 156, 255, 0.12);
-  --hero-glow-b: rgba(8, 191, 255, 0.05);
+  --hero-glow-b: rgba(227, 172, 85, 0.07);
   --grid-line: rgba(8, 191, 255, 0.045);
   --shadow-card: 0 20px 60px rgba(0, 0, 0, 0.32);
   --header-bg: rgba(2, 6, 9, 0.88);
 
-  /* Glass & halo (let the ledger backdrop breathe through surfaces) */
+  /* Glass & halo (let the backdrop breathe through surfaces) */
   --glass: color-mix(in srgb, var(--surface) 88%, transparent);
   --glass-2: color-mix(in srgb, var(--surface-2) 84%, transparent);
   --glass-deep: color-mix(in srgb, var(--bg-soft) 82%, transparent);
   --glass-blur: blur(14px);
-  --halo-gold: rgba(8, 191, 255, 0.19);
+  --halo-gold: rgba(227, 172, 85, 0.18);
   --halo-cyan: rgba(0, 132, 255, 0.14);
   --halo-text: 0 0 36px rgba(8, 191, 255, 0.28);
+  --halo-text-gold: 0 0 34px rgba(227, 172, 85, 0.3);
 
   --radius: 8px;
   --radius-sm: 5px;
@@ -67,20 +70,22 @@
   --accent: #006d9f;
   --accent-ink: #ffffff;
   --ice: #005a86;
-  --gold-soft: rgba(0, 109, 159, 0.08);
+  --gold: #8f621f;
+  --gold-soft: rgba(143, 98, 31, 0.09);
   --cyan: #006b91;
   --cyan-soft: rgba(0, 107, 145, 0.07);
   --green: #137665;
   --red: #b0395d;
   --hero-glow-a: rgba(0, 157, 229, 0.09);
-  --hero-glow-b: rgba(0, 158, 226, 0.04);
+  --hero-glow-b: rgba(143, 98, 31, 0.06);
   --grid-line: rgba(0, 109, 159, 0.04);
   --shadow-card: 0 18px 44px rgba(21, 75, 107, 0.08);
   --header-bg: rgba(245, 250, 255, 0.92);
 
-  --halo-gold: rgba(0, 109, 159, 0.1);
+  --halo-gold: rgba(143, 98, 31, 0.14);
   --halo-cyan: rgba(0, 132, 200, 0.08);
   --halo-text: none;
+  --halo-text-gold: none;
 }
 
 /* ---------- Fallback: no backdrop-filter support → denser glass ---------- */
@@ -472,15 +477,22 @@ main {
 
 .button.primary,
 .button.accent {
-  background: var(--accent);
-  border-color: var(--accent);
+  background: linear-gradient(180deg,
+    color-mix(in srgb, var(--accent) 82%, #ffffff),
+    var(--accent) 55%,
+    color-mix(in srgb, var(--accent) 88%, #001018));
+  border-color: color-mix(in srgb, var(--accent) 82%, #001018);
   color: var(--accent-ink);
-  box-shadow: 0 0 24px -8px var(--accent);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.28),
+    0 0 26px -8px var(--accent);
 }
 
 .button.primary:hover,
 .button.accent:hover {
-  box-shadow: 0 0 32px -6px var(--accent);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.28),
+    0 0 38px -6px var(--accent);
 }
 
 [data-theme='light'] .button.primary,
@@ -529,7 +541,9 @@ main {
 .hero {
   position: relative;
   overflow: hidden;
-  background: radial-gradient(ellipse at 80% 42%, var(--hero-glow-a), transparent 52%);
+  background:
+    radial-gradient(ellipse at 80% 42%, var(--hero-glow-a), transparent 52%),
+    radial-gradient(560px 420px at 6% 98%, var(--hero-glow-b), transparent 70%);
   border-bottom: 1px solid var(--line);
 }
 
@@ -578,17 +592,24 @@ main {
 .hero h1 {
   margin: 30px 0 0;
   font-family: var(--font-display);
-  font-weight: 500;
+  font-weight: 600;
   font-size: clamp(42px, 5.25vw, 76px);
   line-height: 1.035;
   letter-spacing: -0.06em;
   text-wrap: balance;
 }
 
-.hero h1 em {
-  font-style: normal;
-  color: var(--accent);
-  text-shadow: var(--halo-text);
+/* Serif-italic gold accent: the editorial counterpoint inside grotesk type. */
+.hero h1 em,
+.page-title h1 em,
+.section-head h2 em,
+.contact-panel h2 em {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 450;
+  letter-spacing: -0.015em;
+  color: var(--gold);
+  text-shadow: var(--halo-text-gold);
 }
 
 .hero-copy {
@@ -636,7 +657,10 @@ main {
   border: 1px solid var(--line-strong);
   border-radius: var(--radius);
   background: var(--glass-deep);
-  box-shadow: 0 0 80px -30px var(--accent), var(--shadow-card);
+  box-shadow:
+    0 0 80px -30px var(--accent),
+    0 26px 60px -30px var(--halo-gold),
+    var(--shadow-card);
 }
 
 .hero-portrait img {
@@ -648,6 +672,7 @@ main {
   box-shadow: none;
 }
 
+/* HUD corner brackets: cyan leads, gold trails the far corner. */
 .hero-portrait::before {
   content: '';
   position: absolute;
@@ -656,8 +681,8 @@ main {
   background:
     linear-gradient(var(--accent), var(--accent)) left top / 38px 1px no-repeat,
     linear-gradient(var(--accent), var(--accent)) left top / 1px 38px no-repeat,
-    linear-gradient(var(--accent), var(--accent)) right bottom / 38px 1px no-repeat,
-    linear-gradient(var(--accent), var(--accent)) right bottom / 1px 38px no-repeat;
+    linear-gradient(var(--gold), var(--gold)) right bottom / 38px 1px no-repeat,
+    linear-gradient(var(--gold), var(--gold)) right bottom / 1px 38px no-repeat;
 }
 
 .portrait-caption {
@@ -814,6 +839,12 @@ main {
   font-weight: 600;
   letter-spacing: -0.02em;
   color: var(--ice);
+  background: linear-gradient(180deg,
+    var(--text) 32%,
+    color-mix(in srgb, var(--accent) 68%, var(--text)));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
   font-variant-numeric: tabular-nums;
 }
 
@@ -996,9 +1027,9 @@ main {
   border-radius: 50%;
 }
 
-.panel-bar .lamp:nth-child(1) { background: var(--accent); }
-.panel-bar .lamp:nth-child(2) { background: var(--cyan); opacity: 0.6; }
-.panel-bar .lamp:nth-child(3) { background: var(--cyan); opacity: 0.3; }
+.panel-bar .lamp:nth-child(1) { background: var(--gold); }
+.panel-bar .lamp:nth-child(2) { background: var(--accent); opacity: 0.55; }
+.panel-bar .lamp:nth-child(3) { background: var(--accent); opacity: 0.28; }
 
 .panel-bar span {
   margin-left: 8px;
@@ -1196,8 +1227,8 @@ main {
 }
 
 .filter-button.active {
-  background: var(--gold);
-  border-color: var(--gold);
+  background: var(--accent);
+  border-color: var(--accent);
   color: var(--accent-ink);
 }
 
@@ -1672,9 +1703,9 @@ main {
   margin: 12px 0 0;
   font-family: var(--font-display);
   font-size: clamp(26px, 3vw, 36px);
-  font-weight: 450;
+  font-weight: 500;
   line-height: 1.16;
-  letter-spacing: -0.01em;
+  letter-spacing: -0.03em;
 }
 
 .contact-panel .lead {

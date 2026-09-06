@@ -214,16 +214,16 @@
   var BUTTON_VARS = {
     gold: {
       dark: {
-        "--button-bg": "var(--accent)",
-        "--button-hover": "var(--ice)",
+        "--button-bg": "linear-gradient(180deg, color-mix(in srgb, var(--accent) 82%, #ffffff), var(--accent) 55%, color-mix(in srgb, var(--accent) 88%, #001018))",
+        "--button-hover": "linear-gradient(180deg, color-mix(in srgb, var(--accent) 68%, #ffffff), color-mix(in srgb, var(--accent) 92%, #ffffff) 55%, var(--accent))",
         "--button-color": "var(--accent-ink)",
-        "--button-bd": "1px solid var(--accent)"
+        "--button-bd": "1px solid color-mix(in srgb, var(--accent) 82%, #001018)"
       },
       light: {
-        "--button-bg": "var(--accent)",
-        "--button-hover": "var(--ice)",
+        "--button-bg": "linear-gradient(180deg, color-mix(in srgb, var(--accent) 82%, #ffffff), var(--accent) 55%, color-mix(in srgb, var(--accent) 88%, #001018))",
+        "--button-hover": "linear-gradient(180deg, color-mix(in srgb, var(--accent) 68%, #ffffff), color-mix(in srgb, var(--accent) 92%, #ffffff) 55%, var(--accent))",
         "--button-color": "var(--accent-ink)",
-        "--button-bd": "1px solid var(--accent)"
+        "--button-bd": "1px solid color-mix(in srgb, var(--accent) 82%, #001018)"
       }
     },
     lagoon: {
