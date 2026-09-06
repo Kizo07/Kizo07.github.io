@@ -41,9 +41,9 @@
   --header-bg: rgba(2, 6, 9, 0.88);
 
   /* Glass & halo (let the backdrop breathe through surfaces) */
-  --glass: color-mix(in srgb, var(--surface) 88%, transparent);
-  --glass-2: color-mix(in srgb, var(--surface-2) 84%, transparent);
-  --glass-deep: color-mix(in srgb, var(--bg-soft) 82%, transparent);
+  --glass: color-mix(in srgb, var(--surface) 80%, transparent);
+  --glass-2: color-mix(in srgb, var(--surface-2) 76%, transparent);
+  --glass-deep: color-mix(in srgb, var(--bg-soft) 72%, transparent);
   --glass-blur: blur(14px);
   --halo-gold: rgba(227, 172, 85, 0.18);
   --halo-cyan: rgba(0, 132, 255, 0.14);
@@ -736,7 +736,7 @@ main {
 [data-motion='paused'] .eyebrow .dot,
 [data-page-hidden] .ticker-track,
 [data-page-hidden] .eyebrow .dot { animation-play-state: paused; }
-[data-theme='light'] .matrix-canvas { opacity: 0.16; }
+[data-theme='light'] .matrix-canvas { opacity: 0.3; }
 
 /* ---------- Ticker tape ---------- */
 .ticker {

@@ -51,7 +51,7 @@
         if (stream.warm) {
           context.fillStyle = light ? "rgba(146,102,30," + alpha + ")" : "rgba(236,182,96," + alpha + ")";
         } else {
-          context.fillStyle = light ? "rgba(0,108,160," + alpha + ")" : "rgba(0,178,255," + alpha + ")";
+          context.fillStyle = light ? "rgba(0,98,150," + alpha + ")" : "rgba(0,178,255," + alpha + ")";
         }
         if (row === 0) {
           if (stream.warm) {
