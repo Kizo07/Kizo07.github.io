@@ -674,6 +674,16 @@ main {
   box-shadow: none;
 }
 
+/* Theme-following portrait: exactly one image per color scheme.
+   Dark scheme shows the default capture; light scheme swaps in the light one. */
+:root:not([data-theme='light']) .hero-portrait img.portrait-light {
+  display: none;
+}
+
+[data-theme='light'] .hero-portrait img.portrait-dark {
+  display: none;
+}
+
 /* HUD corner brackets: cyan leads, gold trails the far corner. */
 .hero-portrait::before {
   content: '';
