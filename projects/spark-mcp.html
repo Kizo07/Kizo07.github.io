@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Spark-MCP — Research Memory &amp; Creativity Engine | Kanav Mehta</title>
+    <meta name="description" content="Spark-MCP is an MCP server that gives quant research teams a memory: every trial logged, significance deflated for multiple testing, unexplored research space mapped.">
+    <link rel="canonical" href="https://kizo07.github.io/projects/spark-mcp.html">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://kizo07.github.io/projects/spark-mcp.html">
+    <meta property="og:title" content="Spark-MCP — Research Memory &amp; Creativity Engine">
+    <meta property="og:description" content="An MCP server that remembers everything a quant team tried — failures included — and deflates significance so lucky backtests don't ship.">
+    <meta property="og:image" content="https://kizo07.github.io/images/profile.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Spark-MCP — Research Memory &amp; Creativity Engine">
+    <meta name="twitter:description" content="Trial-governed statistics, MAP-Elites exploration, and replay-gated skills for quant research teams.">
+    <meta name="twitter:image" content="https://kizo07.github.io/images/profile.png">
+    <meta name="theme-color" content="#020609">
+    <link rel="icon" href="/favicon.ico">
+    <script>
+      (function () {
+        try {
+          var saved = localStorage.getItem("theme");
+          var theme = saved || "dark";
+          document.documentElement.setAttribute("data-theme", theme);
+        } catch (error) {
+          document.documentElement.setAttribute("data-theme", "dark");
+        }
+      })();
+    </script>
+    <link rel="stylesheet" href="/assets/site.css?v=38">
+    <link rel="stylesheet" href="/assets/vendor/mantine-bundle.css">
+    <link rel="stylesheet" href="/assets/vendor/mantine-overrides.css?v=3">
+    <noscript><style>.reveal { opacity: 1; transform: none; }</style></noscript>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <div class="site-shell">
+      <header class="site-header">
+        <div class="nav-inner">
+          <a class="brand" href="/" aria-label="Kanav Mehta home">
+            <span class="brand-mark">KM</span>
+            <span>Kanav Mehta</span>
+            <span class="brand-role">Quantitative AI Research</span>
+          </a>
+          <nav class="site-nav" data-site-nav aria-label="Primary navigation">
+            <a href="/">Home</a>
+            <a class="active" href="/projects/">Projects</a>
+            <a href="/blogs/">Research Notes</a>
+            <a href="/#contact">Contact</a>
+          </nav>
+          <div class="nav-actions">
+            <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch theme" title="Switch theme">
+              <span class="sun-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path></svg>
+              </span>
+              <span class="moon-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path></svg>
+              </span>
+            </button>
+            <button class="nav-toggle" type="button" data-nav-toggle aria-label="Open navigation" aria-expanded="false">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"></path></svg>
+            </button>
+          </div>
+        </div>
+      </header>
+
+      <main id="main">
+        <section class="page-hero">
+          <div class="page-section">
+            <div class="page-title">
+              <p class="eyebrow">Agentic Research · Institutional Memory</p>
+              <h1>The research ledger that refuses to let a lucky backtest ship.</h1>
+              <p class="lead">Spark-MCP gives quant research teams a memory. It logs every hypothesis and outcome — failures included — deflates significance for the full trial count, and maps the unexplored corners of research space. Validated ideas graduate into replay-gated skills, with a human veto at every promotion.</p>
+              <div class="inline-actions">
+                <a class="button ghost small" href="/projects/"><span class="arr" aria-hidden="true">←</span> Back to Projects</a>
+                <a class="button accent small" href="https://github.com/Kizo07/spark-mcp" target="_blank" rel="noopener noreferrer">GitHub <span class="arr" aria-hidden="true">↗</span></a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="page-section">
+          <div class="detail-grid">
+            <aside class="fact-sheet reveal" aria-label="Project snapshot">
+              <div class="fact-row"><span>Role</span><b>Creativity + institutional learning</b></div>
+              <div class="fact-row"><span>Agent surface</span><b>33 MCP tools (stdio)</b></div>
+              <div class="fact-row"><span>Statistics</span><b>Deflated Sharpe gates</b></div>
+              <div class="fact-row"><span>Exploration</span><b>MAP-Elites archive</b></div>
+              <div class="fact-row"><span>Storage</span><b>SQLite WAL + FTS5 + vec</b></div>
+              <div class="fact-row"><span>Peer</span><b>Alpha Engine computes, Spark judges</b></div>
+            </aside>
+
+            <div class="prose reveal">
+              <article class="article-card">
+                <p class="article-meta">Trial discipline</p>
+                <h2>Significance, deflated by construction.</h2>
+                <ul class="square-list">
+                  <li>Every trial is inserted before dispatch, so retries and reruns never double-count — the trial ledger is exact-once by design.</li>
+                  <li>Every verdict pairs raw Sharpe with its Deflated Sharpe, adjusted for how many things the team actually tried.</li>
+                  <li>Failures are first-class records: the ledger remembers dead ends so the next agent doesn't re-walk them.</li>
+                </ul>
+              </article>
+
+              <article class="article-card" style="margin-top: 18px;">
+                <p class="article-meta">Exploration</p>
+                <h2>A map of what nobody has tried yet.</h2>
+                <ul class="square-list">
+                  <li>A MAP-Elites quality-diversity archive surfaces genuinely unexplored method combinations, not just nearest neighbors of past work.</li>
+                  <li>Successful trajectories distill into challenger skills — promoted only after a replay gate and explicit human approval. The LLM narrates; it never decides.</li>
+                  <li>A bounded artifact-evolution loop (hypothesis → backtest → DSR gate → computed promotion) stays bit-reproducible given seed, caps, and provider — held-out data never leaks into feedback.</li>
+                </ul>
+              </article>
+
+              <article class="article-card" style="margin-top: 18px;">
+                <p class="article-meta">In the stack</p>
+                <h2>The judge beside the engine.</h2>
+                <ul class="square-list">
+                  <li>Spark never backtests or owns market data — the Alpha Engine computes (backtests, causal tests, risk decomposition) and Spark judges the result.</li>
+                  <li>Engine-agnostic MCP peer: plugs into any MCP-capable agent, and stays fully usable offline in degraded mode with a lexical novelty proxy — no LLM key required.</li>
+                  <li>Phases 0–7 complete with gates G1–G5 green, including an honestly reported single-draw RED under the stricter reading.</li>
+                </ul>
+              </article>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <div class="footer-inner">
+          <div class="footer-brand">
+            <strong>Kanav Mehta</strong>
+            <span>Quantitative AI Researcher</span>
+          </div>
+          <div class="footer-links">
+            <a href="/">Home</a>
+            <a href="/projects/">Projects</a>
+            <a href="/blogs/">Research Notes</a>
+            <a href="https://github.com/Kizo07" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <a href="https://linkedin.com/in/cxz07" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          </div>
+          <p class="footer-meta">© <span data-year>2026</span> · KM.EXP ▲</p>
+        </div>
+      </footer>
+    </div>
+    <script src="/assets/site.js?v=22"></script>
+    <script src="/assets/matrix.js?v=5" defer></script>
+    <script src="/assets/vendor/mantine-bundle.js" defer></script>
+    <script src="/assets/mantine-app.js?v=3" defer></script>
+  </body>
+</html>

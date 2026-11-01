@@ -1,8 +1,6 @@
 (function () {
   var root = document.documentElement;
   var toggle = document.querySelector("[data-theme-toggle]");
-  var navToggle = document.querySelector("[data-nav-toggle]");
-  var nav = document.querySelector("[data-site-nav]");
   var filterButtons = document.querySelectorAll("[data-filter]");
   var projectCards = document.querySelectorAll("[data-project]");
 
@@ -25,7 +23,7 @@
       --ts-muted: #a1b4c4;
       --ts-line: rgba(86, 183, 229, 0.28);
       --ts-grid: rgba(86, 183, 229, 0.12);
-      --ts-accent: #08bfff;
+      --ts-accent: #0abfff;
     }
 
     html[data-parent-theme],
@@ -213,27 +211,6 @@
   if (toggle) {
     toggle.addEventListener("click", function () {
       setTheme(root.getAttribute("data-theme") === "dark" ? "light" : "dark");
-    });
-  }
-
-  /* ---- Mobile nav ---- */
-  if (navToggle && nav) {
-    if (!nav.id) {
-      nav.id = "site-nav";
-    }
-    navToggle.setAttribute("aria-controls", nav.id);
-    navToggle.addEventListener("click", function () {
-      var isOpen = nav.classList.toggle("open");
-      navToggle.setAttribute("aria-expanded", String(isOpen));
-      navToggle.setAttribute("aria-label", isOpen ? "Close navigation" : "Open navigation");
-    });
-
-    nav.querySelectorAll("a").forEach(function (link) {
-      link.addEventListener("click", function () {
-        nav.classList.remove("open");
-        navToggle.setAttribute("aria-expanded", "false");
-        navToggle.setAttribute("aria-label", "Open navigation");
-      });
     });
   }
 

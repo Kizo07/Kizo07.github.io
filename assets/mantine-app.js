@@ -12,7 +12,8 @@
     return document.documentElement.getAttribute("data-theme") === "light" ? "light" : "dark";
   }
 
-  var MATRIX = ["#e9faff", "#cef2ff", "#a0e8ff", "#6bdbff", "#36ceff", "#08bfff", "#009ed9", "#007ea9", "#006484", "#004a63"];
+  /* Option A: dark accent #0abfff (shade 5), light accent #00648f (shade 8). */
+  var MATRIX = ["#e9faff", "#cef2ff", "#9fe6ff", "#5fd4ff", "#2ec7ff", "#0abfff", "#009ed9", "#007aa3", "#00648f", "#004a63"];
 
   var theme = MC.createTheme({
     fontFamily: "'Inter', system-ui, -apple-system, sans-serif",
@@ -20,7 +21,7 @@
     headings: { fontFamily: "'Space Grotesk', 'Inter', system-ui, sans-serif", fontWeight: "500" },
     defaultRadius: "sm",
     primaryColor: "matrix",
-    primaryShade: { dark: 5, light: 7 },
+    primaryShade: { dark: 5, light: 8 },
     colors: { matrix: MATRIX }
   });
 
@@ -298,45 +299,88 @@
   }
 
   function applyFilter(value) {
+    var visible = 0;
     projectCards.forEach(function (card) {
       var tags = (card.getAttribute("data-project") || "").split(/\s+/);
       card.hidden = value !== "all" && tags.indexOf(value) === -1;
+      if (!card.hidden) visible += 1;
     });
+    return visible;
+  }
+
+  function filterFromUrl() {
+    try {
+      var v = new URLSearchParams(window.location.search).get("filter");
+      var ok = filterDefs.some(function (f) { return f.value === v; });
+      return ok ? v : (filterDefs.length ? filterDefs[0].value : "all");
+    } catch (e) {
+      return filterDefs.length ? filterDefs[0].value : "all";
+    }
+  }
+
+  function syncFilterToUrl(value) {
+    try {
+      var url = new URL(window.location.href);
+      if (value && value !== "all") url.searchParams.set("filter", value);
+      else url.searchParams.delete("filter");
+      window.history.replaceState(window.history.state, "", url.pathname + url.search + url.hash);
+    } catch (e) {}
   }
 
   function FilterButtons() {
-    var _v = R.useState(filterDefs.length ? filterDefs[0].value : "all");
+    var _v = R.useState(filterFromUrl);
     var value = _v[0];
     var setValue = _v[1];
+
+    R.useEffect(function () {
+      applyFilter(value);
+      syncFilterToUrl(value);
+    }, []);
+
+    var visibleCount = projectCards.filter(function (card) {
+      if (value === "all") return true;
+      return (card.getAttribute("data-project") || "").split(/\s+/).indexOf(value) !== -1;
+    }).length;
+
     return h(
-      MC.Group,
-      { gap: 9, wrap: "wrap", role: "group", "aria-label": "Project filters" },
-      filterDefs.map(function (f) {
-        var active = f.value === value;
-        return h(
-          MC.Button,
-          {
-            key: f.value,
-            type: "button",
-            variant: "filled",
-            size: "compact-sm",
-            radius: "xl",
-            "aria-pressed": String(active),
-            className: "km-btn km-filter-btn " + (active ? "km-gold" : "km-ghost"),
-            style: active
-              ? BUTTON_VARS.gold[currentScheme()]
-              : Object.assign({}, BUTTON_VARS.ghost[currentScheme()], {
-                  "--button-color": "var(--muted)",
-                  "--button-hover": "var(--surface)"
-                }),
-            onClick: function () {
-              setValue(f.value);
-              applyFilter(f.value);
-            }
-          },
-          f.label
-        );
-      })
+      R.Fragment,
+      null,
+      h(
+        MC.Group,
+        { gap: 9, wrap: "wrap", role: "group", "aria-label": "Project filters" },
+        filterDefs.map(function (f) {
+          var active = f.value === value;
+          return h(
+            MC.Button,
+            {
+              key: f.value,
+              type: "button",
+              variant: "filled",
+              size: "compact-sm",
+              radius: "xl",
+              "aria-pressed": String(active),
+              className: "km-btn km-filter-btn " + (active ? "km-gold" : "km-ghost"),
+              style: active
+                ? BUTTON_VARS.gold[currentScheme()]
+                : Object.assign({}, BUTTON_VARS.ghost[currentScheme()], {
+                    "--button-color": "var(--muted)",
+                    "--button-hover": "var(--surface)"
+                  }),
+              onClick: function () {
+                setValue(f.value);
+                applyFilter(f.value);
+                syncFilterToUrl(f.value);
+              }
+            },
+            f.label
+          );
+        })
+      ),
+      h(
+        "p",
+        { className: "km-filter-count", "aria-live": "polite", role: "status" },
+        "Showing " + visibleCount + (visibleCount === 1 ? " project" : " projects")
+      )
     );
   }
 
