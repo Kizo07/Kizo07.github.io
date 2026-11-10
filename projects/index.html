@@ -85,7 +85,7 @@
               <div class="project-card-inner">
                 <span class="project-type">Agentic Research · Flagship<span class="flagship-tag">★ Flagship</span></span>
                 <h2>QuantFlow</h2>
-                <p>LLM-driven equity research stack — a survivorship-bias-free data engine, a debating analyst desk, and a report forge rendering chart-led flagship outlooks in a single gold/teal exhibit identity.</p>
+                <p>LLM-driven equity research stack: a survivorship-bias-free data engine, a debating analyst desk, and a report forge rendering chart-led flagship outlooks in a single gold/teal exhibit identity.</p>
                 <div class="project-metrics">
                   <span>26<small>AMZN charts</small></span>
                   <span>OW $292<small>example call</small></span>
@@ -94,7 +94,7 @@
                 </div>
                 <ul class="square-list">
                   <li>Point-in-time S&amp;P 500 universe, bull/bear debate with risk veto, mechanical freshness/length/artifact gates.</li>
-                  <li>Example: AMZN 12-month outlook — 26 exhibits, full PDF linked.</li>
+                  <li>Example: AMZN 12-month outlook, 26 exhibits, full PDF linked.</li>
                 </ul>
                 <div class="tag-row"><span class="tag">Agentic Research</span><span class="tag">MCP</span></div>
                 <div class="inline-actions">
@@ -122,6 +122,148 @@
                 </ul>
                 <div class="tag-row"><span class="tag">Factor Investing</span><span class="tag">Backtesting</span><span class="tag">Dashboards</span></div>
                 <div class="inline-actions"><a class="button accent small" href="/projects/single-factor-modeling.html">Case Study <span class="arr" aria-hidden="true">→</span></a></div>
+              </div>
+            </article>
+
+            <article class="project-card reveal" data-project="ai product">
+              <div class="project-card-inner">
+                <span class="project-type">QuantLink AI · ML Platform</span>
+                <h2>AutoML Workbench</h2>
+                <p>A no-code platform to train, rank, explain and deploy many scikit-learn, XGBoost and LightGBM models on a point-in-time equity panel or a user's own tables, scored with purged walk-forward validation so future data never leaks in.</p>
+                <div class="project-metrics">
+                  <span>5<small>problem types</small></span>
+                  <span>1M<small>rows per table</small></span>
+                  <span>31<small>plain-language errors</small></span>
+                  <span>4<small>engine releases</small></span>
+                </div>
+                <ul class="square-list"><li>Led the path from a ported research library to production: purged walk-forward CV with embargo and a multi-date holdout, SHAP drivers, blended ensembles, a Redis/RQ worker queue, and an audit of 438 data limits so that every cap became a named refusal.</li></ul>
+                <div class="tag-row"><span class="tag">scikit-learn · XGBoost · LightGBM</span><span class="tag">FastAPI · Redis/RQ</span><span class="tag">Next.js</span></div>
+                <div class="inline-actions">
+                  <a class="button accent small" href="/projects/automl-workbench.html">Case Study <span class="arr" aria-hidden="true">→</span></a>
+                </div>
+              </div>
+            </article>
+
+            <article class="project-card reveal" data-project="market product">
+              <div class="project-card-inner">
+                <span class="project-type">QuantLink AI · Analytics Product</span>
+                <h2>Notebook Dashboards</h2>
+                <p>One click turns a Python research notebook into a shareable, interactive dashboard: typed inputs, scheduled reruns, live embeds, and server-side pivots and cross-filtering over every row of the data.</p>
+                <div class="project-metrics">
+                  <span>50M<small>rows per table</small></span>
+                  <span>9<small>typed inputs</small></span>
+                  <span>6<small>codebases</small></span>
+                  <span>7-tab<small>stock page rebuilt</small></span>
+                </div>
+                <ul class="square-list"><li>Built an in-house DuckDB pivot engine that streams answers over Arrow. The worst-case query once compiled for 28 s and peaked at 10.8 GiB; every limit is now measured and refused by name, never silently truncated.</li></ul>
+                <div class="tag-row"><span class="tag">DuckDB</span><span class="tag">Next.js</span><span class="tag">FastAPI</span></div>
+                <div class="inline-actions">
+                  <a class="button accent small" href="/projects/notebook-dashboards.html">Case Study <span class="arr" aria-hidden="true">→</span></a>
+                </div>
+              </div>
+            </article>
+
+            <article class="project-card reveal" data-project="ai product">
+              <div class="project-card-inner">
+                <span class="project-type">QuantLink AI · Research Platform</span>
+                <h2>Operator Catalog</h2>
+                <p>Eight separate analytics and ML operator registries unified into one generated, hash-sealed catalog. Every operator is a typed parameter form that resolves to runnable notebook code, plus private operators generated from any Python library in the user's own kernel.</p>
+                <div class="project-metrics">
+                  <span>1,139<small>operators</small></span>
+                  <span>8<small>registries unified</small></span>
+                  <span>959<small>directly callable</small></span>
+                  <span>~4 days<small>to core merged</small></span>
+                </div>
+                <ul class="square-list"><li>Deterministic, schema-contracted projection (22 JSON Schemas) with CI conformance runs, content-addressed fail-closed delivery, and one resolver kept identical across Python, TypeScript and kernel implementations.</li></ul>
+                <div class="tag-row"><span class="tag">Python</span><span class="tag">TypeScript / Next.js</span><span class="tag">Cloudflare Workers</span></div>
+                <div class="inline-actions">
+                  <a class="button accent small" href="/projects/operator-catalog.html">Case Study <span class="arr" aria-hidden="true">→</span></a>
+                </div>
+              </div>
+            </article>
+
+            <article class="project-card reveal" data-project="factor product">
+              <div class="project-card-inner">
+                <span class="project-type">QuantLink AI · Data Platform</span>
+                <h2>Point-in-Time Market Data Platform</h2>
+                <p>QuantLink AI's survivorship-free market-data foundation: vendor feeds in ClickHouse under Dagster, a universe that keeps delisted companies, ~180M rows of calculations proven against their sources, and a replayable dbt lakehouse.</p>
+                <div class="project-metrics">
+                  <span>180M<small>calc rows rebuilt</small></span>
+                  <span>1,442<small>columns at exact parity</small></span>
+                  <span>107.6M<small>row backfill</small></span>
+                  <span>20<small>bulk datasets</small></span>
+                </div>
+                <ul class="square-list"><li>A daily incremental lands ~5.9M rows in ~14 minutes, every calculation table ships only after matching an independent oracle, and the lakehouse keeps exact provider bytes for replay.</li></ul>
+                <div class="tag-row"><span class="tag">ClickHouse · Dagster</span><span class="tag">dbt</span><span class="tag">Point-in-Time Data</span></div>
+                <div class="inline-actions"><a class="button accent small" href="/projects/pit-market-data-platform.html">Case Study <span class="arr" aria-hidden="true">→</span></a></div>
+              </div>
+            </article>
+
+            <article class="project-card reveal" data-project="trading factor">
+              <div class="project-card-inner">
+                <span class="project-type">QuantLink AI · Backtesting</span>
+                <h2>SQL-Native Backtester</h2>
+                <p>A backtesting engine written entirely as dbt SQL models on ClickHouse: no Python loop, look-ahead blocked by construction, every dollar of P&amp;L reconciled to its trades, and rebuilt in production every week.</p>
+                <div class="project-metrics">
+                  <span>14<small>dbt gold models</small></span>
+                  <span>7,184<small>trades simulated</small></span>
+                  <span>81/81<small>build checks green</small></span>
+                  <span>Weekly<small>production rebuild</small></span>
+                </div>
+                <ul class="square-list"><li>Look-ahead blocked structurally and by a fuzzed compile-time gate; a per-symbol P&amp;L identity test, a hand-traced trade (84/84 daily rows, zero difference) and a toy fixture covering every exit path pin correctness.</li></ul>
+                <div class="tag-row"><span class="tag">dbt</span><span class="tag">ClickHouse</span><span class="tag">SQL</span></div>
+                <div class="inline-actions"><a class="button accent small" href="/projects/sql-backtester.html">Case Study <span class="arr" aria-hidden="true">→</span></a></div>
+              </div>
+            </article>
+
+            <article class="project-card reveal" data-project="ai product">
+              <div class="project-card-inner">
+                <span class="project-type">QuantLink AI · AI Agents</span>
+                <h2>Notebook AI Agent</h2>
+                <p>A grounded AI agent that writes and edits research notebook cells against a live Python kernel, and checks its own work before any edit applies: code parsed, SQL validated and grounded to real datasets, numbers matched to cited evidence.</p>
+                <div class="project-metrics">
+                  <span>725<small>operators searchable</small></span>
+                  <span>115<small>warehouse datasets</small></span>
+                  <span>5<small>model tools</small></span>
+                  <span>477<small>focused tests</small></span>
+                </div>
+                <ul class="square-list"><li>Built the runtime underneath too: isolated Jupyter kernels with signed, renewable grants, live recovery with no cell replay, and a digest-pinned production executor verified end to end.</li></ul>
+                <div class="tag-row"><span class="tag">LLM tool calling</span><span class="tag">Python / Jupyter</span><span class="tag">FastAPI</span></div>
+                <div class="inline-actions"><a class="button accent small" href="/projects/notebook-ai-agent.html">Case Study <span class="arr" aria-hidden="true">→</span></a></div>
+              </div>
+            </article>
+
+            <article class="project-card reveal" data-project="ai product">
+              <div class="project-card-inner">
+                <span class="project-type">QuantLink AI · Agent Platform</span>
+                <h2>QuantLink MCP Platform</h2>
+                <p>An MCP layer where AI agents research, evaluate, and refine strategies with a quant desk's tools, plus a governed data server giving agents and notebook kernels fail-closed, entitlement-checked access to 789 datasets.</p>
+                <div class="project-metrics">
+                  <span>38<small>agent tools</small></span>
+                  <span>789<small>governed datasets</small></span>
+                  <span>19<small>routes behind JWT</small></span>
+                  <span>8×<small>faster cached lookup</small></span>
+                </div>
+                <ul class="square-list"><li>Large results stay out of agent context: Parquet snapshots served by handle, DuckDB SQL follow-ups with no second provider call, verified end to end on staging.</li></ul>
+                <div class="tag-row"><span class="tag">MCP</span><span class="tag">Governed Data</span><span class="tag">DuckDB</span></div>
+                <div class="inline-actions"><a class="button accent small" href="/projects/quantlink-mcp-platform.html">Case Study <span class="arr" aria-hidden="true">→</span></a></div>
+              </div>
+            </article>
+
+            <article class="project-card reveal" data-project="options product">
+              <div class="project-card-inner">
+                <span class="project-type">QuantLink AI · Derivatives</span>
+                <h2>Options Workspace</h2>
+                <p>A full options analytics workspace on QuantLink's stock page: 104 views spanning a mirrored chain, an interactive 3D implied-volatility surface, skew and term structure, built and shipped across the data layer, API and web app.</p>
+                <div class="project-metrics">
+                  <span>104<small>options views</small></span>
+                  <span>3D<small>IV surface</small></span>
+                  <span>3<small>codebases</small></span>
+                  <span>4.5×<small>faster cold hydration</small></span>
+                </div>
+                <ul class="square-list"><li>Profiled the volatility-surface pipeline stage by stage: a C-accelerated loader for a 6,594-field catalog cut fresh-process hydration from 6.2 s to 1.4 s, and failed streams return a structured, traceable error.</li></ul>
+                <div class="tag-row"><span class="tag">React · Three.js</span><span class="tag">FastAPI</span><span class="tag">Apache Arrow</span></div>
+                <div class="inline-actions"><a class="button accent small" href="/projects/options-workspace.html">Case Study <span class="arr" aria-hidden="true">→</span></a></div>
               </div>
             </article>
 
@@ -239,7 +381,7 @@
               <div class="project-card-inner">
                 <span class="project-type">Factor Research · AI</span>
                 <h2>AI Exposure Factor Suite</h2>
-                <p>ETF-based market-implied AI return factors — an AI Theme factor and an AI Infrastructure factor, built point-in-time for firm-level AI exposure estimation.</p>
+                <p>ETF-based market-implied AI return factors: an AI Theme factor and an AI Infrastructure factor, built point-in-time for firm-level AI exposure estimation.</p>
                 <div class="project-metrics">
                   <span>2<small>AI factors</small></span>
                   <span>AUM-weighted<small>baskets</small></span>
@@ -259,7 +401,7 @@
               <div class="project-card-inner">
                 <span class="project-type">AI / NLP · Product</span>
                 <h2>CEO Tracker</h2>
-                <p>Self-hosted app tracking CEO speeches and press releases from top US firms — company mentions via spaCy NER, FinBERT sentiment.</p>
+                <p>Self-hosted app tracking CEO speeches and press releases from top US firms, with company mentions via spaCy NER and FinBERT sentiment.</p>
                 <div class="project-metrics">
                   <span>spaCy<small>NER</small></span>
                   <span>FinBERT<small>sentiment</small></span>
@@ -279,7 +421,7 @@
               <div class="project-card-inner">
                 <span class="project-type">Market Structure</span>
                 <h2>Early Warning System</h2>
-                <p>A market-crash probability model for US equities — regime and tail-risk signals distilled into a single live probability.</p>
+                <p>A market-crash probability model for US equities: regime and tail-risk signals distilled into a single live probability.</p>
                 <div class="project-metrics">
                   <span>Crash<small>probability</small></span>
                   <span>US Equity<small>universe</small></span>
@@ -326,7 +468,7 @@
               <div class="project-card-inner">
                 <span class="project-type">Options</span>
                 <h2>Implied Volatility Strategies</h2>
-                <p>Equity strategies built on implied-volatility data from the options market — volatility-surface signals treated as tradable edges.</p>
+                <p>Equity strategies built on implied-volatility data from the options market, with volatility-surface signals treated as tradable edges.</p>
                 <div class="project-metrics">
                   <span>IV surface<small>data</small></span>
                   <span>Equity<small>universe</small></span>
@@ -342,7 +484,7 @@
               <div class="project-card-inner">
                 <span class="project-type">Derivatives · Portfolio Research</span>
                 <h2>LEAPS as Stock Substitutes</h2>
-                <p>Empirical long/short equity backtest using LEAPS in place of the underlying stock — escrowed-spot Black-Scholes, a calibrated IV proxy, and a daily-accounting engine with exercise, expiry, and ruin mechanics, on public data only.</p>
+                <p>Empirical long/short equity backtest using LEAPS in place of the underlying stock: escrowed-spot Black-Scholes, a calibrated IV proxy, and a daily-accounting engine with exercise, expiry, and ruin mechanics, on public data only.</p>
                 <div class="project-metrics">
                   <span>V0–V3<small>portfolio variants</small></span>
                   <span>V1–V4<small>validation gates</small></span>
@@ -365,7 +507,7 @@
               <div class="project-card-inner">
                 <span class="project-type">Options · Factor</span>
                 <h2>Factor Investing with Options</h2>
-                <p>Factor portfolios constructed with deep in-the-money options instead of stocks — leverage and downside asymmetry as design inputs rather than afterthoughts.</p>
+                <p>Factor portfolios constructed with deep in-the-money options instead of stocks, with leverage and downside asymmetry as design inputs rather than afterthoughts.</p>
                 <div class="project-metrics">
                   <span>DITM<small>substitute</small></span>
                   <span>Factor<small>portfolios</small></span>
@@ -452,7 +594,7 @@
               <div class="project-card-inner">
                 <span class="project-type">Factor Research · ML</span>
                 <h2>Loss-Making Companies Factor Model</h2>
-                <p>A risk-neutralized factor model for loss-making companies — a LightGBM and Elastic Net ensemble for the regime where traditional valuation signals break down.</p>
+                <p>A risk-neutralized factor model for loss-making companies: a LightGBM and Elastic Net ensemble for the regime where traditional valuation signals break down.</p>
                 <div class="project-metrics">
                   <span>1.53<small>Sharpe</small></span>
                   <span>Neutralized<small>risk</small></span>
@@ -533,7 +675,7 @@
               <div class="project-card-inner">
                 <span class="project-type">Market Structure · Product</span>
                 <h2>Kalshi Market Data &amp; Mentions Pricing</h2>
-                <p>Data pipeline and pricing engine for Kalshi's "Mentions" markets — whether a word will be said during a speech or an earnings call, and how many times. A hurdle model prices the contracts; a FastAPI + Mantine dashboard explores them.</p>
+                <p>Data pipeline and pricing engine for Kalshi's "Mentions" markets: whether a word will be said during a speech or an earnings call, and how many times. A hurdle model prices the contracts; a FastAPI + Mantine dashboard explores them.</p>
                 <div class="project-metrics">
                   <span>Hurdle<small>pricing model</small></span>
                   <span>Live<small>Gamma-Poisson updates</small></span>
@@ -586,8 +728,8 @@
             <article class="project-card reveal" data-project="trading factor">
               <div class="project-card-inner">
                 <span class="project-type">Portfolio Construction</span>
-                <h2>MAPO — Multi-Asset Optimizer</h2>
-                <p>One optimization API across equities, crypto, futures, FX, and treasuries — PyPortfolioOpt, skfolio, and Riskfolio-Lib wrapped behind a unified interface with native solvers, plus a no-lookahead walk-forward backtester and a CLI.</p>
+                <h2>MAPO: Multi-Asset Optimizer</h2>
+                <p>One optimization API across equities, crypto, futures, FX, and treasuries. PyPortfolioOpt, skfolio, and Riskfolio-Lib wrapped behind a unified interface with native solvers, plus a no-lookahead walk-forward backtester and a CLI.</p>
                 <div class="project-metrics">
                   <span>5<small>asset classes</small></span>
                   <span>SOCP<small>max-Sharpe</small></span>
@@ -607,7 +749,7 @@
               <div class="project-card-inner">
                 <span class="project-type">Agentic Research · Reporting</span>
                 <h2>report-forge</h2>
-                <p>Quarto-powered publishing engine, driven by agents over MCP: Markdown and local chart PNGs in, typography-grade PDF, HTML, and DOCX out — with mechanical quality gates that refuse to ship bad exhibits.</p>
+                <p>Quarto-powered publishing engine, driven by agents over MCP: Markdown and local chart PNGs in, typography-grade PDF, HTML, and DOCX out, with mechanical quality gates that refuse to ship bad exhibits.</p>
                 <div class="project-metrics">
                   <span>19<small>templates</small></span>
                   <span>4<small>output formats</small></span>
@@ -615,7 +757,7 @@
                   <span>20–30<small>page flagship PDFs</small></span>
                 </div>
                 <ul class="square-list">
-                  <li>Editorial cover infographics — verdict band, key-point cards, scenario strip — compacted onto page one; native Exhibit numbering and spreadsheet-style tables in PDF and HTML.</li>
+                  <li>Editorial cover infographics (verdict band, key-point cards, scenario strip) compacted onto page one; native Exhibit numbering and spreadsheet-style tables in PDF and HTML.</li>
                   <li>Production renderer for QuantFlow outlooks (MSFT, GOOGL, META, NVDA); headless notebooks with persistent kernels in v0.2.0.</li>
                 </ul>
                 <div class="tag-row"><span class="tag">Agentic Research</span><span class="tag">Typst</span><span class="tag">Quarto</span></div>
@@ -638,7 +780,7 @@
                   <span>Replay<small>gated skills</small></span>
                 </div>
                 <ul class="square-list">
-                  <li>Exact-once trial counting — retries never inflate significance; validated trajectories distill into replay-gated skills with a human veto.</li>
+                  <li>Exact-once trial counting: retries never inflate significance; validated trajectories distill into replay-gated skills with a human veto.</li>
                 </ul>
                 <div class="tag-row"><span class="tag">MCP</span><span class="tag">Research Memory</span><span class="tag">Deflated Sharpe</span></div>
                 <div class="inline-actions">
@@ -652,7 +794,7 @@
               <div class="project-card-inner">
                 <span class="project-type">AI / NLP Library</span>
                 <h2>kizoNLP</h2>
-                <p>Financial NLP library: sentiment engines (DeBERTa-v3 financial, zero-shot NLI, SetFit few-shot), a modern embedding registry (Qwen3, gte-modernbert, BGE, E5), and map-reduce summarizers for long documents — exposed as an MCP server.</p>
+                <p>Financial NLP library: sentiment engines (DeBERTa-v3 financial, zero-shot NLI, SetFit few-shot), a modern embedding registry (Qwen3, gte-modernbert, BGE, E5), and map-reduce summarizers for long documents, all exposed as an MCP server.</p>
                 <div class="project-metrics">
                   <span>0.3.1<small>2026 modernization</small></span>
                   <span>6<small>sentiment engines</small></span>
@@ -667,7 +809,7 @@
               <div class="project-card-inner">
                 <span class="project-type">Product Analytics</span>
                 <h2>Quant Dashboard Systems</h2>
-                <p>Dashboards for backtesting, screening, alpha review, financial models, and macro risk monitoring — built at Wolfe Research and elsewhere, with every recent dashboard launched from a custom-built Mission Control hub.</p>
+                <p>Dashboards for backtesting, screening, alpha review, financial models, and macro risk monitoring, built at Wolfe Research and elsewhere, with every recent dashboard launched from a custom-built Mission Control hub.</p>
                 <div class="project-metrics">
                   <span>Screeners<small>stocks</small></span>
                   <span>Backtests<small>strategy</small></span>
@@ -682,7 +824,7 @@
               <div class="project-card-inner">
                 <span class="project-type">Trading Systems</span>
                 <h2>IMC Prosperity 2025</h2>
-                <p>Algorithmic trading submission for IMC Prosperity 2025 — market-making and positioning under live-style constraints.</p>
+                <p>Algorithmic trading submission for IMC Prosperity 2025: market-making and positioning under live-style constraints.</p>
                 <div class="project-metrics">
                   <span>IMC<small>2025</small></span>
                   <span>Market making<small>quotes</small></span>

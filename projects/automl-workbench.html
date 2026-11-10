@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>AutoML Workbench — Leakage-Safe No-Code ML Platform | Kanav Mehta</title>
+    <meta name="description" content="AutoML Workbench at QuantLink AI: a no-code platform to train, rank, explain and deploy scikit-learn, XGBoost and LightGBM models on equity panels or user tables, with purged walk-forward validation.">
+    <link rel="canonical" href="https://kizo07.github.io/projects/automl-workbench.html">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://kizo07.github.io/projects/automl-workbench.html">
+    <meta property="og:title" content="AutoML Workbench — Leakage-Safe No-Code ML Platform">
+    <meta property="og:description" content="Pick data, pick a target, and train, rank, explain and deploy many models — with purged walk-forward validation that keeps future data out of every score.">
+    <meta property="og:image" content="https://kizo07.github.io/images/profile.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="AutoML Workbench — Leakage-Safe No-Code ML Platform">
+    <meta name="twitter:description" content="A production AutoML platform: leakage-safe validation, SHAP drivers, blended ensembles, queued training and reproducible engine releases.">
+    <meta name="twitter:image" content="https://kizo07.github.io/images/profile.png">
+    <meta name="theme-color" content="#020609">
+    <link rel="icon" href="/favicon.ico">
+    <script>
+      (function () {
+        try {
+          var saved = localStorage.getItem("theme");
+          var theme = saved || "dark";
+          document.documentElement.setAttribute("data-theme", theme);
+        } catch (error) {
+          document.documentElement.setAttribute("data-theme", "dark");
+        }
+      })();
+    </script>
+    <link rel="stylesheet" href="/assets/site.css?v=39">
+    <link rel="stylesheet" href="/assets/vendor/mantine-bundle.css">
+    <link rel="stylesheet" href="/assets/vendor/mantine-overrides.css?v=4">
+    <noscript><style>.reveal { opacity: 1; transform: none; }</style></noscript>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <div class="site-shell">
+      <header class="site-header">
+        <div class="nav-inner">
+          <a class="brand" href="/" aria-label="Kanav Mehta home">
+            <span class="brand-mark">KM</span>
+            <span>Kanav Mehta</span>
+            <span class="brand-role">Quantitative AI Research</span>
+          </a>
+          <nav class="site-nav" data-site-nav aria-label="Primary navigation">
+            <a href="/">Home</a>
+            <a class="active" href="/projects/">Projects</a>
+            <a href="/blogs/">Research Notes</a>
+            <a href="/#contact">Contact</a>
+          </nav>
+          <div class="nav-actions">
+            <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch theme" title="Switch theme">
+              <span class="sun-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path></svg>
+              </span>
+              <span class="moon-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path></svg>
+              </span>
+            </button>
+            <button class="nav-toggle" type="button" data-nav-toggle aria-label="Open navigation" aria-expanded="false">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"></path></svg>
+            </button>
+          </div>
+        </div>
+      </header>
+      <main id="main">
+        <section class="page-hero">
+          <div class="page-section">
+            <div class="page-title">
+              <p class="eyebrow">QuantLink AI · ML Platform</p>
+              <h1>Pick data, pick a target: get models you can trust.</h1>
+              <p class="lead">AutoML Workbench is a no-code platform for training, ranking, explaining and deploying many scikit-learn, XGBoost and LightGBM models across five problem types. Kanav led it from August 2026, taking a ported research ML library and turning it into an end-to-end production platform: leakage-safe validation, explainability, ensembles, scoring, and the release and QA discipline behind them.</p>
+              <div class="inline-actions">
+                <a class="button ghost small" href="/projects/"><span class="arr" aria-hidden="true">←</span> Back to Projects</a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="page-section">
+          <div class="detail-grid">
+            <div class="fact-col">
+            <aside class="fact-sheet reveal" aria-label="Project snapshot">
+              <div class="fact-row"><span>Role</span><b>Lead engineer · QuantLink AI · Aug–Nov 2026</b></div>
+              <div class="fact-row"><span>Problem types</span><b>Regression · Classification · Clustering · Dim. reduction · Similarity</b></div>
+              <div class="fact-row"><span>Data</span><b>~80-factor point-in-time equity panel or user tables up to 1M rows</b></div>
+              <div class="fact-row"><span>Validation</span><b>Purged walk-forward CV + embargo · multi-date holdout</b></div>
+              <div class="fact-row"><span>Ranking</span><b>Holdout Rank IC IR · R² · balanced accuracy</b></div>
+              <div class="fact-row"><span>Stack</span><b>scikit-learn · XGBoost · LightGBM · SHAP · FastAPI</b></div>
+              <div class="fact-row"><span>Workflow</span><b>AI-agent-assisted build, independent review</b></div>
+            </aside>
+            <figure class="showcase-figure reveal">
+            <img src="/images/dashboards/automl-workbench-leaderboard.png" alt="AutoML Workbench results tab showing a completed regression run with streamed progress steps, a six-date holdout, purged walk-forward split, and a model leaderboard ranked by holdout Rank IC with a Blend top 3 button" width="1440" height="751" loading="lazy">
+            <figcaption>Results: streamed run progress, a row-accounting receipt, and a leaderboard ranked on a multi-date holdout, one click from a blended ensemble.</figcaption>
+          </figure>
+            <figure class="showcase-figure reveal">
+            <img src="/images/dashboards/automl-workbench-features.png" alt="Feature engineering tab in AutoML Workbench adding a one-row lag of momentum and a rolling average of value to the base features" width="1440" height="650" loading="lazy">
+            <figcaption>Feature engineering: past-only lags and rolling features, saved with the run and replayed at prediction time.</figcaption>
+          </figure>
+            <figure class="showcase-figure reveal">
+            <img src="/images/dashboards/automl-workbench-importance.png" alt="Feature importance table in AutoML Workbench comparing ranked feature importances across linear regression, decision tree and lasso models" width="1440" height="751" loading="lazy">
+            <figcaption>Feature importance: per-model rankings in the user's own column names, engineered features included.</figcaption>
+          </figure>
+          </div>
+
+            <div class="prose reveal">
+              <article class="article-card">
+                <p class="article-meta">Validation</p>
+                <h2>Scores that never see the future.</h2>
+                <p class="lead">On financial panels, an honest score is the whole product, so leakage protection is built into every split, not left to the user.</p>
+                <ul class="square-list">
+                  <li>Purged walk-forward cross-validation with an embargo, plus a multi-date holdout, for time-ordered data; seeded grouped or stratified K-fold for plain tables, chosen automatically from the data's roles.</li>
+                  <li>Leakage protection proven, not assumed: a positive-control test plants a deliberately leaky column and confirms the pipeline catches it.</li>
+                  <li>Panel leaderboards rank on holdout Rank IC IR (Spearman IC mean over its standard deviation across dates), the metric a quant desk actually trades on; plain tables rank on R² or balanced accuracy.</li>
+                </ul>
+              </article>
+
+              <article class="article-card" style="margin-top: 18px;">
+                <p class="article-meta">Workbench</p>
+                <h2>From raw table to explained, deployable model with no code.</h2>
+                <p class="lead">Benchmarked against a commercial AutoML product, then closed the highest-value gaps: SHAP drivers, blending, holdout scoring and Quick start.</p>
+                <ul class="square-list">
+                  <li>Quick start trains seven fast models in one click; hyperparameter search runs under a budget with early stopping; past-only lags, changes and rolling features plus sector/size neutralization are built in.</li>
+                  <li>Every run ships a report, model tear sheet, feature importance, per-row SHAP prediction drivers, "Blend top N" ensembles and out-of-fold predictions, all exportable to sheets or a zip bundle.</li>
+                  <li>Predict scores the latest or an as-of snapshot, or queues scoring of every row; live progress streams over SSE, and the same engine is callable from notebooks and the in-product AI agent.</li>
+                </ul>
+              </article>
+
+              <article class="article-card" style="margin-top: 18px;">
+                <p class="article-meta">Production</p>
+                <h2>Built to refuse loudly, never fail silently.</h2>
+                <p class="lead">Shipped in production releases behind a staff feature flag, with the engineering discipline of a platform, not a prototype.</p>
+                <ul class="square-list">
+                  <li>Spec-driven engine: algorithms, limits, defaults and user-facing wording live in versioned JSON specs (one consolidation removed ~20K lines), and 31 plain-language error codes keep jargon away from users.</li>
+                  <li>Set the policy, applied across 438 data limits, that every cap is a named refusal and never a silent cut; a Redis/RQ worker pool refuses work rather than losing it, and per-dataset access rights are re-checked on every read and export.</li>
+                  <li>Cut four reproducible engine releases (pinned commit, wheel sha256) with additive, backward-compatible API contracts across five codebases, validated by a 5-tester staging pass and a 31-item divergence audit that unified two workflows into one.</li>
+                </ul>
+              </article>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <div class="footer-inner">
+          <div class="footer-brand">
+            <strong>Kanav Mehta</strong>
+            <span>Quantitative AI Researcher</span>
+          </div>
+          <div class="footer-links">
+            <a href="/">Home</a>
+            <a href="/projects/">Projects</a>
+            <a href="/blogs/">Research Notes</a>
+            <a href="https://github.com/Kizo07" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <a href="https://linkedin.com/in/cxz07" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          </div>
+          <p class="footer-meta">© <span data-year>2026</span> · KM.EXP ▲</p>
+        </div>
+      </footer>
+    </div>
+    <script src="/assets/site.js?v=22"></script>
+    <script src="/assets/matrix.js?v=5" defer></script>
+    <script src="/assets/vendor/mantine-bundle.js" defer></script>
+    <script src="/assets/mantine-app.js?v=3" defer></script>
+  </body>
+</html>

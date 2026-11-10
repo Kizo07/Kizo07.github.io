@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Options Workspace: Chains, Skew &amp; 3D Volatility Surfaces | Kanav Mehta</title>
+    <meta name="description" content="Kanav Mehta built and shipped QuantLink AI's Options workspace: 104 options analytics views, from a mirrored chain to a 3D implied-volatility surface, delivered across three codebases and profiled until a cold catalog load fell from 6.2 s to 1.4 s.">
+    <link rel="canonical" href="https://kizo07.github.io/projects/options-workspace.html">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://kizo07.github.io/projects/options-workspace.html">
+    <meta property="og:title" content="Options Workspace: 104 Options Views on the Stock Page">
+    <meta property="og:description" content="Chains, skew, term structure and a 3D implied-volatility surface, shipped across web, API and data layers, with a measured 6.2 s to 1.4 s cold-load speedup.">
+    <meta property="og:image" content="https://kizo07.github.io/images/profile.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Options Workspace: 104 Options Views on the Stock Page">
+    <meta name="twitter:description" content="A 3D IV surface, skew, term structure and a mirrored chain across three codebases; profiled hydration cut from 6.2 s to 1.4 s.">
+    <meta name="twitter:image" content="https://kizo07.github.io/images/profile.png">
+    <meta name="theme-color" content="#020609">
+    <link rel="icon" href="/favicon.ico">
+    <script>
+      (function () {
+        try {
+          var saved = localStorage.getItem("theme");
+          var theme = saved || "dark";
+          document.documentElement.setAttribute("data-theme", theme);
+        } catch (error) {
+          document.documentElement.setAttribute("data-theme", "dark");
+        }
+      })();
+    </script>
+    <link rel="stylesheet" href="/assets/site.css?v=39">
+    <link rel="stylesheet" href="/assets/vendor/mantine-bundle.css">
+    <link rel="stylesheet" href="/assets/vendor/mantine-overrides.css?v=4">
+    <noscript><style>.reveal { opacity: 1; transform: none; }</style></noscript>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <div class="site-shell">
+      <header class="site-header">
+        <div class="nav-inner">
+          <a class="brand" href="/" aria-label="Kanav Mehta home">
+            <span class="brand-mark">KM</span>
+            <span>Kanav Mehta</span>
+            <span class="brand-role">Quantitative AI Research</span>
+          </a>
+          <nav class="site-nav" data-site-nav aria-label="Primary navigation">
+            <a href="/">Home</a>
+            <a class="active" href="/projects/">Projects</a>
+            <a href="/blogs/">Research Notes</a>
+            <a href="/#contact">Contact</a>
+          </nav>
+          <div class="nav-actions">
+            <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch theme" title="Switch theme">
+              <span class="sun-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path></svg>
+              </span>
+              <span class="moon-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path></svg>
+              </span>
+            </button>
+            <button class="nav-toggle" type="button" data-nav-toggle aria-label="Open navigation" aria-expanded="false">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"></path></svg>
+            </button>
+          </div>
+        </div>
+      </header>
+
+      <main id="main">
+        <section class="page-hero">
+          <div class="page-section">
+            <div class="page-title">
+              <p class="eyebrow">QuantLink AI · Derivatives</p>
+              <h1>An options desk, built into the stock page.</h1>
+              <p class="lead">Kanav built and shipped QuantLink's Options workspace: 104 analytics views behind one toolbar, from a mirrored options chain to an interactive 3D implied-volatility surface, skew and term structure. He delivered it across the product's data layer, API and web app, then profiled the volatility-surface pipeline and cut a cold catalog load from 6.2 s to 1.4 s.</p>
+              <div class="inline-actions">
+                <a class="button ghost small" href="/projects/"><span class="arr" aria-hidden="true">←</span> Back to Projects</a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="page-section">
+          <div class="detail-grid">
+            <aside class="fact-sheet reveal" aria-label="Project snapshot">
+              <div class="fact-row"><span>Role</span><b>Owner · lead engineer</b></div>
+              <div class="fact-row"><span>Company</span><b>QuantLink AI · Sep 2026</b></div>
+              <div class="fact-row"><span>Workflow</span><b>AI-agent-assisted build, independent review</b></div>
+              <div class="fact-row"><span>Product</span><b>104 options views · 3D IV surface</b></div>
+              <div class="fact-row"><span>Scope</span><b>3 codebases · ~980 files · data, API, web</b></div>
+              <div class="fact-row"><span>Performance</span><b>Cold catalog hydration 6.2 s → 1.4 s</b></div>
+              <div class="fact-row"><span>Stack</span><b>React · Three.js · ECharts · FastAPI · Arrow</b></div>
+            </aside>
+
+            <div class="prose reveal">
+              <article class="article-card">
+                <p class="article-meta">The workspace</p>
+                <h2>Every options lens, one toolbar.</h2>
+                <p class="lead">A single declarative spec drives the whole tab: each view binds one dataset to one presentation, so new analytics ship as configuration rather than new pages.</p>
+                <ul class="square-list">
+                  <li>104 views across chain, analytics, flow, market context and contract detail, drawn as tables and line, bar, scatter and heatmap charts, with grouped calls / puts columns and one-click quotes and Greeks presets.</li>
+                  <li>Four volatility views: an interactive 3D implied-volatility surface (Three.js / React Three Fiber), a volatility topography, multi-expiry skew and ATM term structure, tunable by DTE window, strike-to-spot band, expiry count, OTM / calls / puts layer and quote-quality filter. Rendered from a real 1,444-row NVDA board.</li>
+                  <li>A mirrored chain (calls, pinned strike, puts) with a spot-price marker and a windowed viewport above 150 contracts; clicking any bid or ask opens that contract's price, session VWAP and volume views. Heavy 3D renderers load lazily, so the stock page stays fast.</li>
+                </ul>
+              </article>
+
+              <article class="article-card" style="margin-top: 18px;">
+                <p class="article-meta">Across the stack</p>
+                <h2>Three codebases, one contract.</h2>
+                <ul class="square-list">
+                  <li>Data layer (830 files): a dedicated options data transport that meters vendor egress per HTTP call (a cache hit costs nothing) and caps every leg at the request's remaining deadline, plus 14 fetch handlers, 10 datasets and 247 registered fields. The 134 options tests pass fully offline, behind a dead proxy.</li>
+                  <li>API (FastAPI): component-spec and visualization-spec routers and a rate-limited expirations lookup that fail closed with precise 422 / 502 / 503 answers, with row data streamed to the browser as Apache Arrow IPC.</li>
+                  <li>Web (React / TypeScript, 138 files): moved the options tables onto the product's shared table component, which had 57 consumers and no direct tests. Kanav added a 22-test baseline and six default-off props, proved byte-identical output across 17 real-consumer configurations, and checked every cell of a 35-row chain against the original renderer.</li>
+                </ul>
+              </article>
+
+              <article class="article-card" style="margin-top: 18px;">
+                <p class="article-meta">Performance &amp; reliability</p>
+                <h2>Measured first, then made fast and honest.</h2>
+                <p class="lead">Instead of raising timeouts, Kanav profiled the volatility-surface request stage by stage and optimized what the numbers showed.</p>
+                <ul class="square-list">
+                  <li>Profiling traced cold-start cost to a pure-Python parse of a 4 MB, 6,594-field catalog. Switching to the C-accelerated safe YAML loader (same safety policy) cut fresh-process hydration from 6.2 s to 1.4 s and setup from 13.3 s to 7.2 s, with the hydrated output verified byte-identical.</li>
+                  <li>Stage-level timing telemetry across each step of a request (authorization, catalog, typed fetch, first Arrow batch, serialization), privacy-safe by design: run ID, stage label and elapsed milliseconds only. The last started stage stays visible even when a worker is killed.</li>
+                  <li>Clear refusals: a request that fails before its first Arrow chunk returns a structured error with its run ID through one shared helper; the invariant suite grew from 29 to 93 tests, and removing the guard fails 38 of them.</li>
+                </ul>
+              </article>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <div class="footer-inner">
+          <div class="footer-brand">
+            <strong>Kanav Mehta</strong>
+            <span>Quantitative AI Researcher</span>
+          </div>
+          <div class="footer-links">
+            <a href="/">Home</a>
+            <a href="/projects/">Projects</a>
+            <a href="/blogs/">Research Notes</a>
+            <a href="https://github.com/Kizo07" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <a href="https://linkedin.com/in/cxz07" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          </div>
+          <p class="footer-meta">© <span data-year>2026</span> · KM.EXP ▲</p>
+        </div>
+      </footer>
+    </div>
+    <script src="/assets/site.js?v=22"></script>
+    <script src="/assets/matrix.js?v=5" defer></script>
+    <script src="/assets/vendor/mantine-bundle.js" defer></script>
+    <script src="/assets/mantine-app.js?v=3" defer></script>
+  </body>
+</html>

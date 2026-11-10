@@ -71,7 +71,7 @@
             <div class="page-title">
               <p class="eyebrow">Product Analytics · Options</p>
               <h1>Five pricing models, one workbench.</h1>
-              <p class="lead">A rebuilt options analytics dashboard: multi-leg strategy construction with American exercise, five pricing models side by side, a Greeks lab, and exotics — all on one vendored pricing library.</p>
+              <p class="lead">A rebuilt options analytics dashboard: multi-leg strategy construction with American exercise, five pricing models side by side, a Greeks lab, and exotics, all on one vendored pricing library.</p>
               <div class="inline-actions">
                 <a class="button ghost small" href="/projects/"><span class="arr" aria-hidden="true">←</span> Back to Projects</a>
                 <a class="button cyan small" href="https://github.com/Kizo07/Options_Dashboard3" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
@@ -95,11 +95,11 @@
             </aside>
             <figure class="showcase-figure reveal">
             <img src="/images/dashboards/options-analytics-builder.png" alt="Six-leg options strategy builder in the Options Analytics dashboard with live pricing" width="1440" height="900" loading="lazy">
-            <figcaption>Strategy Builder — legs table with strikes and quantities, live payoff and pricing underneath.</figcaption>
+            <figcaption>Strategy Builder: legs table with strikes and quantities, live payoff and pricing underneath.</figcaption>
           </figure>
             <figure class="showcase-figure reveal">
             <img src="/images/dashboards/options-analytics-greeks.png" alt="Greeks lab in the Options Analytics dashboard showing sensitivity charts" width="1440" height="900" loading="lazy">
-            <figcaption>Greeks Lab — sensitivity surfaces across spot, time, and volatility for the structured position.</figcaption>
+            <figcaption>Greeks Lab: sensitivity surfaces across spot, time, and volatility for the structured position.</figcaption>
           </figure>
           </div>
 
@@ -113,9 +113,9 @@
                     <tr><th scope="col">Module</th><th scope="col">What it does</th></tr>
                   </thead>
                   <tbody>
-                    <tr><td>Strategy Builder</td><td>Up to 6 legs of calls, puts, and stock — buy or sell, European or American — with payoff and current-value overlays plus portfolio Greeks.</td></tr>
+                    <tr><td>Strategy Builder</td><td>Up to 6 legs of calls, puts, and stock (buy or sell, European or American) with payoff and current-value overlays plus portfolio Greeks.</td></tr>
                     <tr><td>American Options</td><td>Five pricing models side by side with early-exercise premiums vs. Black–Scholes, runtimes, and convergence charts.</td></tr>
-                    <tr><td>Greeks Lab</td><td>Two instruments on one chart: Δ, Γ, ν, Θ, ρ against spot, time, vol, and rates — 20 charts plus N(d1)/N(d2) moneyness.</td></tr>
+                    <tr><td>Greeks Lab</td><td>Two instruments on one chart: Δ, Γ, ν, Θ, ρ against spot, time, vol, and rates, with 20 charts plus N(d1)/N(d2) moneyness.</td></tr>
                     <tr><td>Implied Volatility</td><td>European (Brent root-find) and American (trinomial) IV with back-solve verification and a live-quote workflow.</td></tr>
                     <tr><td>Exotics</td><td>Asian, barrier, and lookback via seeded Monte Carlo with standard errors; digital options in closed form.</td></tr>
                   </tbody>
@@ -127,7 +127,7 @@
                 <h2>Trading conventions baked in</h2>
                 <p class="lead">The dashboard follows desk conventions, so its outputs need no mental conversion.</p>
                 <ul class="square-list">
-                  <li>Theta per day; vega and rho per 1% move — displayed the way traders quote them.</li>
+                  <li>Theta per day; vega and rho per 1% move, displayed the way traders quote them.</li>
                   <li>Ticker → expiry → strike → bid/ask/mid auto-fill for real-quote IV work.</li>
                   <li>Dividend yield support and Yahoo Finance spot fetching keep the builder honest on real names.</li>
                 </ul>
@@ -138,7 +138,7 @@
                 <h2>From pricing library to product</h2>
                 <p class="lead">The numerical methods research became the backbone of the product.</p>
                 <ul class="square-list">
-                  <li>comp_methods — trees, finite differences, LSM Monte Carlo, Greeks, and rate models — is vendored from the American_Options project.</li>
+                  <li>comp_methods (trees, finite differences, LSM Monte Carlo, Greeks, and rate models) is vendored from the American_Options project.</li>
                   <li>v3 rebuilds and supersedes Options_Dashboard2, with a Mantine/React frontend migration underway.</li>
                 </ul>
               </article>

@@ -71,7 +71,7 @@
             <div class="page-title">
               <p class="eyebrow">Derivatives · Portfolio Research</p>
               <h1>LEAPS as stock substitutes, treated as an empirical question.</h1>
-              <p class="lead">Can long/short equity keep its risk profile when the stock legs are replaced with LEAPS? A full daily-accounting backtest with validation gates, frictions, and no-lookahead audits — public data only.</p>
+              <p class="lead">Can long/short equity keep its risk profile when the stock legs are replaced with LEAPS? A full daily-accounting backtest with validation gates, frictions, and no-lookahead audits. Public data only.</p>
               <div class="inline-actions">
                 <a class="button ghost small" href="/projects/"><span class="arr" aria-hidden="true">←</span> Back to Projects</a>
                 <a class="button accent small" href="https://github.com/Kizo07/LEAPS-Stock-Substitute-Backtest" target="_blank" rel="noopener noreferrer">GitHub <span class="arr" aria-hidden="true">↗</span></a>
@@ -96,7 +96,7 @@
                 <p class="article-meta">The Question</p>
                 <h2>Substitution, not approximation.</h2>
                 <ul class="square-list">
-                  <li>Deep in-the-money LEAPS promise stock-like exposure with built-in leverage — the backtest asks what that actually costs in tracking, friction, and tail behavior.</li>
+                  <li>Deep in-the-money LEAPS promise stock-like exposure with built-in leverage; the backtest asks what that actually costs in tracking, friction, and tail behavior.</li>
                   <li>The engine reprices every position daily: early exercise, put-parity reopens, expiry settlement, and ruin/write-off reconciliation are explicit events, not approximations.</li>
                   <li>Dollar frictions are split-scaled, and momentum signals are audited for dollar-neutrality and look-ahead bias via signal-shift checks.</li>
                 </ul>
@@ -107,7 +107,7 @@
                 <h2>Gated pipeline, staged evidence.</h2>
                 <ul class="square-list">
                   <li>Download → pricing validation (gates V1–V4) → single-instrument lanes → V0–V3 long/short portfolios → sensitivity grid → assembled report.</li>
-                  <li>V1–V4 validation gates reject data before it can contaminate the engine — bad ticks, stale quotes, and mispriced rolls fail loudly.</li>
+                  <li>V1–V4 validation gates reject data before it can contaminate the engine: bad ticks, stale quotes, and mispriced rolls fail loudly.</li>
                   <li>Offline deterministic tests: daily NAV reconciliation for every variant, exercise and settlement mechanics, and synthetic-engine accounting on known inputs.</li>
                 </ul>
               </article>
@@ -117,7 +117,7 @@
                 <h2>Options as portfolio construction inputs.</h2>
                 <ul class="square-list">
                   <li>Most factor research assumes frictionless stock legs; this measures what changes when leverage and asymmetry come from contracts rather than borrowing.</li>
-                  <li>The sensitivity grid maps results across moneyness, tenor, and rebalancing choices — a substitution claim reported over the full grid, not a single point.</li>
+                  <li>The sensitivity grid maps results across moneyness, tenor, and rebalancing choices: a substitution claim reported over the full grid, not a single point.</li>
                   <li>Foundation work for the Factor Investing with Options line: the same discipline, applied to full factor portfolios.</li>
                 </ul>
               </article>

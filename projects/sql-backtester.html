@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SQL Backtester · Backtesting Entirely in dbt on ClickHouse | Kanav Mehta</title>
+    <meta name="description" content="A backtesting engine written entirely as dbt SQL models on ClickHouse: no Python loop, look-ahead blocked by construction, every dollar of P&amp;L reconciled to its trades, rebuilt in production every week.">
+    <link rel="canonical" href="https://kizo07.github.io/projects/sql-backtester.html">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://kizo07.github.io/projects/sql-backtester.html">
+    <meta property="og:title" content="SQL Backtester · Backtesting Entirely in dbt on ClickHouse">
+    <meta property="og:description" content="Signals, trades, a daily equity curve and a strategy scorecard as 14 versioned, tested dbt models, with no pandas and no Python simulation loop.">
+    <meta property="og:image" content="https://kizo07.github.io/images/profile.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="SQL Backtester · Backtesting Entirely in dbt on ClickHouse">
+    <meta name="twitter:description" content="Look-ahead guarded by construction, a per-symbol P&amp;L identity test, a hand-traced trade with zero difference, and a weekly production rebuild.">
+    <meta name="twitter:image" content="https://kizo07.github.io/images/profile.png">
+    <meta name="theme-color" content="#020609">
+    <link rel="icon" href="/favicon.ico">
+    <script>
+      (function () {
+        try {
+          var saved = localStorage.getItem("theme");
+          var theme = saved || "dark";
+          document.documentElement.setAttribute("data-theme", theme);
+        } catch (error) {
+          document.documentElement.setAttribute("data-theme", "dark");
+        }
+      })();
+    </script>
+    <link rel="stylesheet" href="/assets/site.css?v=39">
+    <link rel="stylesheet" href="/assets/vendor/mantine-bundle.css">
+    <link rel="stylesheet" href="/assets/vendor/mantine-overrides.css?v=4">
+    <noscript><style>.reveal { opacity: 1; transform: none; }</style></noscript>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <div class="site-shell">
+      <header class="site-header">
+        <div class="nav-inner">
+          <a class="brand" href="/" aria-label="Kanav Mehta home">
+            <span class="brand-mark">KM</span>
+            <span>Kanav Mehta</span>
+            <span class="brand-role">Quantitative AI Research</span>
+          </a>
+          <nav class="site-nav" data-site-nav aria-label="Primary navigation">
+            <a href="/">Home</a>
+            <a class="active" href="/projects/">Projects</a>
+            <a href="/blogs/">Research Notes</a>
+            <a href="/#contact">Contact</a>
+          </nav>
+          <div class="nav-actions">
+            <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch theme" title="Switch theme">
+              <span class="sun-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path></svg>
+              </span>
+              <span class="moon-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path></svg>
+              </span>
+            </button>
+            <button class="nav-toggle" type="button" data-nav-toggle aria-label="Open navigation" aria-expanded="false">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"></path></svg>
+            </button>
+          </div>
+        </div>
+      </header>
+
+      <main id="main">
+        <section class="page-hero">
+          <div class="page-section">
+            <div class="page-title">
+              <p class="eyebrow">QuantLink AI · Backtesting</p>
+              <h1>A backtester with no Python loop.</h1>
+              <p class="lead">Kanav designed and built a backtesting engine expressed entirely as dbt SQL models on ClickHouse: signals, a round-trip trade simulator, a dense daily equity curve and a per-strategy scorecard, with no pandas and no simulation loop. It runs where the data lives, blocks look-ahead by construction, reconciles every dollar of P&amp;L to its trades, and rebuilds in production every week.</p>
+              <div class="inline-actions">
+                <a class="button ghost small" href="/projects/"><span class="arr" aria-hidden="true">←</span> Back to Projects</a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="page-section">
+          <div class="detail-grid">
+            <aside class="fact-sheet reveal" aria-label="Project snapshot">
+              <div class="fact-row"><span>Role</span><b>Owner · lead engineer</b></div>
+              <div class="fact-row"><span>Context</span><b>QuantLink AI · Aug–Sep 2026</b></div>
+              <div class="fact-row"><span>Engine</span><b>14 dbt models · pure SQL on ClickHouse</b></div>
+              <div class="fact-row"><span>Default run</span><b>50 US equities · 2015–2025 · 7,184 trades</b></div>
+              <div class="fact-row"><span>Checks</span><b>81/81 build green · per-symbol P&amp;L identity</b></div>
+              <div class="fact-row"><span>Release</span><b>Production · own weekly schedule</b></div>
+              <div class="fact-row"><span>Workflow</span><b>AI-agent-assisted build, independent review</b></div>
+            </aside>
+
+            <div class="prose reveal">
+              <article class="article-card">
+                <p class="article-meta">Why SQL-native</p>
+                <h2>The warehouse is the backtest engine.</h2>
+                <p class="lead">Instead of pulling prices into a Python loop, every stage of the backtest is a versioned, tested, set-based dbt model that runs next to the data.</p>
+                <ul class="square-list">
+                  <li>Fourteen models chain adjusted prices → indicators → signals → round-trip trades → per-position daily P&amp;L → a dense daily equity curve and scorecard (return, Sharpe, max drawdown, turnover, cost drag, and a hindsight-optimal benchmark). Strategies are config: adding one is a one-line edit, not new code.</li>
+                  <li>Limits measured, not assumed: a single-query simulator hit ClickHouse's 50,000-element AST ceiling at 18 iterations, so Kanav re-architected it as three chained, materialized batches of at most ten round trips each, with a 30-per-year cap that fails the build loudly instead of silently truncating.</li>
+                  <li>Default run: the 50 most dollar-liquid US equities with complete 2015–2025 history (2,766 trading days each), 3 strategies, 414,900 signal rows and 7,184 trades; the simulator chain builds in about 18 seconds, and date filters prune a ~295M-row source read to ~16M rows for a one-year window.</li>
+                </ul>
+              </article>
+
+              <article class="article-card" style="margin-top: 18px;">
+                <p class="article-meta">Correctness by construction</p>
+                <h2>Look-ahead can't compile. P&amp;L has to add up.</h2>
+                <p class="lead">The failures that usually stay invisible in backtests (future data leaking into signals, accounting drift between trades and equity) are blocked structurally and re-checked on every build.</p>
+                <ul class="square-list">
+                  <li>Look-ahead guard: forward returns live in a model nothing downstream reads, signals see only the indicator table, and a compile-time allowlist rejects forward-return columns, function calls and subqueries in strategy expressions. An independent reviewer fuzzed the gate with 16 escape payloads; every one failed.</li>
+                  <li>P&amp;L identity test: summed daily P&amp;L must equal summed net trade profit for every strategy and symbol, within a stated floating-point tolerance. One check pins costs, entry and exit marks, and the adjusted-price basis, at the grain where offsetting errors cannot cancel out.</li>
+                  <li>Honest accounting: a fixed capital base with an arithmetic equity curve (no phantom compounding under fixed-dollar sizing), transaction costs on both legs, and five tagged exit reasons (trailing stop, profit target, time stop, year boundary, end of data), so no position is ever left open or unpriced.</li>
+                </ul>
+              </article>
+
+              <article class="article-card" style="margin-top: 18px;">
+                <p class="article-meta">Verification &amp; release</p>
+                <h2>Checked against independent results, then shipped.</h2>
+                <p class="lead">The design passed four review rounds before a line of SQL was written, and its core layers were re-derived independently, outside the warehouse, before release.</p>
+                <ul class="square-list">
+                  <li>A hand-computed toy series covering every exit path matches the production macros exactly; a real AAPL trade re-derived in Python matches field for field, with all 84 of its daily P&amp;L rows at zero difference; the daily roll-up agrees with an independent aggregation to 3.6e-12.</li>
+                  <li>The <a href="/projects/pit-market-data-platform.html">market-data lakehouse</a> it reads was cross-checked against the legacy screener on a live screen (P/E 0–20, market cap ≥ $100B): each path reproduced its reference SQL exactly (30 = 30, 84 = 84), and all 54 symbols that differed between sources were traced to a cause, with zero unexplained.</li>
+                  <li>Promoted to production as its own weekly job, cleanly carved out of the nightly pipeline (81 nodes moved, no others touched); the first scheduled run built all 14 tables in about 2 minutes.</li>
+                </ul>
+              </article>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <div class="footer-inner">
+          <div class="footer-brand">
+            <strong>Kanav Mehta</strong>
+            <span>Quantitative AI Researcher</span>
+          </div>
+          <div class="footer-links">
+            <a href="/">Home</a>
+            <a href="/projects/">Projects</a>
+            <a href="/blogs/">Research Notes</a>
+            <a href="https://github.com/Kizo07" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <a href="https://linkedin.com/in/cxz07" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          </div>
+          <p class="footer-meta">© <span data-year>2026</span> · KM.EXP ▲</p>
+        </div>
+      </footer>
+    </div>
+    <script src="/assets/site.js?v=22"></script>
+    <script src="/assets/matrix.js?v=5" defer></script>
+    <script src="/assets/vendor/mantine-bundle.js" defer></script>
+    <script src="/assets/mantine-app.js?v=3" defer></script>
+  </body>
+</html>

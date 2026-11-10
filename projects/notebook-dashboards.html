@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Notebook Dashboards — One Click from Notebook to Product | Kanav Mehta</title>
+    <meta name="description" content="Notebook Dashboards by Kanav Mehta at QuantLink AI: one click turns a Python research notebook into an interactive dashboard — typed inputs, scheduled reruns, live embeds, and server-side pivots over up to 50M rows.">
+    <link rel="canonical" href="https://kizo07.github.io/projects/notebook-dashboards.html">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://kizo07.github.io/projects/notebook-dashboards.html">
+    <meta property="og:title" content="Notebook Dashboards — One Click from Notebook to Product">
+    <meta property="og:description" content="One click turns a Python research notebook into a shareable dashboard — typed inputs, scheduled reruns, live embeds, and server-side pivots and cross-filtering over full datasets.">
+    <meta property="og:image" content="https://kizo07.github.io/images/dashboards/notebook-dashboards-editor.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Notebook Dashboards — One Click from Notebook to Product">
+    <meta name="twitter:description" content="Typed inputs, scheduled reruns, and a DuckDB pivot engine over up to 50M rows — every limit measured and refused by name.">
+    <meta name="twitter:image" content="https://kizo07.github.io/images/dashboards/notebook-dashboards-editor.png">
+    <meta name="theme-color" content="#020609">
+    <link rel="icon" href="/favicon.ico">
+    <script>
+      (function () {
+        try {
+          var saved = localStorage.getItem("theme");
+          var theme = saved || "dark";
+          document.documentElement.setAttribute("data-theme", theme);
+        } catch (error) {
+          document.documentElement.setAttribute("data-theme", "dark");
+        }
+      })();
+    </script>
+    <link rel="stylesheet" href="/assets/site.css?v=39">
+    <link rel="stylesheet" href="/assets/vendor/mantine-bundle.css">
+    <link rel="stylesheet" href="/assets/vendor/mantine-overrides.css?v=4">
+    <noscript><style>.reveal { opacity: 1; transform: none; }</style></noscript>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <div class="site-shell">
+      <header class="site-header">
+        <div class="nav-inner">
+          <a class="brand" href="/" aria-label="Kanav Mehta home">
+            <span class="brand-mark">KM</span>
+            <span>Kanav Mehta</span>
+            <span class="brand-role">Quantitative AI Research</span>
+          </a>
+          <nav class="site-nav" data-site-nav aria-label="Primary navigation">
+            <a href="/">Home</a>
+            <a class="active" href="/projects/">Projects</a>
+            <a href="/blogs/">Research Notes</a>
+            <a href="/#contact">Contact</a>
+          </nav>
+          <div class="nav-actions">
+            <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch theme" title="Switch theme">
+              <span class="sun-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path></svg>
+              </span>
+              <span class="moon-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path></svg>
+              </span>
+            </button>
+            <button class="nav-toggle" type="button" data-nav-toggle aria-label="Open navigation" aria-expanded="false">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"></path></svg>
+            </button>
+          </div>
+        </div>
+      </header>
+
+      <main id="main">
+        <section class="page-hero">
+          <div class="page-section">
+            <div class="page-title">
+              <p class="eyebrow">QuantLink AI · Analytics Product</p>
+              <h1>One click from research notebook to live dashboard.</h1>
+              <p class="lead">Notebook Dashboards turns a Python research notebook into a shareable, interactive product: typed inputs, scheduled reruns, live embeds, and server-side pivots and cross-filtering over every row of the data. Kanav Mehta led the build end to end, from the drag-and-drop editor down to the query engine.</p>
+              <div class="inline-actions">
+                <a class="button ghost small" href="/projects/"><span class="arr" aria-hidden="true">←</span> Back to Projects</a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="page-section">
+          <div class="detail-grid">
+            <div class="fact-col">
+            <aside class="fact-sheet reveal" aria-label="Project snapshot">
+              <div class="fact-row"><span>Role</span><b>Lead engineer</b></div>
+              <div class="fact-row"><span>Company</span><b>QuantLink AI · Oct–Nov 2026</b></div>
+              <div class="fact-row"><span>Workflow</span><b>AI-agent-assisted build, independent review</b></div>
+              <div class="fact-row"><span>Scope</span><b>6 codebases · web, API, compute, database, edge, pipelines</b></div>
+              <div class="fact-row"><span>Scale</span><b>Up to 50M-row tables, every row queryable</b></div>
+              <div class="fact-row"><span>Status</span><b>v2 shipped to production · Explore features in staging</b></div>
+              <div class="fact-row"><span>Stack</span><b>Next.js · FastAPI · DuckDB · Arrow · Cloudflare</b></div>
+            </aside>
+            <figure class="showcase-figure reveal">
+            <img src="/images/dashboards/notebook-dashboards-pivot.png" alt="Notebook dashboard editor with a pivot tile showing sector rows, daily columns and server-computed totals" width="1440" height="495" loading="lazy">
+            <figcaption>Pivot tile: sector subtotals and a 628.3B grand total computed server-side over all 250,480 rows of a synthetic price set.</figcaption>
+          </figure>
+            <figure class="showcase-figure reveal">
+            <img src="/images/dashboards/notebook-dashboards-editor.png" alt="Dashboard editor with notebook blocks in a sidebar and bar chart, line chart and KPI tiles on a grid" width="1440" height="792" loading="lazy">
+            <figcaption>Editor: notebook blocks on the left; authored bar, line and KPI tiles on the grid, each computed over the full dataset.</figcaption>
+          </figure>
+          </div>
+
+            <div class="prose">
+              <article class="article-card reveal">
+                <p class="article-meta">Notebook to product</p>
+                <h2>Research code becomes a product with no rewrite.</h2>
+                <p class="lead">A competitive audit of 16 tools (Hex, marimo, Panel, Mercury, Quarto, Voilà and more) shaped the v2 design, which was planned, implemented and merged across six codebases in about two days.</p>
+                <ul class="square-list">
+                  <li>"Create dashboard" lifts a notebook's outputs onto a drag-and-resize 12-column grid to arrange, hide, preview, save as a copy, or refresh from the notebook without touching code.</li>
+                  <li>Nine typed inputs (integer, number, text/select, date, boolean, symbols, range, date range, multi-select) are inferred from the notebook's own literals; each rerun executes in an isolated kernel with per-cell progress and swaps fresh outputs into the existing tiles.</li>
+                  <li>Cron schedules with timezones and fixed inputs, auto-paused after three failures; Explore tiles add pivots with server-side subtotals, chart, KPI and text tiles, tabs, a filter bar and chart-click cross-filtering, alongside live spreadsheet and saved-chart embeds.</li>
+                  <li>Sharing grants with owner-only runs: viewers read cached results, never execute code.</li>
+                </ul>
+              </article>
+
+              <article class="article-card reveal" style="margin-top: 18px;">
+                <p class="article-meta">Scale &amp; honest limits</p>
+                <h2>Every row counted, every limit named.</h2>
+                <p class="lead">Large DataFrames are staged as Parquet (up to 50M rows) and served through Arrow streams, so paging, sorting, search and filters cover the full dataset, not a sample.</p>
+                <ul class="square-list">
+                  <li>Third-party pivot engines were evaluated and rejected over licensing and security concerns and replaced by an in-house, spec-driven pivot and chart engine on DuckDB.</li>
+                  <li>A worst-case query that compiled for 28 s, peaked at 10.8 GiB and built 615 MB of JSON in Python was re-engineered: streamed DuckDB-written answers, cancellable compilation, and deterministic float aggregation so paging stays stable.</li>
+                  <li>One versioned limits spec (94 keys) generates Python, TypeScript and SQL for every consumer, hashed so all services agree; under a "highest limit that works" policy, every cap is measured, documented and refused by name, never silently truncated.</li>
+                  <li>Heartbeats, stale-run detection, idempotent automatic retry (including runs interrupted by deploys), bounded worker permits, and compare-and-swap publication, so a run never overwrites a newer edit.</li>
+                </ul>
+              </article>
+
+              <article class="article-card reveal" style="margin-top: 18px;">
+                <p class="article-meta">Proven end to end</p>
+                <h2>Checked against hand-computed answers.</h2>
+                <p class="lead">Verification went beyond green builds: the system was audited against its own requirements and then stress-tested on a real research workload.</p>
+                <ul class="square-list">
+                  <li>A five-tester round: a 265-check view-query suite, plus 140 requirements and 58 review items audited against what actually shipped; every aggregation matched a hand-computed answer.</li>
+                  <li>Capstone: a full seven-tab stock research page (overview, financials, options with gamma exposure and a 3D implied-volatility surface, DCF modeling, filings, holders, news) rebuilt as a dashboard of 68 page elements.</li>
+                  <li>The rebuild exercised the platform end to end, from the UI down to SEC XBRL financial-statement derivations: fiscal quarters on 53-week years, TTM, EBITDA, and de-cumulated year-to-date figures.</li>
+                </ul>
+              </article>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <div class="footer-inner">
+          <div class="footer-brand">
+            <strong>Kanav Mehta</strong>
+            <span>Quantitative AI Researcher</span>
+          </div>
+          <div class="footer-links">
+            <a href="/">Home</a>
+            <a href="/projects/">Projects</a>
+            <a href="/blogs/">Research Notes</a>
+            <a href="https://github.com/Kizo07" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <a href="https://linkedin.com/in/cxz07" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          </div>
+          <p class="footer-meta">© <span data-year>2026</span> · KM.EXP ▲</p>
+        </div>
+      </footer>
+    </div>
+    <script src="/assets/site.js?v=22"></script>
+    <script src="/assets/matrix.js?v=5" defer></script>
+    <script src="/assets/vendor/mantine-bundle.js" defer></script>
+    <script src="/assets/mantine-app.js?v=3" defer></script>
+  </body>
+</html>

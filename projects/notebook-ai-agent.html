@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Notebook AI Agent: Grounded, Self-Checking Notebook Authoring | Kanav Mehta</title>
+    <meta name="description" content="Notebook AI Agent by Kanav Mehta at QuantLink AI: a grounded, self-checking AI agent that writes and edits research notebook cells against a live kernel, on an isolated, recoverable runtime shipped to production.">
+    <link rel="canonical" href="https://kizo07.github.io/projects/notebook-ai-agent.html">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://kizo07.github.io/projects/notebook-ai-agent.html">
+    <meta property="og:title" content="Notebook AI Agent: An AI Agent That Checks Its Own Work">
+    <meta property="og:description" content="Every edit is parsed, its SQL validated and grounded to real datasets, and its numbers checked against cited evidence before it reaches the notebook.">
+    <meta property="og:image" content="https://kizo07.github.io/images/profile.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Notebook AI Agent: An AI Agent That Checks Its Own Work">
+    <meta name="twitter:description" content="725-operator search, 115 warehouse datasets, isolated Jupyter kernels with signed renewable grants, and a digest-pinned production executor.">
+    <meta name="twitter:image" content="https://kizo07.github.io/images/profile.png">
+    <meta name="theme-color" content="#020609">
+    <link rel="icon" href="/favicon.ico">
+    <script>
+      (function () {
+        try {
+          var saved = localStorage.getItem("theme");
+          var theme = saved || "dark";
+          document.documentElement.setAttribute("data-theme", theme);
+        } catch (error) {
+          document.documentElement.setAttribute("data-theme", "dark");
+        }
+      })();
+    </script>
+    <link rel="stylesheet" href="/assets/site.css?v=39">
+    <link rel="stylesheet" href="/assets/vendor/mantine-bundle.css">
+    <link rel="stylesheet" href="/assets/vendor/mantine-overrides.css?v=4">
+    <noscript><style>.reveal { opacity: 1; transform: none; }</style></noscript>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <div class="site-shell">
+      <header class="site-header">
+        <div class="nav-inner">
+          <a class="brand" href="/" aria-label="Kanav Mehta home">
+            <span class="brand-mark">KM</span>
+            <span>Kanav Mehta</span>
+            <span class="brand-role">Quantitative AI Research</span>
+          </a>
+          <nav class="site-nav" data-site-nav aria-label="Primary navigation">
+            <a href="/">Home</a>
+            <a class="active" href="/projects/">Projects</a>
+            <a href="/blogs/">Research Notes</a>
+            <a href="/#contact">Contact</a>
+          </nav>
+          <div class="nav-actions">
+            <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch theme" title="Switch theme">
+              <span class="sun-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path></svg>
+              </span>
+              <span class="moon-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path></svg>
+              </span>
+            </button>
+            <button class="nav-toggle" type="button" data-nav-toggle aria-label="Open navigation" aria-expanded="false">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"></path></svg>
+            </button>
+          </div>
+        </div>
+      </header>
+
+      <main id="main">
+        <section class="page-hero">
+          <div class="page-section">
+            <div class="page-title">
+              <p class="eyebrow">QuantLink AI · AI Agents</p>
+              <h1>An AI notebook agent that checks its own work.</h1>
+              <p class="lead">Kanav Mehta built a grounded, self-checking AI agent that writes and edits research notebook cells against a live Python kernel. Before an edit can be applied, the agent parses the code, validates every SQL query and grounds it to the real datasets, and checks its numbers against cited evidence. He also built the runtime underneath: isolated kernels, signed and renewable access grants, live recovery, and a digest-pinned production executor.</p>
+              <div class="inline-actions">
+                <a class="button ghost small" href="/projects/"><span class="arr" aria-hidden="true">←</span> Back to Projects</a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="page-section">
+          <div class="detail-grid">
+            <aside class="fact-sheet reveal" aria-label="Project snapshot">
+              <div class="fact-row"><span>Role</span><b>Owner · lead engineer</b></div>
+              <div class="fact-row"><span>Timeline</span><b>Aug–Sep 2026</b></div>
+              <div class="fact-row"><span>Agent surface</span><b>5 tools, every edit checked</b></div>
+              <div class="fact-row"><span>Grounding</span><b>725 operators · 115 warehouse datasets</b></div>
+              <div class="fact-row"><span>Runtime</span><b>Isolated Jupyter kernels, signed grants</b></div>
+              <div class="fact-row"><span>Delivery</span><b>7 scoped PRs · 477 focused tests</b></div>
+              <div class="fact-row"><span>Workflow</span><b>AI-agent-assisted build, independent review</b></div>
+            </aside>
+
+            <div class="prose reveal">
+              <article class="article-card">
+                <p class="article-meta">Checked authoring</p>
+                <h2>No edit lands unchecked.</h2>
+                <p class="lead">The model proposes code; deterministic checks decide whether it can be applied.</p>
+                <ul class="square-list">
+                  <li>Every proposal and edit is parsed as Python, held to the notebook cell contract, and each static SQL query is validated with the data layer's own guard and grounded to the dataset that publishes it. Failures return to the model with the exact problems so it repairs and retries: a JOIN on an unpublished table is refused, never guessed at.</li>
+                  <li>Grounded in what actually exists: token-scored search over a hash-sealed manifest of 725 analytics operators, warehouse discovery that reads catalog metadata without fetching data, and numeric grounding that matches reported figures to cited evidence by exact Decimal comparison.</li>
+                  <li>Context engineering under a hard five-tool budget: a code-first notebook index capped at 3,072 bytes and 20 cells per turn, plus a read tool that returns complete cell source.</li>
+                </ul>
+              </article>
+
+              <article class="article-card" style="margin-top: 18px;">
+                <p class="article-meta">Runtime</p>
+                <h2>A runtime built for untrusted code.</h2>
+                <p class="lead">Agent-written code runs in real Jupyter kernels, so every run is isolated and every credential is short-lived.</p>
+                <ul class="square-list">
+                  <li>Isolated runs: each gets a fresh kernel and a private workspace with its own home and cache directories, under a signed grant bound to the run, the notebook and its exact revision. The service authenticates before reading any request body and caps envelopes at 33 MiB.</li>
+                  <li>Renewable access without leaks: data grants live 20 minutes and refresh at 15, delivered into a running kernel through a silent, history-free execution and masked in all output, so credentials never surface in a notebook.</li>
+                  <li>Recovery without surprises: live kernels survive reconnects with state intact and no cell ever replayed, while dead kernels are caught by a bounded liveness check and replaced. Streamed agent events persist with idempotent retries and replay with their original boundaries; provider rate limits retry within a strict budget (two extra requests, 10 s added wait, tools never retried).</li>
+                </ul>
+              </article>
+
+              <article class="article-card" style="margin-top: 18px;">
+                <p class="article-meta">Production</p>
+                <h2>Shipped to production, verified live.</h2>
+                <ul class="square-list">
+                  <li>Prototyped end to end, then shipped into the main product as seven scoped, independently reviewed PRs, with 477 focused tests on checked authoring alone. Over the period Kanav merged 23 PRs across the web, API, agent and database layers and reviewed 92 from teammates.</li>
+                  <li>The production executor runs as a private, digest-pinned Docker image, built and tested in CI (including an offline real-kernel chart-rendering check) behind a release gate tested across 540 repository, ref and event combinations. Verified live: Python, Markdown, DataFrames, interactive Plotly, an authenticated data fetch, and save and reopen.</li>
+                  <li>Notebooks reach 115 warehouse datasets, including 52 bulk datasets, through the authorized catalog, with access and plan checks first. In the flagship demo the agent builds a sector-rotation study stage by stage (universe, signal, backtest with 10 bps costs, evaluation) with six interactive Plotly charts. Executed outputs like these also power <a href="/projects/notebook-dashboards.html" style="text-decoration: underline; text-decoration-color: var(--line-strong); text-underline-offset: 4px;">Notebook Dashboards</a>.</li>
+                </ul>
+              </article>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <div class="footer-inner">
+          <div class="footer-brand">
+            <strong>Kanav Mehta</strong>
+            <span>Quantitative AI Researcher</span>
+          </div>
+          <div class="footer-links">
+            <a href="/">Home</a>
+            <a href="/projects/">Projects</a>
+            <a href="/blogs/">Research Notes</a>
+            <a href="https://github.com/Kizo07" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <a href="https://linkedin.com/in/cxz07" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          </div>
+          <p class="footer-meta">© <span data-year>2026</span> · KM.EXP ▲</p>
+        </div>
+      </footer>
+    </div>
+    <script src="/assets/site.js?v=22"></script>
+    <script src="/assets/matrix.js?v=5" defer></script>
+    <script src="/assets/vendor/mantine-bundle.js" defer></script>
+    <script src="/assets/mantine-app.js?v=3" defer></script>
+  </body>
+</html>

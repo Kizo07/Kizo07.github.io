@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Point-in-Time Market Data Platform | Kanav Mehta</title>
+    <meta name="description" content="Kanav Mehta built QuantLink AI's point-in-time market-data platform: a survivorship-free universe, ~180M rows of rebuilt calculations proven against their sources, fail-closed validation, and a ClickHouse, Dagster and dbt lakehouse.">
+    <link rel="canonical" href="https://kizo07.github.io/projects/pit-market-data-platform.html">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://kizo07.github.io/projects/pit-market-data-platform.html">
+    <meta property="og:title" content="Point-in-Time Market Data Platform">
+    <meta property="og:description" content="A market-data foundation where every backtest sees only what was knowable on the day: delisted companies kept, filings gated on their real dates, every table proven before it ships.">
+    <meta property="og:image" content="https://kizo07.github.io/images/profile.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Point-in-Time Market Data Platform">
+    <meta name="twitter:description" content="Survivorship-free universe, ~180M rows of calculations at exact parity, fail-closed validation gates, and a replayable bronze, silver, gold lakehouse.">
+    <meta name="twitter:image" content="https://kizo07.github.io/images/profile.png">
+    <meta name="theme-color" content="#020609">
+    <link rel="icon" href="/favicon.ico">
+    <script>
+      (function () {
+        try {
+          var saved = localStorage.getItem("theme");
+          var theme = saved || "dark";
+          document.documentElement.setAttribute("data-theme", theme);
+        } catch (error) {
+          document.documentElement.setAttribute("data-theme", "dark");
+        }
+      })();
+    </script>
+    <link rel="stylesheet" href="/assets/site.css?v=39">
+    <link rel="stylesheet" href="/assets/vendor/mantine-bundle.css">
+    <link rel="stylesheet" href="/assets/vendor/mantine-overrides.css?v=4">
+    <noscript><style>.reveal { opacity: 1; transform: none; }</style></noscript>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <div class="site-shell">
+      <header class="site-header">
+        <div class="nav-inner">
+          <a class="brand" href="/" aria-label="Kanav Mehta home">
+            <span class="brand-mark">KM</span>
+            <span>Kanav Mehta</span>
+            <span class="brand-role">Quantitative AI Research</span>
+          </a>
+          <nav class="site-nav" data-site-nav aria-label="Primary navigation">
+            <a href="/">Home</a>
+            <a class="active" href="/projects/">Projects</a>
+            <a href="/blogs/">Research Notes</a>
+            <a href="/#contact">Contact</a>
+          </nav>
+          <div class="nav-actions">
+            <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch theme" title="Switch theme">
+              <span class="sun-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path></svg>
+              </span>
+              <span class="moon-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path></svg>
+              </span>
+            </button>
+            <button class="nav-toggle" type="button" data-nav-toggle aria-label="Open navigation" aria-expanded="false">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"></path></svg>
+            </button>
+          </div>
+        </div>
+      </header>
+
+      <main id="main">
+        <section class="page-hero">
+          <div class="page-section">
+            <div class="page-title">
+              <p class="eyebrow">QuantLink AI · Data Platform</p>
+              <h1>Backtests that only see what was knowable on the day.</h1>
+              <p class="lead">Kanav built QuantLink AI's point-in-time market-data foundation end to end: vendor feeds landed in ClickHouse under Dagster, a security master and survivorship-free universe that keeps delisted companies, ~180M rows of rebuilt calculation tables proven against their sources, validation gates that fail closed, and a bulk bronze, silver, gold lakehouse modeled in dbt.</p>
+              <div class="inline-actions">
+                <a class="button ghost small" href="/projects/"><span class="arr" aria-hidden="true">←</span> Back to Projects</a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="page-section">
+          <div class="detail-grid">
+            <aside class="fact-sheet reveal" aria-label="Project snapshot">
+              <div class="fact-row"><span>Role</span><b>Owner · lead engineer</b></div>
+              <div class="fact-row"><span>Context</span><b>QuantLink AI · May–Sep 2026</b></div>
+              <div class="fact-row"><span>Stack</span><b>Python · SQL · ClickHouse · Dagster · dbt · Polars</b></div>
+              <div class="fact-row"><span>Ingestion</span><b>107.6M-row backfill · ~5.9M rows per daily run</b></div>
+              <div class="fact-row"><span>Universe</span><b>Delisted names kept · 30 composable flags</b></div>
+              <div class="fact-row"><span>Calculations</span><b>~180M rows across 5 rebuilt tables</b></div>
+              <div class="fact-row"><span>Workflow</span><b>AI-agent-assisted build, independent review</b></div>
+            </aside>
+
+            <div class="prose reveal">
+              <article class="article-card">
+                <p class="article-meta">Point-in-time foundation</p>
+                <h2>A universe that remembers the companies that died.</h2>
+                <p class="lead">The legacy universe filter stamped today's trading status onto every historical date, silently removing ~30% of the 2021 universe from every backtest. Kanav replaced it with one built from each security's real listing lifespan.</p>
+                <ul class="square-list">
+                  <li>Ingested an institutional fundamentals vendor's 10 core tables into ClickHouse with Dagster (107.6M-row backfill, prices from 1998, fundamentals from 1990), refreshed by a daily incremental that lands ~5.9M rows in ~14 minutes and deduplicates cleanly; added a second raw feed of 55.9M rows with prices back to 1962.</li>
+                  <li>Built a security master on permanent IDs, ticker-rename history, index-membership spells and listing intervals, resolved into a monthly membership grid (3.5M rows, 30 composable flags) where a delisted name stays present on every date it traded; 71% of the feed's 21,850 equities are since-delisted.</li>
+                  <li>Swapping research consumers onto the new universe recovered 30.4% more since-delisted common stock at 2021 anchors; fundamentals are gated on the actual filing date, keeping first-reported values and 57k+ restated periods so no feature uses a number before it was public.</li>
+                </ul>
+              </article>
+
+              <article class="article-card" style="margin-top: 18px;">
+                <p class="article-meta">Calculation layer</p>
+                <h2>~180M rows rebuilt, then proven.</h2>
+                <p class="lead">Prices, valuations, ratios, metrics, growth, momentum and forward labels were rebuilt on the point-in-time foundation, and each table shipped only after matching an independent oracle.</p>
+                <ul class="square-list">
+                  <li>Five calculation tables, ~180M rows: a 3.1M-row × 1,442-column fundamentals metrics table at exact parity with the prior pipeline (median difference 0.0000), 39M rows of daily valuations from a true as-of join on filing date, and 46M rows of daily OHLCV built in 17 seconds by one server-side SQL insert (price identity 0.000000).</li>
+                  <li>Every calculation is locked in by a golden before/after fixture harness and a calc-contract drift guard, so an upstream change can never silently alter a published number.</li>
+                </ul>
+              </article>
+
+              <article class="article-card" style="margin-top: 18px;">
+                <p class="article-meta">Validation</p>
+                <h2>Validation that measures content, not activity.</h2>
+                <p class="lead">A green job is not proof of good data. Every table is checked for what it contains and how current it is before anything downstream reads it.</p>
+                <ul class="square-list">
+                  <li>Backfill gates reconcile every ingested table to the vendor's full feed within 1% and check coverage by period type, so quarterly, annual and as-reported history all arrive intact.</li>
+                  <li>History reaches back to 1990 for fundamentals and 1998 for prices, with restated periods kept alongside first-reported values for honest point-in-time research.</li>
+                  <li>Fail-closed freshness and content checks (business-date frontier, watermark sanity, cross-feed agreement) track whether data is actually advancing, not just whether jobs ran.</li>
+                </ul>
+              </article>
+
+              <article class="article-card" style="margin-top: 18px;">
+                <p class="article-meta">Bulk lakehouse</p>
+                <h2>A replayable bronze, silver, gold lakehouse.</h2>
+                <p class="lead">For a bulk market-data vendor, Kanav designed and built a lakehouse where every served number traces back to the exact bytes the provider sent.</p>
+                <ul class="square-list">
+                  <li>20 bulk datasets on Dagster schedules: exact provider bytes kept in a content-hashed archive for replay, typed into ClickHouse bronze, then modeled to silver and gold in dbt, including a 304.5M-row silver daily-price table with 0 duplicate keys and 14 gold backtest tables.</li>
+                  <li>Two-layer rate limiting (a per-endpoint cooldown circuit breaker plus a fail-closed credit ledger in the warehouse) logged zero rate-limit errors across a week of proof runs; a restore drill rebuilt bronze from the archive with hashes verified and a matching logical digest.</li>
+                  <li>Cut serving-path query memory 2.5–3× (to ~100–140 MiB under a 1 GiB cap) by tracing peaks to per-thread read buffers; all of it built to a written data-platform standard (layers, naming, grain, freshness) enforced by dbt contracts and CI gates.</li>
+                </ul>
+              </article>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <div class="footer-inner">
+          <div class="footer-brand">
+            <strong>Kanav Mehta</strong>
+            <span>Quantitative AI Researcher</span>
+          </div>
+          <div class="footer-links">
+            <a href="/">Home</a>
+            <a href="/projects/">Projects</a>
+            <a href="/blogs/">Research Notes</a>
+            <a href="https://github.com/Kizo07" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <a href="https://linkedin.com/in/cxz07" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          </div>
+          <p class="footer-meta">© <span data-year>2026</span> · KM.EXP ▲</p>
+        </div>
+      </footer>
+    </div>
+    <script src="/assets/site.js?v=22"></script>
+    <script src="/assets/matrix.js?v=5" defer></script>
+    <script src="/assets/vendor/mantine-bundle.js" defer></script>
+    <script src="/assets/mantine-app.js?v=3" defer></script>
+  </body>
+</html>

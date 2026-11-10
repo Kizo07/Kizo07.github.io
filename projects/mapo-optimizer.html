@@ -71,7 +71,7 @@
             <div class="page-title">
               <p class="eyebrow">Portfolio Construction</p>
               <h1>One optimizer API, every asset class, no look-ahead.</h1>
-              <p class="lead">MAPO wraps established open-source optimizers behind one interface and adds native solvers where they fall short — exact max-Sharpe under real constraints, CVaR LP, hierarchical risk parity, and Black-Litterman — plus a walk-forward backtester with no look-ahead.</p>
+              <p class="lead">MAPO wraps established open-source optimizers behind one interface and adds native solvers where they fall short (exact max-Sharpe under real constraints, CVaR LP, hierarchical risk parity, and Black-Litterman), plus a walk-forward backtester with no look-ahead.</p>
               <div class="inline-actions">
                 <a class="button ghost small" href="/projects/"><span class="arr" aria-hidden="true">←</span> Back to Projects</a>
               </div>
@@ -95,9 +95,9 @@
                 <p class="article-meta">Solvers</p>
                 <h2>Exact where it counts.</h2>
                 <ul class="square-list">
-                  <li>Max-Sharpe as an exact homogeneous SOCP — valid under box, asset-class, and turnover constraints together, where heuristic rescaling quietly breaks.</li>
+                  <li>Max-Sharpe as an exact homogeneous SOCP, valid under box, asset-class, and turnover constraints together, where heuristic rescaling quietly breaks.</li>
                   <li>CVaR LP from Rockafellar-Uryasev: minimize tail loss or cap it while maximizing return, at any confidence level.</li>
-                  <li>HRP and HERC with López de Prado seriation and ERC-refined splits — millisecond numpy implementations, with constraint projection when the hierarchy must respect caps.</li>
+                  <li>HRP and HERC with López de Prado seriation and ERC-refined splits: millisecond numpy implementations, with constraint projection when the hierarchy must respect caps.</li>
                   <li>Black-Litterman with full He-Litterman and Idzorek view-uncertainty control.</li>
                 </ul>
               </article>
@@ -108,7 +108,7 @@
                 <ul class="square-list">
                   <li>Asset-class caps (crypto ≤ 10%, futures ≤ 20%), per-asset bounds, turnover limits against previous weights, cash buffers, leverage caps.</li>
                   <li>Convex rules compile to cvxpy; hierarchical weights get a projection repair operator instead of being ignored.</li>
-                  <li>A unified <code>optimize(returns, cov, prev_weights)</code> signature — swap native, PyPortfolioOpt, skfolio, or Riskfolio backends on identical inputs and compare weights directly.</li>
+                  <li>A unified <code>optimize(returns, cov, prev_weights)</code> signature: swap native, PyPortfolioOpt, skfolio, or Riskfolio backends on identical inputs and compare weights directly.</li>
                 </ul>
               </article>
 
@@ -116,7 +116,7 @@
                 <p class="article-meta">Evidence</p>
                 <h2>Backtests that respect the calendar.</h2>
                 <ul class="square-list">
-                  <li>Walk-forward evaluation with monthly rebalancing and explicit cost basis in basis points — no in-sample shortcuts.</li>
+                  <li>Walk-forward evaluation with monthly rebalancing and explicit cost basis in basis points. No in-sample shortcuts.</li>
                   <li>Default 28-asset universe across five classes, with parquet-cached fetching and a deterministic synthetic generator for offline tests.</li>
                   <li>Risk measures vectorized end to end: VaR and CVaR (historical, Gaussian, Cornish-Fisher), drawdown and Ulcer series, tracking error.</li>
                 </ul>

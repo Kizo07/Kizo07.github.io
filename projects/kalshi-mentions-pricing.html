@@ -71,7 +71,7 @@
             <div class="page-title">
               <p class="eyebrow">Prediction Markets · NLP</p>
               <h1>Pricing "will they say the word" like it deserves a model.</h1>
-              <p class="lead">Kalshi lists binary and count markets on whether a word gets said during a speech or earnings call — and how many times. This is a fair-value engine for those contracts: a hurdle model, live updates, and walk-forward evidence against the base rate.</p>
+              <p class="lead">Kalshi lists binary and count markets on whether a word gets said during a speech or earnings call, and how many times. This is a fair-value engine for those contracts: a hurdle model, live updates, and walk-forward evidence against the base rate.</p>
               <div class="inline-actions">
                 <a class="button ghost small" href="/projects/"><span class="arr" aria-hidden="true">←</span> Back to Projects</a>
                 <a class="button accent small" href="https://github.com/Kizo07/kalshi-data-pipeline" target="_blank" rel="noopener noreferrer">GitHub <span class="arr" aria-hidden="true">↗</span></a>
@@ -93,11 +93,11 @@
             </aside>
             <figure class="showcase-figure reveal">
             <img src="/images/dashboards/kalshi-mentions-overview.png" alt="Kalshi mentions dashboard overview with market counts, type breakdown, and mentions distribution" width="1440" height="900" loading="lazy">
-            <figcaption>Overview — 2,533 mention markets, type breakdown, and the mentions-per-market distribution from the parquet snapshots.</figcaption>
+            <figcaption>Overview: 2,533 mention markets, type breakdown, and the mentions-per-market distribution from the parquet snapshots.</figcaption>
           </figure>
             <figure class="showcase-figure reveal">
             <img src="/images/dashboards/kalshi-mentions-pricing.png" alt="Kalshi mentions pricing tab with hurdle model fair values" width="1440" height="900" loading="lazy">
-            <figcaption>Pricing — hurdle-model fair values for mention contracts, straight off the transcript corpus.</figcaption>
+            <figcaption>Pricing: hurdle-model fair values for mention contracts, straight off the transcript corpus.</figcaption>
           </figure>
           </div>
 
@@ -106,7 +106,7 @@
                 <p class="article-meta">The Model</p>
                 <h2>Two questions, one prior.</h2>
                 <ul class="square-list">
-                  <li>First the hurdle: is the word said at all? Reference-class base rates — shrunk through a Beta-Binomial ladder from speaker×format down to speaker, format, and global word rate — give P(occurs) without overfitting thin history.</li>
+                  <li>First the hurdle: is the word said at all? Reference-class base rates (shrunk through a Beta-Binomial ladder from speaker×format down to speaker, format, and global word rate) give P(occurs) without overfitting thin history.</li>
                   <li>Then repetition: conditional on being said, a truncated negative-binomial layer models how many times, calibrated so E[N|N&gt;0] matches history.</li>
                   <li>The product prices binary "said" markets and count ladders (≥N times) from one coherent distribution instead of separate heuristics.</li>
                 </ul>
@@ -116,7 +116,7 @@
                 <p class="article-meta">Live Pricing</p>
                 <h2>Updates as the speech happens.</h2>
                 <ul class="square-list">
-                  <li>Mid-event, a Gamma-Poisson prior is anchored to the hurdle estimate and updates continuously from elapsed words and observed counts — exact binary continuity, no ad-hoc blending.</li>
+                  <li>Mid-event, a Gamma-Poisson prior is anchored to the hurdle estimate and updates continuously from elapsed words and observed counts. Exact binary continuity, no ad-hoc blending.</li>
                   <li>Opt-in, interpretable adjusters: an LLM reading the transcript corpus, and topic-similarity features over it.</li>
                 </ul>
               </article>
@@ -125,9 +125,9 @@
                 <p class="article-meta">Evidence &amp; Interface</p>
                 <h2>Beat the base rate, then show it.</h2>
                 <ul class="square-list">
-                  <li>Walk-forward backtests compare the model against the shrunk base-rate baseline — the honest benchmark for a market most participants price by gut.</li>
+                  <li>Walk-forward backtests compare the model against the shrunk base-rate baseline, the honest benchmark for a market most participants price by gut.</li>
                   <li>The full stack ships as a CLI, a FastAPI backend, and a Mantine dashboard, all reading parquet snapshots of the mention universe.</li>
-                  <li>Transcripts are plain JSON records — speaker, event type, date, text — so the corpus stays portable and auditable.</li>
+                  <li>Transcripts are plain JSON records (speaker, event type, date, text), so the corpus stays portable and auditable.</li>
                 </ul>
               </article>
             </div>

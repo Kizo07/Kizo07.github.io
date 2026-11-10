@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>QuantLink MCP Platform · Agent Tools &amp; Governed Data | Kanav Mehta</title>
+    <meta name="description" content="QuantLink's MCP platform gives AI agents a quant desk's tools and governed access to 789 datasets: fail-closed authentication, per-dataset access checks, large results served as Parquet handles queried with DuckDB.">
+    <link rel="canonical" href="https://kizo07.github.io/projects/quantlink-mcp-platform.html">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://kizo07.github.io/projects/quantlink-mcp-platform.html">
+    <meta property="og:title" content="QuantLink MCP Platform · A Quant Desk, Opened to AI Agents">
+    <meta property="og:description" content="38 agent tools plus a governed data server: agents and notebook kernels fetch, query, and refine research over 789 datasets, with fail-closed auth and results served by handle.">
+    <meta property="og:image" content="https://kizo07.github.io/images/profile.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="QuantLink MCP Platform · A Quant Desk, Opened to AI Agents">
+    <meta name="twitter:description" content="Fail-closed MCP auth, per-dataset grants, Parquet and DuckDB result handles, and a cached lookup cut from 1.35 s to 0.16 s.">
+    <meta name="twitter:image" content="https://kizo07.github.io/images/profile.png">
+    <meta name="theme-color" content="#020609">
+    <link rel="icon" href="/favicon.ico">
+    <script>
+      (function () {
+        try {
+          var saved = localStorage.getItem("theme");
+          var theme = saved || "dark";
+          document.documentElement.setAttribute("data-theme", theme);
+        } catch (error) {
+          document.documentElement.setAttribute("data-theme", "dark");
+        }
+      })();
+    </script>
+    <link rel="stylesheet" href="/assets/site.css?v=39">
+    <link rel="stylesheet" href="/assets/vendor/mantine-bundle.css">
+    <link rel="stylesheet" href="/assets/vendor/mantine-overrides.css?v=4">
+    <noscript><style>.reveal { opacity: 1; transform: none; }</style></noscript>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <div class="site-shell">
+      <header class="site-header">
+        <div class="nav-inner">
+          <a class="brand" href="/" aria-label="Kanav Mehta home">
+            <span class="brand-mark">KM</span>
+            <span>Kanav Mehta</span>
+            <span class="brand-role">Quantitative AI Research</span>
+          </a>
+          <nav class="site-nav" data-site-nav aria-label="Primary navigation">
+            <a href="/">Home</a>
+            <a class="active" href="/projects/">Projects</a>
+            <a href="/blogs/">Research Notes</a>
+            <a href="/#contact">Contact</a>
+          </nav>
+          <div class="nav-actions">
+            <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch theme" title="Switch theme">
+              <span class="sun-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path></svg>
+              </span>
+              <span class="moon-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path></svg>
+              </span>
+            </button>
+            <button class="nav-toggle" type="button" data-nav-toggle aria-label="Open navigation" aria-expanded="false">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"></path></svg>
+            </button>
+          </div>
+        </div>
+      </header>
+
+      <main id="main">
+        <section class="page-hero">
+          <div class="page-section">
+            <div class="page-title">
+              <p class="eyebrow">QuantLink AI · Agent Platform</p>
+              <h1>A quant desk, opened to AI agents.</h1>
+              <p class="lead">QuantLink's MCP platform is the layer where AI agents research, evaluate, and refine investment strategies with the tools of a quant desk. Beside it sits a governed data server that gives agents and notebook kernels authenticated, entitlement-checked access to 789 datasets. Kanav Mehta owned the platform as lead engineer, from tool contracts and storage design to fail-closed authentication and end-to-end verification on staging.</p>
+              <div class="inline-actions">
+                <a class="button ghost small" href="/projects/"><span class="arr" aria-hidden="true">←</span> Back to Projects</a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="page-section">
+          <div class="detail-grid">
+            <aside class="fact-sheet reveal" aria-label="Project snapshot">
+              <div class="fact-row"><span>Role</span><b>Owner · lead engineer</b></div>
+              <div class="fact-row"><span>Context</span><b>QuantLink AI · Aug–Sep 2026</b></div>
+              <div class="fact-row"><span>Agent surface</span><b>38 platform tools · data server with 7 tools, 6 resources, 3 prompts</b></div>
+              <div class="fact-row"><span>Data access</span><b>789 datasets · JWT · fail-closed dataset grants</b></div>
+              <div class="fact-row"><span>Large results</span><b>Parquet handles · DuckDB SQL · Arrow streams</b></div>
+              <div class="fact-row"><span>Stack</span><b>Python · FastAPI · MCP SDK · DuckDB · Parquet</b></div>
+              <div class="fact-row"><span>Workflow</span><b>AI-agent-assisted build, independent review</b></div>
+            </aside>
+
+            <div class="prose reveal">
+              <article class="article-card">
+                <p class="article-meta">Agent tooling</p>
+                <h2>The desk's machinery, one tool call away.</h2>
+                <p class="lead">Agents work through the same gated machinery a quant researcher uses, not a simplified sandbox.</p>
+                <ul class="square-list">
+                  <li>38 agent tools cover AutoML runs, DAG execution, a blocking leakage and overfit evaluation gate, feature-store queries, knowledge-graph search, DCF valuation, and nine notebook operations.</li>
+                  <li>A dependency-free JSON-RPC stdio server connects the full platform to Claude Code or Cursor in one command; its HTTP twin shares a single MCP wire contract, with one sanitizer making NumPy scalars and non-finite values JSON-safe on both transports.</li>
+                  <li>The data server lets an agent search the catalog, inspect schemas, preview a request, look up valid parameter values, fetch, and query in SQL across 789 datasets, guided by 6 resources and 3 prompts.</li>
+                </ul>
+              </article>
+
+              <article class="article-card" style="margin-top: 18px;">
+                <p class="article-meta">Governed data</p>
+                <h2>Every byte authenticated, every dataset entitled.</h2>
+                <ul class="square-list">
+                  <li>Fail-closed by construction: with no token verifier installed, the MCP endpoint falls back to the API-key gate rather than opening up; anonymous calls get a 401 with RFC 9728 metadata pointing at the service's own public origin, and caller identity always comes from the verified token (notebook grant, user JWT, or service key).</li>
+                  <li>19 dataset-fetching routes sit behind JWT, with fail-closed per-dataset access checks on fetch, preview, query, and spec compilation; the same gate covers the SQL relay and the notebook-kernel data broker, and 115 warehouse datasets (all 52 bulk sets included) dispatch through the authorized catalog.</li>
+                  <li>Large results never flood an agent's context: each fetch is written once to Parquet under a deterministic query key, the agent gets a bounded preview plus a handle, and follow-up DuckDB SQL (capped at 10,000 rows) or an Arrow stream reads the snapshot without another provider call. Tool errors pass through structure-aware secret redaction, pinned by a catalog-wide test.</li>
+                </ul>
+              </article>
+
+              <article class="article-card" style="margin-top: 18px;">
+                <p class="article-meta">Speed &amp; reliability</p>
+                <h2>Fast enough for an agent loop, proven on staging.</h2>
+                <ul class="square-list">
+                  <li>A shared provider rate limiter and a five-minute TTL cache cut a parameter lookup from 1.35 s to 0.16 s, so agents can explore valid inputs without metered spend.</li>
+                  <li>Notebook kernels reach the server with a scoped grant (20-minute lifetime, refreshed at 15 minutes and replayed silently so credentials never appear in cell output): a fetch returned in 0.4 s and a follow-up query in 0.6 s.</li>
+                  <li>Continuity lives in model-visible handles passed as tool arguments, the pattern the stateless MCP revision standardizes. The server shipped with 165 MCP tests and 3,636 further unit and service tests passing, then was verified end to end on staging with an MCP SDK client: auth, fetch, query by handle, and Arrow read-back.</li>
+                </ul>
+              </article>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <div class="footer-inner">
+          <div class="footer-brand">
+            <strong>Kanav Mehta</strong>
+            <span>Quantitative AI Researcher</span>
+          </div>
+          <div class="footer-links">
+            <a href="/">Home</a>
+            <a href="/projects/">Projects</a>
+            <a href="/blogs/">Research Notes</a>
+            <a href="https://github.com/Kizo07" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <a href="https://linkedin.com/in/cxz07" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          </div>
+          <p class="footer-meta">© <span data-year>2026</span> · KM.EXP ▲</p>
+        </div>
+      </footer>
+    </div>
+    <script src="/assets/site.js?v=22"></script>
+    <script src="/assets/matrix.js?v=5" defer></script>
+    <script src="/assets/vendor/mantine-bundle.js" defer></script>
+    <script src="/assets/mantine-app.js?v=3" defer></script>
+  </body>
+</html>
