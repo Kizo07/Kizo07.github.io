@@ -3,17 +3,17 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Single-Factor Modeling | Kanav Mehta</title>
-    <meta name="description" content="QuantLink AI single-factor modeling dashboard by Kanav Mehta — ranking, diagnostics, buckets, risk, and backtest review.">
+    <title>Factor Modeling | Kanav Mehta</title>
+    <meta name="description" content="Kanav Mehta's QuantLink AI dashboard for testing equity factors across 3,545 stocks using rank diagnostics, exposure checks and benchmarked backtests.">
     <link rel="canonical" href="https://kizo07.github.io/projects/single-factor-modeling.html">
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://kizo07.github.io/projects/single-factor-modeling.html">
-    <meta property="og:title" content="Single-Factor Modeling">
-    <meta property="og:description" content="QuantLink AI single-factor modeling dashboard by Kanav Mehta — ranking, diagnostics, buckets, risk, and backtest review.">
+    <meta property="og:title" content="Factor Modeling">
+    <meta property="og:description" content="Equity factor research across 3,545 stocks, from forward-return rank tests to sector exposure and portfolio risk.">
     <meta property="og:image" content="https://kizo07.github.io/images/profile.png">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Single-Factor Modeling">
-    <meta name="twitter:description" content="QuantLink AI single-factor modeling dashboard by Kanav Mehta — ranking, diagnostics, buckets, risk, and backtest review.">
+    <meta name="twitter:title" content="Factor Modeling">
+    <meta name="twitter:description" content="Equity factor research across 3,545 stocks, from forward-return rank tests to sector exposure and portfolio risk.">
     <meta name="twitter:image" content="https://kizo07.github.io/images/profile.png">
     <meta name="theme-color" content="#020609">
     <link rel="icon" href="/favicon.ico">
@@ -28,9 +28,9 @@
         }
       })();
     </script>
-    <link rel="stylesheet" href="/assets/site.css?v=39">
+    <link rel="stylesheet" href="/assets/site.css?v=40">
     <link rel="stylesheet" href="/assets/vendor/mantine-bundle.css">
-    <link rel="stylesheet" href="/assets/vendor/mantine-overrides.css?v=4">
+    <link rel="stylesheet" href="/assets/vendor/mantine-overrides.css?v=5">
     <noscript><style>.reveal { opacity: 1; transform: none; }</style></noscript>
   </head>
   <body>
@@ -41,12 +41,13 @@
           <a class="brand" href="/" aria-label="Kanav Mehta home">
             <span class="brand-mark">KM</span>
             <span>Kanav Mehta</span>
-            <span class="brand-role">Quantitative AI Research</span>
+            <span class="brand-role">Quantitative Researcher</span>
           </a>
-          <nav class="site-nav" data-site-nav aria-label="Primary navigation">
-            <a href="/">Home</a>
-            <a class="active" href="/projects/">Projects</a>
-            <a href="/blogs/">Research Notes</a>
+          <nav class="site-nav" id="primary-navigation" data-site-nav aria-label="Primary navigation">
+            <a href="/#work">Selected work</a>
+            <a href="/#experience">Experience</a>
+            <a class="active" aria-current="location" href="/projects/">Projects</a>
+            <a href="/blogs/">Research notes</a>
             <a href="/#contact">Contact</a>
           </nav>
           <div class="nav-actions">
@@ -58,7 +59,7 @@
                 <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path></svg>
               </span>
             </button>
-            <button class="nav-toggle" type="button" data-nav-toggle aria-label="Open navigation" aria-expanded="false">
+            <button class="nav-toggle" type="button" data-nav-toggle aria-controls="primary-navigation" aria-label="Open navigation" aria-expanded="false">
               <svg viewBox="0 0 24 24" fill="none" stroke-width="2" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"></path></svg>
             </button>
           </div>
@@ -70,11 +71,11 @@
           <div class="page-section">
             <div class="page-title">
               <p class="eyebrow">QuantLink AI · Factor Research</p>
-              <h1>Single-factor engine for ranking, bucketing, and risk analysis.</h1>
-              <p class="lead">Metric. Lookback. Buckets. Distribution. Signal quality. Backtest. One workflow from raw universe to verdict.</p>
+              <h1>Factor Modeling</h1>
+              <p class="lead">This QuantLink AI dashboard evaluates equity factors across 3,545 stocks. It compares factor ranks with forward returns, shows sector and size exposures, and benchmarks portfolio backtests.</p>
               <div class="inline-actions">
                 <a class="button ghost small" href="/projects/"><span class="arr" aria-hidden="true">←</span> Back to Projects</a>
-                <a class="button accent small" href="/blogs/#factor-note">Read Research Note <span class="arr" aria-hidden="true">→</span></a>
+                <a class="button accent small" href="/blogs/#factor-note">Read the factor research note <span class="arr" aria-hidden="true">→</span></a>
               </div>
             </div>
           </div>
@@ -83,7 +84,6 @@
         <section class="page-section">
           <div class="detail-grid">
             <aside class="fact-sheet reveal" aria-label="Project snapshot">
-              <div class="fact-row"><span>Type</span><b>Factor Research</b></div>
               <div class="fact-row"><span>Role</span><b>Founding Quantitative AI Researcher</b></div>
               <div class="fact-row"><span>Company</span><b>QuantLink AI</b></div>
               <div class="fact-row"><span>Universe</span><b>3,545 stocks</b></div>
@@ -94,20 +94,18 @@
 
             <div class="prose reveal">
               <article class="article-card">
-                <p class="article-meta">Signal Map</p>
-                <h2>Research questions</h2>
+                <p class="article-meta">Signal evaluation</p>
+                <h2>Does the factor rank forward returns?</h2>
                 <ul class="square-list">
-                  <li>Distribution across the full 3,545-stock universe.</li>
-                  <li>Concentration by sector, industry, and market-cap band.</li>
-                  <li>Rank signal vs. forward 12-month returns.</li>
-                  <li>Long-short and top-minus-bottom buckets vs. benchmark risk.</li>
+                  <li>Inspect the cross-sectional distribution and compare exposures by sector, industry and market-cap band.</li>
+                  <li>Group stocks by factor rank and compare forward 12-month returns across deciles. Use rank correlation, bucket monotonicity and the top-minus-bottom spread to assess the signal.</li>
+                  <li>Review quintile returns and benchmark-relative performance alongside drawdowns and sector weights.</li>
                 </ul>
               </article>
 
               <article class="article-card" style="margin-top: 18px;">
                 <p class="article-meta">Build</p>
-                <h2>Dashboard architecture</h2>
-                <p class="lead">Cross-section first. Concentration risk second. Predictive power third. Portfolio behavior last.</p>
+                <h2>Dashboard diagnostics</h2>
                 <table class="data-table">
                   <thead>
                     <tr><th scope="col">Module</th><th scope="col">Purpose</th></tr>
@@ -126,14 +124,10 @@
               </article>
 
               <article class="article-card" style="margin-top: 18px;">
-                <p class="article-meta">Design</p>
-                <h2>One-screen verdict</h2>
-                <p class="lead">Distribution. Concentration. Signal quality. Performance. Risk.</p>
-                <ul class="square-list">
-                  <li>Changing any control recomputes all panels.</li>
-                  <li>The key-takeaway panel summarizes backtest highlights, sector bias, and signal quality at a glance.</li>
-                  <li>Conditional formatting and reference overlays keep dense outputs easy to scan.</li>
-                </ul>
+                <p class="article-meta">Implementation</p>
+                <h2>Linked controls for factor review</h2>
+                <p>Changing the metric, lookback or bucket setting recomputes the dashboard together. The summary brings backtest results, sector concentration and signal quality into the same view.</p>
+                <a class="button ghost small" href="/projects/automl-workbench.html">Explore AutoML Workbench <span class="arr" aria-hidden="true">→</span></a>
               </article>
             </div>
           </div>
@@ -144,7 +138,7 @@
         <div class="footer-inner">
           <div class="footer-brand">
             <strong>Kanav Mehta</strong>
-            <span>Quantitative AI Researcher</span>
+            <span>Quantitative Researcher</span>
           </div>
           <div class="footer-links">
             <a href="/">Home</a>
@@ -157,9 +151,9 @@
         </div>
       </footer>
     </div>
-    <script src="/assets/site.js?v=22"></script>
+    <script src="/assets/site.js?v=23"></script>
     <script src="/assets/matrix.js?v=5" defer></script>
     <script src="/assets/vendor/mantine-bundle.js" defer></script>
-    <script src="/assets/mantine-app.js?v=3" defer></script>
+    <script src="/assets/mantine-app.js?v=4" defer></script>
   </body>
 </html>

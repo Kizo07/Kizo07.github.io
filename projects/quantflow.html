@@ -3,17 +3,17 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>QuantFlow · Flagship | Kanav Mehta</title>
-    <meta name="description" content="QuantFlow: an eleven-agent quant desk on a survivorship-bias-free engine, producing sourced, investment-committee-style equity outlooks in HTML, PDF, and DOCX.">
+    <title>QuantFlow | Kanav Mehta</title>
+    <meta name="description" content="QuantFlow researches individual stocks using historical S&amp;P 500 membership, a documented bull and bear debate, and a risk review that can veto recommendations.">
     <link rel="canonical" href="https://kizo07.github.io/projects/quantflow.html">
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://kizo07.github.io/projects/quantflow.html">
-    <meta property="og:title" content="QuantFlow — Research Agents That Produce Desk-Grade Outlooks">
-    <meta property="og:description" content="Eleven specialist agents debate bull vs. bear, pass a risk veto, and print a sourced flagship report. Built on the DeerFlow harness.">
+    <meta property="og:title" content="QuantFlow · AI-assisted equity research">
+    <meta property="og:description" content="Eleven specialist agents collect evidence, debate the bull and bear cases, and run a risk review before producing a report with charts.">
     <meta property="og:image" content="https://kizo07.github.io/images/quantflow/amzn-price-hero.png">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="QuantFlow — Research Agents That Produce Desk-Grade Outlooks">
-    <meta name="twitter:description" content="Agentic equity research: survivorship-bias-free data, adversarial debate, mechanical quality gates, print-ready reports.">
+    <meta name="twitter:title" content="QuantFlow · AI-assisted equity research">
+    <meta name="twitter:description" content="Equity research using historical S&amp;P 500 membership, a documented bull and bear debate, and a risk review that can veto recommendations.">
     <meta name="twitter:image" content="https://kizo07.github.io/images/quantflow/amzn-price-hero.png">
     <meta name="theme-color" content="#020609">
     <link rel="icon" href="/favicon.ico">
@@ -28,9 +28,9 @@
         }
       })();
     </script>
-    <link rel="stylesheet" href="/assets/site.css?v=39">
+    <link rel="stylesheet" href="/assets/site.css?v=40">
     <link rel="stylesheet" href="/assets/vendor/mantine-bundle.css">
-    <link rel="stylesheet" href="/assets/vendor/mantine-overrides.css?v=4">
+    <link rel="stylesheet" href="/assets/vendor/mantine-overrides.css?v=5">
     <noscript><style>.reveal { opacity: 1; transform: none; }</style></noscript>
   </head>
   <body>
@@ -41,12 +41,13 @@
           <a class="brand" href="/" aria-label="Kanav Mehta home">
             <span class="brand-mark">KM</span>
             <span>Kanav Mehta</span>
-            <span class="brand-role">Quantitative AI Research</span>
+            <span class="brand-role">Quantitative Researcher</span>
           </a>
-          <nav class="site-nav" data-site-nav aria-label="Primary navigation">
-            <a href="/">Home</a>
-            <a class="active" href="/projects/">Projects</a>
-            <a href="/blogs/">Research Notes</a>
+          <nav class="site-nav" id="primary-navigation" data-site-nav aria-label="Primary navigation">
+            <a href="/#work">Selected work</a>
+            <a href="/#experience">Experience</a>
+            <a class="active" aria-current="location" href="/projects/">Projects</a>
+            <a href="/blogs/">Research notes</a>
             <a href="/#contact">Contact</a>
           </nav>
           <div class="nav-actions">
@@ -58,7 +59,7 @@
                 <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path></svg>
               </span>
             </button>
-            <button class="nav-toggle" type="button" data-nav-toggle aria-label="Open navigation" aria-expanded="false">
+            <button class="nav-toggle" type="button" data-nav-toggle aria-controls="primary-navigation" aria-label="Open navigation" aria-expanded="false">
               <svg viewBox="0 0 24 24" fill="none" stroke-width="2" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"></path></svg>
             </button>
           </div>
@@ -69,13 +70,11 @@
         <section class="page-hero">
           <div class="page-section">
             <div class="page-title">
-              <p class="eyebrow">Flagship Project · Agent Research</p>
-              <h1>QuantFlow: research agents that produce desk-grade outlooks.</h1>
-              <p class="lead">An end-to-end pipeline: a survivorship-bias-free equity engine, an agent desk that debates and sizes single-name cases, and a report forge that renders chart-led flagship outlooks, with every exhibit in one gold/teal identity, dark or light.</p>
+              <h1>QuantFlow</h1>
+              <p class="lead">QuantFlow uses historical S&amp;P 500 membership to research individual stocks. Eleven specialist agents collect evidence, record a bull and bear debate, and run a risk review that can veto a recommendation before generating a report with charts.</p>
               <div class="inline-actions">
                 <a class="button ghost small" href="/projects/"><span class="arr" aria-hidden="true">←</span> Back to Projects</a>
-                <a class="button accent small" href="/tearsheets/quantflow-amzn-12m-outlook.pdf" target="_blank" rel="noopener noreferrer">Example Report (PDF) <span class="arr" aria-hidden="true">→</span></a>
-                <a class="button cyan small" href="https://github.com/Kizo07/alpha_engine" target="_blank" rel="noopener noreferrer">Engine ↗</a>
+                <a class="button accent small" href="https://github.com/Kizo07/alpha_engine" target="_blank" rel="noopener noreferrer">View the equity engine on GitHub <span aria-hidden="true">↗</span></a>
               </div>
             </div>
           </div>
@@ -97,35 +96,25 @@
 
             <div class="prose reveal">
               <article class="article-card">
-                <p class="article-meta">Thesis</p>
-                <h2>Evidence-first, adversarial, printable</h2>
-                <p class="lead">Most agent research demos stop at a chat transcript. QuantFlow ends at a deliverable a desk would sign: sourced numbers, debated picks, sized positions, rendered documents.</p>
+                <h2>How the research works</h2>
                 <ul class="square-list">
-                  <li>Point-in-time S&amp;P 500 membership back to 1996: historical selections never touch the current snapshot, so delisted names can't silently vanish.</li>
-                  <li>A fixed desk workflow: parallel evidence tracks, an independent bull/bear debate with documented demotions, and a risk-manager veto before any recommendation.</li>
-                  <li>Length, freshness, and artifact gates are mechanical: word counts, as-of dates, and rendered-file checks, not judgment calls.</li>
+                  <li>The data engine uses S&amp;P 500 membership as of each research date, back to 1996. That keeps stocks that later delisted in the historical universe.</li>
+                  <li>Specialists gather evidence in parallel. The bull and bear cases are evaluated independently, with downgrades documented and a risk manager able to veto the recommendation.</li>
+                  <li>Automated checks verify word counts, as-of dates, and rendered files before delivery.</li>
                 </ul>
               </article>
 
               <article class="article-card" style="margin-top: 18px;">
-                <p class="article-meta">Example · AMZN 12-Month Outlook</p>
-                <h2>OVERWEIGHT at $292: the case in charts</h2>
-                <p class="lead">26 exhibits, one identity: price technicals, a scenario fan ($200 / $292 / $350), peer multiples, a catalyst calendar. Every PNG is exported from the same builder library in QuantFlow light.</p>
+                <h2>Amazon chart examples</h2>
+                <p class="lead">These September 2026 charts show how the chart library presents price history and reference levels.</p>
                 <figure class="showcase-figure">
-                  <img src="/images/quantflow/amzn-price-hero.png" alt="AMZN price technicals exhibit in the QuantFlow light identity" width="2100" height="1200" loading="lazy">
-                  <figcaption>Price technicals: trend, moving averages, momentum in gold/teal.</figcaption>
+                  <img src="/images/quantflow/amzn-price-hero.png" alt="Amazon adjusted closing price, 50-day and 200-day moving averages, and trading volume" width="2100" height="1200" loading="lazy">
+                  <figcaption>Price history with moving averages, trading volume, and 52-week highs and lows.</figcaption>
                 </figure>
                 <figure class="showcase-figure">
-                  <img src="/images/quantflow/amzn-scenario-fan.png" alt="AMZN bear/base/bull scenario fan in the QuantFlow light identity" width="2100" height="900" loading="lazy">
-                  <figcaption>Scenario fan: bear $200, base $292, bull $350 paths to September 2027.</figcaption>
+                  <img src="/images/quantflow/amzn-levels.png" alt="Amazon price history with support and resistance levels marked by horizontal lines" width="2100" height="900" loading="lazy">
+                  <figcaption>Reference levels plotted against the historical price series.</figcaption>
                 </figure>
-                <figure class="showcase-figure">
-                  <img src="/images/quantflow/amzn-levels.png" alt="AMZN support and resistance levels in the QuantFlow light identity" width="2100" height="900" loading="lazy">
-                  <figcaption>Key levels: supports and resistances framing entries and stops.</figcaption>
-                </figure>
-                <div class="inline-actions" style="margin-top: 14px;">
-                  <a class="button accent small" href="/tearsheets/quantflow-amzn-12m-outlook.pdf" target="_blank" rel="noopener noreferrer">Full 26-Page Report (PDF) <span class="arr" aria-hidden="true">→</span></a>
-                </div>
               </article>
 
               <article class="article-card" style="margin-top: 18px;">
@@ -151,7 +140,7 @@
         <div class="footer-inner">
           <div class="footer-brand">
             <strong>Kanav Mehta</strong>
-            <span>Quantitative AI Researcher</span>
+            <span>Quantitative Researcher</span>
           </div>
           <div class="footer-links">
             <a href="/">Home</a>
@@ -164,9 +153,9 @@
         </div>
       </footer>
     </div>
-    <script src="/assets/site.js?v=22"></script>
+    <script src="/assets/site.js?v=23"></script>
     <script src="/assets/matrix.js?v=5" defer></script>
     <script src="/assets/vendor/mantine-bundle.js" defer></script>
-    <script src="/assets/mantine-app.js?v=3" defer></script>
+    <script src="/assets/mantine-app.js?v=4" defer></script>
   </body>
 </html>

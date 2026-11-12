@@ -28,9 +28,9 @@
         }
       })();
     </script>
-    <link rel="stylesheet" href="/assets/site.css?v=39">
+    <link rel="stylesheet" href="/assets/site.css?v=40">
     <link rel="stylesheet" href="/assets/vendor/mantine-bundle.css">
-    <link rel="stylesheet" href="/assets/vendor/mantine-overrides.css?v=4">
+    <link rel="stylesheet" href="/assets/vendor/mantine-overrides.css?v=5">
     <noscript><style>.reveal { opacity: 1; transform: none; }</style></noscript>
   </head>
   <body>
@@ -41,12 +41,13 @@
           <a class="brand" href="/" aria-label="Kanav Mehta home">
             <span class="brand-mark">KM</span>
             <span>Kanav Mehta</span>
-            <span class="brand-role">Quantitative AI Research</span>
+            <span class="brand-role">Quantitative Researcher</span>
           </a>
-          <nav class="site-nav" data-site-nav aria-label="Primary navigation">
-            <a href="/">Home</a>
-            <a class="active" href="/projects/">Projects</a>
-            <a href="/blogs/">Research Notes</a>
+          <nav class="site-nav" id="primary-navigation" data-site-nav aria-label="Primary navigation">
+            <a href="/#work">Selected work</a>
+            <a href="/#experience">Experience</a>
+            <a class="active" aria-current="location" href="/projects/">Projects</a>
+            <a href="/blogs/">Research notes</a>
             <a href="/#contact">Contact</a>
           </nav>
           <div class="nav-actions">
@@ -58,7 +59,7 @@
                 <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path></svg>
               </span>
             </button>
-            <button class="nav-toggle" type="button" data-nav-toggle aria-label="Open navigation" aria-expanded="false">
+            <button class="nav-toggle" type="button" data-nav-toggle aria-controls="primary-navigation" aria-label="Open navigation" aria-expanded="false">
               <svg viewBox="0 0 24 24" fill="none" stroke-width="2" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"></path></svg>
             </button>
           </div>
@@ -70,10 +71,11 @@
           <div class="page-section">
             <div class="page-title">
               <p class="eyebrow">QuantLink AI · Data Platform</p>
-              <h1>Backtests that only see what was knowable on the day.</h1>
-              <p class="lead">Kanav built QuantLink AI's point-in-time market-data foundation end to end: vendor feeds landed in ClickHouse under Dagster, a security master and survivorship-free universe that keeps delisted companies, ~180M rows of rebuilt calculation tables proven against their sources, validation gates that fail closed, and a bulk bronze, silver, gold lakehouse modeled in dbt.</p>
+              <h1>Point-in-Time Market Data Platform</h1>
+              <p class="lead">I built a market data platform that keeps delisted stocks in historical backtests and uses filing dates to determine when fundamentals become available. I checked five rebuilt tables totaling about 180 million rows against independent references.</p>
               <div class="inline-actions">
                 <a class="button ghost small" href="/projects/"><span class="arr" aria-hidden="true">←</span> Back to Projects</a>
+                <a class="button accent small" href="#validation">See the validation checks <span class="arr" aria-hidden="true">→</span></a>
               </div>
             </div>
           </div>
@@ -113,7 +115,7 @@
                 </ul>
               </article>
 
-              <article class="article-card" style="margin-top: 18px;">
+              <article class="article-card" id="validation" tabindex="-1" style="margin-top: 18px;">
                 <p class="article-meta">Validation</p>
                 <h2>Validation that measures content, not activity.</h2>
                 <p class="lead">A green job is not proof of good data. Every table is checked for what it contains and how current it is before anything downstream reads it.</p>
@@ -143,7 +145,7 @@
         <div class="footer-inner">
           <div class="footer-brand">
             <strong>Kanav Mehta</strong>
-            <span>Quantitative AI Researcher</span>
+            <span>Quantitative Researcher</span>
           </div>
           <div class="footer-links">
             <a href="/">Home</a>
@@ -156,9 +158,9 @@
         </div>
       </footer>
     </div>
-    <script src="/assets/site.js?v=22"></script>
+    <script src="/assets/site.js?v=23"></script>
     <script src="/assets/matrix.js?v=5" defer></script>
     <script src="/assets/vendor/mantine-bundle.js" defer></script>
-    <script src="/assets/mantine-app.js?v=3" defer></script>
+    <script src="/assets/mantine-app.js?v=4" defer></script>
   </body>
 </html>

@@ -22,9 +22,9 @@
         }
       })();
     </script>
-    <link rel="stylesheet" href="/assets/site.css?v=39">
+    <link rel="stylesheet" href="/assets/site.css?v=40">
     <link rel="stylesheet" href="/assets/vendor/mantine-bundle.css">
-    <link rel="stylesheet" href="/assets/vendor/mantine-overrides.css?v=4">
+    <link rel="stylesheet" href="/assets/vendor/mantine-overrides.css?v=5">
     <noscript><style>.reveal { opacity: 1; transform: none; }</style></noscript>
   </head>
   <body>
@@ -35,12 +35,13 @@
           <a class="brand" href="/" aria-label="Kanav Mehta home">
             <span class="brand-mark">KM</span>
             <span>Kanav Mehta</span>
-            <span class="brand-role">Quantitative AI Research</span>
+            <span class="brand-role">Quantitative Researcher</span>
           </a>
-          <nav class="site-nav" data-site-nav aria-label="Primary navigation">
-            <a href="/">Home</a>
-            <a class="active" href="/projects/">Projects</a>
-            <a href="/blogs/">Research Notes</a>
+          <nav class="site-nav" id="primary-navigation" data-site-nav aria-label="Primary navigation">
+            <a href="/#work">Selected work</a>
+            <a href="/#experience">Experience</a>
+            <a class="active" aria-current="page" href="/projects/">Projects</a>
+            <a href="/blogs/">Research notes</a>
             <a href="/#contact">Contact</a>
           </nav>
           <div class="nav-actions">
@@ -52,7 +53,7 @@
                 <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path></svg>
               </span>
             </button>
-            <button class="nav-toggle" type="button" data-nav-toggle aria-label="Open navigation" aria-expanded="false">
+            <button class="nav-toggle" type="button" data-nav-toggle aria-controls="primary-navigation" aria-label="Open navigation" aria-expanded="false">
               <svg viewBox="0 0 24 24" fill="none" stroke-width="2" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"></path></svg>
             </button>
           </div>
@@ -63,9 +64,8 @@
         <section class="page-hero">
           <div class="page-section">
             <div class="page-title">
-              <p class="eyebrow">Research Index</p>
-              <h1>Models, markets, and the interfaces between them.</h1>
-              <p class="lead">Factor research · derivatives · systematic strategies · NLP · market structure · analytics tooling. Open repositories are linked; internal work is described with permission-safe detail.</p>
+              <h1>Projects</h1>
+              <p class="lead">Case studies in quantitative research, trading strategies, market data, and AI tools for research.</p>
             </div>
             <div class="filter-bar" role="group" aria-label="Project filters">
               <button class="filter-button active" type="button" data-filter="all">All</button>
@@ -81,25 +81,17 @@
 
         <section class="page-section">
           <div class="project-grid">
-            <article class="project-card flagship reveal" data-project="trading ai product">
+            <article class="project-card reveal" data-project="factor ai market">
               <div class="project-card-inner">
-                <span class="project-type">Agentic Research · Flagship<span class="flagship-tag">★ Flagship</span></span>
-                <h2>QuantFlow</h2>
-                <p>LLM-driven equity research stack: a survivorship-bias-free data engine, a debating analyst desk, and a report forge rendering chart-led flagship outlooks in a single gold/teal exhibit identity.</p>
-                <div class="project-metrics">
-                  <span>26<small>AMZN charts</small></span>
-                  <span>OW $292<small>example call</small></span>
-                  <span>13<small>chart builders</small></span>
-                  <span>dark+light<small>reports</small></span>
-                </div>
+                <span class="project-type">Wolfe Research · 2020–2024</span>
+                <h2>Equity Research at Wolfe</h2>
+                <p>I researched equity signals and portfolio risk, using financial NLP, factor models, event studies, and cross-sectional exposure analysis.</p>
                 <ul class="square-list">
-                  <li>Point-in-time S&amp;P 500 universe, bull/bear debate with risk veto, mechanical freshness/length/artifact gates.</li>
-                  <li>Example: AMZN 12-month outlook, 26 exhibits, full PDF linked.</li>
+                  <li>Built NLP tools for earnings calls and filings, studied loss-making companies and intangible assets, and developed dashboards for screening and risk analysis.</li>
                 </ul>
-                <div class="tag-row"><span class="tag">Agentic Research</span><span class="tag">MCP</span></div>
+                <div class="tag-row"><span class="tag">Equity factors</span><span class="tag">Financial NLP</span><span class="tag">Risk modeling</span></div>
                 <div class="inline-actions">
-                  <a class="button accent small" href="/projects/quantflow.html">Case Study <span class="arr" aria-hidden="true">→</span></a>
-                  <a class="button ghost small" href="/tearsheets/quantflow-amzn-12m-outlook.pdf" target="_blank" rel="noopener noreferrer">AMZN Report ↗</a>
+                  <a class="button accent small" href="/projects/wolfe-research.html">Explore the Wolfe research <span class="arr" aria-hidden="true">→</span></a>
                 </div>
               </div>
             </article>
@@ -107,8 +99,8 @@
             <article class="project-card reveal" data-project="factor">
               <div class="project-card-inner">
                 <span class="project-type">Factor Research · QuantLink AI</span>
-                <h2>Single-Factor Modeling</h2>
-                <p>Cross-sectional factor research dashboard for ranking, diagnostics, buckets, risk, and backtest review.</p>
+                <h2>Factor Modeling</h2>
+                <p>A cross-sectional workflow for comparing factor ranks with forward returns, checking sector concentration, and evaluating portfolio backtests across a 3,545-stock universe.</p>
                 <div class="project-metrics">
                   <span>3,545<small>stocks</small></span>
                   <span>10+<small>panels</small></span>
@@ -121,25 +113,43 @@
                   <li>Backtests report Sharpe, Sortino, drawdown, Calmar, win rate, and terminal wealth.</li>
                 </ul>
                 <div class="tag-row"><span class="tag">Factor Investing</span><span class="tag">Backtesting</span><span class="tag">Dashboards</span></div>
-                <div class="inline-actions"><a class="button accent small" href="/projects/single-factor-modeling.html">Case Study <span class="arr" aria-hidden="true">→</span></a></div>
+                <div class="inline-actions"><a class="button accent small" href="/projects/single-factor-modeling.html">See the factor research workflow <span class="arr" aria-hidden="true">→</span></a></div>
               </div>
             </article>
 
-            <article class="project-card reveal" data-project="ai product">
+            <article class="project-card reveal" data-project="ai factor product">
               <div class="project-card-inner">
-                <span class="project-type">QuantLink AI · ML Platform</span>
+                <span class="project-type">QuantLink AI · Applied machine learning</span>
                 <h2>AutoML Workbench</h2>
-                <p>A no-code platform to train, rank, explain and deploy many scikit-learn, XGBoost and LightGBM models on a point-in-time equity panel or a user's own tables, scored with purged walk-forward validation so future data never leaks in.</p>
-                <div class="project-metrics">
-                  <span>5<small>problem types</small></span>
-                  <span>1M<small>rows per table</small></span>
-                  <span>31<small>plain-language errors</small></span>
-                  <span>4<small>engine releases</small></span>
-                </div>
-                <ul class="square-list"><li>Led the path from a ported research library to production: purged walk-forward CV with embargo and a multi-date holdout, SHAP drivers, blended ensembles, a Redis/RQ worker queue, and an audit of 438 data limits so that every cap became a named refusal.</li></ul>
-                <div class="tag-row"><span class="tag">scikit-learn · XGBoost · LightGBM</span><span class="tag">FastAPI · Redis/RQ</span><span class="tag">Next.js</span></div>
+                <p>I led development of a staff-facing workbench for training, comparing, and explaining machine-learning models on point-in-time equity data and research datasets.</p>
+                <ul class="square-list">
+                  <li>Equity-panel runs use purged walk-forward validation with an embargo and a separate holdout. Model rankings account for how consistently predictions rank the target across holdout dates.</li>
+                  <li>Supported workflows include model blending, SHAP explanations, and queued scoring.</li>
+                </ul>
+                <div class="tag-row"><span class="tag">Model validation</span><span class="tag">Ensembles</span><span class="tag">Explainability</span></div>
                 <div class="inline-actions">
-                  <a class="button accent small" href="/projects/automl-workbench.html">Case Study <span class="arr" aria-hidden="true">→</span></a>
+                  <a class="button accent small" href="/projects/automl-workbench.html">See the AutoML workflow <span class="arr" aria-hidden="true">→</span></a>
+                </div>
+              </div>
+            </article>
+
+            <article class="project-card flagship reveal" data-project="trading ai product">
+              <div class="project-card-inner">
+                <span class="project-type">AI-assisted equity research</span>
+                <h2>QuantFlow</h2>
+                <p>QuantFlow researches individual stocks using historical S&amp;P 500 membership. It documents the bull and bear cases and runs a risk review before generating reports with charts.</p>
+                <div class="project-metrics">
+                  <span>11<small>specialist agents</small></span>
+                  <span>Since 1996<small>S&amp;P 500 membership</small></span>
+                  <span>13<small>chart builders</small></span>
+                  <span>HTML / PDF / DOCX<small>report formats</small></span>
+                </div>
+                <ul class="square-list">
+                  <li>The risk review can veto a recommendation. Automated checks verify as-of dates, word counts, and rendered files.</li>
+                </ul>
+                <div class="tag-row"><span class="tag">Agentic Research</span><span class="tag">MCP</span></div>
+                <div class="inline-actions">
+                  <a class="button accent small" href="/projects/quantflow.html">Read the QuantFlow case study <span class="arr" aria-hidden="true">→</span></a>
                 </div>
               </div>
             </article>
@@ -592,16 +602,13 @@
 
             <article class="project-card reveal" data-project="factor ai">
               <div class="project-card-inner">
-                <span class="project-type">Factor Research · ML</span>
+                <span class="project-type">Wolfe Research · Factor research</span>
                 <h2>Loss-Making Companies Factor Model</h2>
-                <p>A risk-neutralized factor model for loss-making companies: a LightGBM and Elastic Net ensemble for the regime where traditional valuation signals break down.</p>
-                <div class="project-metrics">
-                  <span>1.53<small>Sharpe</small></span>
-                  <span>Neutralized<small>risk</small></span>
-                  <span>Ensemble<small>LGBM + ENet</small></span>
-                  <span>Alpha<small>factor</small></span>
+                <p>I used a machine-learning ensemble and attribution analysis to develop a risk-neutralized factor for loss-making companies. A separate event study examined market reactions to corporate turnarounds.</p>
+                <div class="tag-row"><span class="tag">Equity factors</span><span class="tag">Attribution</span><span class="tag">Event studies</span></div>
+                <div class="inline-actions">
+                  <a class="button accent small" href="/projects/wolfe-research.html#loss-making-companies">Read the factor study summary <span class="arr" aria-hidden="true">→</span></a>
                 </div>
-                <div class="tag-row"><span class="tag">LightGBM</span><span class="tag">Elastic Net</span><span class="tag">Risk Model</span></div>
               </div>
             </article>
 
@@ -890,7 +897,7 @@
         <div class="footer-inner">
           <div class="footer-brand">
             <strong>Kanav Mehta</strong>
-            <span>Quantitative AI Researcher</span>
+            <span>Quantitative Researcher</span>
           </div>
           <div class="footer-links">
             <a href="/">Home</a>
@@ -903,9 +910,9 @@
         </div>
       </footer>
     </div>
-    <script src="/assets/site.js?v=22"></script>
+    <script src="/assets/site.js?v=23"></script>
     <script src="/assets/matrix.js?v=5" defer></script>
     <script src="/assets/vendor/mantine-bundle.js" defer></script>
-    <script src="/assets/mantine-app.js?v=3" defer></script>
+    <script src="/assets/mantine-app.js?v=4" defer></script>
   </body>
 </html>

@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Wolfe Research | Kanav Mehta</title>
+    <meta name="description" content="Selected quantitative equity research at Wolfe Research from 2020 to 2024, including equity factor models, financial NLP, macro risk, and research tools.">
+    <link rel="canonical" href="https://kizo07.github.io/projects/wolfe-research.html">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://kizo07.github.io/projects/wolfe-research.html">
+    <meta property="og:title" content="Quantitative Equity Research at Wolfe">
+    <meta property="og:description" content="Equity factor models, financial NLP, macro risk, and research tools from Kanav Mehta’s time at Wolfe Research.">
+    <meta name="twitter:card" content="summary">
+    <meta name="theme-color" content="#020609">
+    <link rel="icon" href="/favicon.ico">
+    <script>
+      (function () {
+        try {
+          var saved = localStorage.getItem("theme");
+          var theme = saved || "dark";
+          document.documentElement.setAttribute("data-theme", theme);
+        } catch (error) {
+          document.documentElement.setAttribute("data-theme", "dark");
+        }
+      })();
+    </script>
+    <link rel="stylesheet" href="/assets/site.css?v=40">
+    <link rel="stylesheet" href="/assets/vendor/mantine-bundle.css">
+    <link rel="stylesheet" href="/assets/vendor/mantine-overrides.css?v=5">
+    <style>
+      .fact-row > span { white-space: nowrap; }
+      .article-grid { margin-top: 0; }
+      .article-card p:last-child { margin-bottom: 0; }
+    </style>
+    <noscript><style>.reveal { opacity: 1; transform: none; }</style></noscript>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <div class="site-shell">
+      <header class="site-header">
+        <div class="nav-inner">
+          <a class="brand" href="/" aria-label="Kanav Mehta home">
+            <span class="brand-mark">KM</span>
+            <span>Kanav Mehta</span>
+            <span class="brand-role">Quantitative Researcher</span>
+          </a>
+          <nav class="site-nav" id="primary-navigation" data-site-nav aria-label="Primary navigation">
+            <a href="/#work">Selected work</a>
+            <a href="/#experience">Experience</a>
+            <a class="active" aria-current="location" href="/projects/">Projects</a>
+            <a href="/blogs/">Research notes</a>
+            <a href="/#contact">Contact</a>
+          </nav>
+          <div class="nav-actions">
+            <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch theme" title="Switch theme">
+              <span class="sun-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path></svg>
+              </span>
+              <span class="moon-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path></svg>
+              </span>
+            </button>
+            <button class="nav-toggle" type="button" data-nav-toggle aria-controls="primary-navigation" aria-label="Open navigation" aria-expanded="false">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"></path></svg>
+            </button>
+          </div>
+        </div>
+      </header>
+
+      <main id="main">
+        <section class="page-hero" aria-labelledby="wolfe-title">
+          <div class="page-section">
+            <div class="page-title">
+              <h1 id="wolfe-title">Quantitative equity research at Wolfe</h1>
+              <p class="lead">At Wolfe Research, I built equity factor models, used natural language processing to analyze company disclosures, and developed tools for measuring portfolio exposure to market shocks.</p>
+              <div class="inline-actions">
+                <a class="button ghost small" href="/projects/"><span class="arr" aria-hidden="true">←</span> Back to projects</a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <div class="page-section">
+          <div class="detail-grid">
+            <aside class="fact-sheet" aria-label="Wolfe Research role">
+              <div class="fact-row"><span>Role</span><b>Senior Quantitative Research Associate</b></div>
+              <div class="fact-row"><span>Team</span><b>Quantitative Research, ESG and Strategy (QES)</b></div>
+              <div class="fact-row"><span>Dates</span><b><time datetime="2020-12">Dec 2020</time>–<time datetime="2024-07">Jul 2024</time></b></div>
+            </aside>
+
+            <div class="article-grid prose">
+              <article class="article-card" id="loss-making-companies" tabindex="-1">
+                <h2>A factor model for loss-making companies</h2>
+                <p>I combined fundamental, technical, and alternative signals in a risk-neutralized factor model using an ensemble of XGBoost and Elastic Net. I analyzed what drove factor performance and used an event study to measure how markets reacted to corporate turnarounds.</p>
+              </article>
+
+              <article class="article-card" id="intangible-assets">
+                <h2>Intangible assets in a multifactor risk model</h2>
+                <p>I adjusted book-to-market to account for intangible assets and incorporated the measure into multifactor risk models for portfolio optimization. I also examined the relationship between intangible assets and information asymmetry.</p>
+              </article>
+
+              <article class="article-card" id="financial-nlp">
+                <h2>Financial NLP for earnings calls and filings</h2>
+                <p>I built an NLP system that analyzed earnings-call transcripts and audio, 10-K and 10-Q filings, and news. I used transformer models including RoBERTa, Llama, and GPT, alongside knowledge graphs, to score sentiment, model topics, and recognize entities.</p>
+              </article>
+
+              <article class="article-card" id="macro-risk">
+                <h2>Equity exposures to macro shocks</h2>
+                <p>I built cross-sectional exposure screens and scenario analyses to show which equities and portfolios were sensitive to shocks involving interest rates, oil, geopolitics, or technology.</p>
+              </article>
+
+              <article class="article-card" id="research-tools">
+                <h2>Dashboards for backtesting and stock screening</h2>
+                <p>I led the design of dashboards for researchers to run backtests, screen stocks dynamically, and evaluate trading strategies.</p>
+              </article>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <footer class="site-footer">
+        <div class="footer-inner">
+          <div class="footer-brand">
+            <strong>Kanav Mehta</strong>
+            <span>Quantitative Researcher</span>
+          </div>
+          <div class="footer-links">
+            <a href="/">Home</a>
+            <a href="/projects/">Projects</a>
+            <a href="/blogs/">Research Notes</a>
+            <a href="https://github.com/Kizo07" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <a href="https://linkedin.com/in/cxz07" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          </div>
+          <p class="footer-meta">© <span data-year>2026</span> · KM.EXP ▲</p>
+        </div>
+      </footer>
+    </div>
+    <script src="/assets/site.js?v=23"></script>
+    <script src="/assets/matrix.js?v=5" defer></script>
+    <script src="/assets/vendor/mantine-bundle.js" defer></script>
+    <script src="/assets/mantine-app.js?v=4" defer></script>
+  </body>
+</html>

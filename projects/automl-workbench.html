@@ -3,17 +3,17 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>AutoML Workbench — Leakage-Safe No-Code ML Platform | Kanav Mehta</title>
-    <meta name="description" content="AutoML Workbench at QuantLink AI: a no-code platform to train, rank, explain and deploy scikit-learn, XGBoost and LightGBM models on equity panels or user tables, with purged walk-forward validation.">
+    <title>AutoML Workbench | Kanav Mehta</title>
+    <meta name="description" content="Kanav Mehta led development of QuantLink AI's staff-gated AutoML Workbench for equity research and tabular ML, with purged walk-forward validation, SHAP explanations and queued scoring.">
     <link rel="canonical" href="https://kizo07.github.io/projects/automl-workbench.html">
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://kizo07.github.io/projects/automl-workbench.html">
-    <meta property="og:title" content="AutoML Workbench — Leakage-Safe No-Code ML Platform">
-    <meta property="og:description" content="Pick data, pick a target, and train, rank, explain and deploy many models — with purged walk-forward validation that keeps future data out of every score.">
+    <meta property="og:title" content="AutoML Workbench">
+    <meta property="og:description" content="A staff-gated workbench for training, comparing, explaining and scoring models on equity data and published tables.">
     <meta property="og:image" content="https://kizo07.github.io/images/profile.png">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="AutoML Workbench — Leakage-Safe No-Code ML Platform">
-    <meta name="twitter:description" content="A production AutoML platform: leakage-safe validation, SHAP drivers, blended ensembles, queued training and reproducible engine releases.">
+    <meta name="twitter:title" content="AutoML Workbench">
+    <meta name="twitter:description" content="Applied ML for equity research and tabular data, with purged walk-forward validation, SHAP explanations and queued scoring.">
     <meta name="twitter:image" content="https://kizo07.github.io/images/profile.png">
     <meta name="theme-color" content="#020609">
     <link rel="icon" href="/favicon.ico">
@@ -28,9 +28,9 @@
         }
       })();
     </script>
-    <link rel="stylesheet" href="/assets/site.css?v=39">
+    <link rel="stylesheet" href="/assets/site.css?v=40">
     <link rel="stylesheet" href="/assets/vendor/mantine-bundle.css">
-    <link rel="stylesheet" href="/assets/vendor/mantine-overrides.css?v=4">
+    <link rel="stylesheet" href="/assets/vendor/mantine-overrides.css?v=5">
     <noscript><style>.reveal { opacity: 1; transform: none; }</style></noscript>
   </head>
   <body>
@@ -41,12 +41,13 @@
           <a class="brand" href="/" aria-label="Kanav Mehta home">
             <span class="brand-mark">KM</span>
             <span>Kanav Mehta</span>
-            <span class="brand-role">Quantitative AI Research</span>
+            <span class="brand-role">Quantitative Researcher</span>
           </a>
-          <nav class="site-nav" data-site-nav aria-label="Primary navigation">
-            <a href="/">Home</a>
-            <a class="active" href="/projects/">Projects</a>
-            <a href="/blogs/">Research Notes</a>
+          <nav class="site-nav" id="primary-navigation" data-site-nav aria-label="Primary navigation">
+            <a href="/#work">Selected work</a>
+            <a href="/#experience">Experience</a>
+            <a class="active" aria-current="location" href="/projects/">Projects</a>
+            <a href="/blogs/">Research notes</a>
             <a href="/#contact">Contact</a>
           </nav>
           <div class="nav-actions">
@@ -58,7 +59,7 @@
                 <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path></svg>
               </span>
             </button>
-            <button class="nav-toggle" type="button" data-nav-toggle aria-label="Open navigation" aria-expanded="false">
+            <button class="nav-toggle" type="button" data-nav-toggle aria-controls="primary-navigation" aria-label="Open navigation" aria-expanded="false">
               <svg viewBox="0 0 24 24" fill="none" stroke-width="2" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"></path></svg>
             </button>
           </div>
@@ -68,11 +69,12 @@
         <section class="page-hero">
           <div class="page-section">
             <div class="page-title">
-              <p class="eyebrow">QuantLink AI · ML Platform</p>
-              <h1>Pick data, pick a target: get models you can trust.</h1>
-              <p class="lead">AutoML Workbench is a no-code platform for training, ranking, explaining and deploying many scikit-learn, XGBoost and LightGBM models across five problem types. Kanav led it from August 2026, taking a ported research ML library and turning it into an end-to-end production platform: leakage-safe validation, explainability, ensembles, scoring, and the release and QA discipline behind them.</p>
+              <p class="eyebrow">QuantLink AI · Applied Machine Learning</p>
+              <h1>AutoML Workbench</h1>
+              <p class="lead">I led the development of a staff-gated workbench for training, comparing, explaining and scoring models without writing code. It gave researchers a way to evaluate signals on a built-in U.S. equity panel or train models on their own published tables.</p>
               <div class="inline-actions">
                 <a class="button ghost small" href="/projects/"><span class="arr" aria-hidden="true">←</span> Back to Projects</a>
+                <a class="button accent small" href="#automl-validation">See the validation methods <span class="arr" aria-hidden="true">→</span></a>
               </div>
             </div>
           </div>
@@ -81,61 +83,65 @@
         <section class="page-section">
           <div class="detail-grid">
             <div class="fact-col">
-            <aside class="fact-sheet reveal" aria-label="Project snapshot">
-              <div class="fact-row"><span>Role</span><b>Lead engineer · QuantLink AI · Aug–Nov 2026</b></div>
-              <div class="fact-row"><span>Problem types</span><b>Regression · Classification · Clustering · Dim. reduction · Similarity</b></div>
-              <div class="fact-row"><span>Data</span><b>~80-factor point-in-time equity panel or user tables up to 1M rows</b></div>
-              <div class="fact-row"><span>Validation</span><b>Purged walk-forward CV + embargo · multi-date holdout</b></div>
-              <div class="fact-row"><span>Ranking</span><b>Holdout Rank IC IR · R² · balanced accuracy</b></div>
-              <div class="fact-row"><span>Stack</span><b>scikit-learn · XGBoost · LightGBM · SHAP · FastAPI</b></div>
-              <div class="fact-row"><span>Workflow</span><b>AI-agent-assisted build, independent review</b></div>
-            </aside>
-            <figure class="showcase-figure reveal">
-            <img src="/images/dashboards/automl-workbench-leaderboard.png" alt="AutoML Workbench results tab showing a completed regression run with streamed progress steps, a six-date holdout, purged walk-forward split, and a model leaderboard ranked by holdout Rank IC with a Blend top 3 button" width="1440" height="751" loading="lazy">
-            <figcaption>Results: streamed run progress, a row-accounting receipt, and a leaderboard ranked on a multi-date holdout, one click from a blended ensemble.</figcaption>
-          </figure>
-            <figure class="showcase-figure reveal">
-            <img src="/images/dashboards/automl-workbench-features.png" alt="Feature engineering tab in AutoML Workbench adding a one-row lag of momentum and a rolling average of value to the base features" width="1440" height="650" loading="lazy">
-            <figcaption>Feature engineering: past-only lags and rolling features, saved with the run and replayed at prediction time.</figcaption>
-          </figure>
-            <figure class="showcase-figure reveal">
-            <img src="/images/dashboards/automl-workbench-importance.png" alt="Feature importance table in AutoML Workbench comparing ranked feature importances across linear regression, decision tree and lasso models" width="1440" height="751" loading="lazy">
-            <figcaption>Feature importance: per-model rankings in the user's own column names, engineered features included.</figcaption>
-          </figure>
-          </div>
+              <aside class="fact-sheet reveal" aria-label="Project snapshot">
+                <div class="fact-row"><span>Role</span><b>Lead engineer · QuantLink AI · Aug–Nov 2026</b></div>
+                <div class="fact-row"><span>Equity data</span><b>~80 point-in-time U.S. equity factors</b></div>
+                <div class="fact-row"><span>Published tables</span><b>Up to 1M rows, subject to a separate cell limit</b></div>
+                <div class="fact-row"><span>Task coverage</span><b>Five task types for equity panels, three for published tables</b></div>
+                <div class="fact-row"><span>Stack</span><b>scikit-learn · XGBoost · LightGBM · SHAP · FastAPI · Redis/RQ</b></div>
+                <div class="fact-row"><span>Access</span><b>Staff-gated workflow verified in staging</b></div>
+              </aside>
+              <figure class="showcase-figure reveal">
+                <img src="/images/dashboards/automl-workbench-leaderboard.png" alt="Completed regression run with training progress, a purged walk-forward split, holdout scores and a Blend top 3 button" width="1440" height="751" loading="lazy">
+                <figcaption>Example regression run on demo data. The results view shows progress, rows used, and holdout scores. The ranking metric depends on the data source and task.</figcaption>
+              </figure>
+              <figure class="showcase-figure reveal">
+                <img src="/images/dashboards/automl-workbench-features.png" alt="Feature editor adding a one-row momentum lag and a rolling average of value" width="1440" height="650" loading="lazy">
+                <figcaption>The workbench saves lag and rolling feature definitions with the run and reapplies them when scoring.</figcaption>
+              </figure>
+              <figure class="showcase-figure reveal">
+                <img src="/images/dashboards/automl-workbench-importance.png" alt="Feature importance table comparing linear regression, decision tree and lasso models" width="1440" height="751" loading="lazy">
+                <figcaption>Feature importance retains the user's column names and includes engineered features.</figcaption>
+              </figure>
+            </div>
 
             <div class="prose reveal">
-              <article class="article-card">
+              <article class="article-card" id="automl-validation" tabindex="-1">
                 <p class="article-meta">Validation</p>
-                <h2>Scores that never see the future.</h2>
-                <p class="lead">On financial panels, an honest score is the whole product, so leakage protection is built into every split, not left to the user.</p>
+                <h2>Out-of-sample model comparison</h2>
                 <ul class="square-list">
-                  <li>Purged walk-forward cross-validation with an embargo, plus a multi-date holdout, for time-ordered data; seeded grouped or stratified K-fold for plain tables, chosen automatically from the data's roles.</li>
-                  <li>Leakage protection proven, not assumed: a positive-control test plants a deliberately leaky column and confirms the pipeline catches it.</li>
-                  <li>Panel leaderboards rank on holdout Rank IC IR (Spearman IC mean over its standard deviation across dates), the metric a quant desk actually trades on; plain tables rank on R² or balanced accuracy.</li>
+                  <li>For equity panels, purged walk-forward cross-validation removes training labels that overlap the test window. An embargo adds a gap, and a separate holdout spans multiple dates.</li>
+                  <li>The equity leaderboard ranks supervised models by Rank IC IR, the mean cross-sectional Spearman rank correlation divided by its standard deviation across holdout dates.</li>
+                  <li>Published tables use walk-forward splits when they have a time column and seeded K-fold otherwise, with grouping or stratification as appropriate. The table leaderboard uses R² for regression and balanced accuracy for classification.</li>
                 </ul>
               </article>
 
               <article class="article-card" style="margin-top: 18px;">
                 <p class="article-meta">Workbench</p>
-                <h2>From raw table to explained, deployable model with no code.</h2>
-                <p class="lead">Benchmarked against a commercial AutoML product, then closed the highest-value gaps: SHAP drivers, blending, holdout scoring and Quick start.</p>
+                <h2>Training, explanation and scoring</h2>
                 <ul class="square-list">
-                  <li>Quick start trains seven fast models in one click; hyperparameter search runs under a budget with early stopping; past-only lags, changes and rolling features plus sector/size neutralization are built in.</li>
-                  <li>Every run ships a report, model tear sheet, feature importance, per-row SHAP prediction drivers, "Blend top N" ensembles and out-of-fold predictions, all exportable to sheets or a zip bundle.</li>
-                  <li>Predict scores the latest or an as-of snapshot, or queues scoring of every row; live progress streams over SSE, and the same engine is callable from notebooks and the in-product AI agent.</li>
+                  <li>Both data sources support regression, classification and clustering. The equity panel also supports dimensionality reduction and similarity search.</li>
+                  <li>Quick Start trains seven fast models on the equity panel. Hyperparameter search runs within a trial budget, and supported boosting models use early stopping on a validation fold.</li>
+                  <li>For supervised runs, researchers can inspect out-of-fold predictions and feature rankings, explain individual predictions with SHAP, and combine top models into an ensemble. Predict scores the latest or a historical equity snapshot, or queues a scoring job over a published table.</li>
                 </ul>
               </article>
 
               <article class="article-card" style="margin-top: 18px;">
-                <p class="article-meta">Production</p>
-                <h2>Built to refuse loudly, never fail silently.</h2>
-                <p class="lead">Shipped in production releases behind a staff feature flag, with the engineering discipline of a platform, not a prototype.</p>
+                <p class="article-meta">Engineering</p>
+                <h2>Run execution and reproducible releases</h2>
                 <ul class="square-list">
-                  <li>Spec-driven engine: algorithms, limits, defaults and user-facing wording live in versioned JSON specs (one consolidation removed ~20K lines), and 31 plain-language error codes keep jargon away from users.</li>
-                  <li>Set the policy, applied across 438 data limits, that every cap is a named refusal and never a silent cut; a Redis/RQ worker pool refuses work rather than losing it, and per-dataset access rights are re-checked on every read and export.</li>
-                  <li>Cut four reproducible engine releases (pinned commit, wheel sha256) with additive, backward-compatible API contracts across five codebases, validated by a 5-tester staging pass and a 31-item divergence audit that unified two workflows into one.</li>
+                  <li>The API validates a run before sending it to a background worker. The interface streams progress, and the engine stores the fitted model, configuration and results for later inspection and scoring.</li>
+                  <li>Versioned specifications define the estimator catalog, defaults and validation rules. Oversized tables receive an explicit refusal, and published-table permissions are checked again when reading or exporting results.</li>
+                  <li>Engine releases pin the source revision and verify the build artifact by checksum. The workbench uses the installed engine's capabilities to decide which controls to show.</li>
                 </ul>
+              </article>
+
+              <article class="article-card" style="margin-top: 18px;">
+                <p class="article-meta">Verification</p>
+                <h2>What the staging tests established</h2>
+                <p>Staging tests checked engineered feature values and independently recalculated metrics. They also tested repeatability, cancellation and concurrent runs. A deliberately leaky feature served as a positive control for the leakage check.</p>
+                <p>The staged equity panel filtered historical data by current listing status, which introduces survivorship bias into historical tests.</p>
+                <a class="button ghost small" href="/projects/single-factor-modeling.html">Explore Factor Modeling <span class="arr" aria-hidden="true">→</span></a>
               </article>
             </div>
           </div>
@@ -146,7 +152,7 @@
         <div class="footer-inner">
           <div class="footer-brand">
             <strong>Kanav Mehta</strong>
-            <span>Quantitative AI Researcher</span>
+            <span>Quantitative Researcher</span>
           </div>
           <div class="footer-links">
             <a href="/">Home</a>
@@ -159,9 +165,9 @@
         </div>
       </footer>
     </div>
-    <script src="/assets/site.js?v=22"></script>
+    <script src="/assets/site.js?v=23"></script>
     <script src="/assets/matrix.js?v=5" defer></script>
     <script src="/assets/vendor/mantine-bundle.js" defer></script>
-    <script src="/assets/mantine-app.js?v=3" defer></script>
+    <script src="/assets/mantine-app.js?v=4" defer></script>
   </body>
 </html>

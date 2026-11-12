@@ -118,91 +118,6 @@ body {
 
 .km-tag .mantine-Badge-label { white-space: normal; }
 
-/* ---------- Header controls ---------- */
-.km-theme-action {
-  min-width: 44px;
-  min-height: 44px;
-  color: var(--muted);
-  border-radius: var(--radius-sm);
-  transition: color 0.2s, border-color 0.2s, background 0.2s;
-}
-
-.km-theme-action:hover {
-  color: var(--text) !important;
-  border-color: var(--line-strong) !important;
-  background: var(--surface) !important;
-}
-
-.km-theme-action svg,
-.km-theme-action .sun-icon svg,
-.km-theme-action .moon-icon svg {
-  width: 18px;
-  height: 18px;
-  stroke: currentColor;
-  fill: none;
-}
-
-.km-theme-action .sun-icon svg,
-.km-theme-action .moon-icon svg {
-  width: 18px;
-  height: 18px;
-}
-
-.km-burger {
-  width: 44px;
-  height: 44px;
-  border-radius: var(--radius-sm);
-  border: 1px solid var(--line);
-  background: transparent;
-  color: var(--muted);
-  transition: color 0.2s, border-color 0.2s, background 0.2s;
-  display: none;
-}
-
-.km-burger:hover {
-  color: var(--text);
-  border-color: var(--line-strong);
-  background: var(--surface);
-}
-
-@media (max-width: 860px) {
-  .km-burger {
-    display: block;
-  }
-}
-
-.km-burger span,
-.km-burger span::before,
-.km-burger span::after { background: var(--text); }
-
-/* ---------- Drawer ---------- */
-.km-drawer-link {
-  display: block;
-  padding: 13px 14px;
-  border-radius: var(--radius-sm);
-  font-size: 16px;
-  font-weight: 500;
-  color: var(--muted);
-  transition: color 0.2s, background 0.2s;
-}
-
-.km-drawer-link:hover {
-  color: var(--text);
-  background: var(--bg-soft);
-}
-
-.km-drawer-link.active {
-  color: var(--gold);
-}
-
-.km-drawer-mail {
-  margin-top: 10px;
-  border-top: 1px dashed var(--line);
-  border-radius: 0 0 10px 10px;
-  font-family: var(--font-mono);
-  font-size: 13px;
-}
-
 /* ---------- Back-to-top Affix ---------- */
 .km-top {
   width: 44px;
@@ -214,7 +129,7 @@ body {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .km-btn, .km-btn .arr, .km-theme-action, .km-burger, .km-drawer-link { transition: none; }
+  .km-btn, .km-btn .arr { transition: none; }
   .km-btn:hover, .km-btn:hover .arr { transform: none; }
 }
 

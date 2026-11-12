@@ -3,17 +3,17 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Kanav Mehta | Quantitative AI Researcher</title>
-    <meta name="description" content="Kanav Mehta is a quantitative researcher at QuantLink AI building an agentic quant research platform, portfolio construction and risk systems, factor engines, and NLP market signals.">
-    <meta property="og:title" content="Kanav Mehta | Quantitative AI Researcher">
-    <meta property="og:description" content="Agentic research platforms, portfolio construction, factor engines, derivatives analytics, and NLP signals — quantitative research rebuilt for the age of AI.">
+    <title>Kanav Mehta | Quantitative Researcher</title>
+    <meta name="description" content="Kanav Mehta is a quantitative researcher focused on systematic equities, factor modeling, portfolio construction, and risk, with experience in Python and applied AI.">
+    <meta property="og:title" content="Kanav Mehta | Quantitative Researcher">
+    <meta property="og:description" content="Kanav Mehta is a quantitative researcher focused on systematic equities, factor modeling, portfolio construction, and risk, with experience in Python and applied AI.">
     <meta property="og:type" content="website">
     <link rel="canonical" href="https://kizo07.github.io/">
     <meta property="og:url" content="https://kizo07.github.io/">
     <meta property="og:image" content="https://kizo07.github.io/images/profile.png">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Kanav Mehta | Quantitative AI Researcher">
-    <meta name="twitter:description" content="Agentic research platforms, portfolio construction, factor engines, derivatives analytics, and NLP signals.">
+    <meta name="twitter:title" content="Kanav Mehta | Quantitative Researcher">
+    <meta name="twitter:description" content="Kanav Mehta is a quantitative researcher focused on systematic equities, factor modeling, portfolio construction, and risk, with experience in Python and applied AI.">
     <meta name="twitter:image" content="https://kizo07.github.io/images/profile.png">
     <meta name="theme-color" content="#020609">
     <link rel="icon" href="/favicon.ico">
@@ -28,12 +28,9 @@
         }
       })();
     </script>
-    <link rel="stylesheet" href="/assets/site.css?v=39">
-    <link rel="stylesheet" href="/assets/vendor/mantine-bundle.css">
-    <link rel="stylesheet" href="/assets/vendor/mantine-overrides.css?v=4">
-    <noscript><style>.reveal { opacity: 1; transform: none; }</style></noscript>
+    <link rel="stylesheet" href="/assets/site.css?v=41">
   </head>
-  <body>
+  <body class="home-page">
     <a class="skip-link" href="#main">Skip to content</a>
     <div class="site-shell">
       <header class="site-header">
@@ -41,12 +38,12 @@
           <a class="brand" href="/" aria-label="Kanav Mehta home">
             <span class="brand-mark">KM</span>
             <span>Kanav Mehta</span>
-            <span class="brand-role">Quantitative AI Research</span>
           </a>
-          <nav class="site-nav" data-site-nav aria-label="Primary navigation">
-            <a class="active" href="/">Home</a>
+          <nav class="site-nav" id="primary-navigation" data-site-nav aria-label="Primary navigation">
+            <a href="#work">Selected work</a>
+            <a href="#experience">Experience</a>
             <a href="/projects/">Projects</a>
-            <a href="/blogs/">Research Notes</a>
+            <a href="/blogs/">Research notes</a>
             <a href="#contact">Contact</a>
           </nav>
           <div class="nav-actions">
@@ -58,809 +55,182 @@
                 <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path></svg>
               </span>
             </button>
-            <button class="nav-toggle" type="button" data-nav-toggle aria-label="Open navigation" aria-expanded="false">
+            <button class="nav-toggle" type="button" data-nav-toggle aria-label="Open navigation" aria-expanded="false" aria-controls="primary-navigation">
               <svg viewBox="0 0 24 24" fill="none" stroke-width="2" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"></path></svg>
             </button>
           </div>
         </div>
       </header>
 
-      <main id="main">
-        <!-- ============ Hero ============ -->
-        <section class="hero">
+      <main id="main" tabindex="-1">
+        <section class="hero" aria-labelledby="hero-title">
           <div class="hero-content">
             <div class="hero-copy">
-              <p class="eyebrow"><span class="dot" aria-hidden="true"></span> Founding Quantitative AI Researcher · QuantLink AI</p>
-              <h1>Quantitative research, rebuilt for <em>machine intelligence</em>.</h1>
-              <p class="lead">I build systems that turn messy market data into decision-grade alpha: factor engines, ML strategy research, derivatives analytics, and NLP signals, taken from first dataset to production interface.</p>
+              <h1 id="hero-title">
+                <span>Kanav Mehta</span>
+                <span class="hero-role">Quantitative Researcher</span>
+              </h1>
+              <p class="lead">I research systematic equity strategies, from testing signals to building portfolios and measuring risk. I build research software in Python and SQL and use machine learning to analyze markets and financial text.</p>
+              <p class="hero-context">
+                <span><strong>Nearly four years at Wolfe Research</strong></span>
+                <span>Founding Quantitative AI Researcher at QuantLink AI</span>
+                <span>UCLA Anderson MFE</span>
+              </p>
               <div class="inline-actions">
-                <a class="button primary" href="/projects/">View Selected Work <span class="arr" aria-hidden="true">→</span></a>
-                <a class="button cyan" href="https://github.com/Kizo07" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
-                <a class="button ghost" href="mailto:kanavdbz@gmail.com">kanavdbz@gmail.com</a>
+                <a class="button primary" href="#work">View selected work <span class="arr" aria-hidden="true">→</span></a>
+                <a class="button ghost" href="mailto:kanavdbz@gmail.com">Email me</a>
               </div>
-              <pre class="terminal-readout"><span class="cyan">$ whoami</span>
-kanav_mehta · quantitative_researcher
-<span class="gold">focus</span>   = factors | portfolio_construction | risk | agentic_research
-<span class="gold">stack</span>   = python · sql · lightgbm · transformers · mcp
-<span class="gold">mode</span>    = research → production, with audit trails</pre>
             </div>
             <div class="hero-portrait">
               <img class="portrait-dark" src="/images/profile.png" alt="Portrait of Kanav Mehta">
-              <img class="portrait-light" src="/images/profile_light.png" alt="" aria-hidden="true">
-              <p class="portrait-caption"><span>Kanav Mehta</span><span>Los Angeles · UCLA MFE</span></p>
+              <img class="portrait-light" src="/images/profile_light.png" alt="Portrait of Kanav Mehta">
             </div>
           </div>
         </section>
 
-        <!-- ============ Ticker tape ============ -->
-        <div class="ticker" aria-hidden="true">
-          <div class="ticker-track" data-ticker-track>
-            <span class="ticker-item">RANK IC <b>+0.084</b> <span class="up">▲</span><span class="sep">◆</span></span>
-            <span class="ticker-item">FACTOR UNIVERSE <b>3,545 STOCKS</b><span class="sep">◆</span></span>
-            <span class="ticker-item">MERGED PRS <b>517</b> · CODE REVIEWS <b>1,059</b><span class="sep">◆</span></span>
-            <span class="ticker-item">LS STRATEGY SHARPE <b>1.53</b> <span class="up">▲</span><span class="sep">◆</span></span>
-            <span class="ticker-item">GLOBAL ALPHAS <b>40+</b><span class="sep">◆</span></span>
-            <span class="ticker-item">FINBERT · FOMC ROC-AUC <b>0.65</b><span class="sep">◆</span></span>
-            <span class="ticker-item">CRYPTO ML SHARPE <b>&gt;1.5</b> <span class="up">▲</span><span class="sep">◆</span></span>
-            <span class="ticker-item">UCLA MFE GPA <b>3.93</b><span class="sep">◆</span></span>
-            <span class="ticker-item">WORLDQUANT BRAIN ALPHATHON <b>1ST RANK</b><span class="sep">◆</span></span>
-            <span class="ticker-item">QUANT RESEARCH <b>5+ YEARS</b><span class="sep">◆</span></span>
-          </div>
-        </div>
-
-        <!-- ============ Metrics ============ -->
-        <section class="metric-strip reveal" aria-label="Career highlights">
-          <div class="metric">
-            <strong>3,545</strong>
-            <span>stock universe covered by the factor research engine</span>
-          </div>
-          <div class="metric">
-            <strong>40<sup>+</sup></strong>
-            <span>global alpha strategies designed across four regions</span>
-          </div>
-          <div class="metric">
-            <strong>10<sup>+</sup></strong>
-            <span>analytics panels shipped end to end, research to UI</span>
-          </div>
-          <div class="metric">
-            <strong>1<sup>st</sup></strong>
-            <span>rank, WorldQuant BRAIN Alphathon · UCLA Anderson MFE</span>
-          </div>
-        </section>
-
-        <!-- ============ QuantFlow flagship ============ -->
-        <section class="page-section" id="quantflow" aria-labelledby="quantflow-title">
+        <section class="page-section" id="work" tabindex="-1" aria-labelledby="work-title">
           <div class="section-head">
-            <div>
-              <p class="kicker">00 · Flagship</p>
-              <h2 id="quantflow-title">QuantFlow: an automated pipeline that produces desk-grade outlooks</h2>
-            </div>
-            <p class="section-note">Engine · Desk · Reports</p>
+            <h2 id="work-title">Selected work</h2>
           </div>
-          <div class="spotlight">
-            <div class="spotlight-copy reveal">
-              <h3>From hypothesis to print-ready flagship report, with no manual glue work.</h3>
-              <p class="lead">A survivorship-bias-free equity engine, an eleven-specialist analyst desk that debates and sizes each case, and a report generator rendering chart-led outlooks, all in one gold/teal visual identity. Latest outlooks: MSFT, GOOGL, META, and NVDA 12-month flagships, each argued across 20+ exhibits.</p>
-              <div class="inline-actions">
-                <a class="button accent" href="/projects/quantflow.html">QuantFlow Case Study <span class="arr" aria-hidden="true">→</span></a>
-                <a class="button ghost" href="/tearsheets/quantflow-amzn-12m-outlook.pdf" target="_blank" rel="noopener noreferrer">AMZN Report (PDF)</a>
-              </div>
-            </div>
-            <aside class="panel reveal" aria-label="QuantFlow example report">
-              <div class="panel-bar">
-                <span class="lamp"></span><span class="lamp"></span><span class="lamp"></span>
-                <span>quantflow · amzn-12m-outlook</span>
-              </div>
-              <div class="panel-body">
-                <div class="pipe-row">
-                  <span class="step">OW</span>
-                  <span class="name">$292<small>base target, +14.5% · Sep 2027</small></span>
-                  <span class="stat">26 CHARTS</span>
-                </div>
-                <div class="pipe-row">
-                  <span class="step">01</span>
-                  <span class="name">ENGINE<small>point-in-time universe · factor lab</small></span>
-                  <span class="stat">FRESH</span>
-                </div>
-                <div class="pipe-row">
-                  <span class="step">02</span>
-                  <span class="name">DEBATE<small>bull vs bear, risk veto</small></span>
-                  <span class="stat">SIZED</span>
-                </div>
-                <div class="pipe-row">
-                  <span class="step">03</span>
-                  <span class="name">RENDER<small>infographic cover · dark + light</small></span>
-                  <span class="stat">PRINTED</span>
+          <div class="project-grid">
+            <article class="project-card" data-project="factor research">
+              <div class="project-card-inner">
+                <span class="project-type">Systematic equities</span>
+                <h3>Wolfe Research</h3>
+                <p>I developed a risk-neutralized equity factor for loss-making companies, studied intangible assets as a source of systematic risk, and used NLP to analyze earnings calls and filings.</p>
+                <div class="inline-actions">
+                  <a class="button accent small" href="/projects/wolfe-research.html">Read the Wolfe case study <span class="arr" aria-hidden="true">→</span></a>
                 </div>
               </div>
-              <div class="panel-foot">
-                <span>exhibits · gold/teal identity</span>
-                <b>as-of: stamped</b>
-              </div>
-            </aside>
-          </div>
-        </section>
-
-        <!-- ============ QuantLink spotlight ============ -->
-        <section class="page-section" id="quantlink" aria-labelledby="quantlink-title">
-          <div class="section-head">
-            <div>
-              <p class="kicker">01 · Current Role</p>
-              <h2 id="quantlink-title">Founding Researcher at QuantLink AI</h2>
-            </div>
-            <p class="section-note">2026–Present · Quant Analytics</p>
-          </div>
-          <div class="spotlight">
-            <div class="spotlight-copy reveal">
-              <h3>An automated research platform with desk-grade discipline.</h3>
-              <p class="lead">At QuantLink AI I'm building an agent layer for quantitative research (an MCP-based platform where AI agents research, evaluate, and refine investment strategies with the tools of a quant desk) alongside constrained portfolio construction and multi-factor risk monitoring.</p>
-              <ul class="check-list">
-                <li><b><a href="/projects/quantlink-mcp-platform.html" style="text-decoration: underline; text-decoration-color: var(--line-strong); text-underline-offset: 4px;">Agentic quant research platform</a></b>: an MCP-based system in which AI agents iteratively invoke backtesting, portfolio construction &amp; optimization, and risk-model attribution to research, evaluate, and refine investment strategies.</li>
-                <li><b><a href="/projects/automl-workbench.html" style="text-decoration: underline; text-decoration-color: var(--line-strong); text-underline-offset: 4px;">AutoML Workbench</a></b>: a no-code, leakage-safe machine-learning platform for quant research.</li>
-                <li><b><a href="/projects/notebook-dashboards.html" style="text-decoration: underline; text-decoration-color: var(--line-strong); text-underline-offset: 4px;">Notebook Dashboards</a></b>: turns a research notebook into an interactive, scheduled dashboard with server-side pivots.</li>
-                <li><b><a href="/projects/operator-catalog.html" style="text-decoration: underline; text-decoration-color: var(--line-strong); text-underline-offset: 4px;">Operator Catalog</a></b>: 1,139 analytics and ML operators unified into one typed, hash-sealed catalog.</li>
-                <li><b><a href="/projects/pit-market-data-platform.html" style="text-decoration: underline; text-decoration-color: var(--line-strong); text-underline-offset: 4px;">Point-in-Time Market Data Platform</a></b>: a survivorship-free data foundation with ~180M rows of calculations proven against their sources.</li>
-                <li><b><a href="/projects/sql-backtester.html" style="text-decoration: underline; text-decoration-color: var(--line-strong); text-underline-offset: 4px;">SQL-Native Backtester</a></b>: backtesting written entirely as dbt SQL on ClickHouse, with look-ahead blocked by construction.</li>
-                <li><b><a href="/projects/notebook-ai-agent.html" style="text-decoration: underline; text-decoration-color: var(--line-strong); text-underline-offset: 4px;">Notebook AI Agent</a></b>: an agent that edits research notebooks and checks every edit against real data before it applies.</li>
-                <li><b><a href="/projects/options-workspace.html" style="text-decoration: underline; text-decoration-color: var(--line-strong); text-underline-offset: 4px;">Options Workspace</a></b>: 104 options views, from a mirrored chain to an interactive 3D implied-volatility surface.</li>
-                <li><b>Constrained portfolio construction</b>: long-only and long-short features with volatility, beta, sector, industry, and style-factor exposure controls.</li>
-                <li><b>Multi-factor risk model</b>: exposure monitoring and attribution analysis across constructed portfolios.</li>
-                <li><b>Factor research foundation</b> (the shipped implementation): point-in-time pipeline, Rank IC and information-ratio diagnostics, and a backtest engine across a 3,545-stock universe.</li>
-              </ul>
-              <div class="inline-actions">
-                <a class="button accent" href="/projects/agentic-alpha-engine.html">Read the Alpha Engine Case Study <span class="arr" aria-hidden="true">→</span></a>
-                <a class="button ghost" href="/projects/single-factor-modeling.html">Single-Factor Case Study</a>
-              </div>
-            </div>
-            <aside class="panel reveal" aria-label="Agentic research loop overview">
-              <div class="panel-bar">
-                <span class="lamp"></span><span class="lamp"></span><span class="lamp"></span>
-                <span>quantlink · agentic-research.loop</span>
-              </div>
-              <div class="panel-body">
-                <div class="pipe-row">
-                  <span class="step">01</span>
-                  <span class="name">RESEARCH<small>agents propose &amp; evaluate strategy hypotheses</small></span>
-                  <span class="stat">MCP TOOLS</span>
-                </div>
-                <div class="pipe-row">
-                  <span class="step">02</span>
-                  <span class="name">BACKTEST<small>cross-sectional &amp; event-driven engines</small></span>
-                  <span class="stat">COST-AWARE</span>
-                </div>
-                <div class="pipe-row">
-                  <span class="step">03</span>
-                  <span class="name">OPTIMIZE<small>volatility · beta · sector · style constraints</small></span>
-                  <span class="stat">CONVEX</span>
-                </div>
-                <div class="pipe-row">
-                  <span class="step">04</span>
-                  <span class="name">ATTRIBUTE<small>multi-factor risk-model exposures</small></span>
-                  <span class="stat">MONITORED</span>
-                </div>
-                <div class="pipe-row">
-                  <span class="step">05</span>
-                  <span class="name">REFINE<small>verdicts feed the next research loop</small></span>
-                  <span class="stat">AUDITED</span>
-                </div>
-              </div>
-              <div class="panel-foot">
-                <span>workflow · agents ↔ desk tools</span>
-                <b>audit trail: on</b>
-              </div>
-            </aside>
-          </div>
-
-          <!-- Engineering impact (GitHub activity, Mar 10 – Nov 9, 2026) -->
-          <div class="reveal" role="group" aria-labelledby="ql-impact-title" style="margin-top: 64px; padding-top: 36px; border-top: 1px solid var(--line);">
-            <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 8px 24px;">
-              <p class="kicker" id="ql-impact-title">Engineering impact</p>
-              <p class="section-note" style="padding-bottom: 0;">GitHub · Mar–Nov 2026</p>
-            </div>
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); row-gap: 24px; margin-top: 24px;">
-              <div class="metric">
-                <strong>517</strong>
-                <span>pull requests merged, median 5.4 h from open to merge</span>
-              </div>
-              <div class="metric">
-                <strong>95.7<sup>%</sup></strong>
-                <span>merge rate across 551 pull requests opened</span>
-              </div>
-              <div class="metric">
-                <strong>1,059</strong>
-                <span>code reviews of teammates' pull requests</span>
-              </div>
-              <div class="metric">
-                <strong>218<sup>K</sup></strong>
-                <span>lines of dead code and redundant tests removed</span>
-              </div>
-              <div class="metric">
-                <strong>6,050</strong>
-                <span>GitHub contributions across 18 repositories</span>
-              </div>
-            </div>
-          </div>
-          <div class="spotlight" style="margin-top: 40px; align-items: center;">
-            <div class="spotlight-copy reveal">
-              <h3>Output that scaled with the platform.</h3>
-              <p class="lead">Monthly contributions climbed from a few hundred over the summer to 2,120 in September and 2,726 in October, while the median pull request still went from open to merged in 5.4 hours.</p>
-              <ul class="check-list">
-                <li><b>Agent-assisted, human-approved</b>: I lead an AI-agent-assisted engineering workflow: agents implement, independent agents review, and every merge is human-approved.</li>
-                <li><b>Review as a first-class output</b>: 1,059 reviews of teammates' pull requests, nearly two for every pull request authored.</li>
-                <li><b>Subtractive engineering</b>: 20 dedicated cleanup pull requests removed 218K lines of dead code, redundant tests, and duplicated logic.</li>
-              </ul>
-            </div>
-            <aside class="panel reveal" aria-label="Monthly GitHub contributions chart">
-              <div class="panel-bar">
-                <span class="lamp"></span><span class="lamp"></span><span class="lamp"></span>
-                <span>quantlink · contributions.monthly</span>
-              </div>
-              <div class="panel-body">
-                <svg width="100%" height="212" role="img" aria-labelledby="ql-contrib-title ql-contrib-desc" style="display: block; overflow: visible; color: var(--accent); font-family: var(--font-mono);">
-                  <title id="ql-contrib-title">Monthly GitHub contributions at QuantLink AI, March to November 2026</title>
-                  <desc id="ql-contrib-desc">Bar chart of contributions per month: March 2, April 5, May 34, June 363, July 180, August 380, September 2,120, October 2,726, and November 240 (month to date, through November 9).</desc>
-                  <defs>
-                    <clipPath id="ql-contrib-clip"><rect x="0" y="0" width="100%" height="176"></rect></clipPath>
-                  </defs>
-                  <g><title>Mar 2026: 2 contributions</title><rect x="0%" y="0" width="11.111%" height="176" fill="transparent"></rect><rect x="2.444%" y="174" width="6.222%" height="6" rx="3" fill="currentColor" clip-path="url(#ql-contrib-clip)"></rect><text x="5.556%" y="194" text-anchor="middle" style="fill: var(--faint); font-size: 10.5px; letter-spacing: 0.06em;">MAR</text></g>
-                  <g><title>Apr 2026: 5 contributions</title><rect x="11.111%" y="0" width="11.111%" height="176" fill="transparent"></rect><rect x="13.556%" y="174" width="6.222%" height="6" rx="3" fill="currentColor" clip-path="url(#ql-contrib-clip)"></rect><text x="16.667%" y="194" text-anchor="middle" style="fill: var(--faint); font-size: 10.5px; letter-spacing: 0.06em;">APR</text></g>
-                  <g><title>May 2026: 34 contributions</title><rect x="22.222%" y="0" width="11.111%" height="176" fill="transparent"></rect><rect x="24.667%" y="174" width="6.222%" height="6" rx="3" fill="currentColor" clip-path="url(#ql-contrib-clip)"></rect><text x="27.778%" y="194" text-anchor="middle" style="fill: var(--faint); font-size: 10.5px; letter-spacing: 0.06em;">MAY</text></g>
-                  <g><title>Jun 2026: 363 contributions</title><rect x="33.333%" y="0" width="11.111%" height="176" fill="transparent"></rect><rect x="35.778%" y="156" width="6.222%" height="24" rx="3" fill="currentColor" clip-path="url(#ql-contrib-clip)"></rect><text x="38.889%" y="149" text-anchor="middle" style="fill: var(--text); font-size: 11px;">363</text><text x="38.889%" y="194" text-anchor="middle" style="fill: var(--faint); font-size: 10.5px; letter-spacing: 0.06em;">JUN</text></g>
-                  <g><title>Jul 2026: 180 contributions</title><rect x="44.444%" y="0" width="11.111%" height="176" fill="transparent"></rect><rect x="46.889%" y="166.1" width="6.222%" height="13.9" rx="3" fill="currentColor" clip-path="url(#ql-contrib-clip)"></rect><text x="50%" y="159.1" text-anchor="middle" style="fill: var(--text); font-size: 11px;">180</text><text x="50%" y="194" text-anchor="middle" style="fill: var(--faint); font-size: 10.5px; letter-spacing: 0.06em;">JUL</text></g>
-                  <g><title>Aug 2026: 380 contributions</title><rect x="55.556%" y="0" width="11.111%" height="176" fill="transparent"></rect><rect x="58%" y="155.1" width="6.222%" height="24.9" rx="3" fill="currentColor" clip-path="url(#ql-contrib-clip)"></rect><text x="61.111%" y="148.1" text-anchor="middle" style="fill: var(--text); font-size: 11px;">380</text><text x="61.111%" y="194" text-anchor="middle" style="fill: var(--faint); font-size: 10.5px; letter-spacing: 0.06em;">AUG</text></g>
-                  <g><title>Sep 2026: 2,120 contributions</title><rect x="66.667%" y="0" width="11.111%" height="176" fill="transparent"></rect><rect x="69.111%" y="59.3" width="6.222%" height="120.7" rx="3" fill="currentColor" clip-path="url(#ql-contrib-clip)"></rect><text x="72.222%" y="52.3" text-anchor="middle" style="fill: var(--text); font-size: 11px;">2,120</text><text x="72.222%" y="194" text-anchor="middle" style="fill: var(--faint); font-size: 10.5px; letter-spacing: 0.06em;">SEP</text></g>
-                  <g><title>Oct 2026: 2,726 contributions</title><rect x="77.778%" y="0" width="11.111%" height="176" fill="transparent"></rect><rect x="80.222%" y="26" width="6.222%" height="154" rx="3" fill="currentColor" clip-path="url(#ql-contrib-clip)"></rect><text x="83.333%" y="19" text-anchor="middle" style="fill: var(--text); font-size: 11px;">2,726</text><text x="83.333%" y="194" text-anchor="middle" style="fill: var(--faint); font-size: 10.5px; letter-spacing: 0.06em;">OCT</text></g>
-                  <g><title>Nov 2026 (month to date, through Nov 9): 240 contributions</title><rect x="88.889%" y="0" width="11.111%" height="176" fill="transparent"></rect><rect x="91.333%" y="162.8" width="6.222%" height="17.2" rx="3" fill="currentColor" fill-opacity="0.42" clip-path="url(#ql-contrib-clip)"></rect><text x="94.444%" y="155.8" text-anchor="middle" style="fill: var(--text); font-size: 11px;">240</text><text x="94.444%" y="194" text-anchor="middle" style="fill: var(--faint); font-size: 10.5px; letter-spacing: 0.06em;">NOV</text><text x="94.444%" y="207" text-anchor="middle" style="fill: var(--faint); font-size: 9px; letter-spacing: 0.08em;">MTD</text></g>
-                  <line x1="0" y1="176.5" x2="100%" y2="176.5" style="stroke: var(--line-strong);" stroke-width="1"></line>
-                </svg>
-              </div>
-              <div class="panel-foot">
-                <span>contributions / month · nov = month to date</span>
-                <b>streak: 27 days</b>
-              </div>
-            </aside>
-          </div>
-        </section>
-
-        <!-- ============ Focus areas ============ -->
-        <section class="page-section" aria-labelledby="focus-title">
-          <div class="section-head">
-            <div>
-              <p class="kicker">02 · Focus Areas</p>
-              <h2 id="focus-title">Three disciplines, one pipeline</h2>
-            </div>
-            <p class="section-note">Factors · Strategies · Language</p>
-          </div>
-          <div class="work-grid">
-            <article class="feature-card factor reveal">
-              <p class="label">QuantLink AI</p>
-              <h3>Factor Engine</h3>
-              <ul class="square-list">
-                <li>End-to-end factor research workflow across a 3,545-stock universe.</li>
-                <li>IC, rank correlation, OLS slope, R², monotonicity, and spread diagnostics in one pass.</li>
-                <li>Quintile and decile backtests with benchmark, sector, and market-cap analysis.</li>
-              </ul>
             </article>
-            <article class="feature-card trading reveal">
-              <p class="label">Systematic Trading</p>
-              <h3>Strategy Lab</h3>
-              <ul class="square-list">
-                <li>ETF and crypto strategies with sliding-window LightGBM, oscillators, liquidity, and macro-trend features.</li>
-                <li>Multi-region alphas across US, China, Europe, and UK markets.</li>
-                <li>Turnover control, transaction-cost-aware backtests, risk-adjusted quality first.</li>
-              </ul>
+            <article class="project-card" data-project="factor">
+              <div class="project-card-inner">
+                <span class="project-type">Factor research</span>
+                <h3>Factor Modeling</h3>
+                <p>This QuantLink AI workflow tests factors across 3,545 stocks. It compares forward returns by factor rank, checks for sector concentration, and benchmarks portfolio backtests.</p>
+                <div class="inline-actions">
+                  <a class="button accent small" href="/projects/single-factor-modeling.html">See the factor workflow <span class="arr" aria-hidden="true">→</span></a>
+                </div>
+              </div>
             </article>
-            <article class="feature-card ai reveal">
-              <p class="label">AI + Markets</p>
-              <h3>NLP &amp; Research UI</h3>
-              <ul class="square-list">
-                <li>Transformers and knowledge graphs applied to filings, earnings calls, headlines, and macro communications.</li>
-                <li>Dashboards for screening, backtesting, alpha review, and risk monitoring.</li>
-                <li>Complex analytics translated into interfaces analysts can scan under pressure.</li>
-              </ul>
+            <article class="project-card" data-project="ai product">
+              <div class="project-card-inner">
+                <span class="project-type">Applied machine learning</span>
+                <h3>AutoML Workbench</h3>
+                <p>I led development of a workbench to train and compare machine learning models on equity data and research datasets. It supports purged walk-forward validation, holdout rankings, SHAP explanations, and ensembles.</p>
+                <div class="inline-actions">
+                  <a class="button accent small" href="/projects/automl-workbench.html">Explore the AutoML workflow <span class="arr" aria-hidden="true">→</span></a>
+                </div>
+              </div>
+            </article>
+            <article class="project-card" id="quantflow" tabindex="-1" data-project="ai research">
+              <div class="project-card-inner">
+                <span class="project-type">AI-assisted equity research</span>
+                <h3>QuantFlow</h3>
+                <p>QuantFlow researches individual stocks using historical S&amp;P 500 membership. AI agents document the bull and bear cases. A risk review can veto a recommendation before the report is generated.</p>
+                <div class="inline-actions">
+                  <a class="button accent small" href="/projects/quantflow.html">Explore QuantFlow <span class="arr" aria-hidden="true">→</span></a>
+                </div>
+              </div>
             </article>
           </div>
+          <div class="work-links">
+            <a href="/projects/">View all projects</a>
+            <a href="/projects/pit-market-data-platform.html">Point-in-Time Market Data Platform</a>
+            <a href="/projects/sql-backtester.html">SQL-Native Backtester</a>
+            <a href="/blogs/">Research notes</a>
+            <a href="https://linkedin.com/in/cxz07" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          </div>
         </section>
 
-        <!-- ============ Experience ============ -->
-        <section class="page-section" id="experience" aria-labelledby="experience-title">
+        <section class="page-section" id="experience" tabindex="-1" aria-labelledby="experience-title">
           <div class="section-head">
-            <div>
-              <p class="kicker">03 · Experience</p>
-              <h2 id="experience-title">Analytics → Quant Research → Quantitative AI</h2>
-            </div>
-            <p class="section-note">2017–Present</p>
+            <h2 id="experience-title">Experience</h2>
           </div>
           <div class="ledger">
-            <article class="ledger-row reveal">
-              <div class="ledger-when"><b>Apr 2026–Now</b>Remote · Minneapolis HQ</div>
+            <article class="ledger-row" id="quantlink" tabindex="-1">
+              <div class="ledger-when"><b>Apr 2026–Present</b></div>
               <div class="ledger-role">
                 <h3>Founding Quantitative AI Researcher</h3>
                 <p class="org">QuantLink AI</p>
-                <p>Building an MCP-based agentic quant research platform (AI agents that research, evaluate, and refine strategies through desk-grade backtesting, portfolio construction &amp; optimization, and risk-model attribution) alongside constrained long-only/long-short construction with multi-factor exposure monitoring. Shipped a point-in-time market-data platform, a SQL-native backtester, AutoML Workbench, Notebook Dashboards with a self-checking notebook AI agent, an options workspace, and a 1,139-operator typed catalog, with 517 merged pull requests and 1,059 code reviews to date.</p>
+                <p>I work on systematic research at QuantLink AI, including backtesting, portfolio construction, and risk attribution. I develop machine learning workflows for model evaluation and led development of a platform that gives AI agents access to research tools and permission-checked market data.</p>
+                <p class="experience-link"><a href="/projects/quantlink-mcp-platform.html">Read the QuantLink platform case study</a></p>
               </div>
-              <span class="ledger-tag current">Current</span>
             </article>
-            <article class="ledger-row reveal">
+            <article class="ledger-row">
               <div class="ledger-when"><b>Jun–Sep 2025</b>Tampa, FL</div>
               <div class="ledger-role">
                 <h3>Quantitative Researcher</h3>
                 <p class="org">Quanta Ventures</p>
-                <p>End-to-end Python ML pipeline for Bitcoin, Ethereum, and QQQ strategies: sliding-window LightGBM linear trees, walk-forward validation, live paper trading net of transaction costs with Sharpe above 1.5. Partnered with traders on equity-index, crude-oil, and precious-metals futures research.</p>
+                <p>I researched ETF allocation strategies for Bitcoin, Ethereum, and QQQ and built a Python pipeline for LightGBM modeling, walk-forward validation, and paper trading with transaction costs.</p>
               </div>
-              <span class="ledger-tag">ML Strategies</span>
             </article>
-            <article class="ledger-row reveal">
+            <article class="ledger-row">
               <div class="ledger-when"><b>Feb–Jun 2025</b>Remote</div>
               <div class="ledger-role">
                 <h3>BRAIN Research Consultant</h3>
                 <p class="org">WorldQuant</p>
-                <p>Engineered 40+ intraday and medium-frequency strategies from fundamental, analyst, short-interest, news, price-volume, and options data across US, China, Europe, and UK markets.</p>
+                <p>I designed more than 40 intraday and medium-frequency equity strategies using data from company fundamentals, analysts, short interest, news, and options.</p>
               </div>
-              <span class="ledger-tag">Alpha Research</span>
             </article>
-            <article class="ledger-row reveal">
-              <div class="ledger-when"><b>Dec 2020–Jul 2024</b>New York</div>
+            <article class="ledger-row">
+              <div class="ledger-when"><b>Dec 2020–Jul 2024</b></div>
               <div class="ledger-role">
                 <h3>Senior Quantitative Research Associate</h3>
                 <p class="org">Wolfe Research</p>
-                <p>Built NLP factors, risk-neutralized models, intangible-asset research, macro risk-exposure frameworks, and analyst-facing dashboards for alpha discovery and portfolio context.</p>
+                <p>I researched equity factors and built scenario analyses to measure portfolio exposure to macroeconomic shocks. I applied NLP to financial documents and developed dashboards for backtesting and stock screening.</p>
+                <p class="experience-link"><a href="/projects/wolfe-research.html">See my research at Wolfe</a></p>
               </div>
-              <span class="ledger-tag">NLP · Risk</span>
             </article>
-            <article class="ledger-row reveal">
+            <article class="ledger-row">
               <div class="ledger-when"><b>2017–2020</b>India</div>
               <div class="ledger-role">
                 <h3>Analytics Consultant · Business Analyst</h3>
                 <p class="org">ZS Associates · Udaan</p>
-                <p>Observational studies on claims and EHR data, survival analysis, anomaly detection, revenue forecasting, and operational collections optimization. The statistical foundation for everything since.</p>
-              </div>
-              <span class="ledger-tag">Statistics</span>
-            </article>
-          </div>
-        </section>
-
-        <!-- ============ Selected projects ============ -->
-        <section class="page-section" id="work" aria-labelledby="work-title">
-          <div class="section-head">
-            <div>
-              <p class="kicker">04 · Selected Work</p>
-              <h2 id="work-title">Research you can open</h2>
-            </div>
-            <p class="section-note">Full index → <a href="/projects/">/projects</a></p>
-          </div>
-          <div class="project-grid">
-            <article class="project-card flagship reveal" data-project="trading ai product">
-              <div class="project-card-inner">
-                <span class="project-type">Agentic Research<span class="flagship-tag">★ Flagship</span></span>
-                <h3>QuantFlow</h3>
-                <p>An agent desk that researches, debates, and sizes a single-name case, then prints it. Eleven specialists, a recorded bull/bear debate, and a risk-manager veto before any outlook ships.</p>
-                <div class="project-metrics">
-                  <span>11<small>specialist agents</small></span>
-                  <span>27<small>engine tools</small></span>
-                  <span>MCP<small>agent tools</small></span>
-                  <span>dark+light<small>reports</small></span>
-                </div>
-                <div class="tag-row"><span class="tag">Agentic Research</span></div>
-                <div class="inline-actions"><a class="button accent small" href="/projects/quantflow.html">Case Study <span class="arr" aria-hidden="true">→</span></a></div>
-              </div>
-            </article>
-            <article class="project-card reveal" data-project="factor">
-              <div class="project-card-inner">
-                <span class="project-type">Factor Research</span>
-                <h3>Single-Factor Modeling · QuantLink AI</h3>
-                <p>Cross-sectional factor dashboard: ranking, diagnostics, buckets, risk, and backtest review in one workflow.</p>
-                <div class="project-metrics">
-                  <span>3,545<small>stocks</small></span>
-                  <span>10+<small>panels</small></span>
-                  <span>IC + OLS<small>diagnostics</small></span>
-                  <span>Q / D<small>buckets</small></span>
-                </div>
-                <div class="tag-row"><span class="tag">Factor Investing</span><span class="tag">Backtesting</span></div>
-                <div class="inline-actions"><a class="button accent small" href="/projects/single-factor-modeling.html">Case Study <span class="arr" aria-hidden="true">→</span></a></div>
-              </div>
-            </article>
-            <article class="project-card reveal" data-project="ai product">
-              <div class="project-card-inner">
-                <span class="project-type">QuantLink AI · ML Platform</span>
-                <h3>AutoML Workbench</h3>
-                <p>No-code training, ranking, explanation and deployment of many ML models, with leakage-safe purged walk-forward validation and holdout Rank IC leaderboards.</p>
-                <div class="project-metrics">
-                  <span>5<small>problem types</small></span>
-                  <span>1M<small>rows per table</small></span>
-                  <span>31<small>plain-language errors</small></span>
-                  <span>4<small>engine releases</small></span>
-                </div>
-                <div class="tag-row"><span class="tag">scikit-learn · XGBoost · LightGBM</span><span class="tag">FastAPI · Redis/RQ</span><span class="tag">Next.js</span></div>
-                <div class="inline-actions"><a class="button accent small" href="/projects/automl-workbench.html">Case Study <span class="arr" aria-hidden="true">→</span></a></div>
-              </div>
-            </article>
-            <article class="project-card reveal" data-project="market product">
-              <div class="project-card-inner">
-                <span class="project-type">QuantLink AI · Analytics Product</span>
-                <h3>Notebook Dashboards</h3>
-                <p>One click from Python research notebook to interactive dashboard: typed inputs, scheduled reruns, and server-side pivots over up to 50M rows.</p>
-                <div class="project-metrics">
-                  <span>50M<small>rows per table</small></span>
-                  <span>9<small>typed inputs</small></span>
-                  <span>6<small>codebases</small></span>
-                  <span>7-tab<small>stock page rebuilt</small></span>
-                </div>
-                <div class="tag-row"><span class="tag">DuckDB</span><span class="tag">Next.js</span><span class="tag">FastAPI</span></div>
-                <div class="inline-actions"><a class="button accent small" href="/projects/notebook-dashboards.html">Case Study <span class="arr" aria-hidden="true">→</span></a></div>
-              </div>
-            </article>
-            <article class="project-card reveal" data-project="factor product">
-              <div class="project-card-inner">
-                <span class="project-type">QuantLink AI · Data Platform</span>
-                <h3>Point-in-Time Market Data Platform</h3>
-                <p>Survivorship-free market data: a universe that keeps delisted companies, ~180M rows of calculations at exact parity, and a replayable dbt lakehouse.</p>
-                <div class="project-metrics">
-                  <span>180M<small>calc rows rebuilt</small></span>
-                  <span>1,442<small>columns at exact parity</small></span>
-                  <span>107.6M<small>row backfill</small></span>
-                  <span>20<small>bulk datasets</small></span>
-                </div>
-                <div class="tag-row"><span class="tag">ClickHouse · Dagster</span><span class="tag">dbt</span><span class="tag">Point-in-Time Data</span></div>
-                <div class="inline-actions"><a class="button accent small" href="/projects/pit-market-data-platform.html">Case Study <span class="arr" aria-hidden="true">→</span></a></div>
-              </div>
-            </article>
-            <article class="project-card reveal" data-project="trading factor">
-              <div class="project-card-inner">
-                <span class="project-type">QuantLink AI · Backtesting</span>
-                <h3>SQL-Native Backtester</h3>
-                <p>Backtesting written entirely as dbt SQL on ClickHouse: no Python loop, look-ahead blocked by construction, P&amp;L reconciled to every trade.</p>
-                <div class="project-metrics">
-                  <span>14<small>dbt gold models</small></span>
-                  <span>7,184<small>trades simulated</small></span>
-                  <span>81/81<small>build checks green</small></span>
-                  <span>Weekly<small>production rebuild</small></span>
-                </div>
-                <div class="tag-row"><span class="tag">dbt</span><span class="tag">ClickHouse</span><span class="tag">SQL</span></div>
-                <div class="inline-actions"><a class="button accent small" href="/projects/sql-backtester.html">Case Study <span class="arr" aria-hidden="true">→</span></a></div>
-              </div>
-            </article>
-            <article class="project-card reveal" data-project="ai product">
-              <div class="project-card-inner">
-                <span class="project-type">QuantLink AI · AI Agents</span>
-                <h3>Notebook AI Agent</h3>
-                <p>An AI agent that edits research notebooks against a live kernel and checks every edit before it applies, on an isolated, production-grade runtime.</p>
-                <div class="project-metrics">
-                  <span>725<small>operators searchable</small></span>
-                  <span>115<small>warehouse datasets</small></span>
-                  <span>5<small>model tools</small></span>
-                  <span>477<small>focused tests</small></span>
-                </div>
-                <div class="tag-row"><span class="tag">LLM tool calling</span><span class="tag">Python / Jupyter</span><span class="tag">FastAPI</span></div>
-                <div class="inline-actions"><a class="button accent small" href="/projects/notebook-ai-agent.html">Case Study <span class="arr" aria-hidden="true">→</span></a></div>
-              </div>
-            </article>
-            <article class="project-card reveal" data-project="ai">
-              <div class="project-card-inner">
-                <span class="project-type">AI / NLP</span>
-                <h3>FOMC Sentiment Toolkit</h3>
-                <p>FinBERT-FOMC suite released as a package and CLI: policy-regime tone, novelty scores, walk-forward validation, and sign-signal backtests.</p>
-                <div class="project-metrics">
-                  <span>FinBERT<small>fine-tuned</small></span>
-                  <span>Novelty<small>score</small></span>
-                  <span>LightGBM<small>SPX &amp; spreads</small></span>
-                  <span>Walk-forward<small>validation</small></span>
-                </div>
-                <div class="tag-row"><span class="tag">NLP</span><span class="tag">Macro</span></div>
-                <div class="inline-actions">
-                  <a class="button accent small" href="/projects/fomc-sentiment.html">Case Study <span class="arr" aria-hidden="true">→</span></a>
-                  <a class="button cyan small" href="https://github.com/Kizo07/fomc-sentiment-toolkit" target="_blank" rel="noopener noreferrer">Toolkit ↗</a>
-                  <a class="button ghost small" href="https://github.com/Kizo07/FOMC-Sentiment" target="_blank" rel="noopener noreferrer">Research</a>
-                </div>
-              </div>
-            </article>
-            <article class="project-card reveal" data-project="options">
-              <div class="project-card-inner">
-                <span class="project-type">Options &amp; Rates</span>
-                <h3>American Options &amp; Securitized Products</h3>
-                <p>Numerical methods for early exercise, barriers, MBS, and G2++ rate models (lattices, LSMC, FDM, Monte Carlo).</p>
-                <div class="project-metrics">
-                  <span>LSMC<small>early exercise</small></span>
-                  <span>FDM<small>greeks</small></span>
-                  <span>G2++<small>rates</small></span>
-                  <span>MBS<small>valuation</small></span>
-                </div>
-                <div class="tag-row"><span class="tag">Monte Carlo</span><span class="tag">Derivatives</span></div>
-                <div class="inline-actions">
-                  <a class="button accent small" href="/projects/securitized-products.html">Detail <span class="arr" aria-hidden="true">→</span></a>
-                  <a class="button ghost small" href="https://github.com/Kizo07/American_Options" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
-                </div>
-              </div>
-            </article>
-            <article class="project-card reveal" data-project="trading">
-              <div class="project-card-inner">
-                <span class="project-type">Agentic Research</span>
-                <h3>Agentic Alpha Engine</h3>
-                <p>End-to-end alpha engine for US equities on public data, designed to be driven by any MCP-capable AI agent: ingest, transform, backtest, optimize. Now at v0.5.0 with a survivorship-bias-free point-in-time universe.</p>
-                <div class="project-metrics">
-                  <span>25+<small>MCP tools</small></span>
-                  <span>dbt+DuckDB<small>transform</small></span>
-                  <span>170+<small>factors built in</small></span>
-                  <span>vectorbt<small>backtests</small></span>
-                </div>
-                <div class="tag-row"><span class="tag">Agentic Research</span><span class="tag">Portfolio Optimization</span></div>
-                <div class="inline-actions">
-                  <a class="button accent small" href="/projects/agentic-alpha-engine.html">Case Study <span class="arr" aria-hidden="true">→</span></a>
-                  <a class="button ghost small" href="https://github.com/Kizo07/alpha_engine" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
-                </div>
-              </div>
-            </article>
-            <article class="project-card reveal" data-project="trading">
-              <div class="project-card-inner">
-                <span class="project-type">Trading Systems</span>
-                <h3>Stat Arb Optimization &amp; Risk</h3>
-                <p>RMT-denoised and shrinkage covariance estimation with transaction-cost-aware convex optimization for a copula-based US equity pairs strategy.</p>
-                <div class="project-metrics">
-                  <span>RMT<small>denoised</small></span>
-                  <span>Shrinkage<small>covariance</small></span>
-                  <span>Cost-aware<small>convex opt</small></span>
-                  <span>Copula<small>pairs</small></span>
-                </div>
-                <div class="tag-row"><span class="tag">Stat Arb</span><span class="tag">Risk Analytics</span></div>
-                <div class="inline-actions"><a class="button cyan small" href="https://github.com/Kizo07/RL_StatArb" target="_blank" rel="noopener noreferrer">GitHub ↗</a></div>
-              </div>
-            </article>
-            <article class="project-card reveal" data-project="market">
-              <div class="project-card-inner">
-                <span class="project-type">Market Structure</span>
-                <h3>MAG7 Concentration Effects</h3>
-                <p>IAQF 2025 research: did SMB factor behavior decouple once concentration moved into mega-cap winners?</p>
-                <div class="project-metrics">
-                  <span>IAQF<small>2025</small></span>
-                  <span>SMB<small>factor</small></span>
-                  <span>MAG7<small>regime</small></span>
-                  <span>Crowding<small>risk</small></span>
-                </div>
-                <div class="tag-row"><span class="tag">Factors</span><span class="tag">Concentration</span></div>
-                <div class="inline-actions"><a class="button cyan small" href="https://github.com/Kizo07/Concentration_Strategies" target="_blank" rel="noopener noreferrer">GitHub ↗</a></div>
-              </div>
-            </article>
-            <article class="project-card reveal" data-project="options trading">
-              <div class="project-card-inner">
-                <span class="project-type">Derivatives · Portfolio Research</span>
-                <h3>LEAPS as Stock Substitutes</h3>
-                <p>Long/short equity built on LEAPS instead of stock: Black-Scholes on escrowed spot, a calibrated IV proxy, and a daily-accounting engine that reprices exercise, expiry, and ruin on public data only.</p>
-                <div class="project-metrics">
-                  <span>V0–V3<small>portfolio variants</small></span>
-                  <span>V1–V4<small>validation gates</small></span>
-                  <span>Daily<small>NAV reconciliation</small></span>
-                  <span>No-lookahead<small>signal audit</small></span>
-                </div>
-                <div class="tag-row"><span class="tag">LEAPS</span><span class="tag">Long/Short</span><span class="tag">Backtesting</span></div>
-                <div class="inline-actions">
-                  <a class="button accent small" href="/projects/leaps-stock-substitutes.html">Case Study <span class="arr" aria-hidden="true">→</span></a>
-                  <a class="button ghost small" href="https://github.com/Kizo07/LEAPS-Stock-Substitute-Backtest" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
-                </div>
-              </div>
-            </article>
-            <article class="project-card reveal" data-project="factor ai">
-              <div class="project-card-inner">
-                <span class="project-type">Factor Research · AI</span>
-                <h3>AI Exposure Factor Suite</h3>
-                <p>Two market-implied AI return factors built point-in-time from ETF baskets: AI Theme (AUM-weighted, ex-semiconductors) and AI Infrastructure. Together they form the base for measuring firm-level AI exposure with Fama-French controls.</p>
-                <div class="project-metrics">
-                  <span>2<small>AI factors</small></span>
-                  <span>AUM-weighted<small>baskets</small></span>
-                  <span>Point-in-time<small>construction</small></span>
-                  <span>FF<small>controls</small></span>
-                </div>
-                <div class="tag-row"><span class="tag">AI Factors</span><span class="tag">ETFs</span><span class="tag">Risk Exposure</span></div>
-                <div class="inline-actions">
-                  <a class="button accent small" href="/projects/ai-exposure-factors.html">Case Study <span class="arr" aria-hidden="true">→</span></a>
-                  <a class="button ghost small" href="https://github.com/Kizo07/AI-Factor" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
-                </div>
-              </div>
-            </article>
-            <article class="project-card reveal" data-project="trading">
-              <div class="project-card-inner">
-                <span class="project-type">Portfolio Construction</span>
-                <h3>MAPO: Multi-Asset Optimizer</h3>
-                <p>One optimization API across equities, crypto, futures, FX, and treasuries, unifying PyPortfolioOpt, skfolio, and Riskfolio-Lib behind native solvers: exact SOCP max-Sharpe under asset-class caps and turnover, CVaR LP, HRP/HERC, Black-Litterman, and a no-lookahead walk-forward backtester.</p>
-                <div class="project-metrics">
-                  <span>5<small>asset classes</small></span>
-                  <span>SOCP<small>max-Sharpe</small></span>
-                  <span>CVaR<small>LP</small></span>
-                  <span>Walk-forward<small>backtests</small></span>
-                </div>
-                <div class="tag-row"><span class="tag">Optimization</span><span class="tag">Convex</span><span class="tag">Risk Models</span></div>
-                <div class="inline-actions"><a class="button accent small" href="/projects/mapo-optimizer.html">Case Study <span class="arr" aria-hidden="true">→</span></a></div>
-              </div>
-            </article>
-            <article class="project-card reveal" data-project="ai product">
-              <div class="project-card-inner">
-                <span class="project-type">Agentic Research · Reporting</span>
-                <h3>report-forge</h3>
-                <p>MCP-driven report engine that turns Markdown and chart PNGs into publication-grade PDF, HTML, and DOCX, with 19 templates, native Exhibit numbering, and mechanical quality gates that refuse to ship a bad exhibit. Renders QuantFlow's flagship outlooks.</p>
-                <div class="project-metrics">
-                  <span>19<small>templates</small></span>
-                  <span>4<small>output formats</small></span>
-                  <span>40+<small>MCP tools</small></span>
-                  <span>Quality<small>gates</small></span>
-                </div>
-                <div class="tag-row"><span class="tag">Agentic Research</span><span class="tag">Typst</span><span class="tag">Quarto</span></div>
-                <div class="inline-actions">
-                  <a class="button accent small" href="/projects/report-forge.html">Case Study <span class="arr" aria-hidden="true">→</span></a>
-                  <a class="button ghost small" href="https://github.com/Kizo07/report-forge" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
-                </div>
-              </div>
-            </article>
-            <article class="project-card reveal" data-project="ai product">
-              <div class="project-card-inner">
-                <span class="project-type">Agentic Research · Memory</span>
-                <h3>Spark-MCP</h3>
-                <p>Creativity and institutional-learning MCP server for quant research. Spark remembers everything a team has tried (failures included), deflates significance for the full trial count, and maps the unexplored corners of research space.</p>
-                <div class="project-metrics">
-                  <span>33<small>MCP tools</small></span>
-                  <span>DSR<small>significance gates</small></span>
-                  <span>MAP-Elites<small>exploration</small></span>
-                  <span>Replay<small>gated skills</small></span>
-                </div>
-                <div class="tag-row"><span class="tag">MCP</span><span class="tag">Research Memory</span><span class="tag">Deflated Sharpe</span></div>
-                <div class="inline-actions">
-                  <a class="button accent small" href="/projects/spark-mcp.html">Case Study <span class="arr" aria-hidden="true">→</span></a>
-                  <a class="button ghost small" href="https://github.com/Kizo07/spark-mcp" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
-                </div>
-              </div>
-            </article>
-            <article class="project-card reveal" data-project="ai market">
-              <div class="project-card-inner">
-                <span class="project-type">Prediction Markets · NLP</span>
-                <h3>Kalshi Mentions Pricing</h3>
-                <p>Fair-value engine for Kalshi's "Mentions" contracts: will a word be said, and how many times. A hurdle model pairs shrunk Beta-Binomial base rates with a truncated negative-binomial repetition process, plus live Gamma-Poisson updating mid-event and walk-forward backtests against the base rate.</p>
-                <div class="project-metrics">
-                  <span>Hurdle<small>model</small></span>
-                  <span>Live<small>updating</small></span>
-                  <span>Walk-forward<small>backtests</small></span>
-                  <span>FastAPI+Mantine<small>dashboard</small></span>
-                </div>
-                <div class="tag-row"><span class="tag">Prediction Markets</span><span class="tag">NLP</span><span class="tag">Probability</span></div>
-                <div class="inline-actions">
-                  <a class="button accent small" href="/projects/kalshi-mentions-pricing.html">Case Study <span class="arr" aria-hidden="true">→</span></a>
-                  <a class="button ghost small" href="https://github.com/Kizo07/kalshi-data-pipeline" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
-                </div>
+                <p>Analyzed claims and electronic health records for observational studies and worked on revenue forecasting and collections.</p>
               </div>
             </article>
           </div>
         </section>
 
-        <!-- ============ Research & writing ============ -->
-        <section class="page-section" aria-labelledby="research-title">
+        <section class="page-section" id="about" aria-labelledby="about-title">
           <div class="section-head">
-            <div>
-              <p class="kicker">05 · Research &amp; Writing</p>
-              <h2 id="research-title">Notes, papers, and tearsheets</h2>
-            </div>
-            <p class="section-note">Working out loud</p>
+            <h2 id="about-title">About</h2>
           </div>
-          <div class="blog-grid">
-            <a class="blog-card reveal" href="/blogs/#factor-note">
-              <p class="article-meta">Research Note</p>
-              <h3>From factor idea to verdict</h3>
-              <p>Distribution, concentration, rank quality, bucket backtests: the checklist a factor must survive.</p>
-            </a>
-            <a class="blog-card reveal" href="/blogs/#sector-note">
-              <p class="article-meta">Research Note</p>
-              <h3>Sector composition is not a footnote</h3>
-              <p>Top-bottom spreads can look clean until sector concentration turns a factor into an accidental macro bet.</p>
-            </a>
-            <a class="blog-card reveal" href="/blogs/#numerical-note">
-              <p class="article-meta">Research Note</p>
-              <h3>Numerical methods as product design</h3>
-              <p>Lattices, LSMC, finite differences, Monte Carlo: the method choice determines which risk surfaces you can see.</p>
-            </a>
-          </div>
-          <div class="tearsheet-strip reveal" style="margin-top: 18px;">
-            <a class="tearsheet-link" href="/tearsheets/QQQ_LS.html" target="_blank" rel="noopener noreferrer">
-              <b>QQQ Long/Short Regime</b>
-              <span>Strategy tearsheet ↗</span>
-            </a>
-            <a class="tearsheet-link" href="/tearsheets/QQQ_GLD_UUP_Rotation.html" target="_blank" rel="noopener noreferrer">
-              <b>QQQ · GLD · UUP Rotation</b>
-              <span>Strategy tearsheet ↗</span>
-            </a>
-            <a class="tearsheet-link" href="/tearsheets/deep-learning-momentum-tearsheet.html" target="_blank" rel="noopener noreferrer">
-              <b>Deep Learning Momentum</b>
-              <span>Strategy tearsheet ↗</span>
-            </a>
-            <a class="tearsheet-link" href="/tearsheets/sentiment-analysis-trader-tearsheet.html" target="_blank" rel="noopener noreferrer">
-              <b>Sentiment Trader</b>
-              <span>Strategy tearsheet ↗</span>
-            </a>
-          </div>
-        </section>
-
-        <!-- ============ Capabilities ============ -->
-        <section class="page-section" aria-labelledby="stack-title">
-          <div class="section-head">
-            <div>
-              <p class="kicker">06 · Capabilities</p>
-              <h2 id="stack-title">The stack behind the research</h2>
-            </div>
-          </div>
-          <div class="skill-grid">
-            <article class="skill-block reveal">
-              <h3>Quantitative Finance</h3>
-              <p>Factor investing, cross-sectional analysis, derivatives pricing, fixed income, statistical arbitrage, portfolio construction, and risk diagnostics.</p>
-              <div class="tag-row"><span class="tag">IC</span><span class="tag">Sharpe</span><span class="tag">Fama-French</span><span class="tag">MBS</span><span class="tag">Bloomberg</span><span class="tag">FactSet</span><span class="tag">Capital IQ</span></div>
-            </article>
-            <article class="skill-block reveal">
-              <h3>Machine Learning &amp; Applied AI</h3>
-              <p>LightGBM, Elastic Net, transformer models, FinBERT, anomaly detection, and model validation under noisy market data, plus research agent workflows built on MCP tool servers.</p>
-              <div class="tag-row"><span class="tag">LightGBM</span><span class="tag">Transformers</span><span class="tag">FinBERT</span><span class="tag">MCP</span><span class="tag">Agents</span></div>
-            </article>
-            <article class="skill-block reveal">
-              <h3>Data Engineering</h3>
-              <p>Python, R, SQL, C++, Git, AWS, Linux; point-in-time data discipline, structured pipelines, APIs, and research reproducibility.</p>
-              <div class="tag-row"><span class="tag">Python</span><span class="tag">SQL</span><span class="tag">R</span><span class="tag">C++</span></div>
-            </article>
-            <article class="skill-block reveal">
-              <h3>Product Systems</h3>
-              <p>Interactive dashboards, chart design, stateful controls, screeners, backtest explorers, and analyst workflows built for repeated use.</p>
-              <div class="tag-row"><span class="tag">Dashboards</span><span class="tag">Screeners</span><span class="tag">Analytics UX</span></div>
-            </article>
-          </div>
-        </section>
-
-        <!-- ============ Education ============ -->
-        <section class="page-section" aria-labelledby="education-title">
-          <div class="section-head">
-            <div>
-              <p class="kicker">07 · Education</p>
-              <h2 id="education-title">Engineering roots, finance depth</h2>
-            </div>
-          </div>
+          <p class="lead about-copy">When I evaluate a factor, I check whether it predicts returns, how much of the result comes from sector exposure, and how it behaves in a portfolio.</p>
           <div class="edu-grid">
-            <article class="edu-card reveal">
+            <article class="edu-card">
               <p class="school">UCLA Anderson School of Management</p>
               <h3>Master of Financial Engineering</h3>
-              <p class="when">2024–2025 · GPA 3.93 / 4.0</p>
+              <p class="when">2024–2025</p>
               <ul>
-                <li>1st Rank, WorldQuant BRAIN Alphathon · VP of Careers</li>
-                <li>IAQF 2025 co-author: MAG7 concentration research</li>
-                <li>Coursework: Computational Methods, Quantitative Asset Management, PhD-level Financial Economics, Statistical Arbitrage, Credit Markets</li>
+                <li>First place, WorldQuant BRAIN Alphathon</li>
+                <li>Co-authored research on MAG7 concentration for IAQF 2025</li>
               </ul>
             </article>
-            <article class="edu-card reveal">
+            <article class="edu-card">
               <p class="school">IIT Roorkee</p>
               <h3>B.Tech, Civil Engineering</h3>
               <p class="when">2013–2017 · KVPY Scholar</p>
-              <ul>
-                <li>KVPY Scholarship, a national science research fellowship</li>
-                <li>Quantitative and computational foundation in mathematics, mechanics, and programming</li>
-              </ul>
             </article>
           </div>
         </section>
 
-        <!-- ============ Contact ============ -->
-        <section class="page-section" id="contact" aria-labelledby="contact-title">
-          <div class="contact-panel reveal">
-            <div>
-              <p class="kicker">Contact</p>
-              <h2 id="contact-title">Let's talk factors, models, and markets.</h2>
-              <p class="lead">Los Angeles · UCLA Anderson MFE · research experience at QuantLink AI, Quanta Ventures, WorldQuant, and Wolfe Research.</p>
-            </div>
+        <section class="page-section" id="contact" tabindex="-1" aria-labelledby="contact-title">
+          <div class="contact-panel">
+            <h2 id="contact-title">Get in touch</h2>
             <div class="contact-channels">
               <a class="channel" href="mailto:kanavdbz@gmail.com">
-                <span><span class="ch-label">Email</span><br><span class="ch-value">kanavdbz@gmail.com</span></span>
-                <span class="arr" aria-hidden="true">→</span>
-              </a>
-              <a class="channel" href="mailto:kanav.mehta.2025@anderson.ucla.edu">
-                <span><span class="ch-label">University</span><br><span class="ch-value">kanav.mehta.2025@anderson.ucla.edu</span></span>
+                <span><span class="ch-label">Email me</span><br><span class="ch-value">kanavdbz@gmail.com</span></span>
                 <span class="arr" aria-hidden="true">→</span>
               </a>
               <a class="channel" href="https://linkedin.com/in/cxz07" target="_blank" rel="noopener noreferrer">
                 <span><span class="ch-label">LinkedIn</span><br><span class="ch-value">linkedin.com/in/cxz07</span></span>
-                <span class="arr">↗</span>
+                <span class="arr" aria-hidden="true">↗</span>
               </a>
               <a class="channel" href="https://github.com/Kizo07" target="_blank" rel="noopener noreferrer">
                 <span><span class="ch-label">GitHub</span><br><span class="ch-value">github.com/Kizo07</span></span>
-                <span class="arr">↗</span>
+                <span class="arr" aria-hidden="true">↗</span>
               </a>
             </div>
           </div>
@@ -871,12 +241,12 @@ kanav_mehta · quantitative_researcher
         <div class="footer-inner">
           <div class="footer-brand">
             <strong>Kanav Mehta</strong>
-            <span>Quantitative AI Researcher</span>
+            <span>Quantitative Researcher</span>
           </div>
           <div class="footer-links">
             <a href="/">Home</a>
             <a href="/projects/">Projects</a>
-            <a href="/blogs/">Research Notes</a>
+            <a href="/blogs/">Research notes</a>
             <a href="https://github.com/Kizo07" target="_blank" rel="noopener noreferrer">GitHub</a>
             <a href="https://linkedin.com/in/cxz07" target="_blank" rel="noopener noreferrer">LinkedIn</a>
           </div>
@@ -884,9 +254,6 @@ kanav_mehta · quantitative_researcher
         </div>
       </footer>
     </div>
-    <script src="/assets/site.js?v=22"></script>
-    <script src="/assets/matrix.js?v=5" defer></script>
-    <script src="/assets/vendor/mantine-bundle.js" defer></script>
-    <script src="/assets/mantine-app.js?v=3" defer></script>
+    <script src="/assets/site.js?v=23"></script>
   </body>
 </html>

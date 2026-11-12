@@ -4,6 +4,71 @@
   var filterButtons = document.querySelectorAll("[data-filter]");
   var projectCards = document.querySelectorAll("[data-project]");
 
+  /* ---- Primary navigation ---- */
+  function initNavigation() {
+    var nav = document.querySelector("[data-site-nav]");
+    var button = document.querySelector("[data-nav-toggle]");
+    if (!nav || !button) return;
+
+    var links = Array.from(nav.querySelectorAll("a[href]"));
+    if (!links.length) return;
+
+    var sectionLinks = links.filter(function (link) {
+      return link.hash && link.origin === window.location.origin &&
+        link.pathname === window.location.pathname;
+    });
+
+    function updateCurrentSection() {
+      sectionLinks.forEach(function (link) {
+        if (link.hash === window.location.hash) link.setAttribute("aria-current", "location");
+        else link.removeAttribute("aria-current");
+      });
+    }
+
+    function setNavigationOpen(open) {
+      nav.classList.toggle("open", open);
+      button.setAttribute("aria-expanded", String(open));
+      button.setAttribute("aria-label", open ? "Close navigation" : "Open navigation");
+    }
+
+    function closeWhenOutside(event) {
+      if (nav.classList.contains("open") && !nav.contains(event.target) && !button.contains(event.target)) {
+        setNavigationOpen(false);
+      }
+    }
+
+    button.addEventListener("click", function () {
+      var open = !nav.classList.contains("open");
+      setNavigationOpen(open);
+      if (open) links[0].focus();
+    });
+
+    links.forEach(function (link) {
+      link.addEventListener("click", function () { setNavigationOpen(false); });
+    });
+
+    document.addEventListener("keydown", function (event) {
+      if (event.key === "Escape" && nav.classList.contains("open")) {
+        event.preventDefault();
+        setNavigationOpen(false);
+        button.focus();
+      }
+    });
+
+    document.addEventListener("click", closeWhenOutside);
+    document.addEventListener("focusin", closeWhenOutside);
+    window.addEventListener("resize", function () {
+      if (nav.classList.contains("open") && !button.getClientRects().length) setNavigationOpen(false);
+    });
+    window.addEventListener("hashchange", updateCurrentSection);
+    updateCurrentSection();
+
+    nav.setAttribute("data-nav-ready", "");
+    button.setAttribute("data-nav-ready", "");
+  }
+
+  initNavigation();
+
   /* ---- Tearsheet iframe theme injection (quantstats pages) ---- */
   var tearsheetThemeCss = `
     :root[data-parent-theme="light"] {
@@ -205,13 +270,13 @@
     });
   }
 
-  window.__kizoSetTheme = setTheme;
   setTheme(preferredTheme());
 
   if (toggle) {
     toggle.addEventListener("click", function () {
       setTheme(root.getAttribute("data-theme") === "dark" ? "light" : "dark");
     });
+    toggle.setAttribute("data-theme-ready", "");
   }
 
   /* ---- Project filters ---- */
@@ -257,10 +322,7 @@
     revealTargets.forEach(function (el) {
       observer.observe(el);
     });
-  } else {
-    revealTargets.forEach(function (el) {
-      el.classList.add("in");
-    });
+    root.setAttribute("data-reveal-ready", "");
   }
 
   /* ---- Footer year ---- */
